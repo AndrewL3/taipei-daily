@@ -25,3 +25,20 @@ export function getTaipeiDayOfWeek(date: Date): number {
   };
   return map[dayName]!;
 }
+
+export function toTaipeiDateString(date: Date): string {
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Taipei",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  return formatter.format(date);
+}
+
+export function getNextMidnightTaipei(now: Date): number {
+  const taipeiDate = toTaipeiDateString(now);
+  const todayMidnight = new Date(`${taipeiDate}T00:00:00+08:00`);
+  const nextMidnight = new Date(todayMidnight.getTime() + 24 * 60 * 60 * 1000);
+  return Math.floor(nextMidnight.getTime() / 1000);
+}
