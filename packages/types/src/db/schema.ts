@@ -6,6 +6,7 @@ import {
   doublePrecision,
   boolean,
   timestamp,
+  date,
   unique,
 } from "drizzle-orm/pg-core";
 
@@ -47,9 +48,10 @@ export const passEvents = pgTable(
     stopRank: integer("stop_rank").notNull(),
     car: text("car").notNull(),
     passedAt: timestamp("passed_at", { withTimezone: true }).notNull(),
+    routeDate: date("route_date").notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .notNull()
       .defaultNow(),
   },
-  (t) => [unique().on(t.routeLineId, t.stopRank, t.car)],
+  (t) => [unique().on(t.routeLineId, t.stopRank, t.car, t.routeDate)],
 );

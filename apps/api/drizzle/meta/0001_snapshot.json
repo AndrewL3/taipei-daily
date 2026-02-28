@@ -1,0 +1,254 @@
+{
+  "id": "aac4d51a-9e9e-490a-aa6e-74ce612140bc",
+  "prevId": "0892173a-fc19-400f-af40-272cbeb38465",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.pass_events": {
+      "name": "pass_events",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "route_line_id": {
+          "name": "route_line_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "stop_rank": {
+          "name": "stop_rank",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "car": {
+          "name": "car",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "passed_at": {
+          "name": "passed_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "route_date": {
+          "name": "route_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "pass_events_route_line_id_routes_line_id_fk": {
+          "name": "pass_events_route_line_id_routes_line_id_fk",
+          "tableFrom": "pass_events",
+          "tableTo": "routes",
+          "columnsFrom": [
+            "route_line_id"
+          ],
+          "columnsTo": [
+            "line_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "pass_events_route_line_id_stop_rank_car_route_date_unique": {
+          "name": "pass_events_route_line_id_stop_rank_car_route_date_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "route_line_id",
+            "stop_rank",
+            "car",
+            "route_date"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.routes": {
+      "name": "routes",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "line_id": {
+          "name": "line_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "line_name": {
+          "name": "line_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "city": {
+          "name": "city",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "routes_line_id_unique": {
+          "name": "routes_line_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "line_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.stops": {
+      "name": "stops",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "route_line_id": {
+          "name": "route_line_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rank": {
+          "name": "rank",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "village": {
+          "name": "village",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "longitude": {
+          "name": "longitude",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "latitude": {
+          "name": "latitude",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "scheduled_time": {
+          "name": "scheduled_time",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "memo": {
+          "name": "memo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "''"
+        },
+        "garbage_days": {
+          "name": "garbage_days",
+          "type": "boolean[]",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "recycling_days": {
+          "name": "recycling_days",
+          "type": "boolean[]",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "foodscraps_days": {
+          "name": "foodscraps_days",
+          "type": "boolean[]",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "stops_route_line_id_routes_line_id_fk": {
+          "name": "stops_route_line_id_routes_line_id_fk",
+          "tableFrom": "stops",
+          "tableTo": "routes",
+          "columnsFrom": [
+            "route_line_id"
+          ],
+          "columnsTo": [
+            "line_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "stops_route_line_id_rank_unique": {
+          "name": "stops_route_line_id_rank_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "route_line_id",
+            "rank"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
