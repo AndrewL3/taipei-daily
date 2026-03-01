@@ -36,6 +36,20 @@ export function toTaipeiDateString(date: Date): string {
   return formatter.format(date);
 }
 
+const SCHEDULE_TIME_RE = /^(\d{1,2}):(\d{2})$/;
+
+export function parseScheduleTime(timeStr: string, dateStr: string): Date {
+  const match = SCHEDULE_TIME_RE.exec(timeStr);
+  if (!match) throw new Error(`Invalid schedule time: "${timeStr}"`);
+  const [, hour, minute] = match;
+  const iso = `${dateStr}T${hour.padStart(2, "0")}:${minute}:00+08:00`;
+  const date = new Date(iso);
+  if (isNaN(date.getTime())) {
+    throw new Error(`Invalid schedule time: "${timeStr}" on "${dateStr}"`);
+  }
+  return date;
+}
+
 export function getNextMidnightTaipei(now: Date): number {
   const taipeiDate = toTaipeiDateString(now);
   const todayMidnight = new Date(`${taipeiDate}T00:00:00+08:00`);

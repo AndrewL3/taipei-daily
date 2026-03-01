@@ -4,6 +4,7 @@ import {
   getTaipeiDayOfWeek,
   toTaipeiDateString,
   getNextMidnightTaipei,
+  parseScheduleTime,
 } from "../time.js";
 
 describe("parseNtcTimestamp", () => {
@@ -80,6 +81,32 @@ describe("getNextMidnightTaipei", () => {
     // Should be 2026-03-02T00:00:00+08:00
     expect(midnight).toBe(
       Math.floor(new Date("2026-03-01T16:00:00Z").getTime() / 1000),
+    );
+  });
+});
+
+describe("parseScheduleTime", () => {
+  it("parses HH:MM into a full Date in Asia/Taipei", () => {
+    const date = parseScheduleTime("15:30", "2026-03-01");
+    // 15:30 in +08:00 → 07:30 UTC
+    expect(date.toISOString()).toBe("2026-03-01T07:30:00.000Z");
+  });
+
+  it("parses single-digit hour", () => {
+    const date = parseScheduleTime("9:05", "2026-03-01");
+    // 09:05 in +08:00 → 01:05 UTC
+    expect(date.toISOString()).toBe("2026-03-01T01:05:00.000Z");
+  });
+
+  it("throws on invalid time format", () => {
+    expect(() => parseScheduleTime("invalid", "2026-03-01")).toThrow(
+      "Invalid schedule time",
+    );
+  });
+
+  it("throws on invalid date string", () => {
+    expect(() => parseScheduleTime("15:30", "not-a-date")).toThrow(
+      "Invalid schedule time",
     );
   });
 });
