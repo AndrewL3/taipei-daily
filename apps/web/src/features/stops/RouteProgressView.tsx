@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useRef } from "react";
-import { ArrowLeft, Truck, Trash2, Recycle, Apple } from "lucide-react";
+import { ArrowLeft, Truck, Trash2, Recycle, Apple, Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -8,12 +8,28 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouteDetail } from "@/api/hooks";
 import ErrorMessage from "@/components/ErrorMessage";
 
-const COLLECTION_ICONS: Record<string, { icon: typeof Trash2; label: string }> =
-  {
-    garbage: { icon: Trash2, label: "Garbage" },
-    recycling: { icon: Recycle, label: "Recycling" },
-    foodScraps: { icon: Apple, label: "Food Scraps" },
-  };
+const COLLECTION_ICONS: Record<
+  string,
+  { icon: typeof Trash2; label: string; classes: string }
+> = {
+  garbage: {
+    icon: Trash2,
+    label: "Garbage",
+    classes:
+      "bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300",
+  },
+  recycling: {
+    icon: Recycle,
+    label: "Recycling",
+    classes: "bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-300",
+  },
+  foodScraps: {
+    icon: Apple,
+    label: "Food Scraps",
+    classes:
+      "bg-emerald-100 text-emerald-700 dark:bg-emerald-800 dark:text-emerald-300",
+  },
+};
 
 export default function RouteProgressView() {
   const { lineId } = useParams<{ lineId: string }>();
@@ -72,15 +88,14 @@ export default function RouteProgressView() {
   const { route, stops, progress } = data;
 
   function formatTime(isoOrSchedule: string): string {
-    // Handle both "14:30" (schedule) and "2026-...T14:30:00+08:00" (ISO)
     if (isoOrSchedule.includes("T")) return isoOrSchedule.slice(11, 16);
     return isoOrSchedule;
   }
 
   return (
     <div className="flex h-dvh flex-col">
-      {/* Header */}
-      <div className="border-border flex items-center gap-3 border-b px-4 py-3">
+      {/* Sticky glass header */}
+      <div className="glass sticky top-0 z-10 flex items-center gap-3 px-4 py-3">
         <Button
           variant="ghost"
           size="icon"
@@ -97,8 +112,8 @@ export default function RouteProgressView() {
                 variant="secondary"
                 className={
                   progress.deltaMinutes > 0
-                    ? "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300"
-                    : "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300"
+                    ? "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300"
+                    : "bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300"
                 }
               >
                 {progress.deltaMinutes > 0 ? "+" : ""}
@@ -119,7 +134,7 @@ export default function RouteProgressView() {
         </div>
       )}
       {progress.status === "completed" && (
-        <div className="bg-green-50 px-4 py-2 text-center text-sm text-green-700 dark:bg-green-950 dark:text-green-300">
+        <div className="bg-primary/10 px-4 py-2 text-center text-sm text-primary">
           Route complete for today
         </div>
       )}
@@ -138,20 +153,26 @@ export default function RouteProgressView() {
                 {/* Stop node */}
                 <div className="flex items-start gap-3">
                   {/* Timeline dot + line */}
-                  <div className="flex w-4 flex-col items-center">
+                  <div className="flex w-5 flex-col items-center">
+                    {/* Dot */}
                     <div
-                      className={`h-4 w-4 shrink-0 rounded-full border-2 ${
+                      className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
                         passed
-                          ? "border-green-500 bg-green-500"
-                          : "border-muted-foreground bg-background border-2"
+                          ? "bg-primary text-primary-foreground"
+                          : isLeading && progress.status === "active"
+                            ? "border-2 border-primary bg-primary/20"
+                            : "border-2 border-muted-foreground/40 bg-background"
                       }`}
-                    />
+                    >
+                      {passed && <Check className="h-3 w-3" strokeWidth={3} />}
+                    </div>
+                    {/* Connecting line */}
                     {i < stops.length - 1 && (
                       <div
                         className={`w-0.5 flex-1 ${
                           passed && stops[i + 1]?.passedAt
-                            ? "bg-green-500"
-                            : "bg-border border-border border-l-2 border-dashed bg-transparent"
+                            ? "bg-primary"
+                            : "border-border border-l-2 border-dashed bg-transparent"
                         }`}
                         style={{ minHeight: "2rem" }}
                       />
@@ -180,7 +201,7 @@ export default function RouteProgressView() {
                             <Badge
                               key={type}
                               variant="outline"
-                              className="gap-1 text-xs"
+                              className={`gap-1 border-0 text-xs ${info.classes}`}
                             >
                               <Icon className="h-3 w-3" />
                               {info.label}
@@ -196,11 +217,11 @@ export default function RouteProgressView() {
                 {showTruck && (
                   <div
                     ref={truckRef}
-                    className="flex items-center gap-3 py-1 pl-0.5"
+                    className="ml-7 mb-2 flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5"
                   >
-                    <Truck className="h-5 w-5 text-yellow-500" />
-                    <span className="text-muted-foreground text-xs">
-                      Truck here
+                    <Truck className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium text-primary">
+                      Truck is here
                     </span>
                   </div>
                 )}
