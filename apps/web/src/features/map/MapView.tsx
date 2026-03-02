@@ -8,13 +8,14 @@ import StopMarker from "./StopMarker";
 import StopPopup from "./StopPopup";
 import UserLocationMarker from "./UserLocationMarker";
 import StopDetail from "@/features/stops/StopDetail";
+import MapControls from "./MapControls";
 import type { NearbyStop } from "@/api/client";
 
-const LIGHT_TILES = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+const LIGHT_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
 const DARK_TILES =
   "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
 const ATTRIBUTION =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>';
 
 function MapEvents({
   onMoveEnd,
@@ -73,6 +74,7 @@ export default function MapView() {
           attribution={ATTRIBUTION}
         />
         <MapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
+        <MapControls userLat={position.lat} userLon={position.lon} />
         {located && (
           <UserLocationMarker lat={position.lat} lon={position.lon} />
         )}
