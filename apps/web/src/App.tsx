@@ -11,7 +11,7 @@ const RouteProgressView = lazy(
 
 function PageSkeleton() {
   return (
-    <div className="flex h-full items-center justify-center">
+    <div className="flex h-full items-center justify-center bg-background">
       <Skeleton className="h-8 w-32" />
     </div>
   );

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -43,9 +43,11 @@ function formatTime(iso: string): string {
 
 interface StopDetailContentProps {
   stop: NearbyStop;
+  onClose?: () => void;
 }
 
-export default function StopDetailContent({ stop }: StopDetailContentProps) {
+export default function StopDetailContent({ stop, onClose }: StopDetailContentProps) {
+  const navigate = useNavigate();
   const { data, isLoading, isError } = useRouteDetail(stop.routeLineId);
   const annotated = data?.stops.find((s) => s.rank === stop.rank);
 
@@ -144,11 +146,16 @@ export default function StopDetailContent({ stop }: StopDetailContentProps) {
 
       {/* Show route button */}
       <div className="border-t border-border pt-1">
-        <Button variant="outline" className="w-full" asChild>
-          <Link to={`/route/${stop.routeLineId}`}>
-            Show full route
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+        <Button
+          variant="outline"
+          className="w-full"
+          onClick={() => {
+            onClose?.();
+            navigate(`/route/${stop.routeLineId}`);
+          }}
+        >
+          Show full route
+          <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
     </div>

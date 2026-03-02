@@ -23,7 +23,7 @@ export default function StopPopup({ stop, onClose }: StopPopupProps) {
           </h3>
           <p className="text-muted-foreground text-sm">{stop.routeLineName}</p>
         </div>
-        <StopDetailContent stop={stop} />
+        <StopDetailContent stop={stop} onClose={onClose} />
       </div>
     </Popup>
   );

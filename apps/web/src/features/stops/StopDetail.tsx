@@ -25,7 +25,7 @@ export default function StopDetail({ stop, onClose }: StopDetailProps) {
         </DrawerHeader>
 
         <div className="px-4 pb-6">
-          {stop && <StopDetailContent stop={stop} />}
+          {stop && <StopDetailContent stop={stop} onClose={onClose} />}
         </div>
       </DrawerContent>
     </Drawer>
