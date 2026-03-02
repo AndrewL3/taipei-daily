@@ -2,6 +2,7 @@ import { useState, useCallback, useRef } from "react";
 import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useTheme } from "@/lib/theme";
 import { useNearbyStops } from "@/api/hooks";
 import StopMarker from "./StopMarker";
 import StopPopup from "./StopPopup";
@@ -41,7 +42,7 @@ function MapEvents({
 
 export default function MapView() {
   const { position, located } = useGeolocation();
-  const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+  const { isDark } = useTheme();
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const [mapCenter, setMapCenter] = useState<{
     lat: number;
