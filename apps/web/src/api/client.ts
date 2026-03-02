@@ -1,3 +1,9 @@
+// Base URL for API requests.
+// In production, set VITE_API_URL to the deployed API origin
+// (e.g. "https://ntpc-garbage-tracker-api.vercel.app").
+// In local dev it defaults to "" so requests go through the Vite proxy.
+const API_BASE = (import.meta.env.VITE_API_URL ?? "").replace(/\/+$/, "");
+
 // Response types matching the exact shapes from /api/stops and /api/routes
 
 export interface NearbyStop {
@@ -42,8 +48,8 @@ export interface RouteDetail {
   progress: RouteProgress;
 }
 
-async function apiFetch<T>(url: string): Promise<T> {
-  const res = await fetch(url);
+async function apiFetch<T>(path: string): Promise<T> {
+  const res = await fetch(`${API_BASE}${path}`);
   const json = await res.json();
   if (!json.ok) throw new Error(json.error ?? "API request failed");
   return json;
