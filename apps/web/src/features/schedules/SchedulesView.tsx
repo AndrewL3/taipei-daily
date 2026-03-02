@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouteList } from "@/api/hooks";
+import ErrorMessage from "@/components/ErrorMessage";
 import type { RouteListItem } from "@/api/client";
 
 function getRouteStatus(
@@ -27,7 +28,7 @@ function statusOrder(status: string): number {
 }
 
 export default function SchedulesView() {
-  const { data: routes, isLoading } = useRouteList();
+  const { data: routes, isLoading, isError, refetch } = useRouteList();
   const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {
@@ -62,7 +63,15 @@ export default function SchedulesView() {
       {/* Route list */}
       <ScrollArea className="flex-1">
         <div className="divide-border divide-y">
+          {isError && (
+            <ErrorMessage
+              message="Failed to load routes"
+              onRetry={() => refetch()}
+            />
+          )}
+
           {isLoading &&
+            !isError &&
             Array.from({ length: 10 }).map((_, i) => (
               <div key={i} className="flex items-center gap-3 px-4 py-3">
                 <Skeleton className="h-10 w-full" />

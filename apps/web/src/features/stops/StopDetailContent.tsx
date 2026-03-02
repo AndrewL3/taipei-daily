@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowRight, Trash2, Recycle, Apple } from "lucide-react";
+import { ArrowRight, Trash2, Recycle, Apple, AlertCircle } from "lucide-react";
 import { useRouteDetail } from "@/api/hooks";
 import type { NearbyStop } from "@/api/client";
 
@@ -22,7 +22,7 @@ interface StopDetailContentProps {
 }
 
 export default function StopDetailContent({ stop }: StopDetailContentProps) {
-  const { data, isLoading } = useRouteDetail(stop.routeLineId);
+  const { data, isLoading, isError } = useRouteDetail(stop.routeLineId);
   const annotated = data?.stops.find((s) => s.rank === stop.rank);
 
   if (isLoading) {
@@ -30,6 +30,15 @@ export default function StopDetailContent({ stop }: StopDetailContentProps) {
       <div className="space-y-3">
         <Skeleton className="h-6 w-32" />
         <Skeleton className="h-6 w-48" />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="flex items-center gap-2 text-sm text-destructive">
+        <AlertCircle className="h-4 w-4" />
+        <span>Unable to load schedule</span>
       </div>
     );
   }

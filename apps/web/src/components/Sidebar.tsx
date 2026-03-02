@@ -17,7 +17,6 @@ const themeOptions = [
 export default function Sidebar() {
   const { theme, setTheme } = useTheme();
 
-  // Cycle through themes on click
   const cycleTheme = () => {
     const order = ["light", "dark", "system"] as const;
     const next = order[(order.indexOf(theme) + 1) % order.length];
@@ -28,7 +27,15 @@ export default function Sidebar() {
   const ThemeIcon = currentThemeOption.icon;
 
   return (
-    <aside className="border-border bg-background flex flex-col items-center gap-1 border-r py-3 px-1.5">
+    <aside
+      className={[
+        "border-border bg-background flex items-center",
+        // Mobile: bottom bar
+        "flex-row border-t px-2 py-1",
+        // Desktop: left sidebar
+        "md:flex-col md:border-t-0 md:border-r md:px-1.5 md:py-3",
+      ].join(" ")}
+    >
       {/* Navigation */}
       {navItems.map(({ to, icon: Icon, label }) => (
         <NavLink key={to} to={to} end={to === "/"}>
@@ -37,6 +44,7 @@ export default function Sidebar() {
               variant={isActive ? "secondary" : "ghost"}
               size="icon"
               className="h-10 w-10"
+              aria-label={label}
               title={label}
             >
               <Icon
@@ -56,6 +64,7 @@ export default function Sidebar() {
         size="icon"
         className="h-10 w-10"
         onClick={cycleTheme}
+        aria-label={`Theme: ${currentThemeOption.label}`}
         title={`Theme: ${currentThemeOption.label}`}
       >
         <ThemeIcon className="h-5 w-5" />

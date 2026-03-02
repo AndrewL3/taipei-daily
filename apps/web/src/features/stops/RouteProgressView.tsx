@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouteDetail } from "@/api/hooks";
+import ErrorMessage from "@/components/ErrorMessage";
 
 const COLLECTION_ICONS: Record<string, { icon: typeof Trash2; label: string }> =
   {
@@ -17,7 +18,7 @@ const COLLECTION_ICONS: Record<string, { icon: typeof Trash2; label: string }> =
 export default function RouteProgressView() {
   const { lineId } = useParams<{ lineId: string }>();
   const navigate = useNavigate();
-  const { data, isLoading } = useRouteDetail(lineId);
+  const { data, isLoading, isError, refetch } = useRouteDetail(lineId);
   const truckRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to truck position on load
@@ -39,6 +40,20 @@ export default function RouteProgressView() {
             <Skeleton key={i} className="h-8 w-full" />
           ))}
         </div>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="flex h-dvh flex-col items-center justify-center">
+        <ErrorMessage
+          message="Failed to load route"
+          onRetry={() => refetch()}
+        />
+        <Button variant="outline" onClick={() => navigate(-1)} className="mt-2">
+          Go back
+        </Button>
       </div>
     );
   }
