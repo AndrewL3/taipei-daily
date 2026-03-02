@@ -28,9 +28,17 @@ describe("computeEtaDelta", () => {
   });
 
   it("computes delta when vehicle is 2 minutes late", () => {
-    const stops = [makeStop(1, "15:30"), makeStop(2, "15:35"), makeStop(3, "15:40")];
+    const stops = [
+      makeStop(1, "15:30"),
+      makeStop(2, "15:35"),
+      makeStop(3, "15:40"),
+    ];
     const events: PassEvent[] = [
-      { stopRank: 1, car: "KED-0605", passedAt: new Date("2026-03-01T07:32:00.000Z") }, // 15:32 Taipei = +2 min
+      {
+        stopRank: 1,
+        car: "KED-0605",
+        passedAt: new Date("2026-03-01T07:32:00.000Z"),
+      }, // 15:32 Taipei = +2 min
     ];
     const result = computeEtaDelta(stops, events, today, dow);
 
@@ -51,11 +59,27 @@ describe("computeEtaDelta", () => {
   });
 
   it("uses leading vehicle (highest rank) for delta across multiple cars", () => {
-    const stops = [makeStop(1, "15:30"), makeStop(2, "15:35"), makeStop(3, "15:40")];
+    const stops = [
+      makeStop(1, "15:30"),
+      makeStop(2, "15:35"),
+      makeStop(3, "15:40"),
+    ];
     const events: PassEvent[] = [
-      { stopRank: 1, car: "KED-0605", passedAt: new Date("2026-03-01T07:32:00.000Z") },
-      { stopRank: 2, car: "KED-0605", passedAt: new Date("2026-03-01T07:38:00.000Z") }, // 15:38, +3 min
-      { stopRank: 1, car: "ABC-1234", passedAt: new Date("2026-03-01T07:33:00.000Z") }, // behind
+      {
+        stopRank: 1,
+        car: "KED-0605",
+        passedAt: new Date("2026-03-01T07:32:00.000Z"),
+      },
+      {
+        stopRank: 2,
+        car: "KED-0605",
+        passedAt: new Date("2026-03-01T07:38:00.000Z"),
+      }, // 15:38, +3 min
+      {
+        stopRank: 1,
+        car: "ABC-1234",
+        passedAt: new Date("2026-03-01T07:33:00.000Z"),
+      }, // behind
     ];
     const result = computeEtaDelta(stops, events, today, dow);
 
@@ -69,8 +93,16 @@ describe("computeEtaDelta", () => {
   it("returns completed status when all stops are passed", () => {
     const stops = [makeStop(1, "15:30"), makeStop(2, "15:35")];
     const events: PassEvent[] = [
-      { stopRank: 1, car: "KED-0605", passedAt: new Date("2026-03-01T07:30:00.000Z") },
-      { stopRank: 2, car: "KED-0605", passedAt: new Date("2026-03-01T07:35:00.000Z") },
+      {
+        stopRank: 1,
+        car: "KED-0605",
+        passedAt: new Date("2026-03-01T07:30:00.000Z"),
+      },
+      {
+        stopRank: 2,
+        car: "KED-0605",
+        passedAt: new Date("2026-03-01T07:35:00.000Z"),
+      },
     ];
     const result = computeEtaDelta(stops, events, today, dow);
 
@@ -84,7 +116,11 @@ describe("computeEtaDelta", () => {
   it("handles negative delta (truck early)", () => {
     const stops = [makeStop(1, "15:30"), makeStop(2, "15:35")];
     const events: PassEvent[] = [
-      { stopRank: 1, car: "KED-0605", passedAt: new Date("2026-03-01T07:27:00.000Z") }, // 15:27, -3 min
+      {
+        stopRank: 1,
+        car: "KED-0605",
+        passedAt: new Date("2026-03-01T07:27:00.000Z"),
+      }, // 15:27, -3 min
     ];
     const result = computeEtaDelta(stops, events, today, dow);
 
@@ -94,9 +130,16 @@ describe("computeEtaDelta", () => {
   });
 
   it("skips ETA for stops with unparseable scheduledTime", () => {
-    const stops = [makeStop(1, "15:30"), { ...makeStop(2, "bad"), scheduledTime: "bad" }];
+    const stops = [
+      makeStop(1, "15:30"),
+      { ...makeStop(2, "bad"), scheduledTime: "bad" },
+    ];
     const events: PassEvent[] = [
-      { stopRank: 1, car: "KED-0605", passedAt: new Date("2026-03-01T07:32:00.000Z") },
+      {
+        stopRank: 1,
+        car: "KED-0605",
+        passedAt: new Date("2026-03-01T07:32:00.000Z"),
+      },
     ];
     const result = computeEtaDelta(stops, events, today, dow);
 

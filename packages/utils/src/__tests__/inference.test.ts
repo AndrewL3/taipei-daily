@@ -20,7 +20,7 @@ describe("inferPassEvents", () => {
       vehicles: [
         {
           car: "KED-0605",
-          latitude: 25.18001,   // ~1m from stop rank 1
+          latitude: 25.18001, // ~1m from stop rank 1
           longitude: 121.68901,
           time: "2026/02/28 15:00:00",
         },
@@ -47,7 +47,7 @@ describe("inferPassEvents", () => {
       vehicles: [
         {
           car: "KED-0605",
-          latitude: 25.18001,   // near stop rank 1
+          latitude: 25.18001, // near stop rank 1
           longitude: 121.68901,
           time: "2026/02/28 15:05:00",
         },
@@ -70,7 +70,7 @@ describe("inferPassEvents", () => {
       vehicles: [
         {
           car: "KED-0605",
-          latitude: 25.18401,   // ~1m from stop rank 3
+          latitude: 25.18401, // ~1m from stop rank 3
           longitude: 121.69001,
           time: "2026/02/28 15:10:00",
         },
@@ -92,7 +92,7 @@ describe("inferPassEvents", () => {
       vehicles: [
         {
           car: "KED-0605",
-          latitude: 25.19,    // far from all stops
+          latitude: 25.19, // far from all stops
           longitude: 121.7,
           time: "2026/02/28 15:15:00",
         },
@@ -113,13 +113,13 @@ describe("inferPassEvents", () => {
       vehicles: [
         {
           car: "AAA-1111",
-          latitude: 25.18001,   // near rank 1
+          latitude: 25.18001, // near rank 1
           longitude: 121.68901,
           time: "2026/02/28 15:00:00",
         },
         {
           car: "BBB-2222",
-          latitude: 25.18401,   // near rank 3
+          latitude: 25.18401, // near rank 3
           longitude: 121.69001,
           time: "2026/02/28 15:00:00",
         },
@@ -130,8 +130,14 @@ describe("inferPassEvents", () => {
     const result = inferPassEvents(input);
 
     expect(result.passEvents).toHaveLength(2);
-    expect(result.passEvents[0]).toMatchObject({ car: "AAA-1111", stopRank: 1 });
-    expect(result.passEvents[1]).toMatchObject({ car: "BBB-2222", stopRank: 3 });
+    expect(result.passEvents[0]).toMatchObject({
+      car: "AAA-1111",
+      stopRank: 1,
+    });
+    expect(result.passEvents[1]).toMatchObject({
+      car: "BBB-2222",
+      stopRank: 3,
+    });
   });
 
   it("skips vehicles with no matching stops (unknown route)", () => {

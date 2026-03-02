@@ -39,7 +39,10 @@ async function upsertRoutes(allStops: RouteStop[]) {
         });
       upserted += batch.length;
     } catch (err) {
-      console.error(`Failed to upsert routes batch ${Math.floor(i / BATCH_SIZE) + 1}:`, err);
+      console.error(
+        `Failed to upsert routes batch ${Math.floor(i / BATCH_SIZE) + 1}:`,
+        err,
+      );
     }
   }
 
@@ -85,7 +88,10 @@ async function upsertStops(allStops: RouteStop[]) {
         });
       upserted += batch.length;
     } catch (err) {
-      console.error(`Failed to upsert stops batch ${Math.floor(i / BATCH_SIZE) + 1}:`, err);
+      console.error(
+        `Failed to upsert stops batch ${Math.floor(i / BATCH_SIZE) + 1}:`,
+        err,
+      );
     }
   }
 

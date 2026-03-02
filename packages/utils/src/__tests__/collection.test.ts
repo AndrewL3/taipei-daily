@@ -15,7 +15,11 @@ describe("getCollectsToday", () => {
 
   it("returns empty array when nothing is collected", () => {
     const result = getCollectsToday(
-      { garbageDays: allFalse, recyclingDays: allFalse, foodscrapsDays: allFalse },
+      {
+        garbageDays: allFalse,
+        recyclingDays: allFalse,
+        foodscrapsDays: allFalse,
+      },
       1, // Monday
     );
     expect(result).toEqual([]);

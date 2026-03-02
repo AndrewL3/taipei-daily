@@ -66,7 +66,10 @@ export default function MapView() {
           url={isDark ? DARK_TILES : LIGHT_TILES}
           attribution={ATTRIBUTION}
         />
-        <MapEvents onMoveEnd={handleMoveEnd} onDeselect={() => setSelectedStop(null)} />
+        <MapEvents
+          onMoveEnd={handleMoveEnd}
+          onDeselect={() => setSelectedStop(null)}
+        />
         {stops?.map((stop) => (
           <StopMarker
             key={`${stop.routeLineId}-${stop.rank}`}

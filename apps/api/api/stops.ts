@@ -9,10 +9,7 @@ const MAX_RADIUS = 2000;
 // ~111,000 meters per degree of latitude
 const METERS_PER_DEGREE = 111_000;
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse,
-) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   try {
@@ -21,7 +18,9 @@ export default async function handler(
     const radiusStr = req.query.radius as string | undefined;
 
     if (!latStr || !lonStr) {
-      return res.status(400).json({ ok: false, error: "lat and lon are required" });
+      return res
+        .status(400)
+        .json({ ok: false, error: "lat and lon are required" });
     }
 
     const lat = parseFloat(latStr);
@@ -38,7 +37,8 @@ export default async function handler(
 
     // Bounding box filter
     const latDelta = radius / METERS_PER_DEGREE;
-    const lonDelta = radius / (METERS_PER_DEGREE * Math.cos((lat * Math.PI) / 180));
+    const lonDelta =
+      radius / (METERS_PER_DEGREE * Math.cos((lat * Math.PI) / 180));
 
     const rows = await db
       .select({
@@ -67,7 +67,9 @@ export default async function handler(
         name: row.name,
         latitude: row.latitude,
         longitude: row.longitude,
-        distance: Math.round(haversineMeters(lat, lon, row.latitude, row.longitude)),
+        distance: Math.round(
+          haversineMeters(lat, lon, row.latitude, row.longitude),
+        ),
       }))
       .filter((s) => s.distance <= radius)
       .sort((a, b) => a.distance - b.distance);
@@ -75,6 +77,7 @@ export default async function handler(
     return res.status(200).json({ ok: true, stops: nearbyStops });
   } catch (err) {
     console.error("Stops API error:", err);
-    return res.status(500).json({ ok: false, error: "Database unavailable" });
+    const message = err instanceof Error ? err.message : String(err);
+    return res.status(500).json({ ok: false, error: message });
   }
 }

@@ -44,9 +44,7 @@ export default function StopDetail({ stop, onClose }: StopDetailProps) {
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle className="text-lg">{stop?.name}</DrawerTitle>
-          <p className="text-muted-foreground text-sm">
-            {stop?.routeLineName}
-          </p>
+          <p className="text-muted-foreground text-sm">{stop?.routeLineName}</p>
         </DrawerHeader>
 
         <div className="px-4 pb-6">

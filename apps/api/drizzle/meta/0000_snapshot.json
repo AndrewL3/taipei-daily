@@ -52,12 +52,8 @@
           "name": "pass_events_route_line_id_routes_line_id_fk",
           "tableFrom": "pass_events",
           "tableTo": "routes",
-          "columnsFrom": [
-            "route_line_id"
-          ],
-          "columnsTo": [
-            "line_id"
-          ],
+          "columnsFrom": ["route_line_id"],
+          "columnsTo": ["line_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -67,11 +63,7 @@
         "pass_events_route_line_id_stop_rank_car_unique": {
           "name": "pass_events_route_line_id_stop_rank_car_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "route_line_id",
-            "stop_rank",
-            "car"
-          ]
+          "columns": ["route_line_id", "stop_rank", "car"]
         }
       },
       "policies": {},
@@ -114,9 +106,7 @@
         "routes_line_id_unique": {
           "name": "routes_line_id_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "line_id"
-          ]
+          "columns": ["line_id"]
         }
       },
       "policies": {},
@@ -207,12 +197,8 @@
           "name": "stops_route_line_id_routes_line_id_fk",
           "tableFrom": "stops",
           "tableTo": "routes",
-          "columnsFrom": [
-            "route_line_id"
-          ],
-          "columnsTo": [
-            "line_id"
-          ],
+          "columnsFrom": ["route_line_id"],
+          "columnsTo": ["line_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -222,10 +208,7 @@
         "stops_route_line_id_rank_unique": {
           "name": "stops_route_line_id_rank_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "route_line_id",
-            "rank"
-          ]
+          "columns": ["route_line_id", "rank"]
         }
       },
       "policies": {},

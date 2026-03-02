@@ -75,7 +75,10 @@ export function computeEtaDelta(
     if (leadingStopRank === null || evt.stopRank > leadingStopRank) {
       leadingStopRank = evt.stopRank;
       leadingPassedAt = evt.passedAt;
-    } else if (evt.stopRank === leadingStopRank && evt.passedAt > leadingPassedAt!) {
+    } else if (
+      evt.stopRank === leadingStopRank &&
+      evt.passedAt > leadingPassedAt!
+    ) {
       leadingPassedAt = evt.passedAt;
     }
   }
@@ -88,7 +91,10 @@ export function computeEtaDelta(
     const leadingStop = stops.find((s) => s.rank === leadingStopRank);
     if (leadingStop) {
       try {
-        const scheduled = parseScheduleTime(leadingStop.scheduledTime, todayDateStr);
+        const scheduled = parseScheduleTime(
+          leadingStop.scheduledTime,
+          todayDateStr,
+        );
         deltaMs = leadingPassedAt.getTime() - scheduled.getTime();
         deltaMinutes = Math.round(deltaMs / 60_000);
       } catch {
@@ -98,7 +104,8 @@ export function computeEtaDelta(
   }
 
   // Determine status
-  const allPassed = stops.length > 0 && stops.every((s) => passedMap.has(s.rank));
+  const allPassed =
+    stops.length > 0 && stops.every((s) => passedMap.has(s.rank));
   const status: RouteProgress["status"] =
     passEvents.length === 0 ? "inactive" : allPassed ? "completed" : "active";
 

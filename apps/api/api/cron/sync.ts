@@ -112,10 +112,7 @@ export default async function handler(
     // 6. Write PassEvents to Supabase
     if (allPassEvents.length > 0) {
       try {
-        await db
-          .insert(passEvents)
-          .values(allPassEvents)
-          .onConflictDoNothing();
+        await db.insert(passEvents).values(allPassEvents).onConflictDoNothing();
         totalPassEvents = allPassEvents.length;
       } catch (err) {
         console.error("Supabase write failed:", err);

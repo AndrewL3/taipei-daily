@@ -10,10 +10,7 @@ import {
   type PassEvent,
 } from "@tracker/utils";
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse,
-) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   try {
@@ -26,7 +23,8 @@ export default async function handler(
     }
   } catch (err) {
     console.error("Routes API error:", err);
-    return res.status(500).json({ ok: false, error: "Database unavailable" });
+    const message = err instanceof Error ? err.message : String(err);
+    return res.status(500).json({ ok: false, error: message });
   }
 }
 
@@ -56,7 +54,8 @@ async function handleList(res: VercelResponse) {
     city: row.city,
     stopCount: Number(row.stop_count),
     activeVehicles: Number(row.active_vehicles),
-    leadingStopRank: row.leading_stop_rank != null ? Number(row.leading_stop_rank) : null,
+    leadingStopRank:
+      row.leading_stop_rank != null ? Number(row.leading_stop_rank) : null,
   }));
 
   return res.status(200).json({ ok: true, routes: routeList });

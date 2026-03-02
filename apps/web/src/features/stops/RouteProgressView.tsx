@@ -116,9 +116,7 @@ export default function RouteProgressView() {
             const passed = stop.passedAt !== null;
             const isLeading = stop.rank === progress.leadingStopRank;
             const showTruck =
-              progress.status === "active" &&
-              isLeading &&
-              i < stops.length - 1;
+              progress.status === "active" && isLeading && i < stops.length - 1;
 
             return (
               <div key={stop.rank}>
