@@ -48,7 +48,10 @@ export function inferPassEvents(input: InferenceInput): InferenceResult {
     const originalRank = redisState[redisKey] ?? 0;
     let lastRank = originalRank;
     const vTime = parseNtcTimestamp(vehicle.time);
+    const routeDate = toTaipeiDateString(vTime);
 
+    // Find the highest-rank stop the truck is currently near
+    let detectedRank: number | null = null;
     for (const stop of stops) {
       if (stop.rank <= lastRank) continue;
 
@@ -60,15 +63,26 @@ export function inferPassEvents(input: InferenceInput): InferenceResult {
       );
 
       if (dist <= PROXIMITY_THRESHOLD_M) {
+        detectedRank = stop.rank;
+      }
+    }
+
+    // Backfill: if truck detected at rank N, all stops from lastRank+1..N
+    // must have been passed (monotonic progress along the route)
+    if (detectedRank !== null) {
+      for (const stop of stops) {
+        if (stop.rank <= lastRank) continue;
+        if (stop.rank > detectedRank) break;
+
         passEvents.push({
           routeLineId: lineId,
           stopRank: stop.rank,
           car: vehicle.car,
           passedAt: vTime,
-          routeDate: toTaipeiDateString(vTime),
+          routeDate,
         });
-        lastRank = stop.rank;
       }
+      lastRank = detectedRank;
     }
 
     if (lastRank > originalRank) {

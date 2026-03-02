@@ -1,6 +1,6 @@
 import { describe, it, expect } from "@jest/globals";
 import { inferPassEvents } from "../inference.js";
-import type { InferenceInput, InferenceResult } from "../inference.js";
+import type { InferenceInput } from "../inference.js";
 
 // Stop at rank 1: (25.180000, 121.689000)
 // Stop at rank 2: (25.182000, 121.689500)  ~230m from rank 1
@@ -61,9 +61,9 @@ describe("inferPassEvents", () => {
     expect(result.redisUpdates).toEqual({});
   });
 
-  it("advances through multiple stops in a single tick", () => {
+  it("advances through multiple stops in a single tick (backfills intermediate)", () => {
     // Vehicle is near stop rank 3 but lastRank is 0
-    // Stop rank 1 and 2 are NOT within 50m — only rank 3 is
+    // Backfill should create pass events for ranks 1, 2, and 3
     const input: InferenceInput = {
       lineId: "207001",
       stops: STOPS,
@@ -80,8 +80,8 @@ describe("inferPassEvents", () => {
 
     const result = inferPassEvents(input);
 
-    expect(result.passEvents).toHaveLength(1);
-    expect(result.passEvents[0].stopRank).toBe(3);
+    expect(result.passEvents).toHaveLength(3);
+    expect(result.passEvents.map((e) => e.stopRank)).toEqual([1, 2, 3]);
     expect(result.redisUpdates).toEqual({ "sync:207001:KED-0605": 3 });
   });
 
