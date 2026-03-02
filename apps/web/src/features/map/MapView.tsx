@@ -4,6 +4,8 @@ import { useGeolocation } from "@/hooks/useGeolocation";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useNearbyStops } from "@/api/hooks";
 import StopMarker from "./StopMarker";
+import StopPopup from "./StopPopup";
+import UserLocationMarker from "./UserLocationMarker";
 import StopDetail from "@/features/stops/StopDetail";
 import type { NearbyStop } from "@/api/client";
 
@@ -38,8 +40,9 @@ function MapEvents({
 }
 
 export default function MapView() {
-  const { position } = useGeolocation();
+  const { position, located } = useGeolocation();
   const isDark = useMediaQuery("(prefers-color-scheme: dark)");
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   const [mapCenter, setMapCenter] = useState<{
     lat: number;
     lon: number;
@@ -52,6 +55,8 @@ export default function MapView() {
 
   const queryPos = mapCenter ?? position;
   const { data: stops } = useNearbyStops(queryPos.lat, queryPos.lon);
+
+  const handleDeselect = useCallback(() => setSelectedStop(null), []);
 
   return (
     <>
@@ -66,10 +71,10 @@ export default function MapView() {
           url={isDark ? DARK_TILES : LIGHT_TILES}
           attribution={ATTRIBUTION}
         />
-        <MapEvents
-          onMoveEnd={handleMoveEnd}
-          onDeselect={() => setSelectedStop(null)}
-        />
+        <MapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
+        {located && (
+          <UserLocationMarker lat={position.lat} lon={position.lon} />
+        )}
         {stops?.map((stop) => (
           <StopMarker
             key={`${stop.routeLineId}-${stop.rank}`}
@@ -81,8 +86,15 @@ export default function MapView() {
             onSelect={setSelectedStop}
           />
         ))}
+        {/* Desktop: Leaflet Popup anchored near the marker */}
+        {isDesktop && selectedStop && (
+          <StopPopup stop={selectedStop} onClose={handleDeselect} />
+        )}
       </MapContainer>
-      <StopDetail stop={selectedStop} onClose={() => setSelectedStop(null)} />
+      {/* Mobile: bottom sheet Drawer */}
+      {!isDesktop && (
+        <StopDetail stop={selectedStop} onClose={handleDeselect} />
+      )}
     </>
   );
 }
