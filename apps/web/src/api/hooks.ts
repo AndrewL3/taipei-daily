@@ -1,5 +1,10 @@
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
-import { fetchNearbyStops, fetchRouteList, fetchRouteDetail } from "./client";
+import {
+  fetchNearbyStops,
+  fetchRouteList,
+  fetchRouteDetail,
+  fetchAdminStatus,
+} from "./client";
 
 /** Round to 4 decimals (~11m) to prevent cache key explosion on map pan */
 function snap(n: number): number {
@@ -39,5 +44,15 @@ export function useRouteList() {
     queryKey: ["routes"],
     queryFn: fetchRouteList,
     staleTime: 60_000,
+  });
+}
+
+export function useAdminStatus(token: string | null) {
+  return useQuery({
+    queryKey: ["admin-status", token],
+    queryFn: () => fetchAdminStatus(token!),
+    enabled: !!token,
+    refetchInterval: 30_000,
+    staleTime: 10_000,
   });
 }
