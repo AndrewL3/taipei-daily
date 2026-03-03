@@ -8,6 +8,7 @@ const SchedulesView = lazy(() => import("./features/schedules/SchedulesView"));
 const RouteProgressView = lazy(
   () => import("./features/stops/RouteProgressView"),
 );
+const AdminView = lazy(() => import("./features/admin/AdminView"));
 
 function PageSkeleton() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="schedules" element={<SchedulesView />} />
         </Route>
         <Route path="route/:lineId" element={<RouteProgressView />} />
+        <Route path="admin" element={<AdminView />} />
       </Routes>
     </Suspense>
   );
