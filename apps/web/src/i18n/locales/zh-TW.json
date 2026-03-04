@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "map": "地圖",
+    "routes": "路線",
+    "toggleTheme": "切換主題",
+    "toggleLang": "切換語言"
+  },
+  "error": {
+    "somethingWentWrong": "發生錯誤",
+    "retry": "重試"
+  },
+  "map": {
+    "zoomIn": "放大",
+    "zoomOut": "縮小",
+    "recenter": "移到我的位置"
+  },
+  "stop": {
+    "passedAt": "已通過",
+    "arrivingAround": "預計抵達",
+    "scheduled": "預定時間",
+    "showFullRoute": "查看完整路線",
+    "unableToLoad": "無法載入時刻表",
+    "notAvailable": "無法取得站點資訊"
+  },
+  "collection": {
+    "garbage": "垃圾",
+    "recycling": "資源回收",
+    "foodScraps": "廚餘"
+  },
+  "route": {
+    "failedToLoad": "無法載入路線",
+    "goBack": "返回",
+    "notFound": "找不到路線",
+    "noTrucksActive": "目前無清運車輛",
+    "completeForToday": "今日路線已完成",
+    "truckIsHere": "清運車在這裡",
+    "stopsProgress": "{{passed}}/{{total}} 站"
+  },
+  "schedules": {
+    "heading": "路線",
+    "searchPlaceholder": "搜尋路線...",
+    "noMatch": "找不到符合的路線",
+    "noRoutes": "目前無路線資料",
+    "failedToLoad": "無法載入路線"
+  },
+  "unit": {
+    "min": "分鐘"
+  }
+}

@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router";
 import { Search } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -41,6 +42,7 @@ const PROGRESS_FILL_COLORS = {
 export default function SchedulesView() {
   const { data: routes, isLoading, isError, refetch } = useRouteList();
   const [search, setSearch] = useState("");
+  const { t } = useTranslation();
 
   const filtered = useMemo(() => {
     if (!routes) return [];
@@ -59,11 +61,11 @@ export default function SchedulesView() {
     <div className="flex h-full flex-col">
       {/* Header — solid surface, shadow */}
       <div className="sticky top-0 z-10 space-y-3 bg-background px-4 py-4 shadow-sm md:pl-48">
-        <h1 className="text-2xl font-bold">Routes</h1>
+        <h1 className="text-2xl font-bold">{t("schedules.heading")}</h1>
         <div className="relative">
           <Search className="text-muted-foreground absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" />
           <Input
-            placeholder="Search routes..."
+            placeholder={t("schedules.searchPlaceholder")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="rounded-full border-0 bg-muted pl-9"
@@ -76,7 +78,7 @@ export default function SchedulesView() {
         <div className="flex flex-col gap-3 p-4 md:pl-48">
           {isError && (
             <ErrorMessage
-              message="Failed to load routes"
+              message={t("schedules.failedToLoad")}
               onRetry={() => refetch()}
             />
           )}
@@ -91,7 +93,7 @@ export default function SchedulesView() {
 
           {!isLoading && filtered.length === 0 && (
             <div className="text-muted-foreground px-4 py-12 text-center text-sm">
-              {search ? "No routes match your search" : "No routes available"}
+              {search ? t("schedules.noMatch") : t("schedules.noRoutes")}
             </div>
           )}
 

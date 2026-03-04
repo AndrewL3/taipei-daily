@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "map": "Map",
+    "routes": "Routes",
+    "toggleTheme": "Toggle theme",
+    "toggleLang": "Toggle language"
+  },
+  "error": {
+    "somethingWentWrong": "Something went wrong",
+    "retry": "Retry"
+  },
+  "map": {
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "recenter": "Recenter on my location"
+  },
+  "stop": {
+    "passedAt": "Passed at",
+    "arrivingAround": "Arriving around",
+    "scheduled": "Scheduled",
+    "showFullRoute": "Show full route",
+    "unableToLoad": "Unable to load schedule",
+    "notAvailable": "Stop details not available"
+  },
+  "collection": {
+    "garbage": "Garbage",
+    "recycling": "Recycling",
+    "foodScraps": "Food Scraps"
+  },
+  "route": {
+    "failedToLoad": "Failed to load route",
+    "goBack": "Go back",
+    "notFound": "Route not found",
+    "noTrucksActive": "No trucks active yet",
+    "completeForToday": "Route complete for today",
+    "truckIsHere": "Truck is here",
+    "stopsProgress": "{{passed}}/{{total}} stops"
+  },
+  "schedules": {
+    "heading": "Routes",
+    "searchPlaceholder": "Search routes...",
+    "noMatch": "No routes match your search",
+    "noRoutes": "No routes available",
+    "failedToLoad": "Failed to load routes"
+  },
+  "unit": {
+    "min": "min"
+  }
+}

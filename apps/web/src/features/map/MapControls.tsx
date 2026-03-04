@@ -1,5 +1,6 @@
 import { Plus, Minus, Crosshair } from "lucide-react";
 import { useMap } from "react-leaflet";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 
 interface MapControlsProps {
@@ -9,6 +10,7 @@ interface MapControlsProps {
 
 export default function MapControls({ userLat, userLon }: MapControlsProps) {
   const map = useMap();
+  const { t } = useTranslation();
 
   return (
     <div className="absolute bottom-20 right-3 z-[1000] flex flex-col gap-1.5 md:bottom-4">
@@ -18,7 +20,7 @@ export default function MapControls({ userLat, userLon }: MapControlsProps) {
           size="icon"
           className="h-9 w-9 rounded-none"
           onClick={() => map.zoomIn()}
-          aria-label="Zoom in"
+          aria-label={t("map.zoomIn")}
         >
           <Plus className="h-4 w-4" />
         </Button>
@@ -28,7 +30,7 @@ export default function MapControls({ userLat, userLon }: MapControlsProps) {
           size="icon"
           className="h-9 w-9 rounded-none"
           onClick={() => map.zoomOut()}
-          aria-label="Zoom out"
+          aria-label={t("map.zoomOut")}
         >
           <Minus className="h-4 w-4" />
         </Button>
@@ -39,7 +41,7 @@ export default function MapControls({ userLat, userLon }: MapControlsProps) {
           size="icon"
           className="h-9 w-9 rounded-none"
           onClick={() => map.flyTo([userLat, userLon], 16)}
-          aria-label="Recenter on my location"
+          aria-label={t("map.recenter")}
         >
           <Crosshair className="h-4 w-4" />
         </Button>

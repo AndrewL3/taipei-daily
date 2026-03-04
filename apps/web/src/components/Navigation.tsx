@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import { Sun, Moon, Monitor } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
 import { useTheme } from "@/lib/theme";
 
@@ -11,6 +12,7 @@ const themeOptions = [
 
 export default function Navigation() {
   const { theme, setTheme } = useTheme();
+  const { t, i18n } = useTranslation();
 
   const cycleTheme = () => {
     const order = ["light", "dark", "system"] as const;
@@ -18,7 +20,13 @@ export default function Navigation() {
     setTheme(next);
   };
 
+  const toggleLang = () => {
+    const next = i18n.language === "zh-TW" ? "en" : "zh-TW";
+    i18n.changeLanguage(next);
+  };
+
   const ThemeIcon = themeOptions.find((t) => t.value === theme)!.icon;
+  const langLabel = i18n.language === "zh-TW" ? "中" : "EN";
 
   return (
     <>
@@ -34,7 +42,7 @@ export default function Navigation() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                Map
+                {t("nav.map")}
               </span>
             )}
           </NavLink>
@@ -47,20 +55,31 @@ export default function Navigation() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                Routes
+                {t("nav.routes")}
               </span>
             )}
           </NavLink>
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="ml-1 h-8 w-8 rounded-full"
-          onClick={cycleTheme}
-          aria-label="Toggle theme"
-        >
-          <ThemeIcon className="h-4 w-4 text-muted-foreground" />
-        </Button>
+        <div className="ml-1 flex gap-1">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8 rounded-full"
+            onClick={cycleTheme}
+            aria-label={t("nav.toggleTheme")}
+          >
+            <ThemeIcon className="h-4 w-4 text-muted-foreground" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8 rounded-full"
+            onClick={toggleLang}
+            aria-label={t("nav.toggleLang")}
+          >
+            <span className="text-xs font-semibold text-muted-foreground">{langLabel}</span>
+          </Button>
+        </div>
       </div>
 
       {/* Mobile: clean bottom tab bar */}
@@ -74,7 +93,7 @@ export default function Navigation() {
                   : "text-muted-foreground"
               }`}
             >
-              Map
+              {t("nav.map")}
             </div>
           )}
         </NavLink>
@@ -87,16 +106,23 @@ export default function Navigation() {
                   : "text-muted-foreground"
               }`}
             >
-              Routes
+              {t("nav.routes")}
             </div>
           )}
         </NavLink>
         <button
-          className="flex items-center justify-center px-4 py-3"
+          className="flex items-center justify-center px-3 py-3"
           onClick={cycleTheme}
-          aria-label="Toggle theme"
+          aria-label={t("nav.toggleTheme")}
         >
           <ThemeIcon className="h-4 w-4 text-muted-foreground" />
+        </button>
+        <button
+          className="flex items-center justify-center px-3 py-3"
+          onClick={toggleLang}
+          aria-label={t("nav.toggleLang")}
+        >
+          <span className="text-xs font-semibold text-muted-foreground">{langLabel}</span>
         </button>
       </nav>
     </>

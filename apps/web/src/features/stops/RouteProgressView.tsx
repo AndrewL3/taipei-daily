@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, Truck, Trash2, Recycle, Apple, Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,18 +9,18 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouteDetail } from "@/api/hooks";
 import ErrorMessage from "@/components/ErrorMessage";
 
-const COLLECTION_ICONS: Record<string, { icon: typeof Trash2; title: string }> =
-  {
-    garbage: { icon: Trash2, title: "Garbage" },
-    recycling: { icon: Recycle, title: "Recycling" },
-    foodScraps: { icon: Apple, title: "Food Scraps" },
-  };
-
 export default function RouteProgressView() {
   const { lineId } = useParams<{ lineId: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { data, isLoading, isError, refetch } = useRouteDetail(lineId);
   const truckRef = useRef<HTMLDivElement>(null);
+
+  const COLLECTION_ICONS: Record<string, { icon: typeof Trash2; title: string }> = {
+    garbage: { icon: Trash2, title: t("collection.garbage") },
+    recycling: { icon: Recycle, title: t("collection.recycling") },
+    foodScraps: { icon: Apple, title: t("collection.foodScraps") },
+  };
 
   useEffect(() => {
     if (data && truckRef.current) {
@@ -47,11 +48,11 @@ export default function RouteProgressView() {
     return (
       <div className="flex h-dvh flex-col items-center justify-center bg-background">
         <ErrorMessage
-          message="Failed to load route"
+          message={t("route.failedToLoad")}
           onRetry={() => refetch()}
         />
         <Button variant="outline" onClick={() => navigate(-1)} className="mt-2">
-          Go back
+          {t("route.goBack")}
         </Button>
       </div>
     );
@@ -60,9 +61,9 @@ export default function RouteProgressView() {
   if (!data) {
     return (
       <div className="flex h-dvh flex-col items-center justify-center gap-4 bg-background">
-        <p className="text-muted-foreground">Route not found</p>
+        <p className="text-muted-foreground">{t("route.notFound")}</p>
         <Button variant="outline" onClick={() => navigate(-1)}>
-          Go back
+          {t("route.goBack")}
         </Button>
       </div>
     );
@@ -100,11 +101,14 @@ export default function RouteProgressView() {
                 }
               >
                 {progress.deltaMinutes > 0 ? "+" : ""}
-                {progress.deltaMinutes} min
+                {progress.deltaMinutes} {t("unit.min")}
               </Badge>
             )}
             <span className="text-muted-foreground">
-              {progress.leadingStopRank ?? 0}/{progress.totalStops} stops
+              {t("route.stopsProgress", {
+                passed: progress.leadingStopRank ?? 0,
+                total: progress.totalStops,
+              })}
             </span>
           </div>
         </div>
@@ -113,12 +117,12 @@ export default function RouteProgressView() {
       {/* Status banners */}
       {progress.status === "inactive" && (
         <div className="bg-muted px-4 py-2 text-center text-sm">
-          No trucks active yet
+          {t("route.noTrucksActive")}
         </div>
       )}
       {progress.status === "completed" && (
         <div className="bg-primary/10 px-4 py-2 text-center text-sm text-primary">
-          Route complete for today
+          {t("route.completeForToday")}
         </div>
       )}
 
@@ -214,7 +218,7 @@ export default function RouteProgressView() {
                   >
                     <Truck className="h-4 w-4 text-primary" />
                     <span className="text-sm font-semibold text-primary">
-                      Truck is here
+                      {t("route.truckIsHere")}
                     </span>
                   </div>
                 )}
