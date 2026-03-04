@@ -12,6 +12,7 @@ import { useNearbyStops, useRouteDetail } from "@/api/hooks";
 import MapControls from "./MapControls";
 import StopMarker from "./StopMarker";
 import StopPopup from "./StopPopup";
+import RoutePolyline from "./RoutePolyline";
 import TruckMarker from "./TruckMarker";
 import UserLocationMarker from "./UserLocationMarker";
 import StopDetail from "@/features/stops/StopDetail";
@@ -131,6 +132,16 @@ export default function MapView() {
         <MapControls userLat={position.lat} userLon={position.lon} />
         {located && (
           <UserLocationMarker lat={position.lat} lon={position.lon} />
+        )}
+
+        {/* Road-snapped route polyline */}
+        {routeDetail?.route.geometry && selectedStop && (
+          <RoutePolyline
+            geometry={routeDetail.route.geometry}
+            lineId={selectedStop.routeLineId}
+            leadingStopLat={truckPosition?.lat ?? null}
+            leadingStopLon={truckPosition?.lon ?? null}
+          />
         )}
 
         {/* Truck marker */}

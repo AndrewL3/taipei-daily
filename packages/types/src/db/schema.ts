@@ -15,6 +15,7 @@ export const routes = pgTable("routes", {
   lineId: text("line_id").notNull().unique(),
   lineName: text("line_name").notNull(),
   city: text("city").notNull(),
+  geometry: text("geometry"),
 });
 
 export const stops = pgTable(

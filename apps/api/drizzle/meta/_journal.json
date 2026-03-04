@@ -15,6 +15,13 @@
       "when": 1772247783695,
       "tag": "0001_complete_frog_thor",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1772595622196,
+      "tag": "0002_round_wolfsbane",
+      "breakpoints": true
     }
   ]
 }

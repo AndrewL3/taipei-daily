@@ -9,7 +9,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:generate": "drizzle-kit generate",
     "db:studio": "drizzle-kit studio",
-    "seed": "tsx src/scripts/seed-stops.ts"
+    "seed": "tsx src/scripts/seed-stops.ts",
+    "seed:geometry": "tsx src/scripts/seed-geometry.ts"
   },
   "dependencies": {
     "@tracker/types": "workspace:*",

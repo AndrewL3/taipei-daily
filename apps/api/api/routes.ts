@@ -128,6 +128,7 @@ async function handleDetail(lineId: string, res: VercelResponse) {
       lineId: route.lineId,
       lineName: route.lineName,
       city: route.city,
+      geometry: route.geometry ?? null,
     },
     stops: stopsWithCoords,
     progress: etaResult.progress,

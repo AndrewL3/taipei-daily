@@ -45,7 +45,7 @@ export interface RouteProgress {
 }
 
 export interface RouteDetail {
-  route: { lineId: string; lineName: string; city: string };
+  route: { lineId: string; lineName: string; city: string; geometry?: string | null };
   stops: AnnotatedStop[];
   progress: RouteProgress;
 }
