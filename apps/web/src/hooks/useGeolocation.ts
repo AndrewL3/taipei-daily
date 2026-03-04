@@ -15,16 +15,21 @@ export function useGeolocation() {
   useEffect(() => {
     if (!navigator.geolocation) return;
 
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setPosition({ lat: pos.coords.latitude, lon: pos.coords.longitude });
-        setLocated(true);
-      },
-      () => {
-        // Permission denied or error — keep default position
-      },
-      { enableHighAccuracy: true, timeout: 10_000 },
-    );
+    const onSuccess = (pos: GeolocationPosition) => {
+      setPosition({ lat: pos.coords.latitude, lon: pos.coords.longitude });
+      setLocated(true);
+    };
+
+    // Try high accuracy first (GPS on mobile), fall back to low accuracy (IP/WiFi on desktop)
+    navigator.geolocation.getCurrentPosition(onSuccess, () => {
+      navigator.geolocation.getCurrentPosition(
+        onSuccess,
+        () => {
+          // Both attempts failed — keep default position
+        },
+        { enableHighAccuracy: false, timeout: 15_000 },
+      );
+    }, { enableHighAccuracy: true, timeout: 10_000 });
   }, []);
 
   return { position, located };
