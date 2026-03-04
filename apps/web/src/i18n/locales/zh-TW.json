@@ -19,6 +19,7 @@
     "arrivingAround": "預計抵達",
     "scheduled": "預定時間",
     "showFullRoute": "查看完整路線",
+    "scheduledTime": "預定時間",
     "unableToLoad": "無法載入時刻表",
     "notAvailable": "無法取得站點資訊"
   },

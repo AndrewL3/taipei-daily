@@ -19,6 +19,7 @@
     "arrivingAround": "Arriving around",
     "scheduled": "Scheduled",
     "showFullRoute": "Show full route",
+    "scheduledTime": "Scheduled",
     "unableToLoad": "Unable to load schedule",
     "notAvailable": "Stop details not available"
   },

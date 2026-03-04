@@ -66,29 +66,45 @@ export default function StopDetailContent({ stop, onClose }: StopDetailContentPr
       {/* Hero ETA / Status */}
       <div className="rounded-xl bg-card px-4 py-3 shadow-sm">
         {annotated.passedAt ? (
-          <div className="flex items-center gap-3">
-            <CheckCircle2 className="h-6 w-6 text-green-500" />
-            <div>
-              <p className="text-sm text-muted-foreground">{t("stop.passedAt")}</p>
-              <p className="text-2xl font-bold tabular-nums text-green-600 dark:text-green-400">
-                {formatTime(annotated.passedAt)}
-              </p>
+          <div className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-green-500" />
+            <div className="flex flex-1 items-start justify-between gap-4">
+              <div>
+                <p className="text-sm text-muted-foreground">{t("stop.passedAt")}</p>
+                <p className="text-2xl font-bold tabular-nums text-green-600 dark:text-green-400">
+                  {formatTime(annotated.passedAt)}
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm text-muted-foreground">{t("stop.scheduledTime")}</p>
+                <p className="text-base tabular-nums text-muted-foreground">
+                  {annotated.scheduledTime}
+                </p>
+              </div>
             </div>
           </div>
         ) : annotated.eta ? (
-          <div className="flex items-center gap-3">
-            <Clock className="h-6 w-6 text-primary" />
-            <div>
-              <p className="text-sm text-muted-foreground">{t("stop.arrivingAround")}</p>
-              <p className="text-2xl font-bold tabular-nums text-primary">
-                ~{formatTime(annotated.eta)}
-                {data?.progress.deltaMinutes != null && (
-                  <span className="text-muted-foreground ml-2 text-sm font-normal">
-                    ({data.progress.deltaMinutes > 0 ? "+" : ""}
-                    {data.progress.deltaMinutes} {t("unit.min")})
-                  </span>
-                )}
-              </p>
+          <div className="flex items-start gap-3">
+            <Clock className="mt-0.5 h-6 w-6 shrink-0 text-primary" />
+            <div className="flex flex-1 items-start justify-between gap-4">
+              <div>
+                <p className="text-sm text-muted-foreground">{t("stop.arrivingAround")}</p>
+                <p className="text-2xl font-bold tabular-nums text-primary">
+                  ~{formatTime(annotated.eta)}
+                  {data?.progress.deltaMinutes != null && (
+                    <span className="text-muted-foreground ml-2 text-sm font-normal">
+                      ({data.progress.deltaMinutes > 0 ? "+" : ""}
+                      {data.progress.deltaMinutes} {t("unit.min")})
+                    </span>
+                  )}
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm text-muted-foreground">{t("stop.scheduledTime")}</p>
+                <p className="text-base tabular-nums text-muted-foreground">
+                  {annotated.scheduledTime}
+                </p>
+              </div>
             </div>
           </div>
         ) : (
