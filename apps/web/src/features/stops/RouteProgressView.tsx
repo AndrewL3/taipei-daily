@@ -128,7 +128,7 @@ export default function RouteProgressView() {
 
       {/* Timeline */}
       <ScrollArea className="flex-1">
-        <div className="px-4 py-4">
+        <div className="bg-background px-4 py-4">
           {stops.map((stop, i) => {
             const passed = stop.passedAt !== null;
             const isLeading = stop.rank === progress.leadingStopRank;
@@ -148,7 +148,7 @@ export default function RouteProgressView() {
                           ? "h-7 w-7 border-2 border-primary bg-primary/20"
                           : passed
                             ? "h-6 w-6 bg-primary text-primary-foreground"
-                            : "h-6 w-6 border-2 border-muted-foreground/30 bg-background"
+                            : "h-6 w-6 border-2 border-muted-foreground/50 bg-background"
                       }`}
                     >
                       {passed && !isActive && (
