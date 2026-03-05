@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // @ts-expect-error -- pnpm hoists duplicate vite types causing Plugin mismatch
+    // @ts-ignore -- pnpm may hoist duplicate vite types causing Plugin mismatch
     VitePWA({
       registerType: "prompt",
       includeAssets: ["favicon.svg", "apple-touch-icon-180x180.png"],
