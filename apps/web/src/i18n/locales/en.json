@@ -12,7 +12,10 @@
   "map": {
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
-    "recenter": "Recenter on my location"
+    "recenter": "Recenter on my location",
+    "layers": {
+      "garbage": "Garbage trucks"
+    }
   },
   "stop": {
     "passedAt": "Passed at",
