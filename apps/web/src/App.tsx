@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router";
 import AppLayout from "./components/AppLayout";
+import ReloadPrompt from "./components/ReloadPrompt";
 import { Skeleton } from "./components/ui/skeleton";
 
 const MapView = lazy(() => import("./features/map/MapView"));
@@ -20,15 +21,18 @@ function PageSkeleton() {
 
 export default function App() {
   return (
-    <Suspense fallback={<PageSkeleton />}>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<MapView />} />
-          <Route path="schedules" element={<SchedulesView />} />
-        </Route>
-        <Route path="route/:lineId" element={<RouteProgressView />} />
-        <Route path="admin" element={<AdminView />} />
-      </Routes>
-    </Suspense>
+    <>
+      <Suspense fallback={<PageSkeleton />}>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<MapView />} />
+            <Route path="schedules" element={<SchedulesView />} />
+          </Route>
+          <Route path="route/:lineId" element={<RouteProgressView />} />
+          <Route path="admin" element={<AdminView />} />
+        </Routes>
+      </Suspense>
+      <ReloadPrompt />
+    </>
   );
 }

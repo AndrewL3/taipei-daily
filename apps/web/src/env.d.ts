@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+/// <reference types="vite-plugin-pwa/react" />
 
 interface ImportMetaEnv {
   /** Base URL for the API (e.g. "https://ntpc-garbage-tracker-api.vercel.app") */
