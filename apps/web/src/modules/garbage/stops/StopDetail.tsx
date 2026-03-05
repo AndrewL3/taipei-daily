@@ -5,7 +5,7 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import StopDetailContent from "./StopDetailContent";
-import type { NearbyStop } from "@/api/client";
+import type { NearbyStop } from "../api/client";
 
 interface StopDetailProps {
   stop: NearbyStop | null;

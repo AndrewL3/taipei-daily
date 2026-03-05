@@ -1,7 +1,7 @@
 import { CircleMarker, Marker, Tooltip } from "react-leaflet";
 import L from "leaflet";
 import { getRouteColor } from "@/lib/routeColor";
-import type { NearbyStop } from "@/api/client";
+import type { NearbyStop } from "../api/client";
 
 interface StopMarkerProps {
   stop: NearbyStop;

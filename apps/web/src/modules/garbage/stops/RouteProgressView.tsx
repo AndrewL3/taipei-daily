@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useRouteDetail } from "@/api/hooks";
+import { useRouteDetail } from "../api/hooks";
 import ErrorMessage from "@/components/ErrorMessage";
 
 export default function RouteProgressView() {

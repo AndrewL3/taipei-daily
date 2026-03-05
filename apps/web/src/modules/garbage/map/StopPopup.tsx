@@ -1,6 +1,6 @@
 import { Popup } from "react-leaflet";
-import StopDetailContent from "@/features/stops/StopDetailContent";
-import type { NearbyStop } from "@/api/client";
+import StopDetailContent from "../stops/StopDetailContent";
+import type { NearbyStop } from "../api/client";
 
 interface StopPopupProps {
   stop: NearbyStop;

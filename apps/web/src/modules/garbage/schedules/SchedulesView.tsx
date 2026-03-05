@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useRouteList } from "@/api/hooks";
+import { useRouteList } from "../api/hooks";
 import ErrorMessage from "@/components/ErrorMessage";
-import type { RouteListItem } from "@/api/client";
+import type { RouteListItem } from "../api/client";
 
 function getRouteStatus(
   route: RouteListItem,

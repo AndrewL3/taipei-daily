@@ -11,8 +11,8 @@ import {
   CheckCircle2,
   Clock,
 } from "lucide-react";
-import { useRouteDetail } from "@/api/hooks";
-import type { NearbyStop } from "@/api/client";
+import { useRouteDetail } from "../api/hooks";
+import type { NearbyStop } from "../api/client";
 
 function formatTime(iso: string): string {
   return iso.slice(11, 16);
