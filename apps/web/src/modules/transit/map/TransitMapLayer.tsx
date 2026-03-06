@@ -1,0 +1,97 @@
+import { useState, useCallback, useRef, useEffect } from "react";
+import { useMap, useMapEvents } from "react-leaflet";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useBusStations } from "../api/hooks";
+import BusStopMarker from "./BusStopMarker";
+import BusStopPopup from "./BusStopPopup";
+import BusStopDetail from "./BusStopDetail";
+import type { BusStation, MapBounds } from "../api/types";
+
+function TransitMapEvents({
+  onMoveEnd,
+  onDeselect,
+}: {
+  onMoveEnd: () => void;
+  onDeselect: () => void;
+}) {
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  useMapEvents({
+    moveend() {
+      clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(onMoveEnd, 500);
+    },
+    click() {
+      onDeselect();
+    },
+  });
+  return null;
+}
+
+function getBounds(map: L.Map): MapBounds {
+  const b = map.getBounds();
+  return {
+    north: b.getNorth(),
+    south: b.getSouth(),
+    east: b.getEast(),
+    west: b.getWest(),
+  };
+}
+
+export default function TransitMapLayer() {
+  const map = useMap();
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const [bounds, setBounds] = useState<MapBounds | null>(null);
+  const [selectedStation, setSelectedStation] =
+    useState<BusStation | null>(null);
+  const selectingRef = useRef(false);
+
+  useEffect(() => {
+    setBounds(getBounds(map));
+  }, [map]);
+
+  const handleMoveEnd = useCallback(() => {
+    setBounds(getBounds(map));
+  }, [map]);
+
+  const handleSelect = useCallback((station: BusStation) => {
+    selectingRef.current = true;
+    setSelectedStation(station);
+    requestAnimationFrame(() => {
+      selectingRef.current = false;
+    });
+  }, []);
+
+  const handleDeselect = useCallback(() => {
+    if (selectingRef.current) return;
+    setSelectedStation(null);
+  }, []);
+
+  const { data: stations } = useBusStations(bounds);
+
+  return (
+    <>
+      <TransitMapEvents
+        onMoveEnd={handleMoveEnd}
+        onDeselect={handleDeselect}
+      />
+
+      {stations?.map((station) => (
+        <BusStopMarker
+          key={station.stationId}
+          station={station}
+          selected={selectedStation?.stationId === station.stationId}
+          onSelect={handleSelect}
+        />
+      ))}
+
+      {isDesktop && selectedStation && (
+        <BusStopPopup station={selectedStation} onClose={handleDeselect} />
+      )}
+
+      {!isDesktop && (
+        <BusStopDetail station={selectedStation} onClose={handleDeselect} />
+      )}
+    </>
+  );
+}

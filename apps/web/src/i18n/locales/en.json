@@ -3,6 +3,7 @@
     "map": "Map",
     "schedules": "Schedules",
     "youbike": "YouBike",
+    "transit": "Transit",
     "toggleTheme": "Toggle theme",
     "toggleLang": "Toggle language"
   },
@@ -16,7 +17,8 @@
     "recenter": "Recenter on my location",
     "layers": {
       "garbage": "Garbage trucks",
-      "youbike": "YouBike stations"
+      "youbike": "YouBike stations",
+      "transit": "Bus stops"
     }
   },
   "stop": {
@@ -55,6 +57,16 @@
     "availableBikes": "Available bikes",
     "emptyDocks": "Empty docks",
     "lastUpdated": "Updated"
+  },
+  "transit": {
+    "arrivals": "Arrivals",
+    "noArrivals": "No arrivals at this time",
+    "routesServed": "routes served",
+    "arriving": "Arriving",
+    "notDeparted": "Not departed",
+    "lastBusLeft": "Last bus left",
+    "notOperating": "Not operating",
+    "min": "min"
   },
   "pwa": {
     "installPrompt": "Add to Home Screen",

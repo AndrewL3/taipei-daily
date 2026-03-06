@@ -3,6 +3,7 @@
     "map": "地圖",
     "schedules": "時刻表",
     "youbike": "YouBike",
+    "transit": "公車",
     "toggleTheme": "切換主題",
     "toggleLang": "切換語言"
   },
@@ -16,7 +17,8 @@
     "recenter": "移到我的位置",
     "layers": {
       "garbage": "垃圾車",
-      "youbike": "YouBike 站點"
+      "youbike": "YouBike 站點",
+      "transit": "公車站"
     }
   },
   "stop": {
@@ -55,6 +57,16 @@
     "availableBikes": "可借車輛",
     "emptyDocks": "可還空位",
     "lastUpdated": "更新時間"
+  },
+  "transit": {
+    "arrivals": "到站時間",
+    "noArrivals": "目前無到站資訊",
+    "routesServed": "條路線",
+    "arriving": "進站中",
+    "notDeparted": "尚未發車",
+    "lastBusLeft": "末班已過",
+    "notOperating": "未營運",
+    "min": "分"
   },
   "pwa": {
     "installPrompt": "加入主畫面",
