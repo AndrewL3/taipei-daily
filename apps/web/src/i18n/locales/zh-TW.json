@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "首頁",
     "map": "地圖",
     "schedules": "時刻表",
     "youbike": "YouBike",
@@ -72,6 +73,11 @@
     "outbound": "去程",
     "return": "返程",
     "viewRoute": "查看路線"
+  },
+  "dashboard": {
+    "title": "首頁",
+    "enableLocation": "啟用定位以獲取個人化資訊",
+    "noCards": "目前無可用的資訊卡"
   },
   "pwa": {
     "installPrompt": "加入主畫面",

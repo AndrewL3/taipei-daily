@@ -1,5 +1,5 @@
 import { Outlet, NavLink } from "react-router";
-import { Map, Sun, Moon, Monitor } from "lucide-react";
+import { House, Map, Sun, Moon, Monitor } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/lib/theme";
@@ -21,7 +21,8 @@ interface NavTab {
 
 function buildNavTabs(modules: readonly ModuleDefinition[]): NavTab[] {
   const tabs: NavTab[] = [
-    { to: "/", label: "nav.map", icon: Map, end: true },
+    { to: "/", label: "nav.home", icon: House, end: true },
+    { to: "/map", label: "nav.map", icon: Map },
   ];
 
   for (const mod of modules) {

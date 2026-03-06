@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "Home",
     "map": "Map",
     "schedules": "Schedules",
     "youbike": "YouBike",
@@ -72,6 +73,11 @@
     "outbound": "Outbound",
     "return": "Return",
     "viewRoute": "View route"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "enableLocation": "Enable location for personalized info",
+    "noCards": "No dashboard cards available"
   },
   "pwa": {
     "installPrompt": "Add to Home Screen",
