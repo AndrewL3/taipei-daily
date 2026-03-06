@@ -7,7 +7,7 @@ const SchedulesView = lazy(() => import("./schedules/SchedulesView"));
 
 export const garbageModule: ModuleDefinition = {
   id: "garbage",
-  name: "nav.routes",
+  name: "nav.schedules",
   icon: Trash2,
   routes: [
     { path: "schedules", element: createElement(SchedulesView) },

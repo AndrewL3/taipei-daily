@@ -1,7 +1,7 @@
 {
   "nav": {
     "map": "地圖",
-    "routes": "路線",
+    "schedules": "時刻表",
     "youbike": "YouBike",
     "toggleTheme": "切換主題",
     "toggleLang": "切換語言"
@@ -45,7 +45,7 @@
     "stopsProgress": "{{passed}}/{{total}} 站"
   },
   "schedules": {
-    "heading": "路線",
+    "heading": "時刻表",
     "searchPlaceholder": "搜尋路線...",
     "noMatch": "找不到符合的路線",
     "noRoutes": "目前無路線資料",

@@ -1,7 +1,7 @@
 {
   "nav": {
     "map": "Map",
-    "routes": "Routes",
+    "schedules": "Schedules",
     "youbike": "YouBike",
     "toggleTheme": "Toggle theme",
     "toggleLang": "Toggle language"
@@ -45,7 +45,7 @@
     "stopsProgress": "{{passed}}/{{total}} stops"
   },
   "schedules": {
-    "heading": "Routes",
+    "heading": "Schedules",
     "searchPlaceholder": "Search routes...",
     "noMatch": "No routes match your search",
     "noRoutes": "No routes available",
