@@ -5,6 +5,7 @@
     "schedules": "時刻表",
     "youbike": "YouBike",
     "transit": "公車",
+    "parking": "停車",
     "toggleTheme": "切換主題",
     "toggleLang": "切換語言"
   },
@@ -20,7 +21,8 @@
     "layers": {
       "garbage": "垃圾車",
       "youbike": "YouBike 站點",
-      "transit": "公車站"
+      "transit": "公車站",
+      "parking": "路邊停車"
     }
   },
   "stop": {
@@ -61,6 +63,11 @@
     "emptyDocks": "可還空位",
     "lastUpdated": "更新時間"
   },
+  "parking": {
+    "available": "可用",
+    "spaces": "車位",
+    "full": "已滿"
+  },
   "transit": {
     "arrivals": "到站時間",
     "noArrivals": "目前無到站資訊",
@@ -90,6 +97,10 @@
     "transit": {
       "title": "公車",
       "noStops": "附近無公車站"
+    },
+    "parking": {
+      "title": "路邊停車",
+      "noSpaces": "附近沒有停車資料"
     }
   },
   "pwa": {
@@ -103,7 +114,8 @@
     "module": {
       "garbage": "垃圾車",
       "youbike": "YouBike",
-      "transit": "公車"
+      "transit": "公車",
+      "parking": "停車"
     }
   },
   "unit": {

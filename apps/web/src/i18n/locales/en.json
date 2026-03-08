@@ -5,6 +5,7 @@
     "schedules": "Schedules",
     "youbike": "YouBike",
     "transit": "Transit",
+    "parking": "Parking",
     "toggleTheme": "Toggle theme",
     "toggleLang": "Toggle language"
   },
@@ -20,7 +21,8 @@
     "layers": {
       "garbage": "Garbage trucks",
       "youbike": "YouBike stations",
-      "transit": "Bus stops"
+      "transit": "Bus stops",
+      "parking": "Street parking"
     }
   },
   "stop": {
@@ -61,6 +63,11 @@
     "emptyDocks": "Empty docks",
     "lastUpdated": "Updated"
   },
+  "parking": {
+    "available": "Available",
+    "spaces": "spaces",
+    "full": "Full"
+  },
   "transit": {
     "arrivals": "Arrivals",
     "noArrivals": "No arrivals at this time",
@@ -90,6 +97,10 @@
     "transit": {
       "title": "Bus Transit",
       "noStops": "No nearby bus stops"
+    },
+    "parking": {
+      "title": "Street Parking",
+      "noSpaces": "No nearby parking data"
     }
   },
   "pwa": {
@@ -103,7 +114,8 @@
     "module": {
       "garbage": "Garbage",
       "youbike": "YouBike",
-      "transit": "Bus Transit"
+      "transit": "Bus Transit",
+      "parking": "Parking"
     }
   },
   "unit": {

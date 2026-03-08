@@ -3,7 +3,6 @@ import {
   NtcParkingSpaceRawSchema,
   NtcParkingSpaceRawArraySchema,
   groupSpacesIntoRoadSegments,
-  type ParkingRoadSegment,
 } from "../parking.js";
 
 describe("NtcParkingSpaceRawSchema", () => {
