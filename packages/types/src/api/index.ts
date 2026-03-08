@@ -62,3 +62,11 @@ export {
   type NtcParkingSpaceRaw,
   type ParkingRoadSegment,
 } from "./parking.js";
+
+export {
+  CwaForecastResponseSchema,
+  transformCwaForecast,
+  type CwaForecastResponse,
+  type ForecastPeriod,
+  type WeatherForecast,
+} from "./weather.js";
