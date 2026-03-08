@@ -3,7 +3,7 @@ import { redis } from "../src/redis.js";
 import { db } from "../src/db.js";
 import { stops, routes } from "@tracker/types";
 import { sql } from "drizzle-orm";
-import type { BusStation, YouBikeStation } from "@tracker/types";
+import type { BusStation, YouBikeStation, ParkingRoadSegment } from "@tracker/types";
 
 interface SearchResult {
   id: string;
@@ -99,6 +99,27 @@ async function searchYouBike(
     }));
 }
 
+async function searchParking(
+  query: string,
+  limit: number,
+): Promise<SearchResult[]> {
+  const cached = await redis.get<ParkingRoadSegment[]>("parking:spaces");
+  if (!cached) return [];
+
+  const q = normalize(query);
+  return cached
+    .filter((s) => normalize(s.roadName).includes(q))
+    .slice(0, limit)
+    .map((s) => ({
+      id: `parking-${s.roadId}`,
+      title: s.roadName,
+      subtitle: `${s.availableSpaces}/${s.totalSpaces} spaces · ${s.pricing}`,
+      lat: s.latitude,
+      lon: s.longitude,
+      moduleId: "parking",
+    }));
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -117,13 +138,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(200).json({ ok: true, results: cached });
     }
 
-    const [transit, garbage, youbike] = await Promise.all([
+    const [transit, garbage, youbike, parking] = await Promise.all([
       searchTransit(q, 10),
       searchGarbage(q, 5),
       searchYouBike(q, 5),
+      searchParking(q, 5),
     ]);
 
-    const results = [...transit, ...garbage, ...youbike];
+    const results = [...transit, ...garbage, ...youbike, ...parking];
     await redis.set(cacheKey, results, { ex: 60 });
 
     return res.status(200).json({ ok: true, results });
