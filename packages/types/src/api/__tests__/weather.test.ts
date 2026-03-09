@@ -1,8 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import {
-  CwaForecastResponseSchema,
-  transformCwaForecast,
-} from "../weather.js";
+import { CwaForecastResponseSchema, transformCwaForecast } from "../weather.js";
 
 describe("CwaForecastResponseSchema", () => {
   const validResponse = {

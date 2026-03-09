@@ -3,7 +3,11 @@ import { redis } from "../src/redis.js";
 import { db } from "../src/db.js";
 import { stops, routes } from "@tracker/types";
 import { sql } from "drizzle-orm";
-import type { BusStation, YouBikeStation, ParkingRoadSegment } from "@tracker/types";
+import type {
+  BusStation,
+  YouBikeStation,
+  ParkingRoadSegment,
+} from "@tracker/types";
 
 interface SearchResult {
   id: string;

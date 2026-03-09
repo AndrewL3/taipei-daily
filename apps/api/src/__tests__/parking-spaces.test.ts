@@ -176,12 +176,8 @@ describe("parking/spaces handler", () => {
     await handler(req, res);
 
     expect(mockFetch).toHaveBeenCalledTimes(2);
-    expect(mockFetch).toHaveBeenCalledWith(
-      expect.stringContaining("page=0"),
-    );
-    expect(mockFetch).toHaveBeenCalledWith(
-      expect.stringContaining("page=1"),
-    );
+    expect(mockFetch).toHaveBeenCalledWith(expect.stringContaining("page=0"));
+    expect(mockFetch).toHaveBeenCalledWith(expect.stringContaining("page=1"));
     expect(mockRedisSet).toHaveBeenCalledWith(
       "parking:spaces",
       expect.any(Array),

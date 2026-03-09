@@ -22,9 +22,7 @@ export const NtcParkingSpaceRawSchema = z.object({
   AreaCode: z.string(),
 });
 
-export const NtcParkingSpaceRawArraySchema = z.array(
-  NtcParkingSpaceRawSchema,
-);
+export const NtcParkingSpaceRawArraySchema = z.array(NtcParkingSpaceRawSchema);
 
 export type NtcParkingSpaceRaw = z.infer<typeof NtcParkingSpaceRawSchema>;
 

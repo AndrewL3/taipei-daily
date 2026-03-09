@@ -5,4 +5,10 @@ import { transitModule } from "./transit";
 import { parkingModule } from "./parking";
 import { weatherModule } from "./weather";
 
-registerModules([garbageModule, youbikeModule, transitModule, parkingModule, weatherModule]);
+registerModules([
+  garbageModule,
+  youbikeModule,
+  transitModule,
+  parkingModule,
+  weatherModule,
+]);

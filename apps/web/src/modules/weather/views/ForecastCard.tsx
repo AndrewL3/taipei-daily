@@ -24,7 +24,10 @@ export default function ForecastCard({ period }: ForecastCardProps) {
       </div>
 
       {/* Weather icon */}
-      <WeatherIcon wx={period.wx} className="h-8 w-8 shrink-0 text-foreground" />
+      <WeatherIcon
+        wx={period.wx}
+        className="h-8 w-8 shrink-0 text-foreground"
+      />
 
       {/* Description + comfort */}
       <div className="min-w-0 flex-1">
@@ -34,9 +37,7 @@ export default function ForecastCard({ period }: ForecastCardProps) {
 
       {/* Temperature */}
       <div className="shrink-0 text-right">
-        <p className="text-lg font-bold tabular-nums">
-          {period.temperature}°
-        </p>
+        <p className="text-lg font-bold tabular-nums">{period.temperature}°</p>
         <p className="text-xs text-muted-foreground tabular-nums">
           {period.minT}°–{period.maxT}°
         </p>

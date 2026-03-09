@@ -71,10 +71,7 @@ export default function ParkingMapLayer() {
 
   return (
     <>
-      <ParkingMapEvents
-        onMoveEnd={handleMoveEnd}
-        onDeselect={handleDeselect}
-      />
+      <ParkingMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
 
       {segments?.map((segment) => (
         <ParkingMarker

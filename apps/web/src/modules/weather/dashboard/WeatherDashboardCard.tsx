@@ -10,7 +10,11 @@ export default function WeatherDashboardCard() {
   const navigate = useNavigate();
   const { position, located } = useGeolocation();
 
-  const { data: forecast, isLoading, isError } = useWeatherForecast(
+  const {
+    data: forecast,
+    isLoading,
+    isError,
+  } = useWeatherForecast(
     located ? position.lat : null,
     located ? position.lon : null,
   );

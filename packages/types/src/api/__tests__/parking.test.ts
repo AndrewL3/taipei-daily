@@ -35,14 +35,15 @@ describe("NtcParkingSpaceRawSchema", () => {
   });
 
   it("parses an array of spaces", () => {
-    const result = NtcParkingSpaceRawArraySchema.parse([validSpace, validSpace]);
+    const result = NtcParkingSpaceRawArraySchema.parse([
+      validSpace,
+      validSpace,
+    ]);
     expect(result).toHaveLength(2);
   });
 
   it("rejects missing required fields", () => {
-    expect(() =>
-      NtcParkingSpaceRawSchema.parse({ ID: "1" }),
-    ).toThrow();
+    expect(() => NtcParkingSpaceRawSchema.parse({ ID: "1" })).toThrow();
   });
 });
 
@@ -78,7 +79,7 @@ describe("groupSpacesIntoRoadSegments", () => {
     const spaces = [
       makeSpace("T63", "建一路", 25.001, 121.487, "Y", "1"),
       makeSpace("T63", "建一路", 25.002, 121.488, "Y", "3"),
-      makeSpace("T99", "中華路", 25.010, 121.500, "Y", "1"),
+      makeSpace("T99", "中華路", 25.01, 121.5, "Y", "1"),
     ];
     const segments = groupSpacesIntoRoadSegments(spaces);
     expect(segments).toHaveLength(2);
@@ -106,9 +107,7 @@ describe("groupSpacesIntoRoadSegments", () => {
   });
 
   it("uses first space for road metadata (pricing, hours, days)", () => {
-    const spaces = [
-      makeSpace("T63", "建一路", 25.0, 121.0, "Y", "1"),
-    ];
+    const spaces = [makeSpace("T63", "建一路", 25.0, 121.0, "Y", "1")];
     const segments = groupSpacesIntoRoadSegments(spaces);
     expect(segments[0].pricing).toBe("30元/時");
     expect(segments[0].hours).toBe("07:00-20:00");
