@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { redis } from "../../src/redis.js";
-import { tdxFetch } from "../../src/data-sources/tdx.js";
+import { redis } from "../redis.js";
+import { tdxFetch } from "../data-sources/tdx.js";
 import {
   TdxBusStopRawArraySchema,
   groupStopsIntoStations,
@@ -44,9 +44,7 @@ async function getAllStations(): Promise<BusStation[]> {
   return all;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
+export async function handleStops(req: VercelRequest, res: VercelResponse) {
   try {
     const north = parseFloat(req.query.north as string);
     const south = parseFloat(req.query.south as string);

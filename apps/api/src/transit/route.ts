@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { redis } from "../../src/redis.js";
-import { tdxFetch } from "../../src/data-sources/tdx.js";
+import { redis } from "../redis.js";
+import { tdxFetch } from "../data-sources/tdx.js";
 import {
   TdxBusStopRawArraySchema,
   TdxBusEtaRawArraySchema,
@@ -35,9 +35,7 @@ async function getCached<T>(
   return data;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
+export async function handleRoute(req: VercelRequest, res: VercelResponse) {
   try {
     const routeId = req.query.routeId as string | undefined;
     const direction = parseInt(req.query.direction as string) || 0;
@@ -68,8 +66,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    // Static data (24h cache): routes + raw stops — fetch all, filter in-memory
-    // Real-time data (60s cache): ETAs + positions — fetch per-route via $filter
+    // Static data (24h cache): routes + raw stops -- fetch all, filter in-memory
+    // Real-time data (60s cache): ETAs + positions -- fetch per-route via $filter
     const [routes, allStops, routeEtas, routePositions] = await Promise.all([
       getCached<TdxBusRouteRaw[]>(
         `transit:routes:${city}`,
@@ -143,7 +141,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .filter((s) => s.RouteUID === routeId && s.Direction === direction)
       .sort((a, b) => a.StopSequence - b.StopSequence);
 
-    // Build ETA lookup: StopUID → ETA entry
+    // Build ETA lookup: StopUID -> ETA entry
     const etaMap = new Map<string, TdxBusEtaRaw>();
     for (const e of routeEtas) {
       if (e.Direction === direction) {

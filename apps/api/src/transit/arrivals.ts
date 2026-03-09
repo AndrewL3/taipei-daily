@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { redis } from "../../src/redis.js";
-import { tdxFetch } from "../../src/data-sources/tdx.js";
+import { redis } from "../redis.js";
+import { tdxFetch } from "../data-sources/tdx.js";
 import {
   TdxBusStopRawArraySchema,
   TdxBusEtaRawArraySchema,
@@ -67,9 +67,7 @@ async function getStationEtas(
   return parsed;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
+export async function handleArrivals(req: VercelRequest, res: VercelResponse) {
   try {
     const stationId = req.query.stationId as string | undefined;
     const cityParam = (req.query.city as string) ?? "Taipei";
