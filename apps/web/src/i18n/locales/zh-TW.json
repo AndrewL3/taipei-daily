@@ -6,6 +6,7 @@
     "youbike": "YouBike",
     "transit": "公車",
     "parking": "停車",
+    "weather": "天氣",
     "toggleTheme": "切換主題",
     "toggleLang": "切換語言"
   },
@@ -68,6 +69,13 @@
     "spaces": "車位",
     "full": "已滿"
   },
+  "weather": {
+    "forecast": "天氣預報",
+    "rainProb": "降雨機率",
+    "feelsLike": "體感溫度",
+    "upcoming": "未來天氣",
+    "error": "無法載入天氣資料"
+  },
   "transit": {
     "arrivals": "到站時間",
     "noArrivals": "目前無到站資訊",
@@ -101,6 +109,10 @@
     "parking": {
       "title": "路邊停車",
       "noSpaces": "附近沒有停車資料"
+    },
+    "weather": {
+      "title": "天氣",
+      "noData": "啟用定位以查看天氣"
     }
   },
   "pwa": {

@@ -6,6 +6,7 @@
     "youbike": "YouBike",
     "transit": "Transit",
     "parking": "Parking",
+    "weather": "Weather",
     "toggleTheme": "Toggle theme",
     "toggleLang": "Toggle language"
   },
@@ -68,6 +69,13 @@
     "spaces": "spaces",
     "full": "Full"
   },
+  "weather": {
+    "forecast": "Forecast",
+    "rainProb": "Rain",
+    "feelsLike": "Feels like",
+    "upcoming": "Upcoming",
+    "error": "Unable to load weather data"
+  },
   "transit": {
     "arrivals": "Arrivals",
     "noArrivals": "No arrivals at this time",
@@ -101,6 +109,10 @@
     "parking": {
       "title": "Street Parking",
       "noSpaces": "No nearby parking data"
+    },
+    "weather": {
+      "title": "Weather",
+      "noData": "Enable location for weather"
     }
   },
   "pwa": {
