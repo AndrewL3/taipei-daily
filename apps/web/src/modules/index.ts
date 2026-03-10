@@ -5,6 +5,7 @@ import { transitModule } from "./transit";
 import { parkingModule } from "./parking";
 import { weatherModule } from "./weather";
 import { alertsModule } from "./alerts";
+import { facilitiesModule } from "./facilities";
 
 registerModules([
   garbageModule,
@@ -13,4 +14,5 @@ registerModules([
   parkingModule,
   weatherModule,
   alertsModule,
+  facilitiesModule,
 ]);
