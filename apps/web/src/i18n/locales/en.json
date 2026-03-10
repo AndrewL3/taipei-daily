@@ -166,6 +166,12 @@
       "facilities": "AED"
     }
   },
+  "favorites": {
+    "title": "Favorites",
+    "add": "Save",
+    "remove": "Remove",
+    "saved": "Saved"
+  },
   "unit": {
     "min": "min"
   }

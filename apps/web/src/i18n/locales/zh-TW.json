@@ -166,6 +166,12 @@
       "facilities": "AED"
     }
   },
+  "favorites": {
+    "title": "收藏",
+    "add": "收藏",
+    "remove": "取消收藏",
+    "saved": "已收藏"
+  },
   "unit": {
     "min": "分鐘"
   }

@@ -4,6 +4,7 @@ import { useGeolocation } from "@/hooks/useGeolocation";
 import { getRegisteredModules } from "../module-registry";
 import SearchBar from "../search/SearchBar";
 import AlertBanner from "@/modules/alerts/components/AlertBanner";
+import FavoritesDashboardSection from "../favorites/FavoritesDashboardSection";
 
 export default function DashboardView() {
   const { t } = useTranslation();
@@ -26,6 +27,8 @@ export default function DashboardView() {
           <SearchBar />
 
           <AlertBanner />
+
+          <FavoritesDashboardSection />
 
           {!located && (
             <div className="rounded-xl border border-border/12 bg-card p-4 shadow-sm">

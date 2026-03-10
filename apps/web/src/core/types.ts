@@ -10,6 +10,9 @@ export interface ModuleDefinition {
   mapLayers?: MapLayerProvider[];
   searchProvider?: SearchProvider;
   dashboardCard?: ComponentType;
+  favoritesConfig?: {
+    storageKey: string;
+  };
 }
 
 export interface MapLayerProvider {
