@@ -169,6 +169,29 @@
   "directions": {
     "walk": "步行導航"
   },
+  "safety": {
+    "title": "緊急資訊",
+    "dashboardTitle": "緊急資訊",
+    "dashboardSubtitle": "離線緊急聯絡與避難所資訊",
+    "emergencyNumbers": "緊急電話",
+    "police": "警察局",
+    "fireAmbulance": "消防局/救護車",
+    "cityServices": "市民服務",
+    "cdc": "疾管署防疫專線",
+    "shelters": "附近避難所",
+    "noLocation": "開啟定位以搜尋附近避難所",
+    "earthquake": "地震安全須知",
+    "earthquakeGuide": "趴下、掩護、穩住。地震停止後確認傷亡、避免搭電梯、若建築受損移至空曠處。檢查瓦斯、水電是否受損。",
+    "typhoon": "颱風安全須知",
+    "typhoonGuide": "留在室內遠離窗戶。儲備三天份飲水與食物。手機充飽電。避免靠近河流、山區及海岸。注意中央氣象署警報。颱風過後注意淹水及土石流。",
+    "capacity": "收容人數",
+    "shelterType": "類型",
+    "indoor": "室內",
+    "outdoor": "室外",
+    "indoorOutdoor": "室內外",
+    "distance": "{{km}} 公里",
+    "emergencyInfo": "緊急資訊"
+  },
   "favorites": {
     "title": "收藏",
     "add": "收藏",

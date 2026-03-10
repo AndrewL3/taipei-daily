@@ -169,6 +169,29 @@
   "directions": {
     "walk": "Directions"
   },
+  "safety": {
+    "title": "Emergency Info",
+    "dashboardTitle": "Emergency Info",
+    "dashboardSubtitle": "Offline emergency contacts & shelters",
+    "emergencyNumbers": "Emergency Numbers",
+    "police": "Police",
+    "fireAmbulance": "Fire & Ambulance",
+    "cityServices": "City Services",
+    "cdc": "CDC Hotline",
+    "shelters": "Nearby Shelters",
+    "noLocation": "Enable location to find nearby shelters",
+    "earthquake": "Earthquake Safety",
+    "earthquakeGuide": "DROP to the ground. Take COVER under sturdy furniture. HOLD ON until shaking stops. After shaking: check for injuries, avoid elevators, move to open areas if building is damaged. Check gas/water/electric for damage.",
+    "typhoon": "Typhoon Safety",
+    "typhoonGuide": "Stay indoors away from windows. Stock water and food for 3 days. Charge devices. Avoid rivers, mountains, and coastal areas. Follow CWA advisories. After: watch for flooding and debris.",
+    "capacity": "Capacity",
+    "shelterType": "Type",
+    "indoor": "Indoor",
+    "outdoor": "Outdoor",
+    "indoorOutdoor": "Indoor & Outdoor",
+    "distance": "{{km}} km",
+    "emergencyInfo": "Emergency info"
+  },
   "favorites": {
     "title": "Favorites",
     "add": "Save",

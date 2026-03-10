@@ -16,6 +16,7 @@ const TransitRouteView = lazy(
   () => import("@/modules/transit/routes/RouteView"),
 );
 const AdminView = lazy(() => import("@/features/admin/AdminView"));
+const SafetyView = lazy(() => import("@/features/safety/SafetyView"));
 
 function PageSkeleton() {
   return (
@@ -47,6 +48,7 @@ export default function AppShell() {
                 />
               )),
             )}
+            <Route path="safety" element={<SafetyView />} />
           </Route>
           <Route path="route/:lineId" element={<RouteProgressView />} />
           <Route path="transit/route/:routeId" element={<TransitRouteView />} />

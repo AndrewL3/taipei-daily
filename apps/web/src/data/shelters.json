@@ -1,0 +1,7319 @@
+[
+  {
+    "name": "三峽國中",
+    "lat": 24.9391,
+    "lon": 121.3693,
+    "district": "三峽區",
+    "capacity": 1149,
+    "type": "indoor_outdoor",
+    "address": "復興路238號"
+  },
+  {
+    "name": "三峽國小",
+    "lat": 24.9345,
+    "lon": 121.3697,
+    "district": "三峽區",
+    "capacity": 581,
+    "type": "indoor_outdoor",
+    "address": "中山路16號"
+  },
+  {
+    "name": "中園國小",
+    "lat": 24.9278,
+    "lon": 121.3672,
+    "district": "三峽區",
+    "capacity": 926,
+    "type": "indoor_outdoor",
+    "address": "弘園街22號"
+  },
+  {
+    "name": "五寮市民活動中心",
+    "lat": 24.863449,
+    "lon": 121.365455,
+    "district": "三峽區",
+    "capacity": 137,
+    "type": "indoor",
+    "address": "五寮93號"
+  },
+  {
+    "name": "介壽國小",
+    "lat": 24.9298,
+    "lon": 121.3785,
+    "district": "三峽區",
+    "capacity": 289,
+    "type": "indoor_outdoor",
+    "address": "大同路1號"
+  },
+  {
+    "name": "北大高中",
+    "lat": 24.948608,
+    "lon": 121.376106,
+    "district": "三峽區",
+    "capacity": 1122,
+    "type": "indoor_outdoor",
+    "address": "大義路277號"
+  },
+  {
+    "name": "大埔國小",
+    "lat": 24.9057,
+    "lon": 121.3665,
+    "district": "三峽區",
+    "capacity": 625,
+    "type": "indoor_outdoor",
+    "address": "大埔路130號"
+  },
+  {
+    "name": "大成國小",
+    "lat": 24.9243,
+    "lon": 121.4275,
+    "district": "三峽區",
+    "capacity": 187,
+    "type": "indoor_outdoor",
+    "address": "成福路215巷2號"
+  },
+  {
+    "name": "大有市民活動中心",
+    "lat": 25.042385,
+    "lon": 121.533012,
+    "district": "三峽區",
+    "capacity": 148,
+    "type": "indoor",
+    "address": "插角25-1號"
+  },
+  {
+    "name": "安溪國中",
+    "lat": 24.9266,
+    "lon": 121.3728,
+    "district": "三峽區",
+    "capacity": 1675,
+    "type": "indoor_outdoor",
+    "address": "大同路135號"
+  },
+  {
+    "name": "安溪國小",
+    "lat": 24.9304,
+    "lon": 121.3729,
+    "district": "三峽區",
+    "capacity": 435,
+    "type": "indoor_outdoor",
+    "address": "中華路42號"
+  },
+  {
+    "name": "建安國小",
+    "lat": 24.9264,
+    "lon": 121.4471,
+    "district": "三峽區",
+    "capacity": 292,
+    "type": "indoor_outdoor",
+    "address": "建安路67號"
+  },
+  {
+    "name": "成福國小",
+    "lat": 24.9332,
+    "lon": 121.4057,
+    "district": "三峽區",
+    "capacity": 261,
+    "type": "indoor_outdoor",
+    "address": "溪東路213號"
+  },
+  {
+    "name": "明德高中",
+    "lat": 24.9069,
+    "lon": 121.3639,
+    "district": "三峽區",
+    "capacity": 1569,
+    "type": "indoor_outdoor",
+    "address": "中正路二段399號"
+  },
+  {
+    "name": "有木國小",
+    "lat": 24.8533,
+    "lon": 121.4373,
+    "district": "三峽區",
+    "capacity": 109,
+    "type": "indoor_outdoor",
+    "address": "有木里131號"
+  },
+  {
+    "name": "民義國小",
+    "lat": 24.912,
+    "lon": 121.3755,
+    "district": "三峽區",
+    "capacity": 975,
+    "type": "indoor_outdoor",
+    "address": "白雞路40號"
+  },
+  {
+    "name": "竹崙市民活動中心",
+    "lat": 24.9088,
+    "lon": 121.4349,
+    "district": "三峽區",
+    "capacity": 113,
+    "type": "indoor",
+    "address": "竹崙里146號"
+  },
+  {
+    "name": "臺北榮家",
+    "lat": 24.9102,
+    "lon": 121.3937,
+    "district": "三峽區",
+    "capacity": 339,
+    "type": "indoor",
+    "address": "白雞127號"
+  },
+  {
+    "name": "長青市民活動中心",
+    "lat": 24.93479,
+    "lon": 121.367,
+    "district": "三峽區",
+    "capacity": 166,
+    "type": "indoor",
+    "address": "中山路65號"
+  },
+  {
+    "name": "龍埔國小",
+    "lat": 24.940679,
+    "lon": 121.377883,
+    "district": "三峽區",
+    "capacity": 855,
+    "type": "indoor",
+    "address": "大學路6號"
+  },
+  {
+    "name": "三芝區公所",
+    "lat": 25.2578,
+    "lon": 121.5011,
+    "district": "三芝區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "新北區三芝區中山路一段32號"
+  },
+  {
+    "name": "三芝農會",
+    "lat": 25.2585,
+    "lon": 121.5011,
+    "district": "三芝區",
+    "capacity": 63,
+    "type": "indoor",
+    "address": "新北區三芝區中山路一段6號"
+  },
+  {
+    "name": "新北市三芝區三芝國民小學",
+    "lat": 25.2579,
+    "lon": 121.5016,
+    "district": "三芝區",
+    "capacity": 956,
+    "type": "indoor_outdoor",
+    "address": "新北區三芝區育英街22號"
+  },
+  {
+    "name": "新北市三芝區八賢里活動中心",
+    "lat": 25.237065,
+    "lon": 121.513105,
+    "district": "三芝區",
+    "capacity": 45,
+    "type": "outdoor",
+    "address": "八連溪41號"
+  },
+  {
+    "name": "新北市三芝區公有市場",
+    "lat": 25.2564,
+    "lon": 121.5036,
+    "district": "三芝區",
+    "capacity": 90,
+    "type": "indoor",
+    "address": "新北區三芝區民生街31號"
+  },
+  {
+    "name": "新北市三芝區圓山里活動中心",
+    "lat": 25.221698,
+    "lon": 121.5295,
+    "district": "三芝區",
+    "capacity": 24,
+    "type": "indoor_outdoor",
+    "address": "木屐寮32號"
+  },
+  {
+    "name": "新北市三芝區橫山國民小學",
+    "lat": 25.258894,
+    "lon": 121.529765,
+    "district": "三芝區",
+    "capacity": 319,
+    "type": "indoor_outdoor",
+    "address": "大坑86號"
+  },
+  {
+    "name": "新北市三芝區興華國民小學",
+    "lat": 25.203711,
+    "lon": 121.501531,
+    "district": "三芝區",
+    "capacity": 408,
+    "type": "indoor_outdoor",
+    "address": "田心子5號"
+  },
+  {
+    "name": "新北市立三芝國民中學",
+    "lat": 25.26,
+    "lon": 121.5028,
+    "district": "三芝區",
+    "capacity": 1182,
+    "type": "indoor_outdoor",
+    "address": "新北區三芝區淡金路一段38號"
+  },
+  {
+    "name": "三光國民小學",
+    "lat": 25.0561,
+    "lon": 121.4968,
+    "district": "三重區",
+    "capacity": 1502,
+    "type": "indoor_outdoor",
+    "address": "三重區大同南路157號"
+  },
+  {
+    "name": "三和國民中學",
+    "lat": 25.0766,
+    "lon": 121.4865,
+    "district": "三重區",
+    "capacity": 653,
+    "type": "indoor_outdoor",
+    "address": "三重區三和路四段216號"
+  },
+  {
+    "name": "三重區公所",
+    "lat": 25.0611,
+    "lon": 121.4885,
+    "district": "三重區",
+    "capacity": 136,
+    "type": "indoor",
+    "address": "三重區新北大道1段11號"
+  },
+  {
+    "name": "三重區綜合運動場",
+    "lat": 25.063033,
+    "lon": 121.489253,
+    "district": "三重區",
+    "capacity": 2200,
+    "type": "outdoor",
+    "address": "中正北路特2號"
+  },
+  {
+    "name": "三重國民小學",
+    "lat": 25.0704,
+    "lon": 121.4973,
+    "district": "三重區",
+    "capacity": 709,
+    "type": "indoor_outdoor",
+    "address": "三重區三和路三段1號"
+  },
+  {
+    "name": "二重國民中學",
+    "lat": 25.0657,
+    "lon": 121.4805,
+    "district": "三重區",
+    "capacity": 845,
+    "type": "indoor_outdoor",
+    "address": "三重區忠孝路三段89號"
+  },
+  {
+    "name": "二重國民小學",
+    "lat": 25.0652,
+    "lon": 121.478,
+    "district": "三重區",
+    "capacity": 4404,
+    "type": "indoor_outdoor",
+    "address": "三重區大有街10號"
+  },
+  {
+    "name": "五華國民小學",
+    "lat": 25.0865,
+    "lon": 121.4931,
+    "district": "三重區",
+    "capacity": 327,
+    "type": "indoor_outdoor",
+    "address": "三重區集賢路89號"
+  },
+  {
+    "name": "修德國民小學",
+    "lat": 25.0661,
+    "lon": 121.489,
+    "district": "三重區",
+    "capacity": 962,
+    "type": "indoor_outdoor",
+    "address": "三重區重陽路三段3號"
+  },
+  {
+    "name": "光榮國民中學",
+    "lat": 25.0705,
+    "lon": 121.4999,
+    "district": "三重區",
+    "capacity": 1031,
+    "type": "indoor_outdoor",
+    "address": "三重區介壽路26號"
+  },
+  {
+    "name": "光榮國民小學",
+    "lat": 25.0709,
+    "lon": 121.5013,
+    "district": "三重區",
+    "capacity": 195,
+    "type": "indoor_outdoor",
+    "address": "三重區介壽路32號"
+  },
+  {
+    "name": "光興國民小學",
+    "lat": 25.0589,
+    "lon": 121.4988,
+    "district": "三重區",
+    "capacity": 600,
+    "type": "indoor_outdoor",
+    "address": "三重區正義南路62號"
+  },
+  {
+    "name": "六張市民活動中心",
+    "lat": 25.0702,
+    "lon": 121.4938,
+    "district": "三重區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "三重區六張街66號"
+  },
+  {
+    "name": "厚德國民小學",
+    "lat": 25.0707,
+    "lon": 121.4874,
+    "district": "三重區",
+    "capacity": 505,
+    "type": "indoor_outdoor",
+    "address": "三重區中孝路一段70號"
+  },
+  {
+    "name": "和平市民活動中心",
+    "lat": 25.0707,
+    "lon": 121.4874,
+    "district": "三重區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "三重區自強路二段90號"
+  },
+  {
+    "name": "新北市立三重商工",
+    "lat": 25.0696,
+    "lon": 121.4801,
+    "district": "三重區",
+    "capacity": 1586,
+    "type": "indoor_outdoor",
+    "address": "三重區中正北路163號"
+  },
+  {
+    "name": "新北市立三重高中",
+    "lat": 25.0547,
+    "lon": 121.4915,
+    "district": "三重區",
+    "capacity": 897,
+    "type": "indoor_outdoor",
+    "address": "集美街212號"
+  },
+  {
+    "name": "新北市立新北高中",
+    "lat": 25.0874,
+    "lon": 121.4899,
+    "district": "三重區",
+    "capacity": 4475,
+    "type": "indoor_outdoor",
+    "address": "三重區重新路五段656號"
+  },
+  {
+    "name": "明志國民中學",
+    "lat": 25.0634,
+    "lon": 121.4892,
+    "district": "三重區",
+    "capacity": 437,
+    "type": "indoor_outdoor",
+    "address": "三重區中正北路107號"
+  },
+  {
+    "name": "格致高級中學",
+    "lat": 25.0738,
+    "lon": 121.4887,
+    "district": "三重區",
+    "capacity": 1000,
+    "type": "indoor_outdoor",
+    "address": "三重區大智街260號"
+  },
+  {
+    "name": "正義國民小學",
+    "lat": 25.0644,
+    "lon": 121.4961,
+    "district": "三重區",
+    "capacity": 929,
+    "type": "indoor_outdoor",
+    "address": "三重區信義西街31號"
+  },
+  {
+    "name": "正義市民活動中心",
+    "lat": 25.0682,
+    "lon": 121.4975,
+    "district": "三重區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "三重區雙園街1號"
+  },
+  {
+    "name": "永盛市民活動中心",
+    "lat": 25.0764,
+    "lon": 121.4846,
+    "district": "三重區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "三重區車路頭街133號"
+  },
+  {
+    "name": "永福國民小學",
+    "lat": 25.077,
+    "lon": 121.4806,
+    "district": "三重區",
+    "capacity": 706,
+    "type": "indoor_outdoor",
+    "address": "三重區永福街66號"
+  },
+  {
+    "name": "碧華國民中學",
+    "lat": 25.0626,
+    "lon": 121.4903,
+    "district": "三重區",
+    "capacity": 969,
+    "type": "indoor_outdoor",
+    "address": "自強路5段66號"
+  },
+  {
+    "name": "碧華國民小學",
+    "lat": 25.085115,
+    "lon": 121.490369,
+    "district": "三重區",
+    "capacity": 0,
+    "type": "outdoor",
+    "address": "五華街160號"
+  },
+  {
+    "name": "私立東海高中",
+    "lat": 25.0648,
+    "lon": 121.4787,
+    "district": "三重區",
+    "capacity": 408,
+    "type": "indoor_outdoor",
+    "address": "三重區集美街212號"
+  },
+  {
+    "name": "私立清傳商職",
+    "lat": 25.052,
+    "lon": 121.4769,
+    "district": "三重區",
+    "capacity": 294,
+    "type": "indoor_outdoor",
+    "address": "三重區五谷王北街141巷1號"
+  },
+  {
+    "name": "私立穀保家商",
+    "lat": 25.0697,
+    "lon": 121.4711,
+    "district": "三重區",
+    "capacity": 1674,
+    "type": "indoor_outdoor",
+    "address": "三重區中正北路560巷38號"
+  },
+  {
+    "name": "私立金陵女中",
+    "lat": 25.0431,
+    "lon": 121.467,
+    "district": "三重區",
+    "capacity": 913,
+    "type": "indoor_outdoor",
+    "address": "三重區忠孝路三段93巷12號"
+  },
+  {
+    "name": "老人文康活動中心禮堂",
+    "lat": 25.0707,
+    "lon": 121.4884,
+    "district": "三重區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "三重區自強路二段93號B1"
+  },
+  {
+    "name": "興穀國民小學",
+    "lat": 25.0502,
+    "lon": 121.4755,
+    "district": "三重區",
+    "capacity": 299,
+    "type": "indoor_outdoor",
+    "address": "三重區五谷王北街46號"
+  },
+  {
+    "name": "菜寮市民活動中心",
+    "lat": 25.0578,
+    "lon": 121.4928,
+    "district": "三重區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "三重區中寮街57巷18號"
+  },
+  {
+    "name": "過圳市民活動中心",
+    "lat": 25.0601,
+    "lon": 121.4881,
+    "district": "三重區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "三重區過圳街19號"
+  },
+  {
+    "name": "重陽國民小學",
+    "lat": 25.0663,
+    "lon": 121.4845,
+    "district": "三重區",
+    "capacity": 608,
+    "type": "indoor_outdoor",
+    "address": "三重區中正北路113號"
+  },
+  {
+    "name": "集美國民小學",
+    "lat": 25.0565,
+    "lon": 121.4879,
+    "district": "三重區",
+    "capacity": 104,
+    "type": "indoor_outdoor",
+    "address": "三重區集美街10號"
+  },
+  {
+    "name": "中和區公所",
+    "lat": 24.9982,
+    "lon": 121.5002,
+    "district": "中和區",
+    "capacity": 65,
+    "type": "indoor",
+    "address": "中和區景平路634之2號"
+  },
+  {
+    "name": "中和國中",
+    "lat": 24.9862,
+    "lon": 121.5085,
+    "district": "中和區",
+    "capacity": 2649,
+    "type": "indoor_outdoor",
+    "address": "中和區興南路2段3巷17號"
+  },
+  {
+    "name": "中和國小",
+    "lat": 24.9999,
+    "lon": 121.5016,
+    "district": "中和區",
+    "capacity": 2866,
+    "type": "indoor_outdoor",
+    "address": "中和區中和路100號"
+  },
+  {
+    "name": "中和高中",
+    "lat": 24.994,
+    "lon": 121.4783,
+    "district": "中和區",
+    "capacity": 2072,
+    "type": "indoor_outdoor",
+    "address": "中和區連城路460號"
+  },
+  {
+    "name": "光復國小",
+    "lat": 25.0148,
+    "lon": 121.4829,
+    "district": "中和區",
+    "capacity": 855,
+    "type": "indoor_outdoor",
+    "address": "中和區光環路2段1號"
+  },
+  {
+    "name": "南山高中",
+    "lat": 25.0016,
+    "lon": 121.5034,
+    "district": "中和區",
+    "capacity": 2130,
+    "type": "indoor_outdoor",
+    "address": "中和區廣福路41號"
+  },
+  {
+    "name": "山北市民活動中心",
+    "lat": 25.0061,
+    "lon": 121.5016,
+    "district": "中和區",
+    "capacity": 92,
+    "type": "indoor",
+    "address": "莊敬路49巷29弄2號"
+  },
+  {
+    "name": "復興國小",
+    "lat": 24.9896,
+    "lon": 121.5019,
+    "district": "中和區",
+    "capacity": 946,
+    "type": "indoor_outdoor",
+    "address": "中和區復興路301巷6號"
+  },
+  {
+    "name": "復興大樓圖書館",
+    "lat": 24.9897,
+    "lon": 121.5065,
+    "district": "中和區",
+    "capacity": 25,
+    "type": "indoor",
+    "address": "南山路236號6樓"
+  },
+  {
+    "name": "景新國小",
+    "lat": 24.9893,
+    "lon": 121.515,
+    "district": "中和區",
+    "capacity": 897,
+    "type": "indoor_outdoor",
+    "address": "中和區景新街467巷37號"
+  },
+  {
+    "name": "漳和國中",
+    "lat": 25.0027,
+    "lon": 121.5055,
+    "district": "中和區",
+    "capacity": 1067,
+    "type": "indoor_outdoor",
+    "address": "中和區廣福路39號"
+  },
+  {
+    "name": "秀山國小",
+    "lat": 24.9942,
+    "lon": 121.5212,
+    "district": "中和區",
+    "capacity": 4228,
+    "type": "indoor_outdoor",
+    "address": "中和區立人街2號"
+  },
+  {
+    "name": "積穗國中",
+    "lat": 25.0004,
+    "lon": 121.4798,
+    "district": "中和區",
+    "capacity": 597,
+    "type": "indoor_outdoor",
+    "address": "中和區民安街66號"
+  },
+  {
+    "name": "積穗國小",
+    "lat": 24.9991,
+    "lon": 121.4814,
+    "district": "中和區",
+    "capacity": 545,
+    "type": "indoor_outdoor",
+    "address": "中和區員山路154號"
+  },
+  {
+    "name": "竹林中學",
+    "lat": 24.9799,
+    "lon": 121.506,
+    "district": "中和區",
+    "capacity": 430,
+    "type": "indoor_outdoor",
+    "address": "中和區華新街143巷12號"
+  },
+  {
+    "name": "自強國中",
+    "lat": 24.9988,
+    "lon": 121.4726,
+    "district": "中和區",
+    "capacity": 936,
+    "type": "indoor_outdoor",
+    "address": "中和區莒光路191號"
+  },
+  {
+    "name": "自強國小",
+    "lat": 24.9985,
+    "lon": 121.4719,
+    "district": "中和區",
+    "capacity": 562,
+    "type": "indoor_outdoor",
+    "address": "中和區莒光路200號"
+  },
+  {
+    "name": "興南國小",
+    "lat": 24.9867,
+    "lon": 121.5091,
+    "district": "中和區",
+    "capacity": 1278,
+    "type": "indoor_outdoor",
+    "address": "中和區興南路1段135巷24號"
+  },
+  {
+    "name": "華夏科技大學",
+    "lat": 24.9822,
+    "lon": 121.5076,
+    "district": "中和區",
+    "capacity": 1447,
+    "type": "indoor_outdoor",
+    "address": "中和區工專路111號"
+  },
+  {
+    "name": "錦和中學",
+    "lat": 24.9925,
+    "lon": 121.4911,
+    "district": "中和區",
+    "capacity": 2543,
+    "type": "indoor_outdoor",
+    "address": "中和區錦和路163號"
+  },
+  {
+    "name": "錦和國小",
+    "lat": 24.9901,
+    "lon": 121.4893,
+    "district": "中和區",
+    "capacity": 1173,
+    "type": "indoor_outdoor",
+    "address": "中和區圓通路292號"
+  },
+  {
+    "name": "鶴齡交誼中心",
+    "lat": 25.0014,
+    "lon": 121.5011,
+    "district": "中和區",
+    "capacity": 82,
+    "type": "indoor",
+    "address": "廟美街6巷3號2、4樓"
+  },
+  {
+    "name": "五股國民中學",
+    "lat": 25.0833,
+    "lon": 121.4357,
+    "district": "五股區",
+    "capacity": 230,
+    "type": "indoor_outdoor",
+    "address": "成泰路二段49巷15號"
+  },
+  {
+    "name": "五股國民小學",
+    "lat": 25.0834,
+    "lon": 121.4377,
+    "district": "五股區",
+    "capacity": 2532,
+    "type": "indoor_outdoor",
+    "address": "成泰路2段49號"
+  },
+  {
+    "name": "公民會館",
+    "lat": 25.090383,
+    "lon": 121.440224,
+    "district": "五股區",
+    "capacity": 182,
+    "type": "indoor",
+    "address": "御史路1巷59號"
+  },
+  {
+    "name": "德音國民小學",
+    "lat": 25.0714,
+    "lon": 121.4345,
+    "district": "五股區",
+    "capacity": 146,
+    "type": "indoor_outdoor",
+    "address": "明德路2號"
+  },
+  {
+    "name": "憲訓中心",
+    "lat": 25.0758,
+    "lon": 121.4349,
+    "district": "五股區",
+    "capacity": 686,
+    "type": "indoor",
+    "address": "成泰路一段175號"
+  },
+  {
+    "name": "成功市民活動中心",
+    "lat": 25.0944,
+    "lon": 121.4461,
+    "district": "五股區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "西雲路163號"
+  },
+  {
+    "name": "成州國民小學",
+    "lat": 25.0998,
+    "lon": 121.4505,
+    "district": "五股區",
+    "capacity": 398,
+    "type": "indoor_outdoor",
+    "address": "成泰路3段493號"
+  },
+  {
+    "name": "成州市民活動中心",
+    "lat": 25.0981,
+    "lon": 121.4494,
+    "district": "五股區",
+    "capacity": 75,
+    "type": "indoor",
+    "address": "西雲路267號"
+  },
+  {
+    "name": "更寮國民小學",
+    "lat": 25.0698,
+    "lon": 121.4677,
+    "district": "五股區",
+    "capacity": 453,
+    "type": "indoor_outdoor",
+    "address": "四維路2號"
+  },
+  {
+    "name": "更新市民活動中心",
+    "lat": 25.0794,
+    "lon": 121.4573,
+    "district": "五股區",
+    "capacity": 65,
+    "type": "indoor",
+    "address": "更洲路47號"
+  },
+  {
+    "name": "立體停車場",
+    "lat": 25.083,
+    "lon": 121.4393,
+    "district": "五股區",
+    "capacity": 550,
+    "type": "indoor",
+    "address": "工商路3號"
+  },
+  {
+    "name": "觀音市民活動中心",
+    "lat": 25.107778,
+    "lon": 121.43072,
+    "district": "五股區",
+    "capacity": 149,
+    "type": "indoor",
+    "address": "凌雲路三段17之2號"
+  },
+  {
+    "name": "八里國中",
+    "lat": 25.1399,
+    "lon": 121.4013,
+    "district": "八里區",
+    "capacity": 2360,
+    "type": "indoor_outdoor",
+    "address": "荖阡坑路15號"
+  },
+  {
+    "name": "八里國小",
+    "lat": 25.1495,
+    "lon": 121.403,
+    "district": "八里區",
+    "capacity": 1243,
+    "type": "indoor_outdoor",
+    "address": "中山路二段338號"
+  },
+  {
+    "name": "大埤頂市民活動中心",
+    "lat": 25.1591,
+    "lon": 121.4152,
+    "district": "八里區",
+    "capacity": 70,
+    "type": "indoor",
+    "address": "中山路1段95號"
+  },
+  {
+    "name": "大崁國小",
+    "lat": 25.1603,
+    "lon": 121.4194,
+    "district": "八里區",
+    "capacity": 1193,
+    "type": "indoor_outdoor",
+    "address": "忠八街2號"
+  },
+  {
+    "name": "大崁老人活動中心",
+    "lat": 25.1589,
+    "lon": 121.4221,
+    "district": "八里區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "中山路1段21號"
+  },
+  {
+    "name": "文化活動中心",
+    "lat": 25.1487,
+    "lon": 121.4029,
+    "district": "八里區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "中山路2段251號1樓"
+  },
+  {
+    "name": "渡船頭市民活動中心",
+    "lat": 25.1589,
+    "lon": 121.4344,
+    "district": "八里區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "渡船頭街11巷8號"
+  },
+  {
+    "name": "私立聖心女中",
+    "lat": 25.1348,
+    "lon": 121.4496,
+    "district": "八里區",
+    "capacity": 902,
+    "type": "indoor_outdoor",
+    "address": "龍米路一段263號"
+  },
+  {
+    "name": "米倉國小",
+    "lat": 25.1468,
+    "lon": 121.4454,
+    "district": "八里區",
+    "capacity": 688,
+    "type": "indoor_outdoor",
+    "address": "龍米路2段129巷1號"
+  },
+  {
+    "name": "長坑國小",
+    "lat": 25.1257,
+    "lon": 121.3905,
+    "district": "八里區",
+    "capacity": 224,
+    "type": "indoor_outdoor",
+    "address": "長坑里25號"
+  },
+  {
+    "name": "長坑市民活動中心",
+    "lat": 25.1257,
+    "lon": 121.3883,
+    "district": "八里區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "下罟子臨8-3號"
+  },
+  {
+    "name": "龍米市民活動中心",
+    "lat": 25.132,
+    "lon": 121.4511,
+    "district": "八里區",
+    "capacity": 125,
+    "type": "indoor",
+    "address": "龍源里龍米路1段223號"
+  },
+  {
+    "name": "中正國中",
+    "lat": 24.983456,
+    "lon": 121.456842,
+    "district": "土城區",
+    "capacity": 415,
+    "type": "indoor_outdoor",
+    "address": "金城路2段247號"
+  },
+  {
+    "name": "員林市民活動中心",
+    "lat": 24.978282,
+    "lon": 121.442984,
+    "district": "土城區",
+    "capacity": 77,
+    "type": "indoor",
+    "address": "員林街15號1樓"
+  },
+  {
+    "name": "土城區公所",
+    "lat": 24.972533,
+    "lon": 121.442873,
+    "district": "土城區",
+    "capacity": 162,
+    "type": "indoor_outdoor",
+    "address": "金城路1段101號7樓"
+  },
+  {
+    "name": "土城國中",
+    "lat": 24.962522,
+    "lon": 121.430192,
+    "district": "土城區",
+    "capacity": 1384,
+    "type": "indoor",
+    "address": "永寧路18號"
+  },
+  {
+    "name": "土城國小",
+    "lat": 24.972383,
+    "lon": 121.441935,
+    "district": "土城區",
+    "capacity": 958,
+    "type": "indoor_outdoor",
+    "address": "興城路17號"
+  },
+  {
+    "name": "安和國小",
+    "lat": 24.988807,
+    "lon": 121.464774,
+    "district": "土城區",
+    "capacity": 2293,
+    "type": "indoor_outdoor",
+    "address": "延和路23號"
+  },
+  {
+    "name": "廣福國小",
+    "lat": 24.986953,
+    "lon": 121.454896,
+    "district": "土城區",
+    "capacity": 608,
+    "type": "indoor_outdoor",
+    "address": "學府路1段127號"
+  },
+  {
+    "name": "廣福市民活動中心",
+    "lat": 24.985909,
+    "lon": 121.457766,
+    "district": "土城區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "學府路一段99巷底1樓"
+  },
+  {
+    "name": "廣興市民活動中心",
+    "lat": 24.985909,
+    "lon": 121.457766,
+    "district": "土城區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "學府路一段99巷底2樓"
+  },
+  {
+    "name": "廷寮市民活動中心",
+    "lat": 24.980803,
+    "lon": 121.467199,
+    "district": "土城區",
+    "capacity": 80,
+    "type": "indoor",
+    "address": "永豐路240-1號"
+  },
+  {
+    "name": "新北高工",
+    "lat": 24.983308,
+    "lon": 121.45038,
+    "district": "土城區",
+    "capacity": 2785,
+    "type": "indoor_outdoor",
+    "address": "學府路1段241號"
+  },
+  {
+    "name": "樂利國小",
+    "lat": 24.985602,
+    "lon": 121.447559,
+    "district": "土城區",
+    "capacity": 1168,
+    "type": "indoor_outdoor",
+    "address": "裕生路65號"
+  },
+  {
+    "name": "永富市民活動中心",
+    "lat": 24.98031,
+    "lon": 121.464447,
+    "district": "土城區",
+    "capacity": 25,
+    "type": "indoor",
+    "address": "明德路1段74-1號2樓"
+  },
+  {
+    "name": "永寧市民活動中心",
+    "lat": 24.961098,
+    "lon": 121.42864,
+    "district": "土城區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "永寧路32巷10弄10號"
+  },
+  {
+    "name": "沛陂市民活動中心",
+    "lat": 24.963872,
+    "lon": 121.419474,
+    "district": "土城區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "三民路23巷8弄9號"
+  },
+  {
+    "name": "清化市民活動中心",
+    "lat": 24.973802,
+    "lon": 121.458661,
+    "district": "土城區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "青雲路368號4樓"
+  },
+  {
+    "name": "清和市民活動中心",
+    "lat": 24.973802,
+    "lon": 121.458661,
+    "district": "土城區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "青雲路368號1樓"
+  },
+  {
+    "name": "清水國小",
+    "lat": 24.984402,
+    "lon": 121.461508,
+    "district": "土城區",
+    "capacity": 597,
+    "type": "indoor_outdoor",
+    "address": "金城路2段356號"
+  },
+  {
+    "name": "清水高中",
+    "lat": 24.982013,
+    "lon": 121.465311,
+    "district": "土城區",
+    "capacity": 1033,
+    "type": "indoor_outdoor",
+    "address": "明德路1段72號"
+  },
+  {
+    "name": "祖田市民活動中心",
+    "lat": 24.952776,
+    "lon": 121.411937,
+    "district": "土城區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "中央路4段285號2樓"
+  },
+  {
+    "name": "裕德高中",
+    "lat": 24.982977,
+    "lon": 121.439585,
+    "district": "土城區",
+    "capacity": 975,
+    "type": "indoor_outdoor",
+    "address": "擺接堡路1號"
+  },
+  {
+    "name": "青山市民活動中心",
+    "lat": 24.98031,
+    "lon": 121.464447,
+    "district": "土城區",
+    "capacity": 18,
+    "type": "indoor",
+    "address": "明德路1段74-1號1樓"
+  },
+  {
+    "name": "青雲,柑林市民活動中心",
+    "lat": 24.98237,
+    "lon": 121.458501,
+    "district": "土城區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "清水路141巷18號B1"
+  },
+  {
+    "name": "頂埔國小",
+    "lat": 24.95623,
+    "lon": 121.414403,
+    "district": "土城區",
+    "capacity": 873,
+    "type": "indoor_outdoor",
+    "address": "中央路4段205號"
+  },
+  {
+    "name": "頂埔市民活動中心",
+    "lat": 24.958966,
+    "lon": 121.417311,
+    "district": "土城區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "中央路4段55-12號"
+  },
+  {
+    "name": "新北市坪林區公所",
+    "lat": 24.93614,
+    "lon": 121.711784,
+    "district": "坪林區",
+    "capacity": 50,
+    "type": "indoor_outdoor",
+    "address": "坪林101號"
+  },
+  {
+    "name": "新北市坪林區坪林國小漁光校區",
+    "lat": 24.959584,
+    "lon": 121.746242,
+    "district": "坪林區",
+    "capacity": 62,
+    "type": "indoor_outdoor",
+    "address": "大舌湖35號"
+  },
+  {
+    "name": "新北市坪林區坪林國民小學",
+    "lat": 24.936238,
+    "lon": 121.71088,
+    "district": "坪林區",
+    "capacity": 314,
+    "type": "indoor_outdoor",
+    "address": "坪林114號"
+  },
+  {
+    "name": "新北市立坪林國民中學",
+    "lat": 24.938007,
+    "lon": 121.712825,
+    "district": "坪林區",
+    "capacity": 1144,
+    "type": "indoor_outdoor",
+    "address": "國中路4號"
+  },
+  {
+    "name": "新昇倉庫",
+    "lat": 24.951077,
+    "lon": 121.725304,
+    "district": "坪林區",
+    "capacity": 10,
+    "type": "indoor",
+    "address": "大粗坑11之1號"
+  },
+  {
+    "name": "樹梅嶺倉庫",
+    "lat": 24.955382,
+    "lon": 121.696956,
+    "district": "坪林區",
+    "capacity": 10,
+    "type": "indoor",
+    "address": "樹梅嶺11號"
+  },
+  {
+    "name": "石里倉庫",
+    "lat": 24.904686,
+    "lon": 121.745228,
+    "district": "坪林區",
+    "capacity": 10,
+    "type": "indoor",
+    "address": "石27之1號"
+  },
+  {
+    "name": "十分國小",
+    "lat": 25.0439,
+    "lon": 121.7774,
+    "district": "平溪區",
+    "capacity": 175,
+    "type": "indoor_outdoor",
+    "address": "十分街157號"
+  },
+  {
+    "name": "嶺腳市民活動中心",
+    "lat": 25.0052,
+    "lon": 121.7508,
+    "district": "平溪區",
+    "capacity": 47,
+    "type": "indoor",
+    "address": "嶺腳寮14號"
+  },
+  {
+    "name": "平湖市民活動中心",
+    "lat": 25.0256,
+    "lon": 121.7813,
+    "district": "平溪區",
+    "capacity": 71,
+    "type": "indoor",
+    "address": "大湖10號"
+  },
+  {
+    "name": "平溪國中",
+    "lat": 25.0235,
+    "lon": 121.7336,
+    "district": "平溪區",
+    "capacity": 710,
+    "type": "indoor_outdoor",
+    "address": "靜安路二段295號"
+  },
+  {
+    "name": "平溪國小",
+    "lat": 25.0272,
+    "lon": 121.7376,
+    "district": "平溪區",
+    "capacity": 525,
+    "type": "indoor_outdoor",
+    "address": "平溪街56號"
+  },
+  {
+    "name": "平溪市民活動中心",
+    "lat": 25.0247,
+    "lon": 121.7371,
+    "district": "平溪區",
+    "capacity": 106,
+    "type": "indoor_outdoor",
+    "address": "公園街17號2樓"
+  },
+  {
+    "name": "東勢市民活動中心",
+    "lat": 25.0052,
+    "lon": 121.7508,
+    "district": "平溪區",
+    "capacity": 25,
+    "type": "indoor",
+    "address": "竿蓁林62-1號"
+  },
+  {
+    "name": "白石市民活動中心",
+    "lat": 25.0221,
+    "lon": 121.7247,
+    "district": "平溪區",
+    "capacity": 49,
+    "type": "indoor",
+    "address": "9鄰靜安路2段241號"
+  },
+  {
+    "name": "老人文康活動中心",
+    "lat": 25.04193,
+    "lon": 121.775807,
+    "district": "平溪區",
+    "capacity": 127,
+    "type": "indoor",
+    "address": "十分街66巷1號"
+  },
+  {
+    "name": "菁桐國小",
+    "lat": 25.0236,
+    "lon": 121.7266,
+    "district": "平溪區",
+    "capacity": 310,
+    "type": "indoor_outdoor",
+    "address": "菁桐街45號"
+  },
+  {
+    "name": "菁桐市民活動中心",
+    "lat": 25.0235,
+    "lon": 121.7262,
+    "district": "平溪區",
+    "capacity": 104,
+    "type": "indoor",
+    "address": "菁桐街65-1號"
+  },
+  {
+    "name": "薯榔市民活動中心",
+    "lat": 25.022689,
+    "lon": 121.728154,
+    "district": "平溪區",
+    "capacity": 61,
+    "type": "indoor",
+    "address": "靜安路二段63號"
+  },
+  {
+    "name": "中正國小",
+    "lat": 24.9717,
+    "lon": 121.5366,
+    "district": "新店區",
+    "capacity": 1001,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區三民路３６號"
+  },
+  {
+    "name": "五峰國中",
+    "lat": 24.9664,
+    "lon": 121.544,
+    "district": "新店區",
+    "capacity": 1103,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區中興路一段253號"
+  },
+  {
+    "name": "北新國小",
+    "lat": 24.9737,
+    "lon": 121.5439,
+    "district": "新店區",
+    "capacity": 1737,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區寶橋路8號"
+  },
+  {
+    "name": "南強工商",
+    "lat": 24.9809,
+    "lon": 121.5448,
+    "district": "新店區",
+    "capacity": 1132,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區文化路42號"
+  },
+  {
+    "name": "及人高中",
+    "lat": 24.9663,
+    "lon": 121.5149,
+    "district": "新店區",
+    "capacity": 2774,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區安興路1號"
+  },
+  {
+    "name": "大豐國小",
+    "lat": 24.9776,
+    "lon": 121.5382,
+    "district": "新店區",
+    "capacity": 5794,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區23143民族路108號"
+  },
+  {
+    "name": "大豐社福館",
+    "lat": 24.9769,
+    "lon": 121.5376,
+    "district": "新店區",
+    "capacity": 1540,
+    "type": "indoor",
+    "address": "新北市新店區民族路110號"
+  },
+  {
+    "name": "安坑國小",
+    "lat": 24.9613,
+    "lon": 121.5142,
+    "district": "新店區",
+    "capacity": 901,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區安忠路36號"
+  },
+  {
+    "name": "安康高中",
+    "lat": 24.9688,
+    "lon": 121.5149,
+    "district": "新店區",
+    "capacity": 1119,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區安興路25號"
+  },
+  {
+    "name": "屈尺國小",
+    "lat": 24.9225,
+    "lon": 121.5463,
+    "district": "新店區",
+    "capacity": 320,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區屈尺路五十五號"
+  },
+  {
+    "name": "屈尺國小廣興分校",
+    "lat": 24.9125,
+    "lon": 121.5396,
+    "district": "新店區",
+    "capacity": 37,
+    "type": "indoor",
+    "address": "新店市廣興路57號。"
+  },
+  {
+    "name": "屈尺市民活動中心",
+    "lat": 24.923518,
+    "lon": 121.544999,
+    "district": "新店區",
+    "capacity": 75,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區屈尺路125號"
+  },
+  {
+    "name": "崇光女中",
+    "lat": 24.9718,
+    "lon": 121.5391,
+    "district": "新店區",
+    "capacity": 522,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區三民路18號"
+  },
+  {
+    "name": "康橋高級中學",
+    "lat": 24.9109,
+    "lon": 121.4978,
+    "district": "新店區",
+    "capacity": 250,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區華城路800號"
+  },
+  {
+    "name": "廣興里辦公處",
+    "lat": 24.902531,
+    "lon": 121.533799,
+    "district": "新店區",
+    "capacity": 37,
+    "type": "indoor",
+    "address": "新北市新店區平廣路一段35巷3號"
+  },
+  {
+    "name": "文中廣明活動中心",
+    "lat": 24.9577,
+    "lon": 121.5399,
+    "district": "新店區",
+    "capacity": 45,
+    "type": "indoor",
+    "address": "新北市新店區北宜路一段39巷32號"
+  },
+  {
+    "name": "文山國中",
+    "lat": 24.9567,
+    "lon": 121.5392,
+    "district": "新店區",
+    "capacity": 703,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區文中路38號"
+  },
+  {
+    "name": "新和國小",
+    "lat": 24.9846,
+    "lon": 121.5182,
+    "district": "新店區",
+    "capacity": 648,
+    "type": "indoor_outdoor",
+    "address": "新店市安和路三段100號"
+  },
+  {
+    "name": "新店國小",
+    "lat": 24.9529,
+    "lon": 121.5402,
+    "district": "新店區",
+    "capacity": 1795,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區新店路2號"
+  },
+  {
+    "name": "新店高中",
+    "lat": 24.9756,
+    "lon": 121.5318,
+    "district": "新店區",
+    "capacity": 1307,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區中央路93號"
+  },
+  {
+    "name": "景文科技大學",
+    "lat": 24.952,
+    "lon": 121.5093,
+    "district": "新店區",
+    "capacity": 1855,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區安忠路99號"
+  },
+  {
+    "name": "直潭國小",
+    "lat": 24.9378,
+    "lon": 121.5313,
+    "district": "新店區",
+    "capacity": 1600,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區直潭路92號"
+  },
+  {
+    "name": "直潭派出所",
+    "lat": 25.005939,
+    "lon": 121.456585,
+    "district": "新店區",
+    "capacity": 75,
+    "type": "outdoor",
+    "address": "新北市新店區直潭十街2號"
+  },
+  {
+    "name": "耕莘健康管理專科學校",
+    "lat": 24.9761,
+    "lon": 121.5355,
+    "district": "新店區",
+    "capacity": 87,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區民族路112號"
+  },
+  {
+    "name": "能仁家商",
+    "lat": 24.9569,
+    "lon": 121.5404,
+    "district": "新店區",
+    "capacity": 1373,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區文中路53巷10號"
+  },
+  {
+    "name": "莊敬工家",
+    "lat": 24.9858,
+    "lon": 121.5322,
+    "district": "新店區",
+    "capacity": 8362,
+    "type": "indoor",
+    "address": "新北市新店區民生路45號"
+  },
+  {
+    "name": "達觀國民中小學",
+    "lat": 24.95362,
+    "lon": 121.49998,
+    "district": "新店區",
+    "capacity": 407,
+    "type": "indoor_outdoor",
+    "address": "僑信路1號"
+  },
+  {
+    "name": "開明工商",
+    "lat": 24.98,
+    "lon": 121.5462,
+    "district": "新店區",
+    "capacity": 1945,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區寶中路49號"
+  },
+  {
+    "name": "雙城國小",
+    "lat": 24.9521,
+    "lon": 121.4865,
+    "district": "新店區",
+    "capacity": 399,
+    "type": "indoor_outdoor",
+    "address": "台北縣新店市安康路三段322號"
+  },
+  {
+    "name": "雙城活動中心",
+    "lat": 24.9538,
+    "lon": 121.4937,
+    "district": "新店區",
+    "capacity": 132,
+    "type": "indoor",
+    "address": "新北市新店區安康路3段2號5樓"
+  },
+  {
+    "name": "雙峰國小",
+    "lat": 24.9515,
+    "lon": 121.5755,
+    "district": "新店區",
+    "capacity": 255,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區北宜路三段66號"
+  },
+  {
+    "name": "青潭國小",
+    "lat": 24.9531,
+    "lon": 121.5523,
+    "district": "新店區",
+    "capacity": 203,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區北宜路二段80號"
+  },
+  {
+    "name": "頂城市民活動中心",
+    "lat": 24.960733,
+    "lon": 121.532147,
+    "district": "新店區",
+    "capacity": 119,
+    "type": "indoor",
+    "address": "新北市新店區安康路一段9-1號"
+  },
+  {
+    "name": "龜山國小",
+    "lat": 24.9022,
+    "lon": 121.5532,
+    "district": "新店區",
+    "capacity": 75,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區新烏路三段99巷10號"
+  },
+  {
+    "name": "龜山市民活動中心",
+    "lat": 24.9031,
+    "lon": 121.552,
+    "district": "新店區",
+    "capacity": 133,
+    "type": "indoor_outdoor",
+    "address": "新北市新店區新烏路3段136號"
+  },
+  {
+    "name": "中信國小",
+    "lat": 25.0358,
+    "lon": 121.4505,
+    "district": "新莊區",
+    "capacity": 1084,
+    "type": "indoor",
+    "address": "中信街168號"
+  },
+  {
+    "name": "中平國中",
+    "lat": 25.0216,
+    "lon": 121.4278,
+    "district": "新莊區",
+    "capacity": 1384,
+    "type": "indoor_outdoor",
+    "address": "中平路385號"
+  },
+  {
+    "name": "中港國小",
+    "lat": 25.0242,
+    "lon": 121.4138,
+    "district": "新莊區",
+    "capacity": 695,
+    "type": "indoor_outdoor",
+    "address": "中港一街142號"
+  },
+  {
+    "name": "中港第一市民活動中心",
+    "lat": 25.041825,
+    "lon": 121.455157,
+    "district": "新莊區",
+    "capacity": 75,
+    "type": "indoor",
+    "address": "中港路172號"
+  },
+  {
+    "name": "丹鳳國小",
+    "lat": 25.0175,
+    "lon": 121.4257,
+    "district": "新莊區",
+    "capacity": 297,
+    "type": "indoor_outdoor",
+    "address": "新北大道七段437號"
+  },
+  {
+    "name": "丹鳳高中",
+    "lat": 25.0426,
+    "lon": 121.4444,
+    "district": "新莊區",
+    "capacity": 1337,
+    "type": "indoor_outdoor",
+    "address": "龍安路72號"
+  },
+  {
+    "name": "光華國小",
+    "lat": 25.0378,
+    "lon": 121.4438,
+    "district": "新莊區",
+    "capacity": 963,
+    "type": "indoor_outdoor",
+    "address": "龍安路452號"
+  },
+  {
+    "name": "全安市民活動中心",
+    "lat": 25.0423,
+    "lon": 121.4565,
+    "district": "新莊區",
+    "capacity": 200,
+    "type": "indoor",
+    "address": "新莊路527號"
+  },
+  {
+    "name": "四維市民活動中心",
+    "lat": 25.021171,
+    "lon": 121.421825,
+    "district": "新莊區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "四維路186巷2號"
+  },
+  {
+    "name": "國泰國小",
+    "lat": 25.0451,
+    "lon": 121.4472,
+    "district": "新莊區",
+    "capacity": 1036,
+    "type": "indoor_outdoor",
+    "address": "中正路386號"
+  },
+  {
+    "name": "思賢國小",
+    "lat": 25.0309,
+    "lon": 121.4433,
+    "district": "新莊區",
+    "capacity": 285,
+    "type": "indoor_outdoor",
+    "address": "自立街229號"
+  },
+  {
+    "name": "新泰國中",
+    "lat": 25.0551,
+    "lon": 121.4594,
+    "district": "新莊區",
+    "capacity": 743,
+    "type": "indoor_outdoor",
+    "address": "新泰路359號"
+  },
+  {
+    "name": "新泰國小",
+    "lat": 25.0514,
+    "lon": 121.4554,
+    "district": "新莊區",
+    "capacity": 106,
+    "type": "indoor_outdoor",
+    "address": "公園一路91號"
+  },
+  {
+    "name": "新泰市民活動中心",
+    "lat": 25.0369,
+    "lon": 121.4451,
+    "district": "新莊區",
+    "capacity": 250,
+    "type": "indoor",
+    "address": "建中街116巷3弄2號"
+  },
+  {
+    "name": "新莊區公所",
+    "lat": 25.035834,
+    "lon": 121.450558,
+    "district": "新莊區",
+    "capacity": 200,
+    "type": "indoor",
+    "address": "中正路176號"
+  },
+  {
+    "name": "新莊國中",
+    "lat": 25.0253,
+    "lon": 121.4225,
+    "district": "新莊區",
+    "capacity": 1370,
+    "type": "indoor_outdoor",
+    "address": "中正路211號"
+  },
+  {
+    "name": "新莊國小",
+    "lat": 25.0342,
+    "lon": 121.4417,
+    "district": "新莊區",
+    "capacity": 1029,
+    "type": "indoor_outdoor",
+    "address": "中正路86號"
+  },
+  {
+    "name": "新莊高中",
+    "lat": 25.0359,
+    "lon": 121.4525,
+    "district": "新莊區",
+    "capacity": 933,
+    "type": "indoor_outdoor",
+    "address": "中平路135號"
+  },
+  {
+    "name": "昌平國小",
+    "lat": 25.0243,
+    "lon": 121.4238,
+    "district": "新莊區",
+    "capacity": 635,
+    "type": "indoor",
+    "address": "昌平街200號"
+  },
+  {
+    "name": "昌隆國小",
+    "lat": 25.0563,
+    "lon": 121.448,
+    "district": "新莊區",
+    "capacity": 509,
+    "type": "indoor_outdoor",
+    "address": "昌隆街63號"
+  },
+  {
+    "name": "榮富國小",
+    "lat": 25.0219,
+    "lon": 121.418,
+    "district": "新莊區",
+    "capacity": 2819,
+    "type": "indoor_outdoor",
+    "address": "中和街193號"
+  },
+  {
+    "name": "民安國小",
+    "lat": 25.0529,
+    "lon": 121.4661,
+    "district": "新莊區",
+    "capacity": 1184,
+    "type": "indoor_outdoor",
+    "address": "民安路261號"
+  },
+  {
+    "name": "牡丹心市民活動中心",
+    "lat": 25.0294,
+    "lon": 121.4431,
+    "district": "新莊區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "雙鳳路75號5樓"
+  },
+  {
+    "name": "瓊泰市民活動中心",
+    "lat": 25.0306,
+    "lon": 121.4467,
+    "district": "新莊區",
+    "capacity": 150,
+    "type": "indoor",
+    "address": "瓊泰路85號"
+  },
+  {
+    "name": "福壽市民活動中心",
+    "lat": 25.0522,
+    "lon": 121.4576,
+    "district": "新莊區",
+    "capacity": 120,
+    "type": "indoor",
+    "address": "昌明街1號"
+  },
+  {
+    "name": "福營國中",
+    "lat": 25.0538,
+    "lon": 121.4445,
+    "district": "新莊區",
+    "capacity": 319,
+    "type": "indoor_outdoor",
+    "address": "富國路105號"
+  },
+  {
+    "name": "福營行政大樓",
+    "lat": 25.0482,
+    "lon": 121.4447,
+    "district": "新莊區",
+    "capacity": 200,
+    "type": "indoor_outdoor",
+    "address": "四維路9號"
+  },
+  {
+    "name": "私立恆毅高級中學",
+    "lat": 25.036593,
+    "lon": 121.453731,
+    "district": "新莊區",
+    "capacity": 604,
+    "type": "indoor_outdoor",
+    "address": "中正路108號"
+  },
+  {
+    "name": "興化國小",
+    "lat": 25.0564,
+    "lon": 121.4556,
+    "district": "新莊區",
+    "capacity": 599,
+    "type": "indoor_outdoor",
+    "address": "五工二路50巷2號"
+  },
+  {
+    "name": "裕民國小",
+    "lat": 25.0659,
+    "lon": 121.4616,
+    "district": "新莊區",
+    "capacity": 1127,
+    "type": "indoor_outdoor",
+    "address": "裕民街123號"
+  },
+  {
+    "name": "裕民行政大樓",
+    "lat": 25.0212,
+    "lon": 121.4162,
+    "district": "新莊區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "裕民路136號"
+  },
+  {
+    "name": "豐年國小",
+    "lat": 25.0514,
+    "lon": 121.4474,
+    "district": "新莊區",
+    "capacity": 1128,
+    "type": "indoor_outdoor",
+    "address": "瓊泰路116號"
+  },
+  {
+    "name": "豐年市民活動中心",
+    "lat": 25.0258,
+    "lon": 121.4283,
+    "district": "新莊區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "豐年街57號之5"
+  },
+  {
+    "name": "輔仁大學",
+    "lat": 25.0329,
+    "lon": 121.4341,
+    "district": "新莊區",
+    "capacity": 705,
+    "type": "indoor_outdoor",
+    "address": "中正路510號"
+  },
+  {
+    "name": "頭前國中",
+    "lat": 25.037,
+    "lon": 121.4564,
+    "district": "新莊區",
+    "capacity": 2352,
+    "type": "indoor_outdoor",
+    "address": "思源路485號"
+  },
+  {
+    "name": "頭前國小",
+    "lat": 25.0456,
+    "lon": 121.4566,
+    "district": "新莊區",
+    "capacity": 610,
+    "type": "indoor_outdoor",
+    "address": "化成路231號"
+  },
+  {
+    "name": "中山國中",
+    "lat": 25.0185,
+    "lon": 121.4676,
+    "district": "板橋區",
+    "capacity": 2280,
+    "type": "indoor_outdoor",
+    "address": "文化路一段188巷56號"
+  },
+  {
+    "name": "中山國小",
+    "lat": 25.0023,
+    "lon": 121.4477,
+    "district": "板橋區",
+    "capacity": 1136,
+    "type": "indoor_outdoor",
+    "address": "大觀路二段59巷31號"
+  },
+  {
+    "name": "信義國小",
+    "lat": 24.9917,
+    "lon": 121.4528,
+    "district": "板橋區",
+    "capacity": 1024,
+    "type": "indoor_outdoor",
+    "address": "四川路二段245巷60號"
+  },
+  {
+    "name": "光復國小",
+    "lat": 25.0177,
+    "lon": 121.484,
+    "district": "板橋區",
+    "capacity": 855,
+    "type": "indoor_outdoor",
+    "address": "中和區中原里光環路二段1號"
+  },
+  {
+    "name": "光復高中",
+    "lat": 25.0168,
+    "lon": 121.4828,
+    "district": "板橋區",
+    "capacity": 416,
+    "type": "indoor_outdoor",
+    "address": "光環路一段7號"
+  },
+  {
+    "name": "國光國小",
+    "lat": 25.0194,
+    "lon": 121.4533,
+    "district": "板橋區",
+    "capacity": 1211,
+    "type": "indoor_outdoor",
+    "address": "中正路325巷30號"
+  },
+  {
+    "name": "埔墘國小",
+    "lat": 25.0181,
+    "lon": 121.4741,
+    "district": "板橋區",
+    "capacity": 628,
+    "type": "indoor_outdoor",
+    "address": "永豐街42之8號"
+  },
+  {
+    "name": "大觀國中",
+    "lat": 25.0112,
+    "lon": 121.4485,
+    "district": "板橋區",
+    "capacity": 1611,
+    "type": "indoor_outdoor",
+    "address": "僑中一街1號"
+  },
+  {
+    "name": "大觀國小",
+    "lat": 25.0086,
+    "lon": 121.4493,
+    "district": "板橋區",
+    "capacity": 1784,
+    "type": "indoor_outdoor",
+    "address": "大觀路一段30號"
+  },
+  {
+    "name": "實踐國小",
+    "lat": 25.005,
+    "lon": 121.4664,
+    "district": "板橋區",
+    "capacity": 1018,
+    "type": "indoor_outdoor",
+    "address": "實踐路93巷51號"
+  },
+  {
+    "name": "後埔國小",
+    "lat": 25.0033,
+    "lon": 121.4627,
+    "district": "板橋區",
+    "capacity": 703,
+    "type": "indoor_outdoor",
+    "address": "重慶路157號"
+  },
+  {
+    "name": "忠孝國中",
+    "lat": 25.0048,
+    "lon": 121.4616,
+    "district": "板橋區",
+    "capacity": 191,
+    "type": "indoor_outdoor",
+    "address": "成都街30號"
+  },
+  {
+    "name": "文德國小",
+    "lat": 25.0225,
+    "lon": 121.4585,
+    "district": "板橋區",
+    "capacity": 1207,
+    "type": "indoor_outdoor",
+    "address": "英士路179號"
+  },
+  {
+    "name": "文聖國小",
+    "lat": 25.0295,
+    "lon": 121.4772,
+    "district": "板橋區",
+    "capacity": 1023,
+    "type": "indoor_outdoor",
+    "address": "文聖街86號"
+  },
+  {
+    "name": "新埔國中",
+    "lat": 25.0249,
+    "lon": 121.4597,
+    "district": "板橋區",
+    "capacity": 3276,
+    "type": "indoor_outdoor",
+    "address": "新海路181號"
+  },
+  {
+    "name": "板橋國中",
+    "lat": 25.024,
+    "lon": 121.4542,
+    "district": "板橋區",
+    "capacity": 1628,
+    "type": "indoor_outdoor",
+    "address": "中正路437號"
+  },
+  {
+    "name": "板橋國小",
+    "lat": 25.0108,
+    "lon": 121.4582,
+    "district": "板橋區",
+    "capacity": 641,
+    "type": "indoor",
+    "address": "文化路一段23號"
+  },
+  {
+    "name": "板橋莊敬市民活動中心",
+    "lat": 25.0197,
+    "lon": 121.4708,
+    "district": "板橋區",
+    "capacity": 188,
+    "type": "indoor",
+    "address": "民生路二段120號"
+  },
+  {
+    "name": "板橋高中",
+    "lat": 25.0117,
+    "lon": 121.4591,
+    "district": "板橋區",
+    "capacity": 1136,
+    "type": "indoor_outdoor",
+    "address": "文化路一段25號"
+  },
+  {
+    "name": "民生公園市民活動中心",
+    "lat": 25.0137,
+    "lon": 121.4768,
+    "district": "板橋區",
+    "capacity": 292,
+    "type": "indoor",
+    "address": "民生路一段30之1號"
+  },
+  {
+    "name": "江翠國中",
+    "lat": 25.0289,
+    "lon": 121.4684,
+    "district": "板橋區",
+    "capacity": 2895,
+    "type": "indoor_outdoor",
+    "address": "松江街63號"
+  },
+  {
+    "name": "江翠國小",
+    "lat": 25.0324,
+    "lon": 121.4742,
+    "district": "板橋區",
+    "capacity": 784,
+    "type": "indoor_outdoor",
+    "address": "文化路二段413號"
+  },
+  {
+    "name": "沙崙國小",
+    "lat": 24.9897,
+    "lon": 121.4305,
+    "district": "板橋區",
+    "capacity": 1692,
+    "type": "indoor_outdoor",
+    "address": "篤行路二段132號"
+  },
+  {
+    "name": "海山高中",
+    "lat": 25.0102,
+    "lon": 121.4709,
+    "district": "板橋區",
+    "capacity": 2122,
+    "type": "indoor_outdoor",
+    "address": "漢生東路215號"
+  },
+  {
+    "name": "溪崑國中",
+    "lat": 24.9984,
+    "lon": 121.4313,
+    "district": "板橋區",
+    "capacity": 785,
+    "type": "indoor_outdoor",
+    "address": "大觀路三段50巷30號"
+  },
+  {
+    "name": "溪洲國小",
+    "lat": 24.9873,
+    "lon": 121.4309,
+    "district": "板橋區",
+    "capacity": 1021,
+    "type": "indoor_outdoor",
+    "address": "金門街289號"
+  },
+  {
+    "name": "莒光國小",
+    "lat": 25.0261,
+    "lon": 121.4736,
+    "district": "板橋區",
+    "capacity": 428,
+    "type": "indoor_outdoor",
+    "address": "莒光路163號"
+  },
+  {
+    "name": "重慶國中",
+    "lat": 24.9982,
+    "lon": 121.4632,
+    "district": "板橋區",
+    "capacity": 2826,
+    "type": "indoor_outdoor",
+    "address": "國慶路221號"
+  },
+  {
+    "name": "重慶國小",
+    "lat": 24.9945,
+    "lon": 121.4624,
+    "district": "板橋區",
+    "capacity": 2135,
+    "type": "indoor_outdoor",
+    "address": "廣和街31號"
+  },
+  {
+    "name": "仁愛市民活動中心",
+    "lat": 25.071966,
+    "lon": 121.37391,
+    "district": "林口區",
+    "capacity": 194,
+    "type": "indoor",
+    "address": "文化一路1段137號"
+  },
+  {
+    "name": "佳林國中",
+    "lat": 25.0803,
+    "lon": 121.3842,
+    "district": "林口區",
+    "capacity": 747,
+    "type": "indoor_outdoor",
+    "address": "中山路268號"
+  },
+  {
+    "name": "南勢國小",
+    "lat": 25.075,
+    "lon": 121.3588,
+    "district": "林口區",
+    "capacity": 534,
+    "type": "indoor_outdoor",
+    "address": "南勢街215號"
+  },
+  {
+    "name": "南勢市民活動中心",
+    "lat": 25.073835,
+    "lon": 121.359019,
+    "district": "林口區",
+    "capacity": 106,
+    "type": "indoor",
+    "address": "南勢二街154號"
+  },
+  {
+    "name": "嘉寶國小",
+    "lat": 25.1083,
+    "lon": 121.3393,
+    "district": "林口區",
+    "capacity": 425,
+    "type": "indoor_outdoor",
+    "address": "22號"
+  },
+  {
+    "name": "太平市民活動中心",
+    "lat": 25.135255,
+    "lon": 121.366375,
+    "district": "林口區",
+    "capacity": 82,
+    "type": "indoor_outdoor",
+    "address": "汕頭32號"
+  },
+  {
+    "name": "崇林國中",
+    "lat": 25.0681,
+    "lon": 121.3703,
+    "district": "林口區",
+    "capacity": 1312,
+    "type": "indoor_outdoor",
+    "address": "文化一路一段20號"
+  },
+  {
+    "name": "師範大學林口校區體育館",
+    "lat": 25.067902,
+    "lon": 121.397844,
+    "district": "林口區",
+    "capacity": 4587,
+    "type": "indoor_outdoor",
+    "address": "仁愛路一段2號"
+  },
+  {
+    "name": "新北特殊教育學校",
+    "lat": 25.078446,
+    "lon": 121.365938,
+    "district": "林口區",
+    "capacity": 1383,
+    "type": "outdoor",
+    "address": "文化北路1段425號"
+  },
+  {
+    "name": "東勢市民活動中心",
+    "lat": 25.068777,
+    "lon": 121.377252,
+    "district": "林口區",
+    "capacity": 247,
+    "type": "indoor",
+    "address": "麗園一街35號3樓"
+  },
+  {
+    "name": "林口區公所",
+    "lat": 25.0767,
+    "lon": 121.3885,
+    "district": "林口區",
+    "capacity": 120,
+    "type": "indoor",
+    "address": "仁愛路一段378號"
+  },
+  {
+    "name": "林口國中活動中心",
+    "lat": 25.0769,
+    "lon": 121.3769,
+    "district": "林口區",
+    "capacity": 1736,
+    "type": "indoor",
+    "address": "民治路25號"
+  },
+  {
+    "name": "林口國小",
+    "lat": 25.0808,
+    "lon": 121.3899,
+    "district": "林口區",
+    "capacity": 1009,
+    "type": "indoor_outdoor",
+    "address": "林口路76號"
+  },
+  {
+    "name": "林口市民活動中心",
+    "lat": 25.068,
+    "lon": 121.3717,
+    "district": "林口區",
+    "capacity": 63,
+    "type": "indoor",
+    "address": "中正路100號3樓"
+  },
+  {
+    "name": "林口高中",
+    "lat": 25.0736,
+    "lon": 121.381,
+    "district": "林口區",
+    "capacity": 3099,
+    "type": "indoor_outdoor",
+    "address": "仁愛路二段173號"
+  },
+  {
+    "name": "湖北市民活動中心",
+    "lat": 25.1013,
+    "lon": 121.3847,
+    "district": "林口區",
+    "capacity": 73,
+    "type": "indoor_outdoor",
+    "address": "林口區湖北里後湖17之6號"
+  },
+  {
+    "name": "湖南市民活動中心",
+    "lat": 25.0844,
+    "lon": 121.3742,
+    "district": "林口區",
+    "capacity": 86,
+    "type": "indoor_outdoor",
+    "address": "民權路165號"
+  },
+  {
+    "name": "瑞平國小",
+    "lat": 25.1284,
+    "lon": 121.3493,
+    "district": "林口區",
+    "capacity": 219,
+    "type": "indoor",
+    "address": "後坑路34之1號"
+  },
+  {
+    "name": "竹林山觀音寺活動中心",
+    "lat": 25.0796,
+    "lon": 121.3958,
+    "district": "林口區",
+    "capacity": 500,
+    "type": "indoor_outdoor",
+    "address": "竹林路325號"
+  },
+  {
+    "name": "興福國小",
+    "lat": 25.1124,
+    "lon": 121.3126,
+    "district": "林口區",
+    "capacity": 735,
+    "type": "indoor_outdoor",
+    "address": "下福10之1號"
+  },
+  {
+    "name": "醒吾高中",
+    "lat": 25.07957,
+    "lon": 121.395779,
+    "district": "林口區",
+    "capacity": 1243,
+    "type": "indoor_outdoor",
+    "address": "粉寮路一段75巷80號"
+  },
+  {
+    "name": "頭湖國小",
+    "lat": 25.0827,
+    "lon": 121.3729,
+    "district": "林口區",
+    "capacity": 819,
+    "type": "indoor_outdoor",
+    "address": "民權路101號"
+  },
+  {
+    "name": "麗園國小",
+    "lat": 25.0686,
+    "lon": 121.3762,
+    "district": "林口區",
+    "capacity": 945,
+    "type": "indoor_outdoor",
+    "address": "忠孝路591號"
+  },
+  {
+    "name": "麗園市民活動中心",
+    "lat": 25.068979,
+    "lon": 121.373756,
+    "district": "林口區",
+    "capacity": 75,
+    "type": "indoor",
+    "address": "忠孝路569巷17號"
+  },
+  {
+    "name": "麗林國小",
+    "lat": 25.0687,
+    "lon": 121.3679,
+    "district": "林口區",
+    "capacity": 1790,
+    "type": "indoor_outdoor",
+    "address": "公園路46號"
+  },
+  {
+    "name": "麗林市民活動中心",
+    "lat": 25.0774,
+    "lon": 121.394,
+    "district": "林口區",
+    "capacity": 236,
+    "type": "indoor",
+    "address": "公園路59號3樓"
+  },
+  {
+    "name": "三多國中",
+    "lat": 25.006414,
+    "lon": 121.414672,
+    "district": "樹林區",
+    "capacity": 847,
+    "type": "indoor_outdoor",
+    "address": "三多路101號"
+  },
+  {
+    "name": "三多國小",
+    "lat": 25.016651,
+    "lon": 121.4059,
+    "district": "樹林區",
+    "capacity": 807,
+    "type": "indoor_outdoor",
+    "address": "三福街52號"
+  },
+  {
+    "name": "大同國小",
+    "lat": 24.981493,
+    "lon": 121.417421,
+    "district": "樹林區",
+    "capacity": 450,
+    "type": "indoor_outdoor",
+    "address": "大同街43號"
+  },
+  {
+    "name": "山佳國小",
+    "lat": 24.975774,
+    "lon": 121.401678,
+    "district": "樹林區",
+    "capacity": 654,
+    "type": "indoor_outdoor",
+    "address": "中山路三段5號"
+  },
+  {
+    "name": "山佳市民活動中心",
+    "lat": 24.972721,
+    "lon": 121.39436,
+    "district": "樹林區",
+    "capacity": 80,
+    "type": "indoor",
+    "address": "中山路三段40號2樓"
+  },
+  {
+    "name": "彭福國小",
+    "lat": 24.981755,
+    "lon": 121.42394,
+    "district": "樹林區",
+    "capacity": 1704,
+    "type": "indoor_outdoor",
+    "address": "忠孝街30號"
+  },
+  {
+    "name": "文林國小",
+    "lat": 24.997757,
+    "lon": 121.426072,
+    "district": "樹林區",
+    "capacity": 1151,
+    "type": "indoor_outdoor",
+    "address": "千歲街59號"
+  },
+  {
+    "name": "東昇市民活動中心",
+    "lat": 24.984222,
+    "lon": 121.415159,
+    "district": "樹林區",
+    "capacity": 214,
+    "type": "indoor",
+    "address": "中山路二段80號2樓"
+  },
+  {
+    "name": "東陽市民活動中心",
+    "lat": 24.981593,
+    "lon": 121.410902,
+    "district": "樹林區",
+    "capacity": 78,
+    "type": "indoor",
+    "address": "鎮前街467號"
+  },
+  {
+    "name": "柑園國中",
+    "lat": 24.95474,
+    "lon": 121.384115,
+    "district": "樹林區",
+    "capacity": 1238,
+    "type": "indoor_outdoor",
+    "address": "柑園街二段125號"
+  },
+  {
+    "name": "柑園國小",
+    "lat": 24.956328,
+    "lon": 121.389362,
+    "district": "樹林區",
+    "capacity": 467,
+    "type": "indoor_outdoor",
+    "address": "柑園街一段353號"
+  },
+  {
+    "name": "桃子腳國民中小學",
+    "lat": 24.94923,
+    "lon": 121.382973,
+    "district": "樹林區",
+    "capacity": 3155,
+    "type": "indoor_outdoor",
+    "address": "學勤路555號"
+  },
+  {
+    "name": "樂山市民活動中心",
+    "lat": 24.973944,
+    "lon": 121.389871,
+    "district": "樹林區",
+    "capacity": 61,
+    "type": "indoor",
+    "address": "中和街38號3樓"
+  },
+  {
+    "name": "樹林區公所",
+    "lat": 24.989981,
+    "lon": 121.424633,
+    "district": "樹林區",
+    "capacity": 215,
+    "type": "indoor",
+    "address": "鎮前街93號"
+  },
+  {
+    "name": "樹林國小",
+    "lat": 24.99003,
+    "lon": 121.418101,
+    "district": "樹林區",
+    "capacity": 304,
+    "type": "indoor_outdoor",
+    "address": "育英街176號"
+  },
+  {
+    "name": "樹林高級中學",
+    "lat": 24.983502,
+    "lon": 121.422804,
+    "district": "樹林區",
+    "capacity": 1404,
+    "type": "indoor_outdoor",
+    "address": "中華路8號"
+  },
+  {
+    "name": "武林國小",
+    "lat": 25.002028,
+    "lon": 121.415438,
+    "district": "樹林區",
+    "capacity": 822,
+    "type": "indoor_outdoor",
+    "address": "保安街二段151號"
+  },
+  {
+    "name": "育德國小",
+    "lat": 24.971116,
+    "lon": 121.392558,
+    "district": "樹林區",
+    "capacity": 484,
+    "type": "indoor_outdoor",
+    "address": "佳園路一段34號"
+  },
+  {
+    "name": "育林國中",
+    "lat": 24.986051,
+    "lon": 121.415677,
+    "district": "樹林區",
+    "capacity": 574,
+    "type": "indoor_outdoor",
+    "address": "復興路395號"
+  },
+  {
+    "name": "育林國小",
+    "lat": 24.986051,
+    "lon": 121.415677,
+    "district": "樹林區",
+    "capacity": 135,
+    "type": "indoor_outdoor",
+    "address": "復興路395號"
+  },
+  {
+    "name": "及人國小",
+    "lat": 25.0157,
+    "lon": 121.512,
+    "district": "永和區",
+    "capacity": 1041,
+    "type": "indoor_outdoor",
+    "address": "永和區新?里文化路172號"
+  },
+  {
+    "name": "復興商工",
+    "lat": 25.0035,
+    "lon": 121.5186,
+    "district": "永和區",
+    "capacity": 827,
+    "type": "indoor_outdoor",
+    "address": "永和區得和里秀朗路一段201號"
+  },
+  {
+    "name": "忠孝市民活動中心",
+    "lat": 25.0169,
+    "lon": 121.5153,
+    "district": "永和區",
+    "capacity": 85,
+    "type": "indoor",
+    "address": "忠孝街26巷8號"
+  },
+  {
+    "name": "智光商工",
+    "lat": 24.9957,
+    "lon": 121.5143,
+    "district": "永和區",
+    "capacity": 722,
+    "type": "indoor_outdoor",
+    "address": "永和區智光里中正路100號"
+  },
+  {
+    "name": "民權市民活動中心",
+    "lat": 24.998,
+    "lon": 121.5199,
+    "district": "永和區",
+    "capacity": 125,
+    "type": "indoor",
+    "address": "永和區民族里民權路60號"
+  },
+  {
+    "name": "永和國中",
+    "lat": 25.0067,
+    "lon": 121.5233,
+    "district": "永和區",
+    "capacity": 1109,
+    "type": "indoor_outdoor",
+    "address": "永和區秀和里國中路111號"
+  },
+  {
+    "name": "永和國小",
+    "lat": 25.0036,
+    "lon": 121.517,
+    "district": "永和區",
+    "capacity": 1329,
+    "type": "indoor_outdoor",
+    "address": "永和區潭墘里秀朗路一段120號"
+  },
+  {
+    "name": "永平國小",
+    "lat": 25.0081,
+    "lon": 121.5057,
+    "district": "永和區",
+    "capacity": 943,
+    "type": "indoor_outdoor",
+    "address": "永和區保安里保生路25號"
+  },
+  {
+    "name": "永平高中",
+    "lat": 25.0108,
+    "lon": 121.5086,
+    "district": "永和區",
+    "capacity": 5315,
+    "type": "indoor_outdoor",
+    "address": "永和區保安里永平路205號"
+  },
+  {
+    "name": "福和國中",
+    "lat": 25.004,
+    "lon": 121.5209,
+    "district": "永和區",
+    "capacity": 1401,
+    "type": "indoor_outdoor",
+    "address": "永和區秀和里永利路71號"
+  },
+  {
+    "name": "秀朗國小",
+    "lat": 24.9997,
+    "lon": 121.5214,
+    "district": "永和區",
+    "capacity": 2124,
+    "type": "indoor_outdoor",
+    "address": "永和區民權里得和路202號"
+  },
+  {
+    "name": "竹林小學",
+    "lat": 25.0145,
+    "lon": 121.5173,
+    "district": "永和區",
+    "capacity": 58,
+    "type": "indoor_outdoor",
+    "address": "永和區勵行里竹林路34號"
+  },
+  {
+    "name": "網溪國小",
+    "lat": 25.0129,
+    "lon": 121.5193,
+    "district": "永和區",
+    "capacity": 853,
+    "type": "indoor_outdoor",
+    "address": "永和區上林里竹林路79號"
+  },
+  {
+    "name": "育才國小",
+    "lat": 25.0071,
+    "lon": 121.5216,
+    "district": "永和區",
+    "capacity": 207,
+    "type": "indoor_outdoor",
+    "address": "永和區永貞里福和路125巷20號"
+  },
+  {
+    "name": "金甌女中",
+    "lat": 25.0158,
+    "lon": 121.5193,
+    "district": "永和區",
+    "capacity": 239,
+    "type": "indoor_outdoor",
+    "address": "永和區復興里博愛街36號"
+  },
+  {
+    "name": "頂溪國小",
+    "lat": 25.0155,
+    "lon": 121.5116,
+    "district": "永和區",
+    "capacity": 888,
+    "type": "indoor_outdoor",
+    "address": "永和區文化里文化路133號"
+  },
+  {
+    "name": "保長國小",
+    "lat": 25.071773,
+    "lon": 121.680851,
+    "district": "汐止區",
+    "capacity": 470,
+    "type": "indoor_outdoor",
+    "address": "大同路三段553號"
+  },
+  {
+    "name": "保長坑訓練中心",
+    "lat": 25.071337,
+    "lon": 121.679316,
+    "district": "汐止區",
+    "capacity": 1075,
+    "type": "indoor_outdoor",
+    "address": "大同路三段469號"
+  },
+  {
+    "name": "北峰國小",
+    "lat": 25.058956,
+    "lon": 121.629106,
+    "district": "汐止區",
+    "capacity": 1067,
+    "type": "indoor_outdoor",
+    "address": "環河街1號"
+  },
+  {
+    "name": "北港國小",
+    "lat": 25.089404,
+    "lon": 121.645595,
+    "district": "汐止區",
+    "capacity": 1307,
+    "type": "indoor_outdoor",
+    "address": "汐萬路二段279號"
+  },
+  {
+    "name": "崇德國小",
+    "lat": 25.069578,
+    "lon": 121.669187,
+    "district": "汐止區",
+    "capacity": 1275,
+    "type": "indoor_outdoor",
+    "address": "茄苳路158號"
+  },
+  {
+    "name": "崇德橋東市民活動中心",
+    "lat": 25.070551,
+    "lon": 121.666953,
+    "district": "汐止區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "茄苳路82號"
+  },
+  {
+    "name": "東山國小",
+    "lat": 25.059723,
+    "lon": 121.699553,
+    "district": "汐止區",
+    "capacity": 118,
+    "type": "indoor_outdoor",
+    "address": "汐平路二段76號"
+  },
+  {
+    "name": "東方科學園區",
+    "lat": 25.060367,
+    "lon": 121.64793,
+    "district": "汐止區",
+    "capacity": 500,
+    "type": "indoor",
+    "address": "汐止區新台五路一段90號"
+  },
+  {
+    "name": "樟樹國中",
+    "lat": 25.06594,
+    "lon": 121.639893,
+    "district": "汐止區",
+    "capacity": 2481,
+    "type": "indoor_outdoor",
+    "address": "樟樹二路135號"
+  },
+  {
+    "name": "樟樹國小",
+    "lat": 25.066498,
+    "lon": 121.641767,
+    "district": "汐止區",
+    "capacity": 1292,
+    "type": "indoor_outdoor",
+    "address": "樟樹一路141巷2號"
+  },
+  {
+    "name": "橫科里活動中心",
+    "lat": 25.05045,
+    "lon": 121.620181,
+    "district": "汐止區",
+    "capacity": 74,
+    "type": "indoor",
+    "address": "橫科路119號"
+  },
+  {
+    "name": "汐止區公所行政中心",
+    "lat": 25.063774,
+    "lon": 121.658894,
+    "district": "汐止區",
+    "capacity": 158,
+    "type": "indoor",
+    "address": "汐止區新台五路一段268號"
+  },
+  {
+    "name": "汐止國中",
+    "lat": 25.066957,
+    "lon": 121.658337,
+    "district": "汐止區",
+    "capacity": 1384,
+    "type": "indoor_outdoor",
+    "address": "大同路二段394號"
+  },
+  {
+    "name": "汐止國小",
+    "lat": 25.066688,
+    "lon": 121.654876,
+    "district": "汐止區",
+    "capacity": 810,
+    "type": "indoor_outdoor",
+    "address": "大同路二段313號"
+  },
+  {
+    "name": "白雲國小",
+    "lat": 25.047641,
+    "lon": 121.618882,
+    "district": "汐止區",
+    "capacity": 96,
+    "type": "indoor_outdoor",
+    "address": "民權街2段90號"
+  },
+  {
+    "name": "白雲里活動中心",
+    "lat": 25.05542,
+    "lon": 121.656768,
+    "district": "汐止區",
+    "capacity": 37,
+    "type": "indoor",
+    "address": "水源路2段112、114號"
+  },
+  {
+    "name": "秀峰國小",
+    "lat": 25.062874,
+    "lon": 121.661377,
+    "district": "汐止區",
+    "capacity": 1185,
+    "type": "indoor_outdoor",
+    "address": "仁愛路90號"
+  },
+  {
+    "name": "秀峰高中",
+    "lat": 25.066456,
+    "lon": 121.661912,
+    "district": "汐止區",
+    "capacity": 1190,
+    "type": "indoor_outdoor",
+    "address": "忠孝東路201號"
+  },
+  {
+    "name": "翠柏新村安養中心-服務大樓",
+    "lat": 25.112499,
+    "lon": 121.603216,
+    "district": "汐止區",
+    "capacity": 203,
+    "type": "indoor",
+    "address": "永春一路5號"
+  },
+  {
+    "name": "茄苳里活動中心",
+    "lat": 25.069255,
+    "lon": 121.672058,
+    "district": "汐止區",
+    "capacity": 53,
+    "type": "indoor",
+    "address": "茄苳路225巷35號"
+  },
+  {
+    "name": "金龍國小",
+    "lat": 25.068806,
+    "lon": 121.627046,
+    "district": "汐止區",
+    "capacity": 600,
+    "type": "indoor_outdoor",
+    "address": "明峰街201號"
+  },
+  {
+    "name": "長安國小",
+    "lat": 25.079315,
+    "lon": 121.670789,
+    "district": "汐止區",
+    "capacity": 807,
+    "type": "indoor_outdoor",
+    "address": "長興街一段80號"
+  },
+  {
+    "name": "長安市民活動中心",
+    "lat": 25.079073,
+    "lon": 121.670529,
+    "district": "汐止區",
+    "capacity": 89,
+    "type": "indoor",
+    "address": "長興街一段50號"
+  },
+  {
+    "name": "青山國中小",
+    "lat": 25.061158,
+    "lon": 121.656653,
+    "district": "汐止區",
+    "capacity": 970,
+    "type": "indoor_outdoor",
+    "address": "莊敬街33號"
+  },
+  {
+    "name": "同榮國小",
+    "lat": 25.0546,
+    "lon": 121.4282,
+    "district": "泰山區",
+    "capacity": 931,
+    "type": "indoor_outdoor",
+    "address": "公園路33號"
+  },
+  {
+    "name": "明志國小",
+    "lat": 25.043,
+    "lon": 121.4317,
+    "district": "泰山區",
+    "capacity": 1024,
+    "type": "indoor_outdoor",
+    "address": "新生路2號"
+  },
+  {
+    "name": "明志市民活動中心",
+    "lat": 25.0577,
+    "lon": 121.4299,
+    "district": "泰山區",
+    "capacity": 20,
+    "type": "indoor",
+    "address": "明志路二段426號"
+  },
+  {
+    "name": "明志科技大學",
+    "lat": 25.0417,
+    "lon": 121.4206,
+    "district": "泰山區",
+    "capacity": 1803,
+    "type": "indoor_outdoor",
+    "address": "工專路84號"
+  },
+  {
+    "name": "楓樹福泰市民活動中心",
+    "lat": 25.062,
+    "lon": 121.4345,
+    "district": "泰山區",
+    "capacity": 201,
+    "type": "indoor",
+    "address": "楓江路26巷26號"
+  },
+  {
+    "name": "泰山區公所",
+    "lat": 25.0592,
+    "lon": 121.4314,
+    "district": "泰山區",
+    "capacity": 53,
+    "type": "indoor",
+    "address": "明志路1段322號"
+  },
+  {
+    "name": "泰山國中",
+    "lat": 25.0652,
+    "lon": 121.426,
+    "district": "泰山區",
+    "capacity": 1388,
+    "type": "indoor_outdoor",
+    "address": "泰林路2段498號"
+  },
+  {
+    "name": "泰山國小",
+    "lat": 25.0623,
+    "lon": 121.4313,
+    "district": "泰山區",
+    "capacity": 1283,
+    "type": "indoor_outdoor",
+    "address": "泰林路2段255號"
+  },
+  {
+    "name": "泰山體育館",
+    "lat": 25.0556,
+    "lon": 121.4263,
+    "district": "泰山區",
+    "capacity": 1280,
+    "type": "indoor_outdoor",
+    "address": "公園路54號"
+  },
+  {
+    "name": "泰山高中",
+    "lat": 25.0573,
+    "lon": 121.4285,
+    "district": "泰山區",
+    "capacity": 650,
+    "type": "indoor_outdoor",
+    "address": "辭修路7號"
+  },
+  {
+    "name": "義仁市民活動中心",
+    "lat": 25.0487,
+    "lon": 121.4273,
+    "district": "泰山區",
+    "capacity": 55,
+    "type": "indoor",
+    "address": "明志路二段185號"
+  },
+  {
+    "name": "義學國中",
+    "lat": 25.0472,
+    "lon": 121.4347,
+    "district": "泰山區",
+    "capacity": 606,
+    "type": "indoor_outdoor",
+    "address": "民生路30號"
+  },
+  {
+    "name": "義學國小",
+    "lat": 25.0472,
+    "lon": 121.4347,
+    "district": "泰山區",
+    "capacity": 952,
+    "type": "indoor_outdoor",
+    "address": "民生路33號"
+  },
+  {
+    "name": "貴和市民活動中心",
+    "lat": 25.0394,
+    "lon": 121.4266,
+    "district": "泰山區",
+    "capacity": 76,
+    "type": "indoor",
+    "address": "明志路三段365號"
+  },
+  {
+    "name": "黎明市民活動中心",
+    "lat": 25.0627,
+    "lon": 121.421,
+    "district": "泰山區",
+    "capacity": 21,
+    "type": "indoor",
+    "address": "黎明路23號"
+  },
+  {
+    "name": "黎明技術學院",
+    "lat": 25.0658,
+    "lon": 121.4199,
+    "district": "泰山區",
+    "capacity": 1081,
+    "type": "indoor_outdoor",
+    "address": "黎專路2之2號"
+  },
+  {
+    "name": "中泰國小",
+    "lat": 25.2241,
+    "lon": 121.4847,
+    "district": "淡水區",
+    "capacity": 915,
+    "type": "indoor_outdoor",
+    "address": "中和里北勢子5號"
+  },
+  {
+    "name": "中興活動中心",
+    "lat": 25.1723,
+    "lon": 121.4432,
+    "district": "淡水區",
+    "capacity": 57,
+    "type": "indoor",
+    "address": "水源街一段29號"
+  },
+  {
+    "name": "坪頂國小",
+    "lat": 25.1583,
+    "lon": 121.4839,
+    "district": "淡水區",
+    "capacity": 395,
+    "type": "indoor_outdoor",
+    "address": "小坪頂18號"
+  },
+  {
+    "name": "天生國小",
+    "lat": 25.1816,
+    "lon": 121.4243,
+    "district": "淡水區",
+    "capacity": 798,
+    "type": "indoor_outdoor",
+    "address": "淡海路72巷26號"
+  },
+  {
+    "name": "屯山國小",
+    "lat": 25.2373,
+    "lon": 121.4564,
+    "district": "淡水區",
+    "capacity": 251,
+    "type": "indoor_outdoor",
+    "address": "淡金路五段111號"
+  },
+  {
+    "name": "忠山國小",
+    "lat": 25.2011,
+    "lon": 121.48,
+    "district": "淡水區",
+    "capacity": 213,
+    "type": "indoor_outdoor",
+    "address": "行忠路899號"
+  },
+  {
+    "name": "文化國小",
+    "lat": 25.174,
+    "lon": 121.4374,
+    "district": "淡水區",
+    "capacity": 436,
+    "type": "indoor_outdoor",
+    "address": "真理街6號"
+  },
+  {
+    "name": "新市國小",
+    "lat": 25.186023,
+    "lon": 121.44451,
+    "district": "淡水區",
+    "capacity": 1490,
+    "type": "outdoor",
+    "address": "中山北路二段200號"
+  },
+  {
+    "name": "新興國小",
+    "lat": 25.1797,
+    "lon": 121.44,
+    "district": "淡水區",
+    "capacity": 663,
+    "type": "indoor_outdoor",
+    "address": "新興街123號"
+  },
+  {
+    "name": "新興活動中心",
+    "lat": 25.178396,
+    "lon": 121.443054,
+    "district": "淡水區",
+    "capacity": 446,
+    "type": "indoor",
+    "address": "大義街18號"
+  },
+  {
+    "name": "樹興里活動中心",
+    "lat": 25.168467,
+    "lon": 121.476943,
+    "district": "淡水區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "樹林口14-2號"
+  },
+  {
+    "name": "正德國中",
+    "lat": 25.179,
+    "lon": 121.4476,
+    "district": "淡水區",
+    "capacity": 2005,
+    "type": "indoor_outdoor",
+    "address": "北新路109號"
+  },
+  {
+    "name": "民生活動中心",
+    "lat": 25.138,
+    "lon": 121.4613,
+    "district": "淡水區",
+    "capacity": 72,
+    "type": "indoor",
+    "address": "民生路27號"
+  },
+  {
+    "name": "水源國小",
+    "lat": 25.1858,
+    "lon": 121.4765,
+    "district": "淡水區",
+    "capacity": 614,
+    "type": "indoor_outdoor",
+    "address": "北新路二段15號"
+  },
+  {
+    "name": "水源里活動中心",
+    "lat": 25.185817,
+    "lon": 121.476527,
+    "district": "淡水區",
+    "capacity": 85,
+    "type": "indoor",
+    "address": "北新路二段15號2樓"
+  },
+  {
+    "name": "水碓活動中心",
+    "lat": 25.178,
+    "lon": 121.4442,
+    "district": "淡水區",
+    "capacity": 102,
+    "type": "indoor",
+    "address": "中山北路158號"
+  },
+  {
+    "name": "淡水商工",
+    "lat": 25.1868,
+    "lon": 121.454,
+    "district": "淡水區",
+    "capacity": 1264,
+    "type": "indoor_outdoor",
+    "address": "商工路307號"
+  },
+  {
+    "name": "淡水國中",
+    "lat": 25.1747,
+    "lon": 121.4367,
+    "district": "淡水區",
+    "capacity": 1608,
+    "type": "indoor_outdoor",
+    "address": "真理街10號"
+  },
+  {
+    "name": "淡水國小",
+    "lat": 25.1734,
+    "lon": 121.4414,
+    "district": "淡水區",
+    "capacity": 665,
+    "type": "indoor_outdoor",
+    "address": "中山路160號"
+  },
+  {
+    "name": "淡海活動中心",
+    "lat": 25.181789,
+    "lon": 121.422969,
+    "district": "淡水區",
+    "capacity": 148,
+    "type": "indoor",
+    "address": "淡海路111號"
+  },
+  {
+    "name": "真聖宮",
+    "lat": 25.165487,
+    "lon": 121.492159,
+    "district": "淡水區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "興福寮6之1號"
+  },
+  {
+    "name": "竹圍國小",
+    "lat": 25.1475,
+    "lon": 121.4602,
+    "district": "淡水區",
+    "capacity": 580,
+    "type": "indoor_outdoor",
+    "address": "中正東路2段145號"
+  },
+  {
+    "name": "竹圍國小自強分校",
+    "lat": 25.1257,
+    "lon": 121.464,
+    "district": "淡水區",
+    "capacity": 207,
+    "type": "indoor_outdoor",
+    "address": "自強路33號"
+  },
+  {
+    "name": "竹圍高中",
+    "lat": 25.146,
+    "lon": 121.4617,
+    "district": "淡水區",
+    "capacity": 612,
+    "type": "indoor_outdoor",
+    "address": "竹林路35號"
+  },
+  {
+    "name": "竿蓁活動中心",
+    "lat": 25.163513,
+    "lon": 121.451437,
+    "district": "淡水區",
+    "capacity": 193,
+    "type": "indoor",
+    "address": "中正東路一段3巷6號"
+  },
+  {
+    "name": "育英國小",
+    "lat": 25.197,
+    "lon": 121.4449,
+    "district": "淡水區",
+    "capacity": 261,
+    "type": "indoor_outdoor",
+    "address": "埤島里14號"
+  },
+  {
+    "name": "興仁國小",
+    "lat": 25.2175,
+    "lon": 121.4511,
+    "district": "淡水區",
+    "capacity": 450,
+    "type": "indoor_outdoor",
+    "address": "興仁路101巷10號"
+  },
+  {
+    "name": "興音寺",
+    "lat": 25.163997,
+    "lon": 121.48835,
+    "district": "淡水區",
+    "capacity": 150,
+    "type": "indoor",
+    "address": "興福寮1-6號"
+  },
+  {
+    "name": "鄧公國小",
+    "lat": 25.1713,
+    "lon": 121.4493,
+    "district": "淡水區",
+    "capacity": 1066,
+    "type": "indoor_outdoor",
+    "address": "學府路99號"
+  },
+  {
+    "name": "長庚活動中心",
+    "lat": 25.1711,
+    "lon": 121.4432,
+    "district": "淡水區",
+    "capacity": 74,
+    "type": "indoor",
+    "address": "中山路72巷1弄10號"
+  },
+  {
+    "name": "長青醫院",
+    "lat": 25.171075,
+    "lon": 121.482713,
+    "district": "淡水區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "糞箕湖1-5號"
+  },
+  {
+    "name": "土庫第1市民活動中心",
+    "lat": 25.01,
+    "lon": 121.6346,
+    "district": "深坑區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "土庫里北深路1段83巷8弄36號"
+  },
+  {
+    "name": "昇高市民活動中心",
+    "lat": 25.0049,
+    "lon": 121.6287,
+    "district": "深坑區",
+    "capacity": 87,
+    "type": "indoor",
+    "address": "昇高里旺耽路25號"
+  },
+  {
+    "name": "東南科技大學",
+    "lat": 25.0044,
+    "lon": 121.6047,
+    "district": "深坑區",
+    "capacity": 916,
+    "type": "indoor_outdoor",
+    "address": "萬福里北深路3段152號"
+  },
+  {
+    "name": "深坑區公所",
+    "lat": 25.0025,
+    "lon": 121.616,
+    "district": "深坑區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "深坑里深坑街10號"
+  },
+  {
+    "name": "深坑國中",
+    "lat": 25.0017,
+    "lon": 121.6183,
+    "district": "深坑區",
+    "capacity": 304,
+    "type": "indoor_outdoor",
+    "address": "深坑里文化路41號"
+  },
+  {
+    "name": "深坑國小",
+    "lat": 25.0018,
+    "lon": 121.6169,
+    "district": "深坑區",
+    "capacity": 632,
+    "type": "indoor_outdoor",
+    "address": "深坑里文化路45號"
+  },
+  {
+    "name": "深坑市民活動中心",
+    "lat": 25.0025,
+    "lon": 121.6147,
+    "district": "深坑區",
+    "capacity": 36,
+    "type": "indoor",
+    "address": "深坑里北深路2段166號"
+  },
+  {
+    "name": "萬順市民活動中心",
+    "lat": 25.0008,
+    "lon": 121.6041,
+    "district": "深坑區",
+    "capacity": 22,
+    "type": "indoor",
+    "address": "萬順里北深路3段107巷26號"
+  },
+  {
+    "name": "阿柔市民活動中心",
+    "lat": 24.9983,
+    "lon": 121.6072,
+    "district": "深坑區",
+    "capacity": 57,
+    "type": "indoor",
+    "address": "阿柔里阿柔洋62號"
+  },
+  {
+    "name": "信賢活動中心",
+    "lat": 24.883684,
+    "lon": 121.548453,
+    "district": "烏來區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "信福路48號"
+  },
+  {
+    "name": "忠治活動中心",
+    "lat": 24.883684,
+    "lon": 121.548453,
+    "district": "烏來區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "忠治14號"
+  },
+  {
+    "name": "烏來國民中小學",
+    "lat": 24.863755,
+    "lon": 121.553147,
+    "district": "烏來區",
+    "capacity": 152,
+    "type": "indoor",
+    "address": "啦卡路5號"
+  },
+  {
+    "name": "烏來活動中心",
+    "lat": 24.883684,
+    "lon": 121.548453,
+    "district": "烏來區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "13鄰環山路82巷45號"
+  },
+  {
+    "name": "福山國小",
+    "lat": 24.883684,
+    "lon": 121.548453,
+    "district": "烏來區",
+    "capacity": 305,
+    "type": "indoor",
+    "address": "福山里李茂岸56號"
+  },
+  {
+    "name": "福山活動中心",
+    "lat": 24.883684,
+    "lon": 121.548453,
+    "district": "烏來區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "2鄰李茂岸51號"
+  },
+  {
+    "name": "綜合活動中心",
+    "lat": 24.883684,
+    "lon": 121.548453,
+    "district": "烏來區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "烏來街34號"
+  },
+  {
+    "name": "九份國小",
+    "lat": 25.1071,
+    "lon": 121.8434,
+    "district": "瑞芳區",
+    "capacity": 172,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區崙頂路145號"
+  },
+  {
+    "name": "傑魚市民活動中心",
+    "lat": 25.1065,
+    "lon": 121.788,
+    "district": "瑞芳區",
+    "capacity": 231,
+    "type": "outdoor",
+    "address": "傑魚坑路245巷2-1號2樓"
+  },
+  {
+    "name": "勸濟堂",
+    "lat": 25.1107,
+    "lon": 121.86,
+    "district": "瑞芳區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "瑞芳區祈堂路53號"
+  },
+  {
+    "name": "吉慶國小",
+    "lat": 25.1037,
+    "lon": 121.7628,
+    "district": "瑞芳區",
+    "capacity": 403,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區大埔路95號"
+  },
+  {
+    "name": "威遠廟",
+    "lat": 25.120447,
+    "lon": 121.868114,
+    "district": "瑞芳區",
+    "capacity": 82,
+    "type": "indoor",
+    "address": "明里路7-1號"
+  },
+  {
+    "name": "新山里活動中心",
+    "lat": 25.107,
+    "lon": 121.8515,
+    "district": "瑞芳區",
+    "capacity": 41,
+    "type": "outdoor",
+    "address": "金光路241號之1"
+  },
+  {
+    "name": "東和市民活動中心",
+    "lat": 25.1204,
+    "lon": 121.8879,
+    "district": "瑞芳區",
+    "capacity": 95,
+    "type": "outdoor",
+    "address": "中山路20號"
+  },
+  {
+    "name": "深澳里市民活動中心",
+    "lat": 25.129623,
+    "lon": 121.817974,
+    "district": "瑞芳區",
+    "capacity": 113,
+    "type": "indoor",
+    "address": "深澳路67 之1號"
+  },
+  {
+    "name": "濂洞國小",
+    "lat": 25.1223,
+    "lon": 121.8598,
+    "district": "瑞芳區",
+    "capacity": 228,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區凍頂路101巷80號"
+  },
+  {
+    "name": "爪峰里活動中心",
+    "lat": 25.1056,
+    "lon": 121.8135,
+    "district": "瑞芳區",
+    "capacity": 162,
+    "type": "outdoor",
+    "address": "三爪子坑路279-2號"
+  },
+  {
+    "name": "猴硐國小",
+    "lat": 25.0889,
+    "lon": 121.8296,
+    "district": "瑞芳區",
+    "capacity": 101,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區九芎橋路69-1號"
+  },
+  {
+    "name": "瑞濱國小",
+    "lat": 25.120495,
+    "lon": 121.820317,
+    "district": "瑞芳區",
+    "capacity": 877,
+    "type": "outdoor",
+    "address": "瑞濱路34號"
+  },
+  {
+    "name": "瑞濱市民活動中心",
+    "lat": 25.1212,
+    "lon": 121.8205,
+    "district": "瑞芳區",
+    "capacity": 115,
+    "type": "indoor",
+    "address": "瑞芳區建基路1段4之2號"
+  },
+  {
+    "name": "瑞芳區公所",
+    "lat": 25.1088,
+    "lon": 121.8095,
+    "district": "瑞芳區",
+    "capacity": 115,
+    "type": "indoor",
+    "address": "瑞芳區逢甲路82號"
+  },
+  {
+    "name": "瑞芳國中",
+    "lat": 25.1075,
+    "lon": 121.8145,
+    "district": "瑞芳區",
+    "capacity": 1826,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區三爪子坑路1號"
+  },
+  {
+    "name": "瑞芳國小",
+    "lat": 25.1079,
+    "lon": 121.8039,
+    "district": "瑞芳區",
+    "capacity": 447,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區中山路2號"
+  },
+  {
+    "name": "瑞芳高工",
+    "lat": 25.1104,
+    "lon": 121.8036,
+    "district": "瑞芳區",
+    "capacity": 1360,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區瑞芳街60號"
+  },
+  {
+    "name": "瑞龍市民活動中心",
+    "lat": 25.107577,
+    "lon": 121.809092,
+    "district": "瑞芳區",
+    "capacity": 580,
+    "type": "indoor",
+    "address": "明燈路3段2號"
+  },
+  {
+    "name": "瓜山國小",
+    "lat": 25.1111,
+    "lon": 121.8569,
+    "district": "瑞芳區",
+    "capacity": 232,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區五號路306號"
+  },
+  {
+    "name": "福住市民活動中心",
+    "lat": 25.106736,
+    "lon": 121.841768,
+    "district": "瑞芳區",
+    "capacity": 53,
+    "type": "indoor",
+    "address": "佛堂巷7號"
+  },
+  {
+    "name": "鼻頭國小",
+    "lat": 25.1208,
+    "lon": 121.9194,
+    "district": "瑞芳區",
+    "capacity": 251,
+    "type": "indoor_outdoor",
+    "address": "瑞芳區鼻頭路99號"
+  },
+  {
+    "name": "永定國小",
+    "lat": 25.0078,
+    "lon": 121.688,
+    "district": "石碇區",
+    "capacity": 330,
+    "type": "indoor_outdoor",
+    "address": "靜安路一段245號"
+  },
+  {
+    "name": "石碇國小",
+    "lat": 24.9903,
+    "lon": 121.659,
+    "district": "石碇區",
+    "capacity": 109,
+    "type": "indoor_outdoor",
+    "address": "石碇西街15號"
+  },
+  {
+    "name": "石碇綜合活動大樓",
+    "lat": 25.0101,
+    "lon": 121.6423,
+    "district": "石碇區",
+    "capacity": 200,
+    "type": "indoor",
+    "address": "楓子林32-1號"
+  },
+  {
+    "name": "石碇高中",
+    "lat": 25.0127,
+    "lon": 121.6426,
+    "district": "石碇區",
+    "capacity": 963,
+    "type": "indoor_outdoor",
+    "address": "八分寮45號"
+  },
+  {
+    "name": "華梵大學于藝館3樓",
+    "lat": 24.98,
+    "lon": 121.6921,
+    "district": "石碇區",
+    "capacity": 100,
+    "type": "indoor_outdoor",
+    "address": "華梵路1號"
+  },
+  {
+    "name": "雲海國小",
+    "lat": 24.9533,
+    "lon": 121.637,
+    "district": "石碇區",
+    "capacity": 299,
+    "type": "indoor_outdoor",
+    "address": "坑內1號"
+  },
+  {
+    "name": "乾華國小禮堂",
+    "lat": 25.2693,
+    "lon": 121.5923,
+    "district": "石門區",
+    "capacity": 671,
+    "type": "indoor_outdoor",
+    "address": "石門區茂林社區74號"
+  },
+  {
+    "name": "北海岸風景管理處德茂里活動中心",
+    "lat": 25.283263,
+    "lon": 121.519157,
+    "district": "石門區",
+    "capacity": 25,
+    "type": "indoor",
+    "address": "德茂里下員坑 33-6號"
+  },
+  {
+    "name": "妙濟寺",
+    "lat": 25.254077,
+    "lon": 121.592343,
+    "district": "石門區",
+    "capacity": 62,
+    "type": "outdoor",
+    "address": "4鄰內阿里磅1號"
+  },
+  {
+    "name": "富基里活動中心",
+    "lat": 25.289023,
+    "lon": 121.540628,
+    "district": "石門區",
+    "capacity": 69,
+    "type": "indoor_outdoor",
+    "address": "富基里楓林37-6號"
+  },
+  {
+    "name": "尖鹿里活動中心",
+    "lat": 25.292022,
+    "lon": 121.566842,
+    "district": "石門區",
+    "capacity": 25,
+    "type": "indoor",
+    "address": "尖鹿里中央路9之3號1樓"
+  },
+  {
+    "name": "山溪里活動中心",
+    "lat": 25.290889,
+    "lon": 121.55172,
+    "district": "石門區",
+    "capacity": 275,
+    "type": "indoor",
+    "address": "山溪里老崩山6-5號"
+  },
+  {
+    "name": "石門區公所",
+    "lat": 25.2912,
+    "lon": 121.5679,
+    "district": "石門區",
+    "capacity": 312,
+    "type": "indoor",
+    "address": "石門區尖鹿里中山路66號"
+  },
+  {
+    "name": "石門區體育館",
+    "lat": 25.2912,
+    "lon": 121.5645,
+    "district": "石門區",
+    "capacity": 325,
+    "type": "indoor_outdoor",
+    "address": "石門區石門里中央路1-9號"
+  },
+  {
+    "name": "石門國小",
+    "lat": 25.291855,
+    "lon": 121.56704,
+    "district": "石門區",
+    "capacity": 695,
+    "type": "indoor_outdoor",
+    "address": "中央路9號"
+  },
+  {
+    "name": "石門國民中學",
+    "lat": 25.2913,
+    "lon": 121.5646,
+    "district": "石門區",
+    "capacity": 435,
+    "type": "indoor_outdoor",
+    "address": "石門區尖鹿里中央路1--9號"
+  },
+  {
+    "name": "石門里活動中心",
+    "lat": 25.291194,
+    "lon": 121.565885,
+    "district": "石門區",
+    "capacity": 52,
+    "type": "indoor",
+    "address": "石門街一號"
+  },
+  {
+    "name": "老梅國小教室",
+    "lat": 25.2889,
+    "lon": 121.545,
+    "district": "石門區",
+    "capacity": 426,
+    "type": "indoor_outdoor",
+    "address": "石門區老梅老梅路10號"
+  },
+  {
+    "name": "老梅里活動中心",
+    "lat": 25.289433,
+    "lon": 121.545195,
+    "district": "石門區",
+    "capacity": 54,
+    "type": "indoor",
+    "address": "老梅里老梅路43號3樓"
+  },
+  {
+    "name": "茂林里活動中心",
+    "lat": 25.27188,
+    "lon": 121.591831,
+    "district": "石門區",
+    "capacity": 110,
+    "type": "indoor_outdoor",
+    "address": "茂林社區1-1號"
+  },
+  {
+    "name": "草里里活動中心",
+    "lat": 25.28074,
+    "lon": 121.606719,
+    "district": "石門區",
+    "capacity": 78,
+    "type": "indoor",
+    "address": "草里里阿里荖33號之1"
+  },
+  {
+    "name": "中華商業海事職業學校",
+    "lat": 25.177827,
+    "lon": 121.685353,
+    "district": "萬里區",
+    "capacity": 125,
+    "type": "indoor_outdoor",
+    "address": "瑪鋉路15號"
+  },
+  {
+    "name": "仁愛之家",
+    "lat": 25.1978,
+    "lon": 121.6841,
+    "district": "萬里區",
+    "capacity": 269,
+    "type": "indoor",
+    "address": "龜吼里玉田路61號"
+  },
+  {
+    "name": "基督教芥菜種營地",
+    "lat": 25.191878,
+    "lon": 121.678967,
+    "district": "萬里區",
+    "capacity": 200,
+    "type": "outdoor",
+    "address": "玉田路25號"
+  },
+  {
+    "name": "大坪國小",
+    "lat": 25.1642,
+    "lon": 121.6364,
+    "district": "萬里區",
+    "capacity": 240,
+    "type": "indoor_outdoor",
+    "address": "萬里區雙興里大坪路19號"
+  },
+  {
+    "name": "大鵬國小",
+    "lat": 25.208821,
+    "lon": 121.650866,
+    "district": "萬里區",
+    "capacity": 1306,
+    "type": "indoor_outdoor",
+    "address": "萬里加投14號"
+  },
+  {
+    "name": "崁腳國小",
+    "lat": 25.1599,
+    "lon": 121.6486,
+    "district": "萬里區",
+    "capacity": 251,
+    "type": "indoor_outdoor",
+    "address": "崁腳里崁腳路59號"
+  },
+  {
+    "name": "崁腳活動中心",
+    "lat": 25.1605,
+    "lon": 121.6497,
+    "district": "萬里區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "崁腳里崁腳路55-1號"
+  },
+  {
+    "name": "獅頭路瑪鋉公園",
+    "lat": 25.177832,
+    "lon": 121.691926,
+    "district": "萬里區",
+    "capacity": 225,
+    "type": "outdoor",
+    "address": "中萬里加投瑪鋉港口小段269-20地號"
+  },
+  {
+    "name": "磺潭社區親水公園",
+    "lat": 25.202226,
+    "lon": 121.646291,
+    "district": "萬里區",
+    "capacity": 225,
+    "type": "outdoor",
+    "address": "員潭路"
+  },
+  {
+    "name": "萬里區行政大樓",
+    "lat": 25.1778,
+    "lon": 121.6854,
+    "district": "萬里區",
+    "capacity": 214,
+    "type": "indoor",
+    "address": "萬里里瑪鋉路123號6樓"
+  },
+  {
+    "name": "萬里區行政大樓",
+    "lat": 25.178167,
+    "lon": 121.689623,
+    "district": "萬里區",
+    "capacity": 214,
+    "type": "indoor",
+    "address": "萬里里瑪鋉路123號6樓"
+  },
+  {
+    "name": "萬里國中",
+    "lat": 25.177791,
+    "lon": 121.694414,
+    "district": "萬里區",
+    "capacity": 475,
+    "type": "indoor",
+    "address": "獅頭路24號"
+  },
+  {
+    "name": "萬里國小",
+    "lat": 25.176187,
+    "lon": 121.689132,
+    "district": "萬里區",
+    "capacity": 897,
+    "type": "indoor_outdoor",
+    "address": "萬里里瑪鋉路18號"
+  },
+  {
+    "name": "野柳國小",
+    "lat": 25.205606,
+    "lon": 121.689442,
+    "district": "萬里區",
+    "capacity": 658,
+    "type": "indoor_outdoor",
+    "address": "港東路167號"
+  },
+  {
+    "name": "野柳活動中心",
+    "lat": 25.2029,
+    "lon": 121.6861,
+    "district": "萬里區",
+    "capacity": 216,
+    "type": "indoor",
+    "address": "野柳里港東路1-5號"
+  },
+  {
+    "name": "鎮北宮",
+    "lat": 25.183902,
+    "lon": 121.680262,
+    "district": "萬里區",
+    "capacity": 175,
+    "type": "outdoor",
+    "address": "玉田路4-2號"
+  },
+  {
+    "name": "頂寮活動中心",
+    "lat": 25.210529,
+    "lon": 121.655728,
+    "district": "萬里區",
+    "capacity": 69,
+    "type": "indoor",
+    "address": "頂社路18號之6"
+  },
+  {
+    "name": "三民高中",
+    "lat": 25.0866,
+    "lon": 121.4723,
+    "district": "蘆洲區",
+    "capacity": 5011,
+    "type": "indoor_outdoor",
+    "address": "三民路96號"
+  },
+  {
+    "name": "中路市民活動中心",
+    "lat": 25.0821,
+    "lon": 121.4675,
+    "district": "蘆洲區",
+    "capacity": 27,
+    "type": "indoor",
+    "address": "光華路107巷11號"
+  },
+  {
+    "name": "仁愛國小",
+    "lat": 25.0915,
+    "lon": 121.471,
+    "district": "蘆洲區",
+    "capacity": 584,
+    "type": "indoor_outdoor",
+    "address": "民族路488號"
+  },
+  {
+    "name": "徐匯中學",
+    "lat": 25.0803,
+    "lon": 121.48,
+    "district": "蘆洲區",
+    "capacity": 784,
+    "type": "indoor_outdoor",
+    "address": "中山一路1號"
+  },
+  {
+    "name": "得仁市民活動中心",
+    "lat": 25.0767,
+    "lon": 121.469,
+    "district": "蘆洲區",
+    "capacity": 52,
+    "type": "indoor",
+    "address": "中山一路415號6樓"
+  },
+  {
+    "name": "忠義國小",
+    "lat": 25.0893,
+    "lon": 121.4639,
+    "district": "蘆洲區",
+    "capacity": 1106,
+    "type": "indoor_outdoor",
+    "address": "光榮路99號"
+  },
+  {
+    "name": "成功國小",
+    "lat": 25.0857,
+    "lon": 121.4575,
+    "district": "蘆洲區",
+    "capacity": 495,
+    "type": "indoor_outdoor",
+    "address": "長安街311號"
+  },
+  {
+    "name": "民生市民活動中心",
+    "lat": 25.0785,
+    "lon": 121.4728,
+    "district": "蘆洲區",
+    "capacity": 20,
+    "type": "indoor",
+    "address": "民生街129巷14號"
+  },
+  {
+    "name": "水湳市民活動中心",
+    "lat": 25.0927,
+    "lon": 121.4731,
+    "district": "蘆洲區",
+    "capacity": 34,
+    "type": "indoor",
+    "address": "民族路426巷17號"
+  },
+  {
+    "name": "永安兒童公園市民活動中心",
+    "lat": 25.081635,
+    "lon": 121.481944,
+    "district": "蘆洲區",
+    "capacity": 87,
+    "type": "indoor",
+    "address": "永安北路二段42之6號"
+  },
+  {
+    "name": "永平市民活動中心",
+    "lat": 25.0904,
+    "lon": 121.4592,
+    "district": "蘆洲區",
+    "capacity": 151,
+    "type": "indoor",
+    "address": "永平街1號4樓"
+  },
+  {
+    "name": "溪墘湧蓮市民活動中心",
+    "lat": 25.079572,
+    "lon": 121.476051,
+    "district": "蘆洲區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "信義路65號"
+  },
+  {
+    "name": "蘆洲區公所",
+    "lat": 25.0847,
+    "lon": 121.4739,
+    "district": "蘆洲區",
+    "capacity": 185,
+    "type": "indoor",
+    "address": "三民路95號"
+  },
+  {
+    "name": "蘆洲國中",
+    "lat": 25.0871,
+    "lon": 121.4664,
+    "district": "蘆洲區",
+    "capacity": 2520,
+    "type": "indoor_outdoor",
+    "address": "中正路265號"
+  },
+  {
+    "name": "蘆洲國小",
+    "lat": 25.0841,
+    "lon": 121.47,
+    "district": "蘆洲區",
+    "capacity": 2139,
+    "type": "indoor_outdoor",
+    "address": "中正路100號"
+  },
+  {
+    "name": "財團法人臺灣省臺北縣基督教徒蘆洲",
+    "lat": 25.0835,
+    "lon": 121.4786,
+    "district": "蘆洲區",
+    "capacity": 75,
+    "type": "indoor",
+    "address": "三民路26巷71弄2號B1地下室"
+  },
+  {
+    "name": "重陽市民活動中心",
+    "lat": 25.0857,
+    "lon": 121.4837,
+    "district": "蘆洲區",
+    "capacity": 58,
+    "type": "indoor",
+    "address": "集賢路221巷11號"
+  },
+  {
+    "name": "長安市民活動中心",
+    "lat": 25.0807,
+    "lon": 121.4619,
+    "district": "蘆洲區",
+    "capacity": 123,
+    "type": "indoor",
+    "address": "長安街96號4樓"
+  },
+  {
+    "name": "鷺江國中",
+    "lat": 25.0903,
+    "lon": 121.4618,
+    "district": "蘆洲區",
+    "capacity": 659,
+    "type": "indoor_outdoor",
+    "address": "長樂路235號"
+  },
+  {
+    "name": "鷺江國小",
+    "lat": 25.0853,
+    "lon": 121.4769,
+    "district": "蘆洲區",
+    "capacity": 1002,
+    "type": "indoor_outdoor",
+    "address": "民族路7號"
+  },
+  {
+    "name": "仁和宮",
+    "lat": 25.051427,
+    "lon": 121.92262,
+    "district": "貢寮區",
+    "capacity": 125,
+    "type": "indoor",
+    "address": "仁和路11號"
+  },
+  {
+    "name": "佛祖廟西側高地",
+    "lat": 25.112326,
+    "lon": 121.919336,
+    "district": "貢寮區",
+    "capacity": 62,
+    "type": "outdoor",
+    "address": "佛祖廟西側高地"
+  },
+  {
+    "name": "佛祖廟西靈岩寺",
+    "lat": 25.105105,
+    "lon": 121.921149,
+    "district": "貢寮區",
+    "capacity": 62,
+    "type": "outdoor",
+    "address": "佛祖廟西靈岩寺"
+  },
+  {
+    "name": "和美國小",
+    "lat": 25.1123,
+    "lon": 121.9193,
+    "district": "貢寮區",
+    "capacity": 117,
+    "type": "indoor_outdoor",
+    "address": "龍洞街1-9號"
+  },
+  {
+    "name": "慶安宮",
+    "lat": 25.054921,
+    "lon": 121.923804,
+    "district": "貢寮區",
+    "capacity": 12,
+    "type": "indoor",
+    "address": "延平街13號"
+  },
+  {
+    "name": "昭惠廟",
+    "lat": 25.0273,
+    "lon": 121.9316,
+    "district": "貢寮區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "龍門街74-1號"
+  },
+  {
+    "name": "澳底國小大禮堂",
+    "lat": 25.0549,
+    "lon": 121.9246,
+    "district": "貢寮區",
+    "capacity": 479,
+    "type": "indoor_outdoor",
+    "address": "延平街10號"
+  },
+  {
+    "name": "澳底圖書館",
+    "lat": 25.054775,
+    "lon": 121.926916,
+    "district": "貢寮區",
+    "capacity": 157,
+    "type": "indoor",
+    "address": "仁愛路79號3樓"
+  },
+  {
+    "name": "福安廟",
+    "lat": 25.0655,
+    "lon": 121.8952,
+    "district": "貢寮區",
+    "capacity": 40,
+    "type": "indoor",
+    "address": "雞母嶺街7號"
+  },
+  {
+    "name": "福連國小",
+    "lat": 25.0162,
+    "lon": 121.9888,
+    "district": "貢寮區",
+    "capacity": 300,
+    "type": "indoor_outdoor",
+    "address": "福連街1號"
+  },
+  {
+    "name": "福隆國小",
+    "lat": 25.0171,
+    "lon": 121.9487,
+    "district": "貢寮區",
+    "capacity": 430,
+    "type": "indoor_outdoor",
+    "address": "東興街35號"
+  },
+  {
+    "name": "福隆青少年活動中心",
+    "lat": 25.0184,
+    "lon": 121.9457,
+    "district": "貢寮區",
+    "capacity": 403,
+    "type": "indoor",
+    "address": "福隆里福隆街60號"
+  },
+  {
+    "name": "虎子山",
+    "lat": 25.015188,
+    "lon": 121.944391,
+    "district": "貢寮區",
+    "capacity": 50,
+    "type": "outdoor",
+    "address": "虎子山街"
+  },
+  {
+    "name": "豐珠國中小活動中心",
+    "lat": 25.042385,
+    "lon": 121.533012,
+    "district": "貢寮區",
+    "capacity": 369,
+    "type": "indoor_outdoor",
+    "address": "雞母嶺街6-6號"
+  },
+  {
+    "name": "貢寮國中",
+    "lat": 25.0164,
+    "lon": 121.9071,
+    "district": "貢寮區",
+    "capacity": 661,
+    "type": "indoor_outdoor",
+    "address": "嵩陽路42號"
+  },
+  {
+    "name": "貢寮國小",
+    "lat": 25.022,
+    "lon": 121.9151,
+    "district": "貢寮區",
+    "capacity": 633,
+    "type": "indoor_outdoor",
+    "address": "學苑街7號"
+  },
+  {
+    "name": "貢寮市民活動中心",
+    "lat": 25.0206,
+    "lon": 121.9075,
+    "district": "貢寮區",
+    "capacity": 176,
+    "type": "indoor",
+    "address": "長泰路18-2號"
+  },
+  {
+    "name": "靈鷲山無生道場",
+    "lat": 25.0177,
+    "lon": 121.9729,
+    "district": "貢寮區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "香蘭街7-1號"
+  },
+  {
+    "name": "三和國小",
+    "lat": 25.2189,
+    "lon": 121.6029,
+    "district": "金山區",
+    "capacity": 156,
+    "type": "indoor_outdoor",
+    "address": "金山區重和里六股林口38號"
+  },
+  {
+    "name": "中山堂〈1樓禮堂〉",
+    "lat": 25.2217,
+    "lon": 121.6408,
+    "district": "金山區",
+    "capacity": 501,
+    "type": "indoor",
+    "address": "金山區大同里溫泉路2巷10號"
+  },
+  {
+    "name": "中角國小",
+    "lat": 25.2398,
+    "lon": 121.6306,
+    "district": "金山區",
+    "capacity": 249,
+    "type": "indoor_outdoor",
+    "address": "金山區萬壽里海興路49號"
+  },
+  {
+    "name": "公館崙公園",
+    "lat": 25.213216,
+    "lon": 121.631809,
+    "district": "金山區",
+    "capacity": 500,
+    "type": "outdoor",
+    "address": "月眉路"
+  },
+  {
+    "name": "六三社區活動中心",
+    "lat": 25.230093,
+    "lon": 121.620711,
+    "district": "金山區",
+    "capacity": 45,
+    "type": "indoor",
+    "address": "三界壇路101-1號"
+  },
+  {
+    "name": "聖德宮",
+    "lat": 25.231106,
+    "lon": 121.619908,
+    "district": "金山區",
+    "capacity": 187,
+    "type": "outdoor",
+    "address": "三界壇路72號"
+  },
+  {
+    "name": "萬壽活動中心",
+    "lat": 25.2405,
+    "lon": 121.631354,
+    "district": "金山區",
+    "capacity": 73,
+    "type": "indoor",
+    "address": "海興路69號之1"
+  },
+  {
+    "name": "金山區獅頭山公園",
+    "lat": 25.231103,
+    "lon": 121.649304,
+    "district": "金山區",
+    "capacity": 500,
+    "type": "outdoor",
+    "address": "溫泉路"
+  },
+  {
+    "name": "金山區運動休閒廣場",
+    "lat": 25.221,
+    "lon": 121.6283,
+    "district": "金山區",
+    "capacity": 702,
+    "type": "indoor",
+    "address": "金山區五湖里南勢53號"
+  },
+  {
+    "name": "金山國小",
+    "lat": 25.2237,
+    "lon": 121.6367,
+    "district": "金山區",
+    "capacity": 503,
+    "type": "indoor_outdoor",
+    "address": "金山區大同里金包里街180號"
+  },
+  {
+    "name": "金山朝天宮",
+    "lat": 25.218034,
+    "lon": 121.602476,
+    "district": "金山區",
+    "capacity": 75,
+    "type": "indoor",
+    "address": "六股林口38-3號"
+  },
+  {
+    "name": "金山青年活動中心",
+    "lat": 25.2259,
+    "lon": 121.6411,
+    "district": "金山區",
+    "capacity": 23369,
+    "type": "indoor",
+    "address": "金山區磺港里青年路1號"
+  },
+  {
+    "name": "金山高中",
+    "lat": 25.2246,
+    "lon": 121.6372,
+    "district": "金山區",
+    "capacity": 520,
+    "type": "indoor_outdoor",
+    "address": "金山區美田里文化路2號"
+  },
+  {
+    "name": "金美國小",
+    "lat": 25.2217,
+    "lon": 121.6327,
+    "district": "金山區",
+    "capacity": 892,
+    "type": "indoor_outdoor",
+    "address": "金山區美田里忠孝一路111號"
+  },
+  {
+    "name": "三港集會所",
+    "lat": 25.053,
+    "lon": 121.878,
+    "district": "雙溪區",
+    "capacity": 63,
+    "type": "indoor",
+    "address": "三港7號"
+  },
+  {
+    "name": "上林國小",
+    "lat": 25.029,
+    "lon": 121.832,
+    "district": "雙溪區",
+    "capacity": 1309,
+    "type": "indoor_outdoor",
+    "address": "內平林60號"
+  },
+  {
+    "name": "中正社區活動中心",
+    "lat": 25.061,
+    "lon": 121.8515,
+    "district": "雙溪區",
+    "capacity": 76,
+    "type": "indoor",
+    "address": "中正路64號"
+  },
+  {
+    "name": "共和社區活動中心",
+    "lat": 25.0318,
+    "lon": 121.8661,
+    "district": "雙溪區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "中山路41巷6號"
+  },
+  {
+    "name": "外柑市民活動中心",
+    "lat": 25.018517,
+    "lon": 121.807814,
+    "district": "雙溪區",
+    "capacity": 72,
+    "type": "outdoor",
+    "address": "外柑腳49號"
+  },
+  {
+    "name": "平林市民活動中心",
+    "lat": 25.035598,
+    "lon": 121.849136,
+    "district": "雙溪區",
+    "capacity": 79,
+    "type": "outdoor",
+    "address": "外平林52號"
+  },
+  {
+    "name": "柑林國小",
+    "lat": 25.01513,
+    "lon": 121.804558,
+    "district": "雙溪區",
+    "capacity": 133,
+    "type": "outdoor",
+    "address": "9鄰柑腳3號"
+  },
+  {
+    "name": "泰平里活動中心",
+    "lat": 24.9727,
+    "lon": 121.827,
+    "district": "雙溪區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "溪尾寮46號"
+  },
+  {
+    "name": "牡丹國小",
+    "lat": 25.0627,
+    "lon": 121.8517,
+    "district": "雙溪區",
+    "capacity": 320,
+    "type": "indoor_outdoor",
+    "address": "政光路3號"
+  },
+  {
+    "name": "長源社區活動中心",
+    "lat": 25.0157,
+    "lon": 121.8028,
+    "district": "雙溪區",
+    "capacity": 172,
+    "type": "indoor",
+    "address": "柑腳19號"
+  },
+  {
+    "name": "雙溪國小",
+    "lat": 25.0334,
+    "lon": 121.8672,
+    "district": "雙溪區",
+    "capacity": 1013,
+    "type": "indoor_outdoor",
+    "address": "東榮街54號"
+  },
+  {
+    "name": "雙溪高中",
+    "lat": 25.0349,
+    "lon": 121.8632,
+    "district": "雙溪區",
+    "capacity": 1376,
+    "type": "indoor_outdoor",
+    "address": "梅竹蹊3號"
+  },
+  {
+    "name": "中湖國小",
+    "lat": 24.973,
+    "lon": 121.3481,
+    "district": "鶯歌區",
+    "capacity": 465,
+    "type": "indoor_outdoor",
+    "address": "中湖街25號"
+  },
+  {
+    "name": "中湖里活動中心",
+    "lat": 24.973,
+    "lon": 121.3481,
+    "district": "鶯歌區",
+    "capacity": 119,
+    "type": "indoor",
+    "address": "中湖街25號"
+  },
+  {
+    "name": "二橋國小",
+    "lat": 24.9409,
+    "lon": 121.3376,
+    "district": "鶯歌區",
+    "capacity": 1284,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區中正三路106號"
+  },
+  {
+    "name": "北鶯里活動中心",
+    "lat": 24.955861,
+    "lon": 121.354434,
+    "district": "鶯歌區",
+    "capacity": 37,
+    "type": "indoor",
+    "address": "仁愛路55號"
+  },
+  {
+    "name": "南靖里活動中心",
+    "lat": 24.950284,
+    "lon": 121.352776,
+    "district": "鶯歌區",
+    "capacity": 56,
+    "type": "indoor",
+    "address": "鶯歌區文化路395號"
+  },
+  {
+    "name": "建國國小",
+    "lat": 24.955,
+    "lon": 121.3461,
+    "district": "鶯歌區",
+    "capacity": 376,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區育英街2號"
+  },
+  {
+    "name": "新北市立尖山國民中學",
+    "lat": 24.9437,
+    "lon": 121.3422,
+    "district": "鶯歌區",
+    "capacity": 622,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區國中街1號"
+  },
+  {
+    "name": "昌福國小",
+    "lat": 24.9556,
+    "lon": 121.3392,
+    "district": "鶯歌區",
+    "capacity": 1391,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區永明街22號"
+  },
+  {
+    "name": "永吉國小",
+    "lat": 24.9588,
+    "lon": 121.3329,
+    "district": "鶯歌區",
+    "capacity": 440,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區德昌二街2號"
+  },
+  {
+    "name": "西鶯里活動中心",
+    "lat": 24.9572,
+    "lon": 121.3536,
+    "district": "鶯歌區",
+    "capacity": 207,
+    "type": "indoor",
+    "address": "中正一路203號"
+  },
+  {
+    "name": "鳳鳴國中",
+    "lat": 24.9671,
+    "lon": 121.3318,
+    "district": "鶯歌區",
+    "capacity": 527,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區永和街33號"
+  },
+  {
+    "name": "鳳鳴國小",
+    "lat": 24.9691,
+    "lon": 121.3351,
+    "district": "鶯歌區",
+    "capacity": 342,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區永和街120號"
+  },
+  {
+    "name": "鶯歌國中",
+    "lat": 24.9504,
+    "lon": 121.3448,
+    "district": "鶯歌區",
+    "capacity": 1093,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區尖山埔路108號"
+  },
+  {
+    "name": "鶯歌國小",
+    "lat": 24.9512,
+    "lon": 121.3458,
+    "district": "鶯歌區",
+    "capacity": 1501,
+    "type": "indoor_outdoor",
+    "address": "鶯歌區尖山埔路106號"
+  },
+  {
+    "name": "鶯歌高職",
+    "lat": 24.9393,
+    "lon": 121.335,
+    "district": "鶯歌區",
+    "capacity": 1513,
+    "type": "indoor_outdoor",
+    "address": "中正三路154號"
+  },
+  {
+    "name": "中山國小",
+    "lat": 25.0629,
+    "lon": 121.5263,
+    "district": "中山區",
+    "capacity": 290,
+    "type": "indoor",
+    "address": "臺北市中山區民權東路1段69號"
+  },
+  {
+    "name": "中山女中",
+    "lat": 25.0485,
+    "lon": 121.5371,
+    "district": "中山區",
+    "capacity": 135,
+    "type": "indoor",
+    "address": "中山區長安東路2段141號"
+  },
+  {
+    "name": "中正國小",
+    "lat": 25.0506,
+    "lon": 121.5402,
+    "district": "中山區",
+    "capacity": 76,
+    "type": "indoor",
+    "address": "中山區龍江路62號"
+  },
+  {
+    "name": "五常國中",
+    "lat": 25.0635,
+    "lon": 121.5431,
+    "district": "中山區",
+    "capacity": 250,
+    "type": "indoor",
+    "address": "中山區復興北路430巷1號"
+  },
+  {
+    "name": "五常國小",
+    "lat": 25.0642,
+    "lon": 121.5422,
+    "district": "中山區",
+    "capacity": 97,
+    "type": "indoor",
+    "address": "中山區五常街16號"
+  },
+  {
+    "name": "北安國中",
+    "lat": 25.0778,
+    "lon": 121.5416,
+    "district": "中山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "中山區明水路325號"
+  },
+  {
+    "name": "吉林國小",
+    "lat": 25.0547,
+    "lon": 121.5296,
+    "district": "中山區",
+    "capacity": 117,
+    "type": "indoor",
+    "address": "中山區長春路116號"
+  },
+  {
+    "name": "大佳國小",
+    "lat": 25.0733,
+    "lon": 121.5359,
+    "district": "中山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "中山區濱江街107號"
+  },
+  {
+    "name": "大同高中",
+    "lat": 25.055,
+    "lon": 121.5351,
+    "district": "中山區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "中山區長春路167號"
+  },
+  {
+    "name": "大直國小",
+    "lat": 25.0805,
+    "lon": 121.5464,
+    "district": "中山區",
+    "capacity": 104,
+    "type": "indoor",
+    "address": "中山區大直街2號"
+  },
+  {
+    "name": "大直高中",
+    "lat": 25.0794,
+    "lon": 121.5428,
+    "district": "中山區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "中山區北安路420號"
+  },
+  {
+    "name": "懷生國小",
+    "lat": 25.0453,
+    "lon": 121.5417,
+    "district": "中山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "中山區安東街16巷2號"
+  },
+  {
+    "name": "新生公園棒球場",
+    "lat": 25.062,
+    "lon": 121.5258,
+    "district": "中山區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "新生北路三段105號"
+  },
+  {
+    "name": "新興國中",
+    "lat": 25.062,
+    "lon": 121.5258,
+    "district": "中山區",
+    "capacity": 175,
+    "type": "indoor",
+    "address": "中山區林森北路511號"
+  },
+  {
+    "name": "榮星花園公園",
+    "lat": 25.0626,
+    "lon": 121.5402,
+    "district": "中山區",
+    "capacity": 2432,
+    "type": "outdoor",
+    "address": "臺北市中山區民權東路3段1號"
+  },
+  {
+    "name": "永安國小",
+    "lat": 25.0787,
+    "lon": 121.5494,
+    "district": "中山區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "臺北市中山區明水路397巷19弄1號"
+  },
+  {
+    "name": "濱江國中",
+    "lat": 25.0796,
+    "lon": 121.5607,
+    "district": "中山區",
+    "capacity": 86,
+    "type": "indoor",
+    "address": "中山區樂群二路262號"
+  },
+  {
+    "name": "濱江國小",
+    "lat": 25.0773,
+    "lon": 121.5617,
+    "district": "中山區",
+    "capacity": 114,
+    "type": "indoor",
+    "address": "中山區樂群2路266巷99號"
+  },
+  {
+    "name": "臺北市中山運動中心",
+    "lat": 25.062,
+    "lon": 121.5258,
+    "district": "中山區",
+    "capacity": 184,
+    "type": "indoor",
+    "address": "中山北路二段44巷2號"
+  },
+  {
+    "name": "行政區民活動中心",
+    "lat": 25.0644,
+    "lon": 121.5335,
+    "district": "中山區",
+    "capacity": 72,
+    "type": "indoor",
+    "address": "松江路367號9樓"
+  },
+  {
+    "name": "長安國中",
+    "lat": 25.0494,
+    "lon": 121.5319,
+    "district": "中山區",
+    "capacity": 41,
+    "type": "indoor",
+    "address": "中山區松江路70巷11號"
+  },
+  {
+    "name": "長安國小",
+    "lat": 25.0497,
+    "lon": 121.5302,
+    "district": "中山區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "中山區吉林路15號"
+  },
+  {
+    "name": "長春國小",
+    "lat": 25.0549,
+    "lon": 121.5339,
+    "district": "中山區",
+    "capacity": 47,
+    "type": "indoor",
+    "address": "中山區長春路165號"
+  },
+  {
+    "name": "中正國中",
+    "lat": 25.0323,
+    "lon": 121.5221,
+    "district": "中正區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "中正區愛國東路158號"
+  },
+  {
+    "name": "中華區民活動中心",
+    "lat": 25.0297,
+    "lon": 121.5045,
+    "district": "中正區",
+    "capacity": 35,
+    "type": "indoor",
+    "address": "中華路2段291號地下室"
+  },
+  {
+    "name": "二二八和平公園",
+    "lat": 25.0403,
+    "lon": 121.5156,
+    "district": "中正區",
+    "capacity": 7909,
+    "type": "outdoor",
+    "address": "臺北市中正區-凱達格蘭大道3號"
+  },
+  {
+    "name": "北一女中",
+    "lat": 25.0386,
+    "lon": 121.513,
+    "district": "中正區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "臺北市中正區重慶南路1段 165 號"
+  },
+  {
+    "name": "南門國中",
+    "lat": 25.0352,
+    "lon": 121.5091,
+    "district": "中正區",
+    "capacity": 151,
+    "type": "indoor",
+    "address": "中正區廣州街6號"
+  },
+  {
+    "name": "南門國小",
+    "lat": 25.0352,
+    "lon": 121.5091,
+    "district": "中正區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "中正區廣州街6號"
+  },
+  {
+    "name": "古亭國中",
+    "lat": 25.0246,
+    "lon": 121.5106,
+    "district": "中正區",
+    "capacity": 66,
+    "type": "indoor",
+    "address": "中正區中華路2段465號"
+  },
+  {
+    "name": "國語實小",
+    "lat": 25.0309,
+    "lon": 121.511,
+    "district": "中正區",
+    "capacity": 49,
+    "type": "indoor",
+    "address": "中正區南海路58號"
+  },
+  {
+    "name": "建國中學",
+    "lat": 25.0312,
+    "lon": 121.5122,
+    "district": "中正區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "中正區南海路56號"
+  },
+  {
+    "name": "弘道國中",
+    "lat": 25.0375,
+    "lon": 121.5153,
+    "district": "中正區",
+    "capacity": 87,
+    "type": "indoor",
+    "address": "中正區公園路21號"
+  },
+  {
+    "name": "忠孝國小",
+    "lat": 25.0428,
+    "lon": 121.5317,
+    "district": "中正區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "中正區忠孝東路2段101號"
+  },
+  {
+    "name": "忠義國小",
+    "lat": 25.0296,
+    "lon": 121.5062,
+    "district": "中正區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "中正區中華路2段307巷17號"
+  },
+  {
+    "name": "成功高中",
+    "lat": 25.0424,
+    "lon": 121.5238,
+    "district": "中正區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "臺北市中正區濟南路1段71號"
+  },
+  {
+    "name": "東門國小",
+    "lat": 25.0387,
+    "lon": 121.5209,
+    "district": "中正區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "中正區仁愛路1段2-4號"
+  },
+  {
+    "name": "河堤國小",
+    "lat": 25.0232,
+    "lon": 121.5226,
+    "district": "中正區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "中正區汀州路2段180號"
+  },
+  {
+    "name": "臺北市中正運動中心",
+    "lat": 25.0137,
+    "lon": 121.535,
+    "district": "中正區",
+    "capacity": 250,
+    "type": "indoor",
+    "address": "信義路一段1號"
+  },
+  {
+    "name": "螢橋國中",
+    "lat": 25.019,
+    "lon": 121.5265,
+    "district": "中正區",
+    "capacity": 52,
+    "type": "indoor",
+    "address": "中正區汀州路3段四號"
+  },
+  {
+    "name": "螢橋國小",
+    "lat": 25.0249,
+    "lon": 121.5144,
+    "district": "中正區",
+    "capacity": 63,
+    "type": "indoor",
+    "address": "中正區詔安街29號"
+  },
+  {
+    "name": "財團法人臺北市東和禪寺",
+    "lat": 25.0394,
+    "lon": 121.5225,
+    "district": "中正區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "仁愛路一段21-33號"
+  },
+  {
+    "name": "?公國中",
+    "lat": 25.0371,
+    "lon": 121.5853,
+    "district": "信義區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "臺北市信義區福德街221巷15號"
+  },
+  {
+    "name": "三興國小",
+    "lat": 25.0297,
+    "lon": 121.558,
+    "district": "信義區",
+    "capacity": 77,
+    "type": "indoor",
+    "address": "信義區基隆路2段99號"
+  },
+  {
+    "name": "信義國中",
+    "lat": 25.0286,
+    "lon": 121.5679,
+    "district": "信義區",
+    "capacity": 361,
+    "type": "indoor",
+    "address": "信義區松仁路158巷1號"
+  },
+  {
+    "name": "信義國小",
+    "lat": 25.0318,
+    "lon": 121.5632,
+    "district": "信義區",
+    "capacity": 150,
+    "type": "indoor",
+    "address": "信義區松勤街60號"
+  },
+  {
+    "name": "光復國小",
+    "lat": 25.0402,
+    "lon": 121.5578,
+    "district": "信義區",
+    "capacity": 40,
+    "type": "indoor",
+    "address": "臺北市信義區光復南路271號"
+  },
+  {
+    "name": "博愛國小",
+    "lat": 25.0364,
+    "lon": 121.5711,
+    "district": "信義區",
+    "capacity": 80,
+    "type": "indoor",
+    "address": "信義區松仁路95巷20號"
+  },
+  {
+    "name": "吳興國小",
+    "lat": 25.026,
+    "lon": 121.5686,
+    "district": "信義區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "臺北市信義區松仁路226號"
+  },
+  {
+    "name": "松山家商",
+    "lat": 25.0348,
+    "lon": 121.5801,
+    "district": "信義區",
+    "capacity": 116,
+    "type": "indoor",
+    "address": "信義區松山路655號"
+  },
+  {
+    "name": "松山工農",
+    "lat": 25.0398,
+    "lon": 121.572,
+    "district": "信義區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市信義區忠孝東路5段236巷15號"
+  },
+  {
+    "name": "松山高中",
+    "lat": 25.0439,
+    "lon": 121.5658,
+    "district": "信義區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "信義區基隆路1段156號"
+  },
+  {
+    "name": "松德公園",
+    "lat": 25.0356,
+    "lon": 121.5733,
+    "district": "信義區",
+    "capacity": 1346,
+    "type": "outdoor",
+    "address": "臺北市信義區松德路180巷興雅國中西側"
+  },
+  {
+    "name": "永吉國中",
+    "lat": 25.0483,
+    "lon": 121.5741,
+    "district": "信義區",
+    "capacity": 97,
+    "type": "indoor",
+    "address": "信義區松隆路161號"
+  },
+  {
+    "name": "永吉國小",
+    "lat": 25.043,
+    "lon": 121.5791,
+    "district": "信義區",
+    "capacity": 53,
+    "type": "indoor",
+    "address": "信義區松山路287巷5號"
+  },
+  {
+    "name": "永春國小",
+    "lat": 25.0447,
+    "lon": 121.5789,
+    "district": "信義區",
+    "capacity": 115,
+    "type": "indoor",
+    "address": "信義區松山路225巷48號"
+  },
+  {
+    "name": "永春高中",
+    "lat": 25.0327,
+    "lon": 121.5786,
+    "district": "信義區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "信義區松山路654號"
+  },
+  {
+    "name": "福德國小",
+    "lat": 25.0389,
+    "lon": 121.5865,
+    "district": "信義區",
+    "capacity": 105,
+    "type": "indoor",
+    "address": "信義區福德街253號"
+  },
+  {
+    "name": "臺北市信義運動中心",
+    "lat": 25.0356,
+    "lon": 121.5733,
+    "district": "信義區",
+    "capacity": 200,
+    "type": "indoor",
+    "address": "松勤路100號"
+  },
+  {
+    "name": "興雅國中",
+    "lat": 25.0364,
+    "lon": 121.5723,
+    "district": "信義區",
+    "capacity": 151,
+    "type": "indoor",
+    "address": "信義區松德路168巷15號"
+  },
+  {
+    "name": "興雅國小",
+    "lat": 25.0467,
+    "lon": 121.5701,
+    "district": "信義區",
+    "capacity": 198,
+    "type": "indoor",
+    "address": "信義區基隆路1段83巷9號"
+  },
+  {
+    "name": "三民國中",
+    "lat": 25.0691,
+    "lon": 121.5862,
+    "district": "內湖區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "內湖區民權東路6段45號"
+  },
+  {
+    "name": "內湖區行政大樓",
+    "lat": 25.069324,
+    "lon": 121.586898,
+    "district": "內湖區",
+    "capacity": 170,
+    "type": "outdoor",
+    "address": "民權東路6段99號8樓"
+  },
+  {
+    "name": "內湖國中",
+    "lat": 25.077,
+    "lon": 121.5887,
+    "district": "內湖區",
+    "capacity": 233,
+    "type": "indoor",
+    "address": "內湖區陽光街1號"
+  },
+  {
+    "name": "內湖國小",
+    "lat": 25.0791,
+    "lon": 121.5802,
+    "district": "內湖區",
+    "capacity": 150,
+    "type": "indoor",
+    "address": "內湖區內湖路2段41號"
+  },
+  {
+    "name": "內湖高中",
+    "lat": 25.0784,
+    "lon": 121.5865,
+    "district": "內湖區",
+    "capacity": 110,
+    "type": "indoor",
+    "address": "內湖區文德路218號"
+  },
+  {
+    "name": "內湖高工",
+    "lat": 25.0797,
+    "lon": 121.5754,
+    "district": "內湖區",
+    "capacity": 245,
+    "type": "indoor",
+    "address": "內湖路1段520號"
+  },
+  {
+    "name": "南湖國小",
+    "lat": 25.0706,
+    "lon": 121.6107,
+    "district": "內湖區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市內湖區康寧路3段200號"
+  },
+  {
+    "name": "南湖高中",
+    "lat": 25.0669,
+    "lon": 121.6111,
+    "district": "內湖區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "內湖區康寧路3段220號"
+  },
+  {
+    "name": "大湖公園",
+    "lat": 25.082835,
+    "lon": 121.603982,
+    "district": "內湖區",
+    "capacity": 4950,
+    "type": "outdoor",
+    "address": "成功路五段31號旁"
+  },
+  {
+    "name": "大湖國小",
+    "lat": 25.0881,
+    "lon": 121.6003,
+    "district": "內湖區",
+    "capacity": 175,
+    "type": "indoor",
+    "address": "內湖區大湖山莊街170號"
+  },
+  {
+    "name": "康寧國小",
+    "lat": 25.08,
+    "lon": 121.5949,
+    "district": "內湖區",
+    "capacity": 247,
+    "type": "indoor",
+    "address": "內湖區星雲街121號"
+  },
+  {
+    "name": "文湖國小",
+    "lat": 25.0858,
+    "lon": 121.5601,
+    "district": "內湖區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "內湖區文湖街15號"
+  },
+  {
+    "name": "新湖國小",
+    "lat": 25.0688,
+    "lon": 121.5887,
+    "district": "內湖區",
+    "capacity": 40,
+    "type": "indoor",
+    "address": "臺北市內湖區民權東路6段138號"
+  },
+  {
+    "name": "明湖國中",
+    "lat": 25.0706,
+    "lon": 121.6107,
+    "district": "內湖區",
+    "capacity": 251,
+    "type": "indoor",
+    "address": "內湖區康寧路3段60號"
+  },
+  {
+    "name": "明湖國小",
+    "lat": 25.0711,
+    "lon": 121.6106,
+    "district": "內湖區",
+    "capacity": 137,
+    "type": "indoor",
+    "address": "內湖區康寧路3段105號"
+  },
+  {
+    "name": "東湖國中",
+    "lat": 25.0723,
+    "lon": 121.6195,
+    "district": "內湖區",
+    "capacity": 138,
+    "type": "indoor",
+    "address": "內湖區康樂街131號"
+  },
+  {
+    "name": "東湖國小",
+    "lat": 25.0685,
+    "lon": 121.6158,
+    "district": "內湖區",
+    "capacity": 155,
+    "type": "indoor",
+    "address": "內湖區東湖路115號"
+  },
+  {
+    "name": "潭美國小",
+    "lat": 25.0609,
+    "lon": 121.5908,
+    "district": "內湖區",
+    "capacity": 81,
+    "type": "indoor",
+    "address": "內湖區新明路22號"
+  },
+  {
+    "name": "碧湖國小",
+    "lat": 25.0853,
+    "lon": 121.5911,
+    "district": "內湖區",
+    "capacity": 134,
+    "type": "indoor",
+    "address": "臺北市內湖區金龍路100號"
+  },
+  {
+    "name": "臺北市內湖運動中心",
+    "lat": 25.0784,
+    "lon": 121.5865,
+    "district": "內湖區",
+    "capacity": 219,
+    "type": "indoor",
+    "address": "洲子街12號"
+  },
+  {
+    "name": "西湖國中",
+    "lat": 25.0858,
+    "lon": 121.5657,
+    "district": "內湖區",
+    "capacity": 106,
+    "type": "indoor",
+    "address": "內湖區環山路1段27號"
+  },
+  {
+    "name": "西湖國小",
+    "lat": 25.0838,
+    "lon": 121.5657,
+    "district": "內湖區",
+    "capacity": 76,
+    "type": "indoor",
+    "address": "內湖區環山路1段25號"
+  },
+  {
+    "name": "麗山國中",
+    "lat": 25.0817,
+    "lon": 121.5752,
+    "district": "內湖區",
+    "capacity": 82,
+    "type": "indoor",
+    "address": "內湖區內湖路1段629巷42號"
+  },
+  {
+    "name": "麗山國小",
+    "lat": 25.0836,
+    "lon": 121.5725,
+    "district": "內湖區",
+    "capacity": 193,
+    "type": "indoor",
+    "address": "臺北市內湖區港華街100號"
+  },
+  {
+    "name": "麗山高中",
+    "lat": 25.0841,
+    "lon": 121.5779,
+    "district": "內湖區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "臺北市內湖區環山路2段100號"
+  },
+  {
+    "name": "麗湖國小",
+    "lat": 25.0731,
+    "lon": 121.6013,
+    "district": "內湖區",
+    "capacity": 315,
+    "type": "indoor",
+    "address": "內湖區金湖路363巷8號"
+  },
+  {
+    "name": "中正高中",
+    "lat": 25.1045,
+    "lon": 121.5165,
+    "district": "北投區",
+    "capacity": 109,
+    "type": "indoor",
+    "address": "北投區文林北路77號"
+  },
+  {
+    "name": "北投區區民活動中心",
+    "lat": 25.1325,
+    "lon": 121.5024,
+    "district": "北投區",
+    "capacity": 90,
+    "type": "indoor",
+    "address": "臺北市新市街30號6樓"
+  },
+  {
+    "name": "北投國中",
+    "lat": 25.1345,
+    "lon": 121.5042,
+    "district": "北投區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "北投區溫泉路62號"
+  },
+  {
+    "name": "北投國小",
+    "lat": 25.1342,
+    "lon": 121.5003,
+    "district": "北投區",
+    "capacity": 195,
+    "type": "indoor",
+    "address": "臺北市北投區中央北路1段173號"
+  },
+  {
+    "name": "大屯國小",
+    "lat": 25.1547,
+    "lon": 121.5043,
+    "district": "北投區",
+    "capacity": 20,
+    "type": "indoor",
+    "address": "北投區復興三路312號"
+  },
+  {
+    "name": "復興公園",
+    "lat": 25.139,
+    "lon": 121.5024,
+    "district": "北投區",
+    "capacity": 3623,
+    "type": "outdoor",
+    "address": "臺北市北投區中和街200號"
+  },
+  {
+    "name": "復興崗營區",
+    "lat": 25.1381,
+    "lon": 121.4929,
+    "district": "北投區",
+    "capacity": 200,
+    "type": "indoor",
+    "address": "中央北路二段70號"
+  },
+  {
+    "name": "復興高中",
+    "lat": 25.1437,
+    "lon": 121.5018,
+    "district": "北投區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "北投區復興四路70號"
+  },
+  {
+    "name": "文化國小",
+    "lat": 25.1371,
+    "lon": 121.4967,
+    "district": "北投區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "北投區文化3路1號"
+  },
+  {
+    "name": "文林國小",
+    "lat": 25.1059,
+    "lon": 121.5147,
+    "district": "北投區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "北投區文林北路155號"
+  },
+  {
+    "name": "新民國中",
+    "lat": 25.1389,
+    "lon": 121.5065,
+    "district": "北投區",
+    "capacity": 207,
+    "type": "indoor",
+    "address": "臺北市北投區新民路10號"
+  },
+  {
+    "name": "明德國中",
+    "lat": 25.1075,
+    "lon": 121.5183,
+    "district": "北投區",
+    "capacity": 88,
+    "type": "indoor",
+    "address": "北投區明德路50號"
+  },
+  {
+    "name": "明德國小",
+    "lat": 25.1121,
+    "lon": 121.5218,
+    "district": "北投區",
+    "capacity": 109,
+    "type": "indoor",
+    "address": "北投區明德路190號"
+  },
+  {
+    "name": "桃源國中",
+    "lat": 25.1347,
+    "lon": 121.4773,
+    "district": "北投區",
+    "capacity": 55,
+    "type": "indoor",
+    "address": "北投區中央北路4段48號"
+  },
+  {
+    "name": "桃源國小",
+    "lat": 25.1396,
+    "lon": 121.4845,
+    "district": "北投區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "北投區中央北路3段40巷45號"
+  },
+  {
+    "name": "泉源國小",
+    "lat": 25.1492,
+    "lon": 121.5243,
+    "district": "北投區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "臺北市北投區東昇路34號"
+  },
+  {
+    "name": "清江國小",
+    "lat": 25.1269,
+    "lon": 121.5076,
+    "district": "北投區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "北投區公?路220號"
+  },
+  {
+    "name": "湖山國小",
+    "lat": 25.15,
+    "lon": 121.5355,
+    "district": "北投區",
+    "capacity": 20,
+    "type": "indoor",
+    "address": "臺北市北投區湖底路11號"
+  },
+  {
+    "name": "湖田國小",
+    "lat": 25.1684,
+    "lon": 121.5387,
+    "district": "北投區",
+    "capacity": 20,
+    "type": "indoor",
+    "address": "北投區竹子湖路17-2號"
+  },
+  {
+    "name": "石牌國中",
+    "lat": 25.1149,
+    "lon": 121.5142,
+    "district": "北投區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "臺北市北投區石牌路1段139號"
+  },
+  {
+    "name": "石牌國小",
+    "lat": 25.1157,
+    "lon": 121.5117,
+    "district": "北投區",
+    "capacity": 112,
+    "type": "indoor",
+    "address": "北投區致遠2路80號"
+  },
+  {
+    "name": "立農國小",
+    "lat": 25.1195,
+    "lon": 121.5053,
+    "district": "北投區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "北投區立農街1段250號"
+  },
+  {
+    "name": "義方國小",
+    "lat": 25.142,
+    "lon": 121.5093,
+    "district": "北投區",
+    "capacity": 120,
+    "type": "indoor",
+    "address": "北投區珠海路155號"
+  },
+  {
+    "name": "臺北市北投運動中心",
+    "lat": 25.1389,
+    "lon": 121.5065,
+    "district": "北投區",
+    "capacity": 384,
+    "type": "indoor",
+    "address": "石牌路一段39巷100號"
+  },
+  {
+    "name": "逸仙國小",
+    "lat": 25.1383,
+    "lon": 121.5052,
+    "district": "北投區",
+    "capacity": 164,
+    "type": "indoor",
+    "address": "臺北市北投區新民路2號"
+  },
+  {
+    "name": "關渡國中",
+    "lat": 25.1199,
+    "lon": 121.4673,
+    "district": "北投區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "北投區知行路212號"
+  },
+  {
+    "name": "關渡國小",
+    "lat": 25.1268,
+    "lon": 121.4668,
+    "district": "北投區",
+    "capacity": 110,
+    "type": "indoor",
+    "address": "北投區中央北路4段581號"
+  },
+  {
+    "name": "修德國小",
+    "lat": 25.0455,
+    "lon": 121.5896,
+    "district": "南港區",
+    "capacity": 95,
+    "type": "indoor",
+    "address": "東新街118巷86號"
+  },
+  {
+    "name": "南港公園",
+    "lat": 25.0458,
+    "lon": 121.5912,
+    "district": "南港區",
+    "capacity": 8661,
+    "type": "outdoor",
+    "address": "東新街170-1號"
+  },
+  {
+    "name": "南港國小",
+    "lat": 25.0575,
+    "lon": 121.6104,
+    "district": "南港區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市南港區惠民街67號"
+  },
+  {
+    "name": "南港高中",
+    "lat": 25.0525,
+    "lon": 121.595,
+    "district": "南港區",
+    "capacity": 435,
+    "type": "indoor",
+    "address": "南港區向陽路21號"
+  },
+  {
+    "name": "南港高工",
+    "lat": 25.0563,
+    "lon": 121.6072,
+    "district": "南港區",
+    "capacity": 160,
+    "type": "indoor",
+    "address": "南港區興中路29號"
+  },
+  {
+    "name": "成德國中",
+    "lat": 25.045069,
+    "lon": 121.587751,
+    "district": "南港區",
+    "capacity": 300,
+    "type": "outdoor",
+    "address": "臺北市南港區東新街108巷23號"
+  },
+  {
+    "name": "成德國小",
+    "lat": 25.0469,
+    "lon": 121.5869,
+    "district": "南港區",
+    "capacity": 200,
+    "type": "indoor",
+    "address": "南港區東新街65號"
+  },
+  {
+    "name": "東新國小",
+    "lat": 25.0562,
+    "lon": 121.602,
+    "district": "南港區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "南港區興南街62號"
+  },
+  {
+    "name": "玉成國小",
+    "lat": 25.05364,
+    "lon": 121.594769,
+    "district": "南港區",
+    "capacity": 30,
+    "type": "outdoor",
+    "address": "向陽路31號"
+  },
+  {
+    "name": "育成高中",
+    "lat": 25.0587,
+    "lon": 121.6092,
+    "district": "南港區",
+    "capacity": 375,
+    "type": "indoor",
+    "address": "重陽路366號"
+  },
+  {
+    "name": "胡適國小",
+    "lat": 25.0424,
+    "lon": 121.6172,
+    "district": "南港區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "南港區舊莊街1段1號"
+  },
+  {
+    "name": "臺北市南港運動中心",
+    "lat": 25.0466,
+    "lon": 121.5822,
+    "district": "南港區",
+    "capacity": 240,
+    "type": "indoor",
+    "address": "臺北市南港區玉成街69號"
+  },
+  {
+    "name": "臺北市極限運動訓練中心",
+    "lat": 25.0519,
+    "lon": 121.6073,
+    "district": "南港區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市南港區忠孝東路七段382號"
+  },
+  {
+    "name": "舊庄國小",
+    "lat": 25.040245,
+    "lon": 121.61735,
+    "district": "南港區",
+    "capacity": 92,
+    "type": "outdoor",
+    "address": "舊莊街一段100號"
+  },
+  {
+    "name": "誠正國中",
+    "lat": 25.0541,
+    "lon": 121.6187,
+    "district": "南港區",
+    "capacity": 143,
+    "type": "indoor",
+    "address": "南港區富康街1巷42號"
+  },
+  {
+    "name": "三玉國小",
+    "lat": 25.118,
+    "lon": 121.5373,
+    "district": "士林區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "士林區天母東路116號"
+  },
+  {
+    "name": "劍潭國小",
+    "lat": 25.0799,
+    "lon": 121.5229,
+    "district": "士林區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "士林區通河街16號"
+  },
+  {
+    "name": "地藏禪寺",
+    "lat": 25.099607,
+    "lon": 121.491108,
+    "district": "士林區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "延平北路7段189號"
+  },
+  {
+    "name": "士東國小",
+    "lat": 25.0,
+    "lon": 121.0,
+    "district": "士林區",
+    "capacity": 63,
+    "type": "outdoor",
+    "address": "中山北路六段392號"
+  },
+  {
+    "name": "士林國中",
+    "lat": 25.0943,
+    "lon": 121.5226,
+    "district": "士林區",
+    "capacity": 39,
+    "type": "indoor",
+    "address": "士林區中正路345號"
+  },
+  {
+    "name": "士林國小",
+    "lat": 25.0928,
+    "lon": 121.5251,
+    "district": "士林區",
+    "capacity": 225,
+    "type": "indoor",
+    "address": "臺北市士林區大東路165號"
+  },
+  {
+    "name": "士林官邸公園",
+    "lat": 25.0951,
+    "lon": 121.5303,
+    "district": "士林區",
+    "capacity": 1362,
+    "type": "outdoor",
+    "address": "臺北市士林區福林路60號"
+  },
+  {
+    "name": "士林高商",
+    "lat": 25.095,
+    "lon": 121.5163,
+    "district": "士林區",
+    "capacity": 54,
+    "type": "indoor",
+    "address": "士林區士商路150號"
+  },
+  {
+    "name": "天母國中",
+    "lat": 25.118,
+    "lon": 121.5381,
+    "district": "士林區",
+    "capacity": 99,
+    "type": "indoor",
+    "address": "士林區天母東路120號"
+  },
+  {
+    "name": "天母國小",
+    "lat": 25.1197,
+    "lon": 121.5274,
+    "district": "士林區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "士林區天玉街12號"
+  },
+  {
+    "name": "天母棒球場",
+    "lat": 25.0898,
+    "lon": 121.5029,
+    "district": "士林區",
+    "capacity": 150,
+    "type": "indoor",
+    "address": "忠誠路二段77號"
+  },
+  {
+    "name": "富安國小",
+    "lat": 25.1058,
+    "lon": 121.4824,
+    "district": "士林區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市士林區延平北路8段135號"
+  },
+  {
+    "name": "平等國小",
+    "lat": 25.1291,
+    "lon": 121.5763,
+    "district": "士林區",
+    "capacity": 20,
+    "type": "indoor",
+    "address": "士林區平等里平菁街101號"
+  },
+  {
+    "name": "文昌國小",
+    "lat": 25.0996,
+    "lon": 121.5209,
+    "district": "士林區",
+    "capacity": 75,
+    "type": "indoor",
+    "address": "士林區文林路615巷20號"
+  },
+  {
+    "name": "新安里臨時聚會場所",
+    "lat": 25.124093,
+    "lon": 121.553582,
+    "district": "士林區",
+    "capacity": 45,
+    "type": "indoor",
+    "address": "新安路85號"
+  },
+  {
+    "name": "普宜苑",
+    "lat": 25.1214,
+    "lon": 121.5773,
+    "district": "士林區",
+    "capacity": 0,
+    "type": "indoor",
+    "address": "溪山里至善路3段181巷5弄7號"
+  },
+  {
+    "name": "格致國中",
+    "lat": 25.1311,
+    "lon": 121.5468,
+    "district": "士林區",
+    "capacity": 47,
+    "type": "indoor",
+    "address": "士林區仰德大道4段75號"
+  },
+  {
+    "name": "溪山國小",
+    "lat": 25.1198,
+    "lon": 121.5796,
+    "district": "士林區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市士林區至善路三段199號"
+  },
+  {
+    "name": "百齡國小",
+    "lat": 25.0862,
+    "lon": 121.5178,
+    "district": "士林區",
+    "capacity": 137,
+    "type": "indoor",
+    "address": "士林區福港街205號"
+  },
+  {
+    "name": "百齡高中",
+    "lat": 25.087,
+    "lon": 121.523,
+    "district": "士林區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "士林區承德路4段177號"
+  },
+  {
+    "name": "社子國小",
+    "lat": 25.0898,
+    "lon": 121.5029,
+    "district": "士林區",
+    "capacity": 192,
+    "type": "indoor",
+    "address": "臺北市士林區延平北路6段308號"
+  },
+  {
+    "name": "福安國中",
+    "lat": 25.1033,
+    "lon": 121.4874,
+    "district": "士林區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "士林區延平北路7段250號"
+  },
+  {
+    "name": "福林國小",
+    "lat": 25.0987,
+    "lon": 121.5297,
+    "district": "士林區",
+    "capacity": 142,
+    "type": "indoor",
+    "address": "士林區福志路75號"
+  },
+  {
+    "name": "至善國中",
+    "lat": 25.1035,
+    "lon": 121.5555,
+    "district": "士林區",
+    "capacity": 170,
+    "type": "indoor",
+    "address": "臺北市士林區至善路2段360號"
+  },
+  {
+    "name": "臺北市士林運動中心",
+    "lat": 25.0898,
+    "lon": 121.5029,
+    "district": "士林區",
+    "capacity": 171,
+    "type": "indoor",
+    "address": "士商路1號"
+  },
+  {
+    "name": "芝山國小",
+    "lat": 25.1104,
+    "lon": 121.5364,
+    "district": "士林區",
+    "capacity": 40,
+    "type": "indoor",
+    "address": "臺北市士林區德行東路285號"
+  },
+  {
+    "name": "葫蘆國小",
+    "lat": 25.0837,
+    "lon": 121.507,
+    "district": "士林區",
+    "capacity": 35,
+    "type": "indoor",
+    "address": "士林區環河北路3段95號"
+  },
+  {
+    "name": "蘭雅國中",
+    "lat": 25.1106,
+    "lon": 121.531,
+    "district": "士林區",
+    "capacity": 130,
+    "type": "indoor",
+    "address": "士林區忠誠路2段51號"
+  },
+  {
+    "name": "蘭雅國小",
+    "lat": 25.1084,
+    "lon": 121.5231,
+    "district": "士林區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "士林區磺溪57號"
+  },
+  {
+    "name": "陽明山國小",
+    "lat": 25.1198,
+    "lon": 121.5529,
+    "district": "士林區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市士林區新安里仰德大道3段 61 號"
+  },
+  {
+    "name": "陽明高中",
+    "lat": 25.0918,
+    "lon": 121.5172,
+    "district": "士林區",
+    "capacity": 110,
+    "type": "indoor",
+    "address": "士林區中正路510號"
+  },
+  {
+    "name": "雙溪國小",
+    "lat": 25.1061,
+    "lon": 121.5638,
+    "district": "士林區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "士林區中社路2段66號"
+  },
+  {
+    "name": "雨聲國小",
+    "lat": 25.1027,
+    "lon": 121.5352,
+    "district": "士林區",
+    "capacity": 46,
+    "type": "indoor",
+    "address": "士林區至誠路1段62巷70號"
+  },
+  {
+    "name": "雨農國小",
+    "lat": 25.1053,
+    "lon": 121.5299,
+    "district": "士林區",
+    "capacity": 124,
+    "type": "indoor",
+    "address": "士林區忠義街1號"
+  },
+  {
+    "name": "大同國小",
+    "lat": 25.0648,
+    "lon": 121.5161,
+    "district": "大同區",
+    "capacity": 183,
+    "type": "indoor",
+    "address": "大同區大龍街51號"
+  },
+  {
+    "name": "大橋國小",
+    "lat": 25.0643,
+    "lon": 121.5134,
+    "district": "大同區",
+    "capacity": 86,
+    "type": "indoor",
+    "address": "大同區重慶北路3段2號"
+  },
+  {
+    "name": "大龍國小",
+    "lat": 25.0734,
+    "lon": 121.5167,
+    "district": "大同區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "大同區哈密街47號"
+  },
+  {
+    "name": "太平國小",
+    "lat": 25.0614,
+    "lon": 121.5114,
+    "district": "大同區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "大同區延平北路2段239號"
+  },
+  {
+    "name": "延平國小",
+    "lat": 25.066,
+    "lon": 121.5124,
+    "district": "大同區",
+    "capacity": 88,
+    "type": "indoor",
+    "address": "大同區昌吉街97號"
+  },
+  {
+    "name": "建成國中",
+    "lat": 25.0503,
+    "lon": 121.5197,
+    "district": "大同區",
+    "capacity": 55,
+    "type": "indoor",
+    "address": "臺北市大同區長安西路37之1號"
+  },
+  {
+    "name": "忠孝國中",
+    "lat": 25.0512,
+    "lon": 121.5082,
+    "district": "大同區",
+    "capacity": 131,
+    "type": "indoor",
+    "address": "大同區西寧北路32號"
+  },
+  {
+    "name": "成淵高中",
+    "lat": 25.0613,
+    "lon": 121.5185,
+    "district": "大同區",
+    "capacity": 75,
+    "type": "indoor",
+    "address": "大同區承德路2段235號"
+  },
+  {
+    "name": "日新國小",
+    "lat": 25.0553,
+    "lon": 121.5167,
+    "district": "大同區",
+    "capacity": 137,
+    "type": "indoor",
+    "address": "大同區太原路151號"
+  },
+  {
+    "name": "明倫高中",
+    "lat": 25.0755,
+    "lon": 121.5199,
+    "district": "大同區",
+    "capacity": 70,
+    "type": "indoor",
+    "address": "臺北市大同區承德路3段336號"
+  },
+  {
+    "name": "民權國中",
+    "lat": 25.0635,
+    "lon": 121.5139,
+    "district": "大同區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "大同區重慶北路3段1號"
+  },
+  {
+    "name": "永樂國小",
+    "lat": 25.0617,
+    "lon": 121.5111,
+    "district": "大同區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市大同區延平北路2段266號"
+  },
+  {
+    "name": "玉泉公園",
+    "lat": 25.0498,
+    "lon": 121.5077,
+    "district": "大同區",
+    "capacity": 2183,
+    "type": "outdoor",
+    "address": "臺北市大同區西寧北路28號"
+  },
+  {
+    "name": "臺北市大同運動中心",
+    "lat": 25.0759,
+    "lon": 121.5179,
+    "district": "大同區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "大龍街51號"
+  },
+  {
+    "name": "蓬萊國小",
+    "lat": 25.0565,
+    "lon": 121.5155,
+    "district": "大同區",
+    "capacity": 104,
+    "type": "indoor",
+    "address": "大同區寧夏路35號"
+  },
+  {
+    "name": "蘭州國中",
+    "lat": 25.0693,
+    "lon": 121.5167,
+    "district": "大同區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "大同區大龍街187巷1號"
+  },
+  {
+    "name": "重慶國中",
+    "lat": 25.0759,
+    "lon": 121.5179,
+    "district": "大同區",
+    "capacity": 0,
+    "type": "indoor",
+    "address": "大同區敦煌路19號"
+  },
+  {
+    "name": "雙蓮國小",
+    "lat": 25.0601,
+    "lon": 121.5167,
+    "district": "大同區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "大同區錦西街51號"
+  },
+  {
+    "name": "仁愛國中",
+    "lat": 25.0375,
+    "lon": 121.5507,
+    "district": "大安區",
+    "capacity": 125,
+    "type": "indoor",
+    "address": "大安區仁愛路4段130號"
+  },
+  {
+    "name": "仁愛國小",
+    "lat": 25.0358,
+    "lon": 121.5524,
+    "district": "大安區",
+    "capacity": 53,
+    "type": "indoor",
+    "address": "大安區安和路1段60號"
+  },
+  {
+    "name": "公館國小",
+    "lat": 25.0124,
+    "lon": 121.5429,
+    "district": "大安區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市大安區基隆路4段41巷68弄2號"
+  },
+  {
+    "name": "古亭國小",
+    "lat": 25.0207,
+    "lon": 121.5285,
+    "district": "大安區",
+    "capacity": 62,
+    "type": "indoor",
+    "address": "大安區羅斯福路3段"
+  },
+  {
+    "name": "和平高中",
+    "lat": 25.0196,
+    "lon": 121.5491,
+    "district": "大安區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "大安區臥龍街100號"
+  },
+  {
+    "name": "大安國中",
+    "lat": 25.0307,
+    "lon": 121.5462,
+    "district": "大安區",
+    "capacity": 274,
+    "type": "indoor",
+    "address": "大安區大安路2段63號"
+  },
+  {
+    "name": "大安國小",
+    "lat": 25.0195,
+    "lon": 121.5496,
+    "district": "大安區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "臺北市大安區臥龍街129號"
+  },
+  {
+    "name": "大安森林公園",
+    "lat": 25.0301,
+    "lon": 121.5354,
+    "district": "大安區",
+    "capacity": 47436,
+    "type": "outdoor",
+    "address": "臺北市大安區新生南路以東、信義路3段以南"
+  },
+  {
+    "name": "大安高工",
+    "lat": 25.0319,
+    "lon": 121.5432,
+    "district": "大安區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "大安區復興南路2段52號"
+  },
+  {
+    "name": "幸安國小",
+    "lat": 25.0376,
+    "lon": 121.535,
+    "district": "大安區",
+    "capacity": 200,
+    "type": "indoor",
+    "address": "大安區仁愛路3段22號"
+  },
+  {
+    "name": "建安國小",
+    "lat": 25.0294,
+    "lon": 121.5461,
+    "district": "大安區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "大安區大安路2段99號"
+  },
+  {
+    "name": "懷生國中",
+    "lat": 25.0403,
+    "lon": 121.5412,
+    "district": "大安區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "大安區忠孝東路3段248巷30號"
+  },
+  {
+    "name": "新生國小",
+    "lat": 25.0304,
+    "lon": 121.5335,
+    "district": "大安區",
+    "capacity": 35,
+    "type": "indoor",
+    "address": "大安區新生南路2段36號"
+  },
+  {
+    "name": "民族國中",
+    "lat": 25.0112,
+    "lon": 121.5388,
+    "district": "大安區",
+    "capacity": 139,
+    "type": "indoor",
+    "address": "大安區羅斯福路4段113巷13號"
+  },
+  {
+    "name": "臺北市大安運動中心",
+    "lat": 25.0112,
+    "lon": 121.5388,
+    "district": "大安區",
+    "capacity": 389,
+    "type": "indoor",
+    "address": "辛亥路三段55號"
+  },
+  {
+    "name": "芳和國中",
+    "lat": 25.0187,
+    "lon": 121.5503,
+    "district": "大安區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "臺北市大安區臥龍街170號"
+  },
+  {
+    "name": "金華國中",
+    "lat": 25.0312,
+    "lon": 121.5331,
+    "district": "大安區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "大安區新生南路2段32號"
+  },
+  {
+    "name": "金華國小",
+    "lat": 25.0322,
+    "lon": 121.5277,
+    "district": "大安區",
+    "capacity": 56,
+    "type": "indoor",
+    "address": "大安區愛國東路79巷11號"
+  },
+  {
+    "name": "銘傳國小",
+    "lat": 25.0142,
+    "lon": 121.5352,
+    "district": "大安區",
+    "capacity": 161,
+    "type": "indoor",
+    "address": "大安區羅斯福路4段21號"
+  },
+  {
+    "name": "龍安國小",
+    "lat": 25.0239,
+    "lon": 121.5348,
+    "district": "大安區",
+    "capacity": 120,
+    "type": "indoor",
+    "address": "大安區新生南路3段33號"
+  },
+  {
+    "name": "龍門國中",
+    "lat": 25.0249,
+    "lon": 121.538,
+    "district": "大安區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "大安區建國南路2段269號"
+  },
+  {
+    "name": "力行國小",
+    "lat": 24.9809,
+    "lon": 121.561,
+    "district": "文山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "文山區木新路3段155巷7號"
+  },
+  {
+    "name": "北政國中",
+    "lat": 24.9849,
+    "lon": 121.5783,
+    "district": "文山區",
+    "capacity": 20,
+    "type": "indoor",
+    "address": "臺北市文山區指南路3段2巷14號"
+  },
+  {
+    "name": "博嘉國小",
+    "lat": 25.0021,
+    "lon": 121.5758,
+    "district": "文山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "文山區木柵路4段159巷14之1號"
+  },
+  {
+    "name": "實踐國中",
+    "lat": 24.9834,
+    "lon": 121.5547,
+    "district": "文山區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "文山區辛亥路7段67號"
+  },
+  {
+    "name": "實踐國小",
+    "lat": 24.9836,
+    "lon": 121.5575,
+    "district": "文山區",
+    "capacity": 75,
+    "type": "indoor",
+    "address": "文山區忠順街1段4號"
+  },
+  {
+    "name": "志清國小",
+    "lat": 24.9987,
+    "lon": 121.5388,
+    "district": "文山區",
+    "capacity": 35,
+    "type": "indoor",
+    "address": "文山區景福街21巷5號"
+  },
+  {
+    "name": "指南國小",
+    "lat": 24.9764,
+    "lon": 121.5836,
+    "district": "文山區",
+    "capacity": 20,
+    "type": "indoor",
+    "address": "文山區指南路3段38巷5-2號"
+  },
+  {
+    "name": "明道國小",
+    "lat": 24.9874,
+    "lon": 121.5626,
+    "district": "文山區",
+    "capacity": 42,
+    "type": "indoor",
+    "address": "文山區木柵路2段138巷61號"
+  },
+  {
+    "name": "景美國中",
+    "lat": 24.993,
+    "lon": 121.5429,
+    "district": "文山區",
+    "capacity": 80,
+    "type": "indoor",
+    "address": "文山區景中街27號"
+  },
+  {
+    "name": "景美國小",
+    "lat": 24.9895,
+    "lon": 121.5408,
+    "district": "文山區",
+    "capacity": 74,
+    "type": "indoor",
+    "address": "文山區景文街108號"
+  },
+  {
+    "name": "景美女中",
+    "lat": 24.9807,
+    "lon": 121.5562,
+    "district": "文山區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "文山區木新路3段312號"
+  },
+  {
+    "name": "景興國中",
+    "lat": 24.9962,
+    "lon": 121.5443,
+    "district": "文山區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "文山區景興路46巷2號"
+  },
+  {
+    "name": "景興國小",
+    "lat": 24.9961,
+    "lon": 121.5482,
+    "district": "文山區",
+    "capacity": 126,
+    "type": "indoor",
+    "address": "文山區景華街150巷21號"
+  },
+  {
+    "name": "景華公園",
+    "lat": 24.9956,
+    "lon": 121.5446,
+    "district": "文山區",
+    "capacity": 1350,
+    "type": "outdoor",
+    "address": "臺北市文山區景興路與景華街交叉口"
+  },
+  {
+    "name": "木柵國中",
+    "lat": 24.9875,
+    "lon": 121.5677,
+    "district": "文山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "文山區木柵路3段102巷12號"
+  },
+  {
+    "name": "木柵國小",
+    "lat": 24.9903,
+    "lon": 121.5702,
+    "district": "文山區",
+    "capacity": 155,
+    "type": "indoor",
+    "address": "文山區木柵路3段191號"
+  },
+  {
+    "name": "木柵高工",
+    "lat": 24.9959,
+    "lon": 121.5719,
+    "district": "文山區",
+    "capacity": 169,
+    "type": "indoor",
+    "address": "文山區木柵路4段77號"
+  },
+  {
+    "name": "武功國小",
+    "lat": 25.0039,
+    "lon": 121.5405,
+    "district": "文山區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市文山區興隆路1段68號"
+  },
+  {
+    "name": "永建國小",
+    "lat": 24.9876,
+    "lon": 121.55,
+    "district": "文山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "文山區試院路2號"
+  },
+  {
+    "name": "溪口國小",
+    "lat": 24.9941,
+    "lon": 121.5387,
+    "district": "文山區",
+    "capacity": 90,
+    "type": "indoor",
+    "address": "文山區景福街225號"
+  },
+  {
+    "name": "臺北市文山運動中心",
+    "lat": 24.9962,
+    "lon": 121.5443,
+    "district": "文山區",
+    "capacity": 189,
+    "type": "indoor",
+    "address": "興隆路三段222號"
+  },
+  {
+    "name": "興德國小",
+    "lat": 25.0017,
+    "lon": 121.5508,
+    "district": "文山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "文山區興隆路2段235號"
+  },
+  {
+    "name": "興德里營區",
+    "lat": 25.0029,
+    "lon": 121.5571,
+    "district": "文山區",
+    "capacity": 200,
+    "type": "indoor",
+    "address": "興德路55號"
+  },
+  {
+    "name": "興福國中",
+    "lat": 25.0049,
+    "lon": 121.5497,
+    "district": "文山區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "文山區福興路80號"
+  },
+  {
+    "name": "興華國小",
+    "lat": 24.9988,
+    "lon": 121.5587,
+    "district": "文山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "臺北市文山區興隆路3段125巷6號"
+  },
+  {
+    "name": "興隆國小",
+    "lat": 25.0024,
+    "lon": 121.5519,
+    "district": "文山區",
+    "capacity": 133,
+    "type": "indoor",
+    "address": "文山區福興路2號"
+  },
+  {
+    "name": "萬福國小",
+    "lat": 25.0048,
+    "lon": 121.5367,
+    "district": "文山區",
+    "capacity": 32,
+    "type": "indoor",
+    "address": "文山區羅斯福路5段170巷32號"
+  },
+  {
+    "name": "萬興國小",
+    "lat": 24.9904,
+    "lon": 121.5766,
+    "district": "文山區",
+    "capacity": 125,
+    "type": "indoor",
+    "address": "文山區秀明路2段114號"
+  },
+  {
+    "name": "萬芳國小",
+    "lat": 25.0019,
+    "lon": 121.5673,
+    "district": "文山區",
+    "capacity": 135,
+    "type": "indoor",
+    "address": "文山區萬和街1號"
+  },
+  {
+    "name": "萬芳高中",
+    "lat": 25.0005,
+    "lon": 121.5588,
+    "district": "文山區",
+    "capacity": 131,
+    "type": "indoor",
+    "address": "文山區興隆路3段115巷1號"
+  },
+  {
+    "name": "行政中心大禮堂",
+    "lat": 24.9896,
+    "lon": 121.5701,
+    "district": "文山區",
+    "capacity": 60,
+    "type": "indoor",
+    "address": "臺北市木柵路3段220號10樓"
+  },
+  {
+    "name": "辛亥國小",
+    "lat": 25.0063,
+    "lon": 121.5585,
+    "district": "文山區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "文山區辛亥路4段103號"
+  },
+  {
+    "name": "三民國小",
+    "lat": 25.0633,
+    "lon": 121.5643,
+    "district": "松山區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "松山區民權東路5段1號"
+  },
+  {
+    "name": "中山國中",
+    "lat": 25.0605,
+    "lon": 121.5455,
+    "district": "松山區",
+    "capacity": 111,
+    "type": "indoor",
+    "address": "松山區復興北路361巷7號"
+  },
+  {
+    "name": "中崙高中",
+    "lat": 25.0487,
+    "lon": 121.5611,
+    "district": "松山區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "松山區八德路4段101號"
+  },
+  {
+    "name": "介壽國中",
+    "lat": 25.0564,
+    "lon": 121.5565,
+    "district": "松山區",
+    "capacity": 70,
+    "type": "indoor",
+    "address": "松山區延壽街401號"
+  },
+  {
+    "name": "健康國小",
+    "lat": 25.0566,
+    "lon": 121.5629,
+    "district": "松山區",
+    "capacity": 84,
+    "type": "indoor",
+    "address": "松山區延壽街168號"
+  },
+  {
+    "name": "敦化國中",
+    "lat": 25.0515,
+    "lon": 121.5468,
+    "district": "松山區",
+    "capacity": 389,
+    "type": "indoor",
+    "address": "松山區南京東路3段300號"
+  },
+  {
+    "name": "敦化國小",
+    "lat": 25.0491,
+    "lon": 121.5485,
+    "district": "松山區",
+    "capacity": 56,
+    "type": "indoor",
+    "address": "松山區敦化北路2號"
+  },
+  {
+    "name": "松山國小",
+    "lat": 25.0512,
+    "lon": 121.5793,
+    "district": "松山區",
+    "capacity": 95,
+    "type": "indoor",
+    "address": "松山區八德路4段746號"
+  },
+  {
+    "name": "民族國小",
+    "lat": 25.0589,
+    "lon": 121.5519,
+    "district": "松山區",
+    "capacity": 40,
+    "type": "indoor",
+    "address": "臺北市松山區民生東路4段97巷7號"
+  },
+  {
+    "name": "民權公園",
+    "lat": 25.0619,
+    "lon": 121.5575,
+    "district": "松山區",
+    "capacity": 2786,
+    "type": "outdoor",
+    "address": "臺北市松山區民權國小旁"
+  },
+  {
+    "name": "民權國小",
+    "lat": 25.0625,
+    "lon": 121.5623,
+    "district": "松山區",
+    "capacity": 80,
+    "type": "indoor",
+    "address": "臺北市松山區民權東路4段200號"
+  },
+  {
+    "name": "民生國中",
+    "lat": 25.0598,
+    "lon": 121.5673,
+    "district": "松山區",
+    "capacity": 100,
+    "type": "indoor",
+    "address": "松山區新東街30巷1號"
+  },
+  {
+    "name": "民生國小",
+    "lat": 25.0565,
+    "lon": 121.552,
+    "district": "松山區",
+    "capacity": 70,
+    "type": "indoor",
+    "address": "松山區敦化北路199巷18號"
+  },
+  {
+    "name": "臺北市松山運動中心",
+    "lat": 25.049,
+    "lon": 121.5501,
+    "district": "松山區",
+    "capacity": 180,
+    "type": "indoor",
+    "address": "臺北市松山區敦化北路1號"
+  },
+  {
+    "name": "臺北田徑場",
+    "lat": 25.0449,
+    "lon": 121.5509,
+    "district": "松山區",
+    "capacity": 440,
+    "type": "outdoor",
+    "address": "臺北市松山區敦化北路3號"
+  },
+  {
+    "name": "臺北體育館",
+    "lat": 25.0517,
+    "lon": 121.5446,
+    "district": "松山區",
+    "capacity": 1000,
+    "type": "indoor",
+    "address": "臺北市松山區南京東路4段10號"
+  },
+  {
+    "name": "西松國小",
+    "lat": 25.0522,
+    "lon": 121.5636,
+    "district": "松山區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市松山區三民路5號"
+  },
+  {
+    "name": "西松高中",
+    "lat": 25.0556,
+    "lon": 121.5671,
+    "district": "松山區",
+    "capacity": 255,
+    "type": "indoor",
+    "address": "松山區健康路325巷7號"
+  },
+  {
+    "name": "大理國小",
+    "lat": 25.0312,
+    "lon": 121.4938,
+    "district": "萬華區",
+    "capacity": 84,
+    "type": "indoor",
+    "address": "萬華區艋舺大道389號"
+  },
+  {
+    "name": "大理高中",
+    "lat": 25.0308,
+    "lon": 121.4913,
+    "district": "萬華區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "萬華區長順街2號"
+  },
+  {
+    "name": "新和國小",
+    "lat": 25.026,
+    "lon": 121.5033,
+    "district": "萬華區",
+    "capacity": 79,
+    "type": "indoor",
+    "address": "萬華區西藏路125巷31號"
+  },
+  {
+    "name": "東園國小",
+    "lat": 25.0231,
+    "lon": 121.4978,
+    "district": "萬華區",
+    "capacity": 102,
+    "type": "indoor",
+    "address": "臺北市萬華區東園街195號"
+  },
+  {
+    "name": "福星國小",
+    "lat": 25.0463,
+    "lon": 121.5089,
+    "district": "萬華區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "萬華區中華路1段66號"
+  },
+  {
+    "name": "老松國小",
+    "lat": 25.038,
+    "lon": 121.5027,
+    "district": "萬華區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "臺北市萬華區桂林路64號"
+  },
+  {
+    "name": "臺北市萬華運動中心",
+    "lat": 25.0231,
+    "lon": 121.4978,
+    "district": "萬華區",
+    "capacity": 226,
+    "type": "indoor",
+    "address": "西寧南路6之1號"
+  },
+  {
+    "name": "華江國小",
+    "lat": 25.0341,
+    "lon": 121.4912,
+    "district": "萬華區",
+    "capacity": 37,
+    "type": "indoor",
+    "address": "萬華區環河南路2段250巷42弄2號"
+  },
+  {
+    "name": "華江高中",
+    "lat": 25.0285,
+    "lon": 121.4962,
+    "district": "萬華區",
+    "capacity": 300,
+    "type": "indoor",
+    "address": "萬華區西藏路213號"
+  },
+  {
+    "name": "萬大國小",
+    "lat": 25.023,
+    "lon": 121.4993,
+    "district": "萬華區",
+    "capacity": 66,
+    "type": "indoor",
+    "address": "大同區萬大路346號"
+  },
+  {
+    "name": "萬華國中",
+    "lat": 25.0291,
+    "lon": 121.4987,
+    "district": "萬華區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "萬華區西藏路201號"
+  },
+  {
+    "name": "西園國小",
+    "lat": 25.0266,
+    "lon": 121.4988,
+    "district": "萬華區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "萬華區東園街73巷23號6樓"
+  },
+  {
+    "name": "西門國小",
+    "lat": 25.0432,
+    "lon": 121.5035,
+    "district": "萬華區",
+    "capacity": 95,
+    "type": "indoor",
+    "address": "萬華區成都路98號"
+  },
+  {
+    "name": "雙園國中",
+    "lat": 25.0276,
+    "lon": 121.4927,
+    "district": "萬華區",
+    "capacity": 30,
+    "type": "indoor",
+    "address": "萬華區興義街2號"
+  },
+  {
+    "name": "雙園國小",
+    "lat": 25.0309,
+    "lon": 121.4975,
+    "district": "萬華區",
+    "capacity": 109,
+    "type": "indoor",
+    "address": "萬華區莒光路315號"
+  },
+  {
+    "name": "青年公園",
+    "lat": 25.0221,
+    "lon": 121.507,
+    "district": "萬華區",
+    "capacity": 33756,
+    "type": "outdoor",
+    "address": "臺北市萬華區水源路199號"
+  },
+  {
+    "name": "青年公園棒球場",
+    "lat": 25.0231,
+    "lon": 121.4978,
+    "district": "萬華區",
+    "capacity": 68,
+    "type": "indoor",
+    "address": "水源路199號"
+  },
+  {
+    "name": "龍山國中",
+    "lat": 25.036,
+    "lon": 121.5046,
+    "district": "萬華區",
+    "capacity": 367,
+    "type": "indoor",
+    "address": "臺北市萬華區南寧路46號"
+  },
+  {
+    "name": "龍山國小",
+    "lat": 25.0356,
+    "lon": 121.4962,
+    "district": "萬華區",
+    "capacity": 50,
+    "type": "indoor",
+    "address": "萬華區和平西路3段235號"
+  }
+]

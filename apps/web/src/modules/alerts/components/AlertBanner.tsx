@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AlertTriangle, X } from "lucide-react";
+import { Link } from "react-router";
+import { AlertTriangle, X, ShieldAlert } from "lucide-react";
 import { useActiveAlerts } from "../api/hooks";
 import AlertDetailSheet from "./AlertDetailSheet";
 
@@ -58,6 +59,14 @@ export default function AlertBanner() {
           <X className="h-3.5 w-3.5" />
         </button>
       </div>
+
+      <Link
+        to="/safety"
+        className="flex items-center gap-2 rounded-lg px-1 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ShieldAlert className="h-3.5 w-3.5" />
+        <span>{t("safety.emergencyInfo")}</span>
+      </Link>
 
       <AlertDetailSheet
         alerts={alerts}
