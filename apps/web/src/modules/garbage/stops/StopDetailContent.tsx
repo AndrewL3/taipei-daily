@@ -12,6 +12,7 @@ import {
   Clock,
 } from "lucide-react";
 import FavoriteButton from "@/core/favorites/FavoriteButton";
+import DirectionsButton from "@/components/DirectionsButton";
 import { useRouteDetail } from "../api/hooks";
 import type { NearbyStop } from "../api/client";
 
@@ -135,14 +136,17 @@ export default function StopDetailContent({
         )}
       </div>
 
-      <FavoriteButton
-        moduleKey="garbage"
-        id={stop.routeLineId}
-        label={stop.routeLineName}
-        lat={stop.latitude}
-        lon={stop.longitude}
-        data={stop}
-      />
+      <div className="flex items-center gap-1">
+        <FavoriteButton
+          moduleKey="garbage"
+          id={stop.routeLineId}
+          label={stop.routeLineName}
+          lat={stop.latitude}
+          lon={stop.longitude}
+          data={stop}
+        />
+        <DirectionsButton lat={stop.latitude} lon={stop.longitude} />
+      </div>
 
       {/* Collection type icons */}
       {annotated.collectsToday.length > 0 && (

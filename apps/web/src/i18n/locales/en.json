@@ -166,6 +166,9 @@
       "facilities": "AED"
     }
   },
+  "directions": {
+    "walk": "Directions"
+  },
   "favorites": {
     "title": "Favorites",
     "add": "Save",

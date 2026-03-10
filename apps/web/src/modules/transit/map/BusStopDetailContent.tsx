@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { Bus, MapPin } from "lucide-react";
 import FavoriteButton from "@/core/favorites/FavoriteButton";
+import DirectionsButton from "@/components/DirectionsButton";
 import { useStationArrivals } from "../api/hooks";
 import { formatEta, etaColor } from "../utils/format";
 import type { BusStation } from "../api/types";
@@ -78,14 +79,17 @@ export default function BusStopDetailContent({
         )}
       </div>
 
-      <FavoriteButton
-        moduleKey="transit"
-        id={station.stationId}
-        label={station.name}
-        lat={station.lat}
-        lon={station.lon}
-        data={station}
-      />
+      <div className="flex items-center gap-1">
+        <FavoriteButton
+          moduleKey="transit"
+          id={station.stationId}
+          label={station.name}
+          lat={station.lat}
+          lon={station.lon}
+          data={station}
+        />
+        <DirectionsButton lat={station.lat} lon={station.lon} />
+      </div>
 
       {/* Station info */}
       <div className="flex items-start gap-2 px-1 text-sm text-muted-foreground">

@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Clock, MapPin, CalendarClock } from "lucide-react";
 import FavoriteButton from "@/core/favorites/FavoriteButton";
+import DirectionsButton from "@/components/DirectionsButton";
 import type { TaipeiGarbageStop } from "../api/taipei-client";
 
 interface TaipeiStopDetailContentProps {
@@ -22,14 +23,17 @@ export default function TaipeiStopDetailContent({
         </span>
       </div>
 
-      <FavoriteButton
-        moduleKey="garbage"
-        id={stop.routeId}
-        label={`${stop.routeName} ${stop.trip}`}
-        lat={stop.lat}
-        lon={stop.lon}
-        data={stop}
-      />
+      <div className="flex items-center gap-1">
+        <FavoriteButton
+          moduleKey="garbage"
+          id={stop.routeId}
+          label={`${stop.routeName} ${stop.trip}`}
+          lat={stop.lat}
+          lon={stop.lon}
+          data={stop}
+        />
+        <DirectionsButton lat={stop.lat} lon={stop.lon} />
+      </div>
 
       {/* Time window */}
       <div className="rounded-xl bg-card px-4 py-3 shadow-sm">

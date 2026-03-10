@@ -166,6 +166,9 @@
       "facilities": "AED"
     }
   },
+  "directions": {
+    "walk": "步行導航"
+  },
   "favorites": {
     "title": "收藏",
     "add": "收藏",
