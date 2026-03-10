@@ -41,9 +41,7 @@ export default function AlertsDashboardCard() {
         )}
       </div>
 
-      {isLoading && (
-        <div className="h-12 animate-pulse rounded-lg bg-muted" />
-      )}
+      {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
 
       {!isLoading && activeAlerts.length > 0 && highest && (
         <div
@@ -68,9 +66,7 @@ export default function AlertsDashboardCard() {
       )}
 
       {!isLoading && activeAlerts.length === 0 && (
-        <p className="text-sm text-muted-foreground">
-          {t("alerts.noAlerts")}
-        </p>
+        <p className="text-sm text-muted-foreground">{t("alerts.noAlerts")}</p>
       )}
 
       <AlertDetailSheet

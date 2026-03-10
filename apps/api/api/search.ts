@@ -135,8 +135,7 @@ async function searchFacilities(
   const q = normalize(query);
   return cached
     .filter(
-      (v) =>
-        normalize(v.name).includes(q) || normalize(v.address).includes(q),
+      (v) => normalize(v.name).includes(q) || normalize(v.address).includes(q),
     )
     .slice(0, limit)
     .map((v) => ({

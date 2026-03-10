@@ -7,7 +7,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   const pathParam = req.query.path;
-  const segments = Array.isArray(pathParam) ? pathParam : pathParam ? [pathParam] : [];
+  const segments = Array.isArray(pathParam)
+    ? pathParam
+    : pathParam
+      ? [pathParam]
+      : [];
   const action = segments[0] ?? "";
 
   switch (action) {

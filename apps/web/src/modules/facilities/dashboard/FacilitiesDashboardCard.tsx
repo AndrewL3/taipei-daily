@@ -41,9 +41,19 @@ export default function FacilitiesDashboardCard() {
   const nearest = useMemo<{ venue: AedVenue; distance: number } | null>(() => {
     if (!venues?.length || !located) return null;
     let best = venues[0];
-    let bestDist = distanceMeters(position.lat, position.lon, best.lat, best.lon);
+    let bestDist = distanceMeters(
+      position.lat,
+      position.lon,
+      best.lat,
+      best.lon,
+    );
     for (let i = 1; i < venues.length; i++) {
-      const d = distanceMeters(position.lat, position.lon, venues[i].lat, venues[i].lon);
+      const d = distanceMeters(
+        position.lat,
+        position.lon,
+        venues[i].lat,
+        venues[i].lon,
+      );
       if (d < bestDist) {
         best = venues[i];
         bestDist = d;
@@ -81,7 +91,8 @@ export default function FacilitiesDashboardCard() {
           <div className="min-w-0">
             <p className="truncate text-sm font-medium">{nearest.venue.name}</p>
             <p className="text-xs text-muted-foreground">
-              {formatDistance(nearest.distance)} · {nearest.venue.aedCount} AED · {nearest.venue.district}
+              {formatDistance(nearest.distance)} · {nearest.venue.aedCount} AED
+              · {nearest.venue.district}
             </p>
           </div>
         </div>

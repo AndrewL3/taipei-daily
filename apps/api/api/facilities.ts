@@ -25,17 +25,16 @@ async function getAllVenues(): Promise<AedVenue[]> {
   const parsed = AedCsvRowArraySchema.parse(rawRows);
 
   // Filter to Greater Taipei
-  const taipeiRows = parsed.filter((r) => GREATER_TAIPEI_CITIES.has(r.場所縣市));
+  const taipeiRows = parsed.filter((r) =>
+    GREATER_TAIPEI_CITIES.has(r.場所縣市),
+  );
 
   const venues = groupAedsIntoVenues(taipeiRows);
   await redis.set(CACHE_KEY, venues, { ex: CACHE_TTL });
   return venues;
 }
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse,
-) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   try {
@@ -61,8 +60,7 @@ export default async function handler(
 
     const all = await getAllVenues();
     const venues = all.filter(
-      (v) =>
-        v.lat >= south && v.lat <= north && v.lon >= west && v.lon <= east,
+      (v) => v.lat >= south && v.lat <= north && v.lon >= west && v.lon <= east,
     );
 
     return res.status(200).json({ ok: true, venues });
