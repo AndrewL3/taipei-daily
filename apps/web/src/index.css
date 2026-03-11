@@ -7,6 +7,8 @@
 
 @theme {
   --font-sans: "Inter", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Calistoga", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 @theme inline {
@@ -83,6 +85,11 @@
   --sidebar-accent-foreground: oklch(0.2 0.02 260);
   --sidebar-border: oklch(0.91 0.005 260);
   --sidebar-ring: oklch(0.65 0.18 195);
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-card-hover: 0 10px 15px rgba(0, 0, 0, 0.08);
+  --shadow-accent: 0 4px 14px rgba(13, 148, 136, 0.25);
+  --inverted-bg: oklch(0.15 0.02 260);
+  --inverted-fg: oklch(0.985 0 0);
 }
 
 .dark {
@@ -117,6 +124,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 12%);
   --sidebar-ring: oklch(0.7 0.15 195);
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-card-hover: 0 10px 15px rgba(0, 0, 0, 0.25);
+  --shadow-accent: 0 4px 14px rgba(13, 148, 136, 0.35);
+  --inverted-bg: oklch(0.28 0.02 260);
+  --inverted-fg: oklch(0.93 0 0);
 }
 
 @layer base {
@@ -131,6 +143,68 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* --- Design System: Minimalist Modern Polish --- */
+
+.card-lift {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+.card-lift:active {
+  transform: scale(0.98);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid oklch(0.65 0.18 195 / 30%);
+  background: oklch(0.65 0.18 195 / 5%);
+  border-radius: 9999px;
+  padding: 0.375rem 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: oklch(0.65 0.18 195);
+}
+.dark .section-label {
+  border-color: oklch(0.7 0.15 195 / 30%);
+  background: oklch(0.7 0.15 195 / 5%);
+  color: oklch(0.7 0.15 195);
+}
+.section-label .dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.gradient-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  color: white;
+}
+
+.inverted-section {
+  position: relative;
+  background: var(--inverted-bg);
+  color: var(--inverted-fg);
+}
+.inverted-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.03;
+  pointer-events: none;
 }
 
 .glass {
