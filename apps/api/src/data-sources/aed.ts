@@ -1,3 +1,29 @@
+import https from "node:https";
+
+/**
+ * Fetch AED CSV from MOHW with SSL verification disabled.
+ * MOHW's server has a broken SSL certificate as of 2026-03.
+ * Uses node:https directly so rejectUnauthorized only applies to this request.
+ */
+export function fetchAedCsv(url: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, { rejectUnauthorized: false }, (response) => {
+        if (response.statusCode !== 200) {
+          reject(new Error(`AED CSV fetch error: ${response.statusCode}`));
+          return;
+        }
+        const chunks: Buffer[] = [];
+        response.on("data", (chunk: Buffer) => chunks.push(chunk));
+        response.on("end", () =>
+          resolve(Buffer.concat(chunks).toString("utf-8")),
+        );
+        response.on("error", reject);
+      })
+      .on("error", reject);
+  });
+}
+
 // Parse CSV text respecting BOM and quoted fields
 export function parseCsv(text: string): Record<string, string>[] {
   const lines = text.split(/\r?\n/).filter((l) => l.trim());

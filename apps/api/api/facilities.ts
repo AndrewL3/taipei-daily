@@ -5,7 +5,7 @@ import {
   groupAedsIntoVenues,
   type AedVenue,
 } from "@tracker/types";
-import { parseCsv } from "../src/data-sources/aed.js";
+import { fetchAedCsv, parseCsv } from "../src/data-sources/aed.js";
 
 const AED_CSV_URL = "https://tw-aed.mohw.gov.tw/openData?t=csv";
 const CACHE_KEY = "facilities:aed";
@@ -17,9 +17,7 @@ async function getAllVenues(): Promise<AedVenue[]> {
   const cached = await redis.get<AedVenue[]>(CACHE_KEY);
   if (cached) return cached;
 
-  const res = await fetch(AED_CSV_URL);
-  if (!res.ok) throw new Error(`AED CSV fetch error: ${res.status}`);
-  const text = await res.text();
+  const text = await fetchAedCsv(AED_CSV_URL);
 
   const rawRows = parseCsv(text);
   const parsed = AedCsvRowArraySchema.parse(rawRows);
