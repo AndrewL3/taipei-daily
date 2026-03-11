@@ -36,7 +36,7 @@ export default function TaipeiStopDetailContent({
       </div>
 
       {/* Time window */}
-      <div className="rounded-xl bg-card px-4 py-3 shadow-sm">
+      <div className="rounded-2xl bg-card px-4 py-3 shadow-[var(--shadow-card)]">
         <div className="flex items-center gap-3">
           <Clock className="h-6 w-6 text-primary" />
           <div>

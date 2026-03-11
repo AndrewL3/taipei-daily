@@ -18,7 +18,7 @@ export default function StationDetailContent({
   return (
     <div className="space-y-4">
       {/* Availability hero */}
-      <div className="rounded-xl bg-card px-4 py-3 shadow-sm">
+      <div className="rounded-2xl bg-card px-4 py-3 shadow-[var(--shadow-card)]">
         <div className="flex items-center justify-between">
           <div className="flex items-start gap-3">
             <Bike className="mt-0.5 h-6 w-6 shrink-0" style={{ color }} />

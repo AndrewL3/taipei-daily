@@ -70,7 +70,7 @@ export default function StopDetailContent({
   return (
     <div className="space-y-4">
       {/* Hero ETA / Status */}
-      <div className="rounded-xl bg-card px-4 py-3 shadow-sm">
+      <div className="rounded-2xl bg-card px-4 py-3 shadow-[var(--shadow-card)]">
         {annotated.passedAt ? (
           <div className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-green-500" />

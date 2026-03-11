@@ -18,7 +18,7 @@ export default function ParkingDetailContent({
   return (
     <div className="space-y-4">
       {/* Availability hero */}
-      <div className="rounded-xl bg-card px-4 py-3 shadow-sm">
+      <div className="rounded-2xl bg-card px-4 py-3 shadow-[var(--shadow-card)]">
         <div className="flex items-center gap-3">
           <ParkingMeter className="h-6 w-6 shrink-0" style={{ color }} />
           <div>

@@ -55,7 +55,7 @@ export default function AlertDetailSheet({
             {alerts.map((alert) => (
               <div
                 key={alert.id}
-                className="rounded-lg border border-border/30 bg-card p-4"
+                className="rounded-2xl border border-border/30 bg-card p-4 shadow-[var(--shadow-card)]"
               >
                 <div className="mb-2 flex items-center gap-2">
                   <span

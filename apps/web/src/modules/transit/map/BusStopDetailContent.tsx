@@ -24,7 +24,7 @@ export default function BusStopDetailContent({
   return (
     <div className="space-y-4">
       {/* Route arrivals */}
-      <div className="rounded-xl bg-card px-4 py-3 shadow-sm">
+      <div className="rounded-2xl bg-card px-4 py-3 shadow-[var(--shadow-card)]">
         <div className="mb-2 flex items-center gap-2 text-sm font-medium text-muted-foreground">
           <Bus className="h-4 w-4" />
           {t("transit.arrivals")}
