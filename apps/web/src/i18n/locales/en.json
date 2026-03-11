@@ -66,10 +66,10 @@
       "garbage": "Garbage Trucks",
       "garbageDesc": "View garbage truck routes and schedules",
       "transit": "Bus Routes",
-      "transitDesc": "Look up bus stops and arrival times"
+      "transitDesc": "Browse and search all bus routes"
     },
     "transit": {
-      "searchPlaceholder": "Search stops or routes..."
+      "searchPlaceholder": "Search by route number or name..."
     }
   },
   "youbike": {

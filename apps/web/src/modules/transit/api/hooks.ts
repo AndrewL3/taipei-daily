@@ -1,5 +1,5 @@
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
-import { fetchBusStations, fetchStationArrivals } from "./fetchers";
+import { fetchBusStations, fetchStationArrivals, fetchBusRoutes } from "./fetchers";
 import type { MapBounds } from "./types";
 
 function snap(n: number): number {
@@ -32,5 +32,13 @@ export function useStationArrivals(stationId: string | null, city: string) {
     enabled: stationId !== null,
     staleTime: 15_000,
     refetchInterval: 20_000,
+  });
+}
+
+export function useBusRoutes() {
+  return useQuery({
+    queryKey: ["bus-routes"],
+    queryFn: fetchBusRoutes,
+    staleTime: 5 * 60_000, // 5 min — route catalog is static-ish
   });
 }

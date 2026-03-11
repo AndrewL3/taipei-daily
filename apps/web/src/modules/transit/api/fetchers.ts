@@ -1,5 +1,5 @@
 import { apiFetch } from "@/api/client";
-import type { BusStation, BusArrival, MapBounds } from "./types";
+import type { BusStation, BusArrival, MapBounds, BusRoute } from "./types";
 
 export async function fetchBusStations(
   bounds: MapBounds,
@@ -25,4 +25,11 @@ export async function fetchStationArrivals(
     `/api/transit/arrivals?${params}`,
   );
   return json.arrivals;
+}
+
+export async function fetchBusRoutes(): Promise<BusRoute[]> {
+  const json = await apiFetch<{ ok: true; routes: BusRoute[] }>(
+    "/api/transit/routes",
+  );
+  return json.routes;
 }

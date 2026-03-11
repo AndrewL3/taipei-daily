@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { handleStops } from "../../src/transit/stops.js";
 import { handleArrivals } from "../../src/transit/arrivals.js";
 import { handleRoute } from "../../src/transit/route.js";
+import { handleRoutes } from "../../src/transit/routes.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -18,6 +19,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return handleArrivals(req, res);
     case "route":
       return handleRoute(req, res);
+    case "routes":
+      return handleRoutes(req, res);
     default:
       return res.status(404).json({ ok: false, error: "Not found" });
   }

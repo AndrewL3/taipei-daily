@@ -1,37 +1,41 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, Search, Bus } from "lucide-react";
+import { ArrowLeft, Search, Bus, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useGeolocation } from "@/hooks/useGeolocation";
-import { useBusStations } from "../api/hooks";
+import { useBusRoutes } from "../api/hooks";
+import type { BusRoute } from "../api/types";
+
+/** Numeric-aware sort for route names like "3", "28", "307", "紅5", "棕20" */
+function sortRoutes(routes: BusRoute[]): BusRoute[] {
+  return [...routes].sort((a, b) =>
+    a.routeName.localeCompare(b.routeName, "zh-TW", { numeric: true }),
+  );
+}
 
 export default function TransitSchedulesView() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { position, located } = useGeolocation();
   const [search, setSearch] = useState("");
+  const { data: routes, isLoading, isError } = useBusRoutes();
 
-  const bounds = located
-    ? {
-        north: position.lat + 0.005,
-        south: position.lat - 0.005,
-        east: position.lon + 0.005,
-        west: position.lon - 0.005,
-      }
-    : null;
+  const sorted = useMemo(
+    () => (routes ? sortRoutes(routes) : []),
+    [routes],
+  );
 
-  const { data: stations, isLoading } = useBusStations(bounds);
-
-  const filtered = stations?.filter((s) => {
-    if (!search) return true;
+  const filtered = useMemo(() => {
+    if (!search) return sorted;
     const q = search.toLowerCase();
-    return (
-      s.name.toLowerCase().includes(q) ||
-      s.routes.some((r) => r.routeName.toLowerCase().includes(q))
+    return sorted.filter(
+      (r) =>
+        r.routeName.toLowerCase().includes(q) ||
+        r.routeNameEn.toLowerCase().includes(q) ||
+        r.departure.toLowerCase().includes(q) ||
+        r.destination.toLowerCase().includes(q),
     );
-  });
+  }, [sorted, search]);
 
   return (
     <div className="flex h-full flex-col bg-background">
@@ -59,28 +63,30 @@ export default function TransitSchedulesView() {
       </div>
 
       <ScrollArea className="flex-1">
-        <div className="flex flex-col gap-3 p-4 md:pl-48">
+        <div className="flex flex-col gap-2 p-4 md:pl-48">
           {isLoading &&
-            Array.from({ length: 6 }).map((_, i) => (
+            Array.from({ length: 8 }).map((_, i) => (
               <div key={i} className="h-16 animate-pulse rounded-xl bg-muted" />
             ))}
 
-          {!isLoading && (!filtered || filtered.length === 0) && (
-            <div className="px-4 py-12 text-center text-sm text-muted-foreground">
-              {!located
-                ? t("dashboard.transit.noStops")
-                : search
-                  ? t("schedules.noMatch")
-                  : t("dashboard.transit.noStops")}
+          {isError && (
+            <div className="px-4 py-12 text-center text-sm text-destructive">
+              {t("schedules.failedToLoad")}
             </div>
           )}
 
-          {filtered?.map((station) => (
+          {!isLoading && !isError && filtered.length === 0 && (
+            <div className="px-4 py-12 text-center text-sm text-muted-foreground">
+              {search ? t("schedules.noMatch") : t("schedules.noRoutes")}
+            </div>
+          )}
+
+          {filtered.map((route) => (
             <button
-              key={station.stationId}
+              key={`${route.city}-${route.routeId}`}
               onClick={() =>
                 navigate(
-                  `/map?lat=${station.lat}&lon=${station.lon}&zoom=17`,
+                  `/transit/route/${route.routeId}?city=${route.city}&dir=0`,
                 )
               }
               className="flex items-center gap-3 rounded-xl bg-card p-4 shadow-sm text-left transition-all hover:shadow-md active:scale-[0.99]"
@@ -89,19 +95,17 @@ export default function TransitSchedulesView() {
                 <Bus className="h-5 w-5 text-blue-600 dark:text-blue-400" />
               </div>
               <div className="min-w-0 flex-1">
-                <div className="font-medium">{station.name}</div>
+                <div className="text-base font-semibold">{route.routeName}</div>
                 <div className="truncate text-xs text-muted-foreground">
-                  {station.routes
-                    .slice(0, 5)
-                    .map((r) => r.routeName)
-                    .join(", ")}
-                  {station.routes.length > 5 &&
-                    ` +${station.routes.length - 5}`}
+                  {route.departure} ↔ {route.destination}
                 </div>
               </div>
-              <span className="shrink-0 text-xs text-muted-foreground">
-                {station.routes.length} {t("transit.routesServed")}
-              </span>
+              <div className="flex shrink-0 items-center gap-1">
+                <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                  {route.city === "Taipei" ? "北市" : "新北"}
+                </span>
+                <ChevronRight className="h-4 w-4 text-muted-foreground" />
+              </div>
             </button>
           ))}
         </div>

@@ -25,3 +25,12 @@ export interface MapBounds {
   east: number;
   west: number;
 }
+
+export interface BusRoute {
+  routeId: string;
+  routeName: string;
+  routeNameEn: string;
+  departure: string;
+  destination: string;
+  city: string;
+}
