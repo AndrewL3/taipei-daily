@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsx src/scripts/prefetch-aed.ts && tsc",
     "lint": "eslint src/ api/",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest --passWithNoTests",
     "db:migrate": "drizzle-kit migrate",
