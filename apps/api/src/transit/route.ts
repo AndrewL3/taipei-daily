@@ -81,7 +81,7 @@ export async function handleRoute(req: VercelRequest, res: VercelResponse) {
           }).then((r) => TdxBusRouteRawArraySchema.parse(r)),
       ),
       getCached<TdxBusStopRaw[]>(
-        `transit:stops:raw:${city}`,
+        `transit:stops:v2:${city}`,
         CACHE_TTL_STATIC,
         () =>
           tdxFetch<TdxStopOfRouteRaw[]>(

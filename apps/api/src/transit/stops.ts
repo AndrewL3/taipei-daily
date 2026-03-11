@@ -10,7 +10,7 @@ import {
   type TdxStopOfRouteRaw,
 } from "@tracker/types";
 
-const CACHE_KEY = "transit:stations";
+const CACHE_KEY = "transit:stations:v2";
 const CACHE_TTL = 86400; // 24h
 
 const VALID_CITIES: Set<string> = new Set(["Taipei", "NewTaipei"]);
