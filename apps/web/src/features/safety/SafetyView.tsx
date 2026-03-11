@@ -77,16 +77,24 @@ export default function SafetyView() {
     <div className="flex h-full flex-col bg-background">
       <div className="flex-1 overflow-y-auto">
         <div className="mx-auto max-w-lg space-y-6 px-4 py-6">
-          {/* Header */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => navigate(-1)}
-              className="rounded-lg p-1.5 transition-colors hover:bg-muted"
-              aria-label={t("route.back")}
-            >
-              <ArrowLeft className="h-5 w-5" />
-            </button>
-            <h1 className="text-2xl font-bold">{t("safety.title")}</h1>
+          {/* Header — inverted section */}
+          <div className="inverted-section -mx-4 -mt-6 mb-2 px-4 pb-6 pt-6">
+            <div className="relative flex items-center gap-3">
+              <button
+                onClick={() => navigate(-1)}
+                className="rounded-lg p-1.5 transition-colors hover:bg-white/10"
+                aria-label={t("route.back")}
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </button>
+              <div className="space-y-1">
+                <div className="section-label" style={{ borderColor: 'rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.8)' }}>
+                  <span className="dot" />
+                  Safety
+                </div>
+                <h1 className="font-display text-2xl">{t("safety.title")}</h1>
+              </div>
+            </div>
           </div>
 
           {/* Emergency Numbers */}
