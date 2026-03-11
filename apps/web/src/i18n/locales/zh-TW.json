@@ -61,7 +61,16 @@
     "searchPlaceholder": "搜尋路線...",
     "noMatch": "找不到符合的路線",
     "noRoutes": "目前無路線資料",
-    "failedToLoad": "無法載入路線"
+    "failedToLoad": "無法載入路線",
+    "hub": {
+      "garbage": "垃圾車",
+      "garbageDesc": "查看垃圾車路線與時刻表",
+      "transit": "公車路線",
+      "transitDesc": "查詢公車站與到站時間"
+    },
+    "transit": {
+      "searchPlaceholder": "搜尋站點或路線..."
+    }
   },
   "youbike": {
     "availableBikes": "可借車輛",

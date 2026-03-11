@@ -61,7 +61,16 @@
     "searchPlaceholder": "Search routes...",
     "noMatch": "No routes match your search",
     "noRoutes": "No routes available",
-    "failedToLoad": "Failed to load routes"
+    "failedToLoad": "Failed to load routes",
+    "hub": {
+      "garbage": "Garbage Trucks",
+      "garbageDesc": "View garbage truck routes and schedules",
+      "transit": "Bus Routes",
+      "transitDesc": "Look up bus stops and arrival times"
+    },
+    "transit": {
+      "searchPlaceholder": "Search stops or routes..."
+    }
   },
   "youbike": {
     "availableBikes": "Available bikes",

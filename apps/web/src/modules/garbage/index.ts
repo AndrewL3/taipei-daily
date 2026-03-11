@@ -1,16 +1,22 @@
 import { lazy, createElement } from "react";
-import { Trash2 } from "lucide-react";
+import { CalendarClock, Trash2 } from "lucide-react";
 import type { ModuleDefinition } from "@/core/types";
 import GarbageMapLayer from "./map/MapView";
 import GarbageDashboardCard from "./dashboard/GarbageDashboardCard";
 
-const SchedulesView = lazy(() => import("./schedules/SchedulesView"));
+const SchedulesHubView = lazy(
+  () => import("@/core/schedules/SchedulesHubView"),
+);
+const GarbageSchedulesView = lazy(() => import("./schedules/SchedulesView"));
 
 export const garbageModule: ModuleDefinition = {
   id: "garbage",
   name: "nav.schedules",
-  icon: Trash2,
-  routes: [{ path: "schedules", element: createElement(SchedulesView) }],
+  icon: CalendarClock,
+  routes: [
+    { path: "schedules", element: createElement(SchedulesHubView) },
+    { path: "schedules/garbage", element: createElement(GarbageSchedulesView) },
+  ],
   mapLayers: [
     {
       id: "garbage",
