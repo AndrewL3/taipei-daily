@@ -47,9 +47,15 @@ export default function TransitSchedulesView() {
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
-          <h1 className="text-2xl font-bold">
-            {t("schedules.hub.transit")}
-          </h1>
+          <div className="space-y-1">
+            <div className="section-label">
+              <span className="dot" />
+              Transit
+            </div>
+            <h1 className="font-display text-2xl">
+              {t("schedules.hub.transit")}
+            </h1>
+          </div>
         </div>
         <div className="relative">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -89,10 +95,10 @@ export default function TransitSchedulesView() {
                   `/transit/route/${route.routeId}?city=${route.city}&dir=0`,
                 )
               }
-              className="flex items-center gap-3 rounded-xl bg-card p-4 shadow-sm text-left transition-all hover:shadow-md active:scale-[0.99]"
+              className="card-lift flex items-center gap-3 rounded-2xl bg-card p-4 shadow-[var(--shadow-card)] text-left"
             >
-              <div className="rounded-lg bg-blue-500/10 p-2">
-                <Bus className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <div className="gradient-icon rounded-lg bg-gradient-to-br from-blue-500 to-indigo-500 p-2 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
+                <Bus className="h-5 w-5" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-base font-semibold">{route.routeName}</div>

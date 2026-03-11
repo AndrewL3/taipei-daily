@@ -61,7 +61,13 @@ export default function SchedulesView() {
     <div className="flex h-full flex-col bg-background">
       {/* Header — solid surface, shadow */}
       <div className="sticky top-0 z-10 space-y-3 bg-background px-4 py-4 shadow-sm md:pl-48">
-        <h1 className="text-2xl font-bold">{t("schedules.heading")}</h1>
+        <div className="space-y-1">
+          <div className="section-label">
+            <span className="dot" />
+            Routes
+          </div>
+          <h1 className="font-display text-2xl">{t("schedules.heading")}</h1>
+        </div>
         <div className="relative">
           <Search className="text-muted-foreground absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2" />
           <Input
@@ -86,7 +92,7 @@ export default function SchedulesView() {
           {isLoading &&
             !isError &&
             Array.from({ length: 10 }).map((_, i) => (
-              <div key={i} className="rounded-xl bg-card p-4 shadow-sm">
+              <div key={i} className="rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
                 <Skeleton className="h-10 w-full" />
               </div>
             ))}
@@ -108,7 +114,7 @@ export default function SchedulesView() {
               <Link
                 key={route.lineId}
                 to={`/route/${route.lineId}`}
-                className="group rounded-xl bg-card p-4 shadow-sm transition-all hover:shadow-md active:scale-[0.99]"
+                className="card-lift group rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]"
               >
                 <div className="flex items-center gap-3">
                   {/* Status dot */}

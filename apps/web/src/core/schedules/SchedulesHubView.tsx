@@ -8,16 +8,16 @@ const options = [
     titleKey: "schedules.hub.garbage",
     descKey: "schedules.hub.garbageDesc",
     Icon: Trash2,
-    color: "text-green-600 dark:text-green-400",
-    bg: "bg-green-500/10",
+    color: "text-white",
+    bg: "gradient-icon bg-gradient-to-br from-green-500 to-emerald-500 shadow-[0_2px_8px_rgba(34,197,94,0.3)]",
   },
   {
     path: "/schedules/transit",
     titleKey: "schedules.hub.transit",
     descKey: "schedules.hub.transitDesc",
     Icon: Bus,
-    color: "text-blue-600 dark:text-blue-400",
-    bg: "bg-blue-500/10",
+    color: "text-white",
+    bg: "gradient-icon bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]",
   },
 ] as const;
 
@@ -27,15 +27,19 @@ export default function SchedulesHubView() {
 
   return (
     <div className="flex h-full flex-col bg-background">
-      <div className="px-4 py-4 md:pl-48">
-        <h1 className="text-2xl font-bold">{t("schedules.heading")}</h1>
+      <div className="space-y-2 px-4 py-4 md:pl-48">
+        <div className="section-label">
+          <span className="dot" />
+          Schedules
+        </div>
+        <h1 className="font-display text-2xl">{t("schedules.heading")}</h1>
       </div>
       <div className="flex flex-col gap-3 px-4 md:pl-48">
         {options.map((opt) => (
           <button
             key={opt.path}
             onClick={() => navigate(opt.path)}
-            className="flex items-center gap-4 rounded-xl bg-card p-4 shadow-sm transition-all hover:shadow-md active:scale-[0.99] text-left"
+            className="card-lift flex items-center gap-4 rounded-2xl bg-card p-4 shadow-[var(--shadow-card)] text-left"
           >
             <div className={`rounded-xl p-3 ${opt.bg}`}>
               <opt.Icon className={`h-6 w-6 ${opt.color}`} />
