@@ -9,16 +9,13 @@ import ForecastCard from "./ForecastCard";
 export default function WeatherDetailView() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { position, located } = useGeolocation();
+  const { position } = useGeolocation();
 
   const {
     data: forecast,
     isLoading,
     isError,
-  } = useWeatherForecast(
-    located ? position.lat : null,
-    located ? position.lon : null,
-  );
+  } = useWeatherForecast(position.lat, position.lon);
 
   const current = forecast?.forecast[0];
 
@@ -39,13 +36,6 @@ export default function WeatherDetailView() {
       </div>
 
       <div className="px-4 py-4">
-        {/* Location prompt */}
-        {!located && (
-          <p className="text-center text-sm text-muted-foreground">
-            {t("dashboard.enableLocation")}
-          </p>
-        )}
-
         {/* Loading */}
         {isLoading && (
           <div className="space-y-3">

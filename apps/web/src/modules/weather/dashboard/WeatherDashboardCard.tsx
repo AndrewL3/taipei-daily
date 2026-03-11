@@ -8,16 +8,13 @@ import WeatherIcon from "../views/WeatherIcon";
 export default function WeatherDashboardCard() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { position, located } = useGeolocation();
+  const { position } = useGeolocation();
 
   const {
     data: forecast,
     isLoading,
     isError,
-  } = useWeatherForecast(
-    located ? position.lat : null,
-    located ? position.lon : null,
-  );
+  } = useWeatherForecast(position.lat, position.lon);
 
   const current = forecast?.forecast[0];
 
