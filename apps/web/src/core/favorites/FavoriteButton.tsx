@@ -33,7 +33,7 @@ export default function FavoriteButton({
         className={`h-4 w-4 ${favorited ? "fill-red-500 text-red-500" : "text-muted-foreground"}`}
       />
       <span className="text-muted-foreground">
-        {favorited ? t("favorites.saved") : t("favorites.save")}
+        {favorited ? t("favorites.saved") : t("favorites.add")}
       </span>
     </button>
   );

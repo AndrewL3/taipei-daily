@@ -29,7 +29,7 @@ async function fetchCityStops(city: {
   );
   const parsed = TdxStopOfRouteRawArraySchema.parse(raw);
   const flat = flattenStopsOfRoute(parsed);
-  return groupStopsIntoStations(flat, city.code);
+  return groupStopsIntoStations(flat, city.path);
 }
 
 async function getAllStations(): Promise<BusStation[]> {
