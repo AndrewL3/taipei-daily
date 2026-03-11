@@ -17,7 +17,7 @@ function formatTime(dateStr: string): string {
 
 export default function ForecastCard({ period }: ForecastCardProps) {
   return (
-    <div className="flex items-center gap-4 rounded-xl bg-card px-4 py-3 shadow-sm">
+    <div className="flex items-center gap-4 rounded-2xl bg-card px-4 py-3 shadow-[var(--shadow-card)]">
       {/* Time */}
       <div className="w-16 shrink-0 text-sm text-muted-foreground">
         {formatTime(period.startTime)}

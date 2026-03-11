@@ -55,7 +55,7 @@ export default function WeatherDetailView() {
         {/* Current conditions hero */}
         {current && forecast && (
           <>
-            <div className="mb-6 rounded-xl bg-card p-6 shadow-sm">
+            <div className="mb-6 rounded-2xl bg-card p-6 shadow-[var(--shadow-card)]">
               <p className="mb-1 text-sm text-muted-foreground">
                 {forecast.township} · {forecast.city}
               </p>

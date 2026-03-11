@@ -43,7 +43,7 @@ export default function SearchBar() {
 
   return (
     <div ref={containerRef} className="relative">
-      <div className="flex items-center gap-2 rounded-xl bg-muted/50 px-3 py-2">
+      <div className="flex items-center gap-2 rounded-xl bg-muted/50 px-3 py-2 transition-shadow focus-within:ring-2 focus-within:ring-primary/50 focus-within:ring-offset-2 focus-within:ring-offset-background">
         <Search className="h-4 w-4 text-muted-foreground" />
         <input
           type="text"
