@@ -21,10 +21,12 @@ export default function GarbageDashboardCard() {
   const nearest = stops?.[0];
 
   return (
-    <div className="rounded-xl bg-card p-4 shadow-sm">
+    <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Trash2 className="h-4 w-4 text-teal-600 dark:text-teal-400" />
+          <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-teal-500 to-sky-500 shadow-[0_2px_8px_rgba(13,148,136,0.3)]">
+            <Trash2 className="h-3.5 w-3.5" />
+          </div>
           <h3 className="text-sm font-semibold">
             {t("dashboard.garbage.title")}
           </h3>

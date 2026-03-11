@@ -19,10 +19,12 @@ export default function WeatherDashboardCard() {
   const current = forecast?.forecast[0];
 
   return (
-    <div className="rounded-xl bg-card p-4 shadow-sm">
+    <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <CloudSun className="h-4 w-4 text-amber-500 dark:text-amber-400" />
+          <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_2px_8px_rgba(245,158,11,0.3)]">
+            <CloudSun className="h-3.5 w-3.5" />
+          </div>
           <h3 className="text-sm font-semibold">
             {t("dashboard.weather.title")}
           </h3>
