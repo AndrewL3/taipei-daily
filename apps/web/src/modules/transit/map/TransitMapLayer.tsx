@@ -7,13 +7,13 @@ import BusStopPopup from "./BusStopPopup";
 import BusStopDetail from "./BusStopDetail";
 import type { BusStation, MapBounds } from "../api/types";
 
+const MIN_ZOOM = 15;
+
 function TransitMapEvents({
   onMoveEnd,
-  onZoomChange,
   onDeselect,
 }: {
   onMoveEnd: () => void;
-  onZoomChange: (zoom: number) => void;
   onDeselect: () => void;
 }) {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -23,8 +23,9 @@ function TransitMapEvents({
       clearTimeout(timerRef.current);
       timerRef.current = setTimeout(onMoveEnd, 500);
     },
-    zoom(e) {
-      onZoomChange(e.target.getZoom());
+    zoomend() {
+      // Fire immediately on zoom (no debounce) to update markers
+      onMoveEnd();
     },
     click() {
       onDeselect();
@@ -42,8 +43,6 @@ function getBounds(map: L.Map): MapBounds {
     west: b.getWest(),
   };
 }
-
-const MIN_ZOOM = 15;
 
 export default function TransitMapLayer() {
   const map = useMap();
@@ -81,11 +80,11 @@ export default function TransitMapLayer() {
     setSelectedStation(null);
   }, []);
 
-  const { data: stations } = useBusStations(bounds);
+  const { data: stations } = useBusStations(zoom >= MIN_ZOOM ? bounds : null);
 
   return (
     <>
-      <TransitMapEvents onMoveEnd={handleMoveEnd} onZoomChange={setZoom} onDeselect={handleDeselect} />
+      <TransitMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
 
       {zoom >= MIN_ZOOM && stations?.map((station) => (
         <BusStopMarker

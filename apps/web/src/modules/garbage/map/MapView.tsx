@@ -26,28 +26,20 @@ function getBounds(map: L.Map): MapBounds {
 
 function GarbageMapEvents({
   onMoveEnd,
-  onBoundsChange,
-  onZoomChange,
   onDeselect,
 }: {
-  onMoveEnd: (lat: number, lon: number) => void;
-  onBoundsChange: (bounds: MapBounds) => void;
-  onZoomChange: (zoom: number) => void;
+  onMoveEnd: () => void;
   onDeselect: () => void;
 }) {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useMapEvents({
-    moveend(e) {
+    moveend() {
       clearTimeout(timerRef.current);
-      timerRef.current = setTimeout(() => {
-        const center = e.target.getCenter();
-        onMoveEnd(center.lat, center.lng);
-        onBoundsChange(getBounds(e.target));
-      }, 500);
+      timerRef.current = setTimeout(onMoveEnd, 500);
     },
-    zoom(e) {
-      onZoomChange(e.target.getZoom());
+    zoomend() {
+      onMoveEnd();
     },
     click() {
       onDeselect();
@@ -87,17 +79,17 @@ export default function GarbageMapLayer() {
   // Fetch Taipei stops
   const { data: taipeiStops } = useTaipeiStops(zoom >= MIN_ZOOM ? bounds : null);
 
-  const handleMoveEnd = useCallback((lat: number, lon: number) => {
+  const handleMoveEnd = useCallback(() => {
     const z = map.getZoom();
     setZoom(z);
-    if (z >= MIN_ZOOM) setMapCenter({ lat, lon });
-    else setMapCenter(null);
-  }, [map]);
-
-  const handleBoundsChange = useCallback((newBounds: MapBounds) => {
-    const z = map.getZoom();
-    if (z >= MIN_ZOOM) setBounds(newBounds);
-    else setBounds(null);
+    if (z >= MIN_ZOOM) {
+      const center = map.getCenter();
+      setMapCenter({ lat: center.lat, lon: center.lng });
+      setBounds(getBounds(map));
+    } else {
+      setMapCenter(null);
+      setBounds(null);
+    }
   }, [map]);
 
   const handleSelect = useCallback((stop: NearbyStop) => {
@@ -168,8 +160,6 @@ export default function GarbageMapLayer() {
     <>
       <GarbageMapEvents
         onMoveEnd={handleMoveEnd}
-        onBoundsChange={handleBoundsChange}
-        onZoomChange={setZoom}
         onDeselect={handleDeselect}
       />
 

@@ -7,13 +7,13 @@ import ParkingPopup from "./ParkingPopup";
 import ParkingDetail from "./ParkingDetail";
 import type { ParkingRoadSegment, MapBounds } from "../api/types";
 
+const MIN_ZOOM = 14;
+
 function ParkingMapEvents({
   onMoveEnd,
-  onZoomChange,
   onDeselect,
 }: {
   onMoveEnd: () => void;
-  onZoomChange: (zoom: number) => void;
   onDeselect: () => void;
 }) {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -23,8 +23,8 @@ function ParkingMapEvents({
       clearTimeout(timerRef.current);
       timerRef.current = setTimeout(onMoveEnd, 500);
     },
-    zoom(e) {
-      onZoomChange(e.target.getZoom());
+    zoomend() {
+      onMoveEnd();
     },
     click() {
       onDeselect();
@@ -42,8 +42,6 @@ function getBounds(map: L.Map): MapBounds {
     west: b.getWest(),
   };
 }
-
-const MIN_ZOOM = 14;
 
 export default function ParkingMapLayer() {
   const map = useMap();
@@ -80,11 +78,11 @@ export default function ParkingMapLayer() {
     setSelectedSegment(null);
   }, []);
 
-  const { data: segments } = useParkingSpaces(bounds);
+  const { data: segments } = useParkingSpaces(zoom >= MIN_ZOOM ? bounds : null);
 
   return (
     <>
-      <ParkingMapEvents onMoveEnd={handleMoveEnd} onZoomChange={setZoom} onDeselect={handleDeselect} />
+      <ParkingMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
 
       {zoom >= MIN_ZOOM && segments?.map((segment) => (
         <ParkingMarker

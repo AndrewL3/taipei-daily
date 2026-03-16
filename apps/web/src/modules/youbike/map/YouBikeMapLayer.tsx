@@ -7,13 +7,13 @@ import StationPopup from "./StationPopup";
 import StationDetail from "../stops/StationDetail";
 import type { YouBikeStation, MapBounds } from "../api/client";
 
+const MIN_ZOOM = 14;
+
 function YouBikeMapEvents({
   onMoveEnd,
-  onZoomChange,
   onDeselect,
 }: {
   onMoveEnd: () => void;
-  onZoomChange: (zoom: number) => void;
   onDeselect: () => void;
 }) {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -23,8 +23,8 @@ function YouBikeMapEvents({
       clearTimeout(timerRef.current);
       timerRef.current = setTimeout(onMoveEnd, 500);
     },
-    zoom(e) {
-      onZoomChange(e.target.getZoom());
+    zoomend() {
+      onMoveEnd();
     },
     click() {
       onDeselect();
@@ -42,8 +42,6 @@ function getBounds(map: L.Map): MapBounds {
     west: b.getWest(),
   };
 }
-
-const MIN_ZOOM = 14;
 
 export default function YouBikeMapLayer() {
   const map = useMap();
@@ -82,11 +80,11 @@ export default function YouBikeMapLayer() {
     setSelectedStation(null);
   }, []);
 
-  const { data: stations } = useYouBikeStations(bounds);
+  const { data: stations } = useYouBikeStations(zoom >= MIN_ZOOM ? bounds : null);
 
   return (
     <>
-      <YouBikeMapEvents onMoveEnd={handleMoveEnd} onZoomChange={setZoom} onDeselect={handleDeselect} />
+      <YouBikeMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
 
       {zoom >= MIN_ZOOM && stations?.map((station) => (
         <StationMarker
