@@ -51,6 +51,8 @@ function GarbageMapEvents({
   return null;
 }
 
+const MIN_ZOOM = 14;
+
 export default function GarbageMapLayer() {
   const map = useMap();
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -58,6 +60,7 @@ export default function GarbageMapLayer() {
     lat: number;
     lon: number;
   } | null>(null);
+  const [zoom, setZoom] = useState(() => map.getZoom());
   const [selectedStop, setSelectedStop] = useState<NearbyStop | null>(null);
   const selectingRef = useRef(false);
 
@@ -71,19 +74,26 @@ export default function GarbageMapLayer() {
 
   // Initialize bounds on mount
   useEffect(() => {
-    setBounds(getBounds(map));
+    const z = map.getZoom();
+    setZoom(z);
+    if (z >= MIN_ZOOM) setBounds(getBounds(map));
   }, [map]);
 
   // Fetch Taipei stops
-  const { data: taipeiStops } = useTaipeiStops(bounds);
+  const { data: taipeiStops } = useTaipeiStops(zoom >= MIN_ZOOM ? bounds : null);
 
   const handleMoveEnd = useCallback((lat: number, lon: number) => {
-    setMapCenter({ lat, lon });
-  }, []);
+    const z = map.getZoom();
+    setZoom(z);
+    if (z >= MIN_ZOOM) setMapCenter({ lat, lon });
+    else setMapCenter(null);
+  }, [map]);
 
   const handleBoundsChange = useCallback((newBounds: MapBounds) => {
-    setBounds(newBounds);
-  }, []);
+    const z = map.getZoom();
+    if (z >= MIN_ZOOM) setBounds(newBounds);
+    else setBounds(null);
+  }, [map]);
 
   const handleSelect = useCallback((stop: NearbyStop) => {
     selectingRef.current = true;
@@ -110,10 +120,9 @@ export default function GarbageMapLayer() {
 
   // Use map center for initial fetch, then track panning
   const initialCenter = map.getCenter();
-  const { data: stops } = useNearbyStops(
-    mapCenter?.lat ?? initialCenter.lat,
-    mapCenter?.lon ?? initialCenter.lng,
-  );
+  const effectiveLat = zoom >= MIN_ZOOM ? (mapCenter?.lat ?? initialCenter.lat) : null;
+  const effectiveLon = zoom >= MIN_ZOOM ? (mapCenter?.lon ?? initialCenter.lng) : null;
+  const { data: stops } = useNearbyStops(effectiveLat, effectiveLon);
 
   const { data: routeDetail } = useRouteDetail(selectedStop?.routeLineId);
 
@@ -171,7 +180,7 @@ export default function GarbageMapLayer() {
         <TruckMarker lat={truckPosition.lat} lon={truckPosition.lon} />
       )}
 
-      {stops?.map((stop) => {
+      {zoom >= MIN_ZOOM && stops?.map((stop) => {
         const key = `${stop.routeLineId}-${stop.rank}`;
         const status = stopStatusMap.get(key);
         const selectedRouteLineId = selectedStop?.routeLineId ?? null;
@@ -195,7 +204,7 @@ export default function GarbageMapLayer() {
         );
       })}
 
-      {taipeiStops?.map((stop) => (
+      {zoom >= MIN_ZOOM && taipeiStops?.map((stop) => (
         <TaipeiStopMarker
           key={stop.id}
           stop={stop}

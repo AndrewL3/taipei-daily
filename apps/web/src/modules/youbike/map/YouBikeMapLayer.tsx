@@ -38,10 +38,13 @@ function getBounds(map: L.Map): MapBounds {
   };
 }
 
+const MIN_ZOOM = 14;
+
 export default function YouBikeMapLayer() {
   const map = useMap();
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const [bounds, setBounds] = useState<MapBounds | null>(null);
+  const [zoom, setZoom] = useState(() => map.getZoom());
   const [selectedStation, setSelectedStation] = useState<YouBikeStation | null>(
     null,
   );
@@ -49,11 +52,16 @@ export default function YouBikeMapLayer() {
 
   // Initialize bounds on mount
   useEffect(() => {
-    setBounds(getBounds(map));
+    const z = map.getZoom();
+    setZoom(z);
+    if (z >= MIN_ZOOM) setBounds(getBounds(map));
   }, [map]);
 
   const handleMoveEnd = useCallback(() => {
-    setBounds(getBounds(map));
+    const z = map.getZoom();
+    setZoom(z);
+    if (z >= MIN_ZOOM) setBounds(getBounds(map));
+    else setBounds(null);
   }, [map]);
 
   const handleSelect = useCallback((station: YouBikeStation) => {
@@ -75,7 +83,7 @@ export default function YouBikeMapLayer() {
     <>
       <YouBikeMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
 
-      {stations?.map((station) => (
+      {zoom >= MIN_ZOOM && stations?.map((station) => (
         <StationMarker
           key={station.id}
           station={station}

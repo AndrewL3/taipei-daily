@@ -38,21 +38,29 @@ function getBounds(map: L.Map): MapBounds {
   };
 }
 
+const MIN_ZOOM = 15;
+
 export default function TransitMapLayer() {
   const map = useMap();
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const [bounds, setBounds] = useState<MapBounds | null>(null);
+  const [zoom, setZoom] = useState(() => map.getZoom());
   const [selectedStation, setSelectedStation] = useState<BusStation | null>(
     null,
   );
   const selectingRef = useRef(false);
 
   useEffect(() => {
-    setBounds(getBounds(map));
+    const z = map.getZoom();
+    setZoom(z);
+    if (z >= MIN_ZOOM) setBounds(getBounds(map));
   }, [map]);
 
   const handleMoveEnd = useCallback(() => {
-    setBounds(getBounds(map));
+    const z = map.getZoom();
+    setZoom(z);
+    if (z >= MIN_ZOOM) setBounds(getBounds(map));
+    else setBounds(null);
   }, [map]);
 
   const handleSelect = useCallback((station: BusStation) => {
@@ -74,7 +82,7 @@ export default function TransitMapLayer() {
     <>
       <TransitMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
 
-      {stations?.map((station) => (
+      {zoom >= MIN_ZOOM && stations?.map((station) => (
         <BusStopMarker
           key={station.stationId}
           station={station}

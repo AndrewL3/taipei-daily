@@ -38,20 +38,28 @@ function getBounds(map: L.Map): MapBounds {
   };
 }
 
+const MIN_ZOOM = 14;
+
 export default function ParkingMapLayer() {
   const map = useMap();
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const [bounds, setBounds] = useState<MapBounds | null>(null);
+  const [zoom, setZoom] = useState(() => map.getZoom());
   const [selectedSegment, setSelectedSegment] =
     useState<ParkingRoadSegment | null>(null);
   const selectingRef = useRef(false);
 
   useEffect(() => {
-    setBounds(getBounds(map));
+    const z = map.getZoom();
+    setZoom(z);
+    if (z >= MIN_ZOOM) setBounds(getBounds(map));
   }, [map]);
 
   const handleMoveEnd = useCallback(() => {
-    setBounds(getBounds(map));
+    const z = map.getZoom();
+    setZoom(z);
+    if (z >= MIN_ZOOM) setBounds(getBounds(map));
+    else setBounds(null);
   }, [map]);
 
   const handleSelect = useCallback((segment: ParkingRoadSegment) => {
@@ -73,7 +81,7 @@ export default function ParkingMapLayer() {
     <>
       <ParkingMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
 
-      {segments?.map((segment) => (
+      {zoom >= MIN_ZOOM && segments?.map((segment) => (
         <ParkingMarker
           key={segment.roadId}
           segment={segment}
