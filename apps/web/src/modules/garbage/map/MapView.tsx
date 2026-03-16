@@ -27,10 +27,12 @@ function getBounds(map: L.Map): MapBounds {
 function GarbageMapEvents({
   onMoveEnd,
   onBoundsChange,
+  onZoomChange,
   onDeselect,
 }: {
   onMoveEnd: (lat: number, lon: number) => void;
   onBoundsChange: (bounds: MapBounds) => void;
+  onZoomChange: (zoom: number) => void;
   onDeselect: () => void;
 }) {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -43,6 +45,9 @@ function GarbageMapEvents({
         onMoveEnd(center.lat, center.lng);
         onBoundsChange(getBounds(e.target));
       }, 500);
+    },
+    zoom(e) {
+      onZoomChange(e.target.getZoom());
     },
     click() {
       onDeselect();
@@ -164,6 +169,7 @@ export default function GarbageMapLayer() {
       <GarbageMapEvents
         onMoveEnd={handleMoveEnd}
         onBoundsChange={handleBoundsChange}
+        onZoomChange={setZoom}
         onDeselect={handleDeselect}
       />
 
