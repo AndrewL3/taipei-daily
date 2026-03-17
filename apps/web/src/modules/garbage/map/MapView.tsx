@@ -54,7 +54,7 @@ function GarbageMapEvents({
   return null;
 }
 
-const MIN_ZOOM = 17;
+const MIN_ZOOM = 18;
 
 export default function GarbageMapLayer() {
   const map = useMap();
