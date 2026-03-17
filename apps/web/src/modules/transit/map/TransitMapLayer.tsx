@@ -7,7 +7,7 @@ import BusStopPopup from "./BusStopPopup";
 import BusStopDetail from "./BusStopDetail";
 import type { BusStation, MapBounds } from "../api/types";
 
-const MIN_ZOOM = 15;
+const MIN_ZOOM = 99;
 
 function TransitMapEvents({
   onBoundsUpdate,
