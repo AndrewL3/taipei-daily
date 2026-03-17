@@ -7,7 +7,7 @@ import StationPopup from "./StationPopup";
 import StationDetail from "../stops/StationDetail";
 import type { YouBikeStation, MapBounds } from "../api/client";
 
-const MIN_ZOOM = 19;
+const MIN_ZOOM = 16;
 
 function YouBikeMapEvents({
   onBoundsUpdate,
