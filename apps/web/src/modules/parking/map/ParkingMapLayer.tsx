@@ -7,7 +7,7 @@ import ParkingPopup from "./ParkingPopup";
 import ParkingDetail from "./ParkingDetail";
 import type { ParkingRoadSegment, MapBounds } from "../api/types";
 
-const MIN_ZOOM = 99;
+const MIN_ZOOM = 14;
 
 function ParkingMapEvents({
   onBoundsUpdate,
