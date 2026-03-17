@@ -79,6 +79,7 @@ export default function SharedMapView() {
         className="h-full w-full"
         zoomControl={false}
         attributionControl={false}
+        markerZoomAnimation={false}
       >
         <TileLayer
           key={isDark ? "dark" : "light"}

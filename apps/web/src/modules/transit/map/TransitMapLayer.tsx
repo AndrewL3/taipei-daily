@@ -10,10 +10,12 @@ import type { BusStation, MapBounds } from "../api/types";
 const MIN_ZOOM = 15;
 
 function TransitMapEvents({
-  onMoveEnd,
+  onBoundsUpdate,
+  onZoom,
   onDeselect,
 }: {
-  onMoveEnd: () => void;
+  onBoundsUpdate: () => void;
+  onZoom: (zoom: number) => void;
   onDeselect: () => void;
 }) {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -21,11 +23,15 @@ function TransitMapEvents({
   useMapEvents({
     moveend() {
       clearTimeout(timerRef.current);
-      timerRef.current = setTimeout(onMoveEnd, 500);
+      timerRef.current = setTimeout(onBoundsUpdate, 500);
     },
     zoomend() {
-      // Fire immediately on zoom (no debounce) to update markers
-      onMoveEnd();
+      clearTimeout(timerRef.current);
+      onBoundsUpdate();
+    },
+    zoomanim(e) {
+      // Fires BEFORE animation with target zoom — lets React unmount markers early
+      onZoom(e.zoom);
     },
     click() {
       onDeselect();
@@ -84,7 +90,7 @@ export default function TransitMapLayer() {
 
   return (
     <>
-      <TransitMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
+      <TransitMapEvents onBoundsUpdate={handleMoveEnd} onZoom={setZoom} onDeselect={handleDeselect} />
 
       {zoom >= MIN_ZOOM && stations?.map((station) => (
         <BusStopMarker

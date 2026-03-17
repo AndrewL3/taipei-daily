@@ -10,10 +10,12 @@ import type { ParkingRoadSegment, MapBounds } from "../api/types";
 const MIN_ZOOM = 14;
 
 function ParkingMapEvents({
-  onMoveEnd,
+  onBoundsUpdate,
+  onZoom,
   onDeselect,
 }: {
-  onMoveEnd: () => void;
+  onBoundsUpdate: () => void;
+  onZoom: (zoom: number) => void;
   onDeselect: () => void;
 }) {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -21,10 +23,14 @@ function ParkingMapEvents({
   useMapEvents({
     moveend() {
       clearTimeout(timerRef.current);
-      timerRef.current = setTimeout(onMoveEnd, 500);
+      timerRef.current = setTimeout(onBoundsUpdate, 500);
     },
     zoomend() {
-      onMoveEnd();
+      clearTimeout(timerRef.current);
+      onBoundsUpdate();
+    },
+    zoomanim(e) {
+      onZoom(e.zoom);
     },
     click() {
       onDeselect();
@@ -82,7 +88,7 @@ export default function ParkingMapLayer() {
 
   return (
     <>
-      <ParkingMapEvents onMoveEnd={handleMoveEnd} onDeselect={handleDeselect} />
+      <ParkingMapEvents onBoundsUpdate={handleMoveEnd} onZoom={setZoom} onDeselect={handleDeselect} />
 
       {zoom >= MIN_ZOOM && segments?.map((segment) => (
         <ParkingMarker
