@@ -21,7 +21,14 @@ export default function FavoritesDashboardSection() {
       }));
     });
 
-  if (entries.length === 0) return null;
+  if (entries.length === 0) {
+    return (
+      <div className="flex items-center gap-2 py-1 text-[13px] text-muted-foreground">
+        <Heart className="h-4 w-4" />
+        <span>{t("favorites.emptyHint")}</span>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-2">
