@@ -17,6 +17,20 @@ function notify() {
   listeners.forEach((fn) => fn());
 }
 
+export async function addFavorite(
+  moduleKey: string,
+  item: FavoriteItem,
+): Promise<void> {
+  const current = cachedFavorites ?? (await loadFavorites());
+  const moduleItems = current[moduleKey] ?? [];
+  if (moduleItems.some((f) => f.id === item.id)) return;
+  if (isAtLimit(current)) return;
+  const updated = { ...current, [moduleKey]: [...moduleItems, item] };
+  cachedFavorites = updated;
+  await saveFavorites(updated);
+  notify();
+}
+
 export function useFavorites(moduleKey: string) {
   const [favorites, setFavorites] = useState<FavoritesMap>(
     cachedFavorites ?? {},

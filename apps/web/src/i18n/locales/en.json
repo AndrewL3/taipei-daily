@@ -196,7 +196,9 @@
     "add": "Save",
     "remove": "Remove",
     "saved": "Saved",
-    "emptyHint": "Tap ♡ on any stop or station to save it here"
+    "emptyHint": "Tap ♡ on any stop or station to save it here",
+    "removed": "Removed from favorites",
+    "undo": "Undo"
   },
   "unit": {
     "min": "min"

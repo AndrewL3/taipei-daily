@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Toaster } from "sonner";
 import { getRegisteredModules } from "../module-registry";
 import ShellLayout from "./ShellLayout";
 import ReloadPrompt from "@/components/ReloadPrompt";
@@ -64,6 +65,7 @@ export default function AppShell() {
       </Suspense>
       <ReloadPrompt />
       <InstallPrompt />
+      <Toaster position="top-center" theme="system" />
     </>
   );
 }
