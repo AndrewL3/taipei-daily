@@ -6,7 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: "Inter", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Calistoga", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
@@ -269,7 +269,7 @@
   border: 1px solid oklch(1 0 0 / 20%);
   box-shadow: 0 8px 32px rgb(0 0 0 / 0.12);
   padding: 0;
-  font-family: "Inter", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Plus Jakarta Sans", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
 }
 
 .stop-popup .leaflet-popup-content {
