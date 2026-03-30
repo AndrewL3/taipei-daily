@@ -22,7 +22,7 @@ export default function TransitDashboardCard() {
   const nearby = stations?.slice(0, 3);
 
   return (
-    <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
+    <div className="card-lift rounded-2xl border-t-2 border-blue-500 bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">

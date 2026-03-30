@@ -24,7 +24,7 @@ export default function YouBikeDashboardCard() {
   const nearest = stations?.[0];
 
   return (
-    <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
+    <div className="card-lift rounded-2xl border-t-2 border-emerald-500 bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-emerald-500 to-green-400 shadow-[0_2px_8px_rgba(16,185,129,0.3)]">
