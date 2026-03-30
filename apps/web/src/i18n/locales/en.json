@@ -34,8 +34,8 @@
     "scheduled": "Scheduled",
     "showFullRoute": "Show full route",
     "scheduledTime": "Scheduled",
-    "unableToLoad": "Unable to load schedule",
-    "notAvailable": "Stop details not available",
+    "unableToLoad": "Couldn't load the schedule",
+    "notAvailable": "Stop details aren't available",
     "scheduleOnly": "Schedule only",
     "arrivalDeparture": "Arrival - Departure"
   },
@@ -46,7 +46,7 @@
   },
   "route": {
     "back": "Go back",
-    "failedToLoad": "Failed to load route",
+    "failedToLoad": "Couldn't load this route",
     "goBack": "Go back",
     "notFound": "Route not found",
     "noTrucksActive": "No trucks active yet",
@@ -59,7 +59,7 @@
     "searchPlaceholder": "Search routes...",
     "noMatch": "No routes match your search",
     "noRoutes": "No routes available",
-    "failedToLoad": "Failed to load routes",
+    "failedToLoad": "Couldn't load routes",
     "hub": {
       "garbage": "Garbage Trucks",
       "garbageDesc": "View garbage truck routes and schedules",
@@ -97,7 +97,7 @@
     "rainProb": "Rain",
     "feelsLike": "Feels like",
     "upcoming": "Upcoming",
-    "error": "Unable to load weather data"
+    "error": "Couldn't load weather data"
   },
   "transit": {
     "arrivals": "Arrivals",
@@ -114,29 +114,34 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "enableLocation": "Enable location for personalized info",
-    "noCards": "No dashboard cards available",
+    "greeting": {
+      "morning": "Good Morning",
+      "afternoon": "Good Afternoon",
+      "evening": "Good Evening"
+    },
+    "enableLocation": "Enable location to see nearby buses, bikes, garbage trucks, and more",
+    "noCards": "No data modules available",
     "nearby": "Nearby",
     "viewOnMap": "View on map",
     "garbage": {
       "title": "Garbage Truck",
-      "noStops": "No nearby garbage stops"
+      "noStops": "No garbage stops found nearby"
     },
     "youbike": {
       "title": "YouBike",
-      "noStations": "No nearby stations"
+      "noStations": "No YouBike stations found nearby"
     },
     "transit": {
       "title": "Bus Transit",
-      "noStops": "No nearby bus stops"
+      "noStops": "No bus stops found nearby"
     },
     "parking": {
       "title": "Street Parking",
-      "noSpaces": "No nearby parking data"
+      "noSpaces": "No street parking data nearby"
     },
     "weather": {
       "title": "Weather",
-      "noData": "Weather data unavailable"
+      "noData": "Weather unavailable right now"
     },
     "alerts": {
       "title": "Alerts"
@@ -149,7 +154,7 @@
   },
   "search": {
     "placeholder": "Search stops, routes, stations...",
-    "noResults": "No results found",
+    "noResults": "No matches. Try a different stop or route name.",
     "module": {
       "garbage": "Garbage",
       "youbike": "YouBike",

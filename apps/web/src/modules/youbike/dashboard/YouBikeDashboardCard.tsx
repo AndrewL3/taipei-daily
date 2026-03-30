@@ -36,7 +36,7 @@ export default function YouBikeDashboardCard() {
         </div>
         <button
           onClick={() => navigate("/map")}
-          className="text-xs text-muted-foreground hover:text-foreground"
+          className="text-xs font-medium text-primary/70 hover:text-primary"
         >
           {t("dashboard.viewOnMap")}
         </button>

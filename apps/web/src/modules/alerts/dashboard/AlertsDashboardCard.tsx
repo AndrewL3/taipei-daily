@@ -36,7 +36,7 @@ export default function AlertsDashboardCard() {
         {activeAlerts.length > 0 && (
           <button
             onClick={() => setDetailOpen(true)}
-            className="text-xs text-muted-foreground hover:text-foreground"
+            className="text-xs font-medium text-primary/70 hover:text-primary"
           >
             {t("alerts.title")}
           </button>

@@ -31,7 +31,7 @@ export default function WeatherDashboardCard() {
         </div>
         <button
           onClick={() => navigate("/weather")}
-          className="text-xs text-muted-foreground hover:text-foreground"
+          className="text-xs font-medium text-primary/70 hover:text-primary"
         >
           {t("weather.forecast")}
         </button>

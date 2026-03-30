@@ -7,6 +7,20 @@ import SearchBar from "../search/SearchBar";
 import AlertBanner from "@/modules/alerts/components/AlertBanner";
 import FavoritesDashboardSection from "../favorites/FavoritesDashboardSection";
 
+function getGreetingKey(): string {
+  const hour = parseInt(
+    new Intl.DateTimeFormat("en-US", {
+      hour: "numeric",
+      hour12: false,
+      timeZone: "Asia/Taipei",
+    }).format(new Date()),
+    10,
+  );
+  if (hour >= 5 && hour < 12) return "dashboard.greeting.morning";
+  if (hour >= 12 && hour < 18) return "dashboard.greeting.afternoon";
+  return "dashboard.greeting.evening";
+}
+
 export default function DashboardView() {
   const { t } = useTranslation();
   const { located } = useGeolocation();
@@ -33,7 +47,7 @@ export default function DashboardView() {
         <div className="stagger mx-auto max-w-lg px-4 pb-8 pt-6">
           {/* Header group — tight spacing within */}
           <div className="space-y-3">
-            <h1 className="text-2xl font-bold">{t("dashboard.title")}</h1>
+            <h1 className="font-display text-2xl">{t(getGreetingKey())}</h1>
             <SearchBar />
             <AlertBanner />
             <FavoritesDashboardSection />

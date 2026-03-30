@@ -114,25 +114,30 @@
   },
   "dashboard": {
     "title": "首頁",
-    "enableLocation": "啟用定位以獲取個人化資訊",
-    "noCards": "目前無可用的資訊卡",
+    "greeting": {
+      "morning": "早安",
+      "afternoon": "午安",
+      "evening": "晚安"
+    },
+    "enableLocation": "開啟定位以查看附近公車、單車、垃圾車等資訊",
+    "noCards": "無可用的資料模組",
     "nearby": "附近",
     "viewOnMap": "在地圖上查看",
     "garbage": {
       "title": "垃圾車",
-      "noStops": "附近無垃圾收集點"
+      "noStops": "附近找不到垃圾收集點"
     },
     "youbike": {
       "title": "YouBike",
-      "noStations": "附近無站點"
+      "noStations": "附近找不到 YouBike 站點"
     },
     "transit": {
       "title": "公車",
-      "noStops": "附近無公車站"
+      "noStops": "附近找不到公車站"
     },
     "parking": {
       "title": "路邊停車",
-      "noSpaces": "附近沒有停車資料"
+      "noSpaces": "附近沒有路邊停車資料"
     },
     "weather": {
       "title": "天氣",
@@ -149,7 +154,7 @@
   },
   "search": {
     "placeholder": "搜尋站點、路線...",
-    "noResults": "找不到結果",
+    "noResults": "找不到相關結果，試試其他站名或路線",
     "module": {
       "garbage": "垃圾車",
       "youbike": "YouBike",

@@ -53,7 +53,7 @@ export default function AlertBanner() {
             e.stopPropagation();
             setDismissed(true);
           }}
-          className="shrink-0 rounded-full p-0.5 hover:bg-black/10 dark:hover:bg-white/10"
+          className="shrink-0 rounded-full p-1.5 hover:bg-black/10 dark:hover:bg-white/10"
           aria-label={t("alerts.dismiss")}
         >
           <X className="h-3.5 w-3.5" />
@@ -62,7 +62,7 @@ export default function AlertBanner() {
 
       <Link
         to="/safety"
-        className="flex items-center gap-2 rounded-lg px-1 py-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+        className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
       >
         <ShieldAlert className="h-3.5 w-3.5" />
         <span>{t("safety.emergencyInfo")}</span>
