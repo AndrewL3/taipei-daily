@@ -150,7 +150,10 @@
   "pwa": {
     "installPrompt": "Add to Home Screen",
     "install": "Install",
-    "dismiss": "Dismiss"
+    "dismiss": "Dismiss",
+    "offlineReady": "App ready to work offline",
+    "newVersion": "New version available",
+    "reload": "Reload"
   },
   "search": {
     "placeholder": "Search stops, routes, stations...",

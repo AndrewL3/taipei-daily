@@ -150,7 +150,10 @@
   "pwa": {
     "installPrompt": "加入主畫面",
     "install": "安裝",
-    "dismiss": "略過"
+    "dismiss": "略過",
+    "offlineReady": "已可離線使用",
+    "newVersion": "有新版本可用",
+    "reload": "重新載入"
   },
   "search": {
     "placeholder": "搜尋站點、路線...",
