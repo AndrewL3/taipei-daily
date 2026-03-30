@@ -26,7 +26,7 @@ export default function SchedulesHubView() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-full flex-col bg-background">
+    <div className="view-enter flex h-full flex-col bg-background">
       <div className="space-y-2 px-4 py-4 md:pl-48">
         <div className="section-label">
           <span className="dot" />

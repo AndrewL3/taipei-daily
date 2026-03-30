@@ -116,6 +116,7 @@
     "title": "Dashboard",
     "enableLocation": "Enable location for personalized info",
     "noCards": "No dashboard cards available",
+    "nearby": "Nearby",
     "viewOnMap": "View on map",
     "garbage": {
       "title": "Garbage Truck",
