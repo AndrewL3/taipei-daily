@@ -60,10 +60,26 @@ function buildDefaultVisibility(
 export default function SharedMapView() {
   const { position, located } = useGeolocation();
   const { isDark } = useTheme();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [layers] = useState(collectMapLayers);
-  const [visibility, setVisibility] = useState(() =>
-    buildDefaultVisibility(layers),
-  );
+  const [visibility, setVisibility] = useState(() => {
+    // Check for ?layer= param to force-enable a specific layer on mount
+    const layerParam = new URLSearchParams(window.location.search).get("layer");
+    const defaults = buildDefaultVisibility(layers);
+    if (layerParam && layers.some((l) => l.id === layerParam)) {
+      defaults[layerParam] = true;
+    }
+    return defaults;
+  });
+
+  // Clear ?layer= param after reading (keep lat/lon/zoom for FlyToSearchResult)
+  useEffect(() => {
+    if (searchParams.has("layer")) {
+      const next = new URLSearchParams(searchParams);
+      next.delete("layer");
+      setSearchParams(next, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
 
   const handleToggle = useCallback((layerId: string) => {
     setVisibility((prev) => ({ ...prev, [layerId]: !prev[layerId] }));

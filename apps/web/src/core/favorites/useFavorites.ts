@@ -31,6 +31,39 @@ export async function addFavorite(
   notify();
 }
 
+export async function removeFavorite(
+  moduleKey: string,
+  itemId: string,
+): Promise<FavoriteItem | undefined> {
+  const current = cachedFavorites ?? (await loadFavorites());
+  const moduleItems = current[moduleKey] ?? [];
+  const item = moduleItems.find((f) => f.id === itemId);
+  if (!item) return undefined;
+  const updated = {
+    ...current,
+    [moduleKey]: moduleItems.filter((f) => f.id !== itemId),
+  };
+  cachedFavorites = updated;
+  await saveFavorites(updated);
+  notify();
+  return item;
+}
+
+const DISPLAY_ORDER_KEY = "favorites-display-order";
+
+export function loadDisplayOrder(): string[] {
+  try {
+    const stored = localStorage.getItem(DISPLAY_ORDER_KEY);
+    return stored ? JSON.parse(stored) : [];
+  } catch {
+    return [];
+  }
+}
+
+export function saveDisplayOrder(order: string[]): void {
+  localStorage.setItem(DISPLAY_ORDER_KEY, JSON.stringify(order));
+}
+
 export function useFavorites(moduleKey: string) {
   const [favorites, setFavorites] = useState<FavoritesMap>(
     cachedFavorites ?? {},
