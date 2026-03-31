@@ -18,7 +18,7 @@ export default function TransitDashboardCard() {
       }
     : null;
 
-  const { data: stations, isLoading, isError } = useBusStations(bounds);
+  const { data: stations, isLoading, isError, refetch } = useBusStations(bounds);
   const nearby = stations?.slice(0, 3);
 
   return (
@@ -64,7 +64,19 @@ export default function TransitDashboardCard() {
         </div>
       )}
 
-      {!isLoading && (!nearby || nearby.length === 0 || isError) && (
+      {!isLoading && isError && (
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-muted-foreground">{t("error.generic")}</p>
+          <button
+            onClick={() => refetch()}
+            className="text-xs font-medium text-primary"
+          >
+            {t("error.retry")}
+          </button>
+        </div>
+      )}
+
+      {!isLoading && !isError && (!nearby || nearby.length === 0) && (
         <p className="text-sm text-muted-foreground">
           {t("dashboard.transit.noStops")}
         </p>

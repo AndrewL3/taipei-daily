@@ -14,6 +14,7 @@ export default function WeatherDashboardCard() {
     data: forecast,
     isLoading,
     isError,
+    refetch,
   } = useWeatherForecast(position.lat, position.lon);
 
   const current = forecast?.forecast[0];
@@ -68,7 +69,19 @@ export default function WeatherDashboardCard() {
         </div>
       )}
 
-      {!isLoading && (!current || isError) && (
+      {!isLoading && isError && (
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-muted-foreground">{t("error.generic")}</p>
+          <button
+            onClick={() => refetch()}
+            className="text-xs font-medium text-primary"
+          >
+            {t("error.retry")}
+          </button>
+        </div>
+      )}
+
+      {!isLoading && !isError && !current && (
         <p className="text-sm text-muted-foreground">
           {t("dashboard.weather.noData")}
         </p>

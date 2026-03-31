@@ -19,7 +19,7 @@ export default function ParkingDashboardCard() {
       }
     : null;
 
-  const { data: segments, isLoading, isError } = useParkingSpaces(bounds);
+  const { data: segments, isLoading, isError, refetch } = useParkingSpaces(bounds);
   const nearest = segments?.[0];
 
   return (
@@ -68,7 +68,19 @@ export default function ParkingDashboardCard() {
         </div>
       )}
 
-      {!isLoading && (!nearest || isError) && (
+      {!isLoading && isError && (
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-muted-foreground">{t("error.generic")}</p>
+          <button
+            onClick={() => refetch()}
+            className="text-xs font-medium text-primary"
+          >
+            {t("error.retry")}
+          </button>
+        </div>
+      )}
+
+      {!isLoading && !isError && !nearest && (
         <p className="text-sm text-muted-foreground">
           {t("dashboard.parking.noSpaces")}
         </p>

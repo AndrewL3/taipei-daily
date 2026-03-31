@@ -20,7 +20,7 @@ export default function YouBikeDashboardCard() {
       }
     : null;
 
-  const { data: stations, isLoading, isError } = useYouBikeStations(bounds);
+  const { data: stations, isLoading, isError, refetch } = useYouBikeStations(bounds);
   const nearest = stations?.[0];
 
   return (
@@ -67,7 +67,19 @@ export default function YouBikeDashboardCard() {
         </div>
       )}
 
-      {!isLoading && (!nearest || isError) && (
+      {!isLoading && isError && (
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-muted-foreground">{t("error.generic")}</p>
+          <button
+            onClick={() => refetch()}
+            className="text-xs font-medium text-primary"
+          >
+            {t("error.retry")}
+          </button>
+        </div>
+      )}
+
+      {!isLoading && !isError && !nearest && (
         <p className="text-sm text-muted-foreground">
           {t("dashboard.youbike.noStations")}
         </p>
