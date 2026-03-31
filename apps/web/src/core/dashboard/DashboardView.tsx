@@ -42,7 +42,7 @@ export default function DashboardView() {
   const hasNearby = nearbyCards.length > 0 || compactCards.length > 0;
 
   return (
-    <div className="flex h-full flex-col bg-background">
+    <div className="view-enter flex h-full flex-col bg-background">
       <div className="flex-1 overflow-y-auto">
         <div className="stagger mx-auto max-w-lg px-4 pb-8 pt-6">
           {/* Header group — tight spacing within */}

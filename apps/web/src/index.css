@@ -243,6 +243,17 @@
 .stagger > :nth-child(5) { animation-delay: 240ms; }
 .stagger > :nth-child(6) { animation-delay: 300ms; }
 
+/* Indeterminate loading bar — map data fetching */
+@keyframes progress-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.progress-bar {
+  animation: progress-slide 1.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  width: 40%;
+}
+
 /* Truck marker pulse */
 @keyframes truck-pulse {
   0% {
@@ -393,5 +404,9 @@
   .card-lift:hover,
   .card-lift:active {
     transform: none;
+  }
+  .progress-bar {
+    animation: none;
+    width: 100%;
   }
 }

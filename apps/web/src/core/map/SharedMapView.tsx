@@ -13,6 +13,7 @@ import MapControls from "./MapControls";
 import UserLocationMarker from "./UserLocationMarker";
 import LayerRegistry from "./LayerRegistry";
 import LayerToggle from "./LayerToggle";
+import MapLoadingBar from "./MapLoadingBar";
 import SearchBar from "../search/SearchBar";
 import type { MapLayerProvider } from "../types";
 
@@ -69,7 +70,8 @@ export default function SharedMapView() {
   }, []);
 
   return (
-    <div className="relative h-full w-full overflow-hidden">
+    <div className="view-enter relative h-full w-full overflow-hidden">
+      <MapLoadingBar />
       <div className="absolute top-3 left-3 right-3 z-[1000] md:left-auto md:right-3 md:w-80">
         <SearchBar />
       </div>
