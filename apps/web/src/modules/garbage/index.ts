@@ -1,5 +1,5 @@
 import { lazy, createElement } from "react";
-import { CalendarClock, Trash2 } from "lucide-react";
+import { CalendarClock, Map, Trash2 } from "lucide-react";
 import type { ModuleDefinition } from "@/core/types";
 import GarbageMapLayer from "./map/MapView";
 import GarbageDashboardCard from "./dashboard/GarbageDashboardCard";
@@ -28,4 +28,12 @@ export const garbageModule: ModuleDefinition = {
   ],
   dashboardCard: GarbageDashboardCard,
   favoritesConfig: { storageKey: "garbage" },
+  quickActions: [
+    { label: "dashboard.quickActions.openOnMap", icon: Map, to: "/map" },
+    {
+      label: "dashboard.quickActions.viewSchedule",
+      icon: CalendarClock,
+      to: "/schedules/garbage",
+    },
+  ],
 };

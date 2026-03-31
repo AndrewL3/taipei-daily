@@ -1,4 +1,4 @@
-import { Bus } from "lucide-react";
+import { Bus, CalendarClock, Map } from "lucide-react";
 import type { ModuleDefinition } from "@/core/types";
 import TransitMapLayer from "./map/TransitMapLayer";
 import TransitDashboardCard from "./dashboard/TransitDashboardCard";
@@ -19,4 +19,12 @@ export const transitModule: ModuleDefinition = {
   ],
   dashboardCard: TransitDashboardCard,
   favoritesConfig: { storageKey: "transit" },
+  quickActions: [
+    { label: "dashboard.quickActions.openOnMap", icon: Map, to: "/map" },
+    {
+      label: "dashboard.quickActions.viewSchedule",
+      icon: CalendarClock,
+      to: "/schedules/transit",
+    },
+  ],
 };

@@ -13,6 +13,11 @@ export interface ModuleDefinition {
   favoritesConfig?: {
     storageKey: string;
   };
+  quickActions?: {
+    label: string; // i18n key
+    icon: ComponentType;
+    to: string; // route path
+  }[];
 }
 
 export interface MapLayerProvider {

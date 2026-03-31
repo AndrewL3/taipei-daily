@@ -123,7 +123,6 @@
     },
     "enableLocation": "開啟定位以查看附近公車、單車、垃圾車等資訊",
     "noCards": "無可用的資料模組",
-    "nearby": "附近",
     "viewOnMap": "在地圖上查看",
     "garbage": {
       "title": "垃圾車",
@@ -153,6 +152,15 @@
       "description": "垃圾車、公車、YouBike 和路邊停車——開啟定位即可查看附近資訊。",
       "enableLocation": "開啟定位",
       "browseSchedules": "瀏覽時刻表"
+    },
+    "quickActions": {
+      "openOnMap": "在地圖上查看",
+      "viewSchedule": "查看時刻表"
+    },
+    "tooltip": {
+      "searchHint": "試試搜尋路線號碼或站名",
+      "longPressHint": "長按卡片可快速操作",
+      "favoritesReorder": "點選「編輯」來排序或移除收藏"
     }
   },
   "pwa": {
@@ -206,7 +214,9 @@
     "saved": "已收藏",
     "emptyHint": "點按 ♡ 收藏站點，方便快速查看",
     "removed": "已取消收藏",
-    "undo": "復原"
+    "undo": "復原",
+    "edit": "編輯",
+    "done": "完成"
   },
   "unit": {
     "min": "分鐘"

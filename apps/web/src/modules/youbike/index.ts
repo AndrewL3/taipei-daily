@@ -1,4 +1,4 @@
-import { Bike } from "lucide-react";
+import { Bike, Map } from "lucide-react";
 import type { ModuleDefinition } from "@/core/types";
 import YouBikeMapLayer from "./map/YouBikeMapLayer";
 import YouBikeDashboardCard from "./dashboard/YouBikeDashboardCard";
@@ -19,4 +19,7 @@ export const youbikeModule: ModuleDefinition = {
   ],
   dashboardCard: YouBikeDashboardCard,
   favoritesConfig: { storageKey: "youbike" },
+  quickActions: [
+    { label: "dashboard.quickActions.openOnMap", icon: Map, to: "/map" },
+  ],
 };

@@ -123,7 +123,6 @@
     },
     "enableLocation": "Enable location to see nearby buses, bikes, garbage trucks, and more",
     "noCards": "No data modules available",
-    "nearby": "Nearby",
     "viewOnMap": "View on map",
     "garbage": {
       "title": "Garbage Truck",
@@ -153,6 +152,15 @@
       "description": "Garbage trucks, buses, bikes, and street parking — enable location to see what's around you.",
       "enableLocation": "Enable Location",
       "browseSchedules": "Browse schedules"
+    },
+    "quickActions": {
+      "openOnMap": "Open on map",
+      "viewSchedule": "View schedule"
+    },
+    "tooltip": {
+      "searchHint": "Try searching by route number or stop name",
+      "longPressHint": "Long-press any card for quick actions",
+      "favoritesReorder": "Tap Edit to reorder or remove favorites"
     }
   },
   "pwa": {
@@ -206,7 +214,9 @@
     "saved": "Saved",
     "emptyHint": "Tap ♡ on any stop or station to save it here",
     "removed": "Removed from favorites",
-    "undo": "Undo"
+    "undo": "Undo",
+    "edit": "Edit",
+    "done": "Done"
   },
   "unit": {
     "min": "min"
