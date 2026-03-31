@@ -32,7 +32,7 @@ export default function SchedulesHubView() {
           <div className="space-y-2">
             <div className="section-label">
               <span className="dot" />
-              Schedules
+              {t("schedules.heading")}
             </div>
             <h1 className="font-display text-2xl">
               {t("schedules.heading")}

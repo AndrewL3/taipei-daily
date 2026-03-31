@@ -101,14 +101,14 @@ export default function DashboardView() {
                       { enableHighAccuracy: true, timeout: 10_000 },
                     )
                   }
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform active:scale-[0.98]"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-transform active:scale-[0.98]"
                 >
                   <MapPin className="h-4 w-4" />
                   {t("dashboard.discovery.enableLocation")}
                 </button>
                 <Link
                   to="/schedules"
-                  className="text-sm font-medium text-primary/70"
+                  className="text-sm font-medium text-primary/70 hover:text-primary"
                 >
                   {t("dashboard.discovery.browseSchedules")} &rarr;
                 </Link>
