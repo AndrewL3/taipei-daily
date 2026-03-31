@@ -18,7 +18,8 @@ export function usePullToRefresh(
   const startY = useRef(0);
   const pulling = useRef(false);
 
-  // Reset when queries settle after a refresh
+  // Reset when queries settle after a refresh.
+  // Uses same setState-in-effect pattern as existing map layer hooks.
   useEffect(() => {
     if (isRefreshing && settled) {
       setIsRefreshing(false);
@@ -55,14 +56,15 @@ export function usePullToRefresh(
   const handleTouchEnd = useCallback(() => {
     if (!pulling.current) return;
     pulling.current = false;
-    if (offset >= TRIGGER_THRESHOLD) {
-      setOffset(MAX_PULL);
-      setIsRefreshing(true);
-      onRefresh();
-    } else {
-      setOffset(0);
-    }
-  }, [offset, onRefresh]);
+    setOffset((current) => {
+      if (current >= TRIGGER_THRESHOLD) {
+        setIsRefreshing(true);
+        onRefresh();
+        return MAX_PULL;
+      }
+      return 0;
+    });
+  }, [onRefresh]);
 
   useEffect(() => {
     const el = scrollRef.current;
