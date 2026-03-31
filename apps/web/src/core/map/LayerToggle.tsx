@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "@/components/ui/button";
 import type { MapLayerProvider } from "../types";
 
 interface LayerToggleProps {
@@ -19,27 +18,27 @@ export default function LayerToggle({
   if (layers.length < 2) return null;
 
   return (
-    <div className="absolute top-4 right-4 z-[1000]">
-      <div className="glass flex rounded-full p-1 shadow-lg">
+    <div className="absolute right-3 top-14 z-[1000]">
+      <div className="glass flex flex-col gap-0.5 rounded-2xl p-1 shadow-lg">
         {layers.map((layer) => {
           const Icon = layer.icon;
           const isVisible = visibility[layer.id] !== false;
           return (
-            <Button
+            <button
               key={layer.id}
-              variant="ghost"
-              size="icon"
-              className={`h-8 w-8 rounded-full transition-colors ${
+              className={`flex items-center gap-2 rounded-xl px-2.5 py-1.5 text-xs font-medium transition-colors ${
                 isVisible
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
               onClick={() => onToggle(layer.id)}
               aria-label={t(layer.name)}
-              title={t(layer.name)}
             >
-              <Icon />
-            </Button>
+              <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center [&>svg]:h-3.5 [&>svg]:w-3.5">
+                <Icon />
+              </span>
+              <span>{t(layer.name)}</span>
+            </button>
           );
         })}
       </div>

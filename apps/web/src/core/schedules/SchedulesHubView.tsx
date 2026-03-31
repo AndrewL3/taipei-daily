@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { Trash2, Bus, ChevronRight } from "lucide-react";
+import { Trash2, Bus, ChevronRight, Search } from "lucide-react";
 
 const options = [
   {
@@ -27,32 +27,49 @@ export default function SchedulesHubView() {
 
   return (
     <div className="view-enter flex h-full flex-col bg-background">
-      <div className="space-y-2 px-4 py-4 md:pl-48">
-        <div className="section-label">
-          <span className="dot" />
-          Schedules
+      <div className="flex-1 overflow-y-auto">
+        <div className="mx-auto max-w-lg px-4 pb-8 pt-6">
+          <div className="space-y-2">
+            <div className="section-label">
+              <span className="dot" />
+              Schedules
+            </div>
+            <h1 className="font-display text-2xl">
+              {t("schedules.heading")}
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              {t("schedules.subtitle")}
+            </p>
+          </div>
+
+          <div className="mt-6 flex flex-col gap-3">
+            {options.map((opt) => (
+              <button
+                key={opt.path}
+                onClick={() => navigate(opt.path)}
+                className="card-lift flex items-center gap-4 rounded-2xl bg-card p-4 shadow-[var(--shadow-card)] text-left"
+              >
+                <div className={`rounded-xl p-3 ${opt.bg}`}>
+                  <opt.Icon className={`h-6 w-6 ${opt.color}`} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-semibold">{t(opt.titleKey)}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {t(opt.descKey)}
+                  </div>
+                </div>
+                <ChevronRight className="h-5 w-5 shrink-0 text-muted-foreground" />
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-8 flex items-start gap-3 rounded-xl border border-border/12 px-4 py-3">
+            <Search className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+            <p className="text-sm text-muted-foreground">
+              {t("schedules.searchTip")}
+            </p>
+          </div>
         </div>
-        <h1 className="font-display text-2xl">{t("schedules.heading")}</h1>
-      </div>
-      <div className="flex flex-col gap-3 px-4 md:pl-48">
-        {options.map((opt) => (
-          <button
-            key={opt.path}
-            onClick={() => navigate(opt.path)}
-            className="card-lift flex items-center gap-4 rounded-2xl bg-card p-4 shadow-[var(--shadow-card)] text-left"
-          >
-            <div className={`rounded-xl p-3 ${opt.bg}`}>
-              <opt.Icon className={`h-6 w-6 ${opt.color}`} />
-            </div>
-            <div className="min-w-0 flex-1">
-              <div className="font-semibold">{t(opt.titleKey)}</div>
-              <div className="text-sm text-muted-foreground">
-                {t(opt.descKey)}
-              </div>
-            </div>
-            <ChevronRight className="h-5 w-5 shrink-0 text-muted-foreground" />
-          </button>
-        ))}
       </div>
     </div>
   );

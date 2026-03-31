@@ -66,6 +66,8 @@
       "transit": "Bus Routes",
       "transitDesc": "Browse and search all bus routes"
     },
+    "subtitle": "Browse routes and timetables for garbage collection and bus transit.",
+    "searchTip": "Each section has search — find routes by number or name.",
     "transit": {
       "searchPlaceholder": "Search by route number or name..."
     }
@@ -125,19 +127,19 @@
     "viewOnMap": "View on map",
     "garbage": {
       "title": "Garbage Truck",
-      "noStops": "No garbage stops found nearby"
+      "noStops": "No scheduled stops in range"
     },
     "youbike": {
       "title": "YouBike",
-      "noStations": "No YouBike stations found nearby"
+      "noStations": "No stations nearby"
     },
     "transit": {
       "title": "Bus Transit",
-      "noStops": "No bus stops found nearby"
+      "noStops": "No bus stops in range"
     },
     "parking": {
       "title": "Street Parking",
-      "noSpaces": "No street parking data nearby"
+      "noSpaces": "No parking sensors in this area"
     },
     "weather": {
       "title": "Weather",
@@ -145,6 +147,12 @@
     },
     "alerts": {
       "title": "Alerts"
+    },
+    "discovery": {
+      "title": "Nearby services",
+      "description": "Garbage trucks, buses, bikes, and street parking — enable location to see what's around you.",
+      "enableLocation": "Enable Location",
+      "browseSchedules": "Browse schedules"
     }
   },
   "pwa": {

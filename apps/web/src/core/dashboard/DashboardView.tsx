@@ -1,6 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
-import { MapPin, ShieldAlert } from "lucide-react";
+import {
+  MapPin,
+  ShieldAlert,
+  Trash2,
+  Bus,
+  Bike,
+  ParkingSquare,
+} from "lucide-react";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { getRegisteredModules } from "../module-registry";
 import SearchBar from "../search/SearchBar";
@@ -51,14 +58,6 @@ export default function DashboardView() {
             <SearchBar />
             <AlertBanner />
             <FavoritesDashboardSection />
-            {!located && (
-              <div className="rounded-xl border border-border/12 bg-card p-4 shadow-sm">
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <MapPin className="h-5 w-5 shrink-0" />
-                  <p className="text-sm">{t("dashboard.enableLocation")}</p>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Weather — hero position, generous separation */}
@@ -70,8 +69,55 @@ export default function DashboardView() {
             </div>
           )}
 
-          {/* Nearby services — labeled section */}
-          {hasNearby && (
+          {/* Discovery card — shown when location is off */}
+          {!located && hasNearby && (
+            <div className="card-lift mt-6 rounded-2xl border-t-2 border-teal-500 bg-card p-5 shadow-[var(--shadow-card)]">
+              <div className="flex gap-2.5">
+                <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-teal-500 to-sky-500 shadow-[0_2px_8px_rgba(13,148,136,0.3)]">
+                  <Trash2 className="h-5 w-5 text-white" />
+                </div>
+                <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
+                  <Bus className="h-5 w-5 text-white" />
+                </div>
+                <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-emerald-500 to-green-400 shadow-[0_2px_8px_rgba(16,185,129,0.3)]">
+                  <Bike className="h-5 w-5 text-white" />
+                </div>
+                <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-violet-500 to-purple-500 shadow-[0_2px_8px_rgba(139,92,246,0.3)]">
+                  <ParkingSquare className="h-5 w-5 text-white" />
+                </div>
+              </div>
+              <h3 className="mt-3 text-sm font-semibold">
+                {t("dashboard.discovery.title")}
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t("dashboard.discovery.description")}
+              </p>
+              <div className="mt-4 flex items-center gap-4">
+                <button
+                  onClick={() =>
+                    navigator.geolocation?.getCurrentPosition(
+                      () => window.location.reload(),
+                      () => {},
+                      { enableHighAccuracy: true, timeout: 10_000 },
+                    )
+                  }
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform active:scale-[0.98]"
+                >
+                  <MapPin className="h-4 w-4" />
+                  {t("dashboard.discovery.enableLocation")}
+                </button>
+                <Link
+                  to="/schedules"
+                  className="text-sm font-medium text-primary/70"
+                >
+                  {t("dashboard.discovery.browseSchedules")} &rarr;
+                </Link>
+              </div>
+            </div>
+          )}
+
+          {/* Nearby services — labeled section (only when located) */}
+          {located && hasNearby && (
             <div className="mt-6">
               <div className="section-label mb-3">
                 <span className="dot" />
