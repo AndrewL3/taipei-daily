@@ -28,7 +28,7 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { useGeolocation } from "@/hooks/useGeolocation";
+import { useGeolocation, retryGeolocation } from "@/hooks/useGeolocation";
 import { getRegisteredModules } from "../module-registry";
 import { usePullToRefresh } from "./usePullToRefresh";
 import { useDashboardOrder } from "./useDashboardOrder";
@@ -280,7 +280,7 @@ export default function DashboardView() {
                 <button
                   onClick={() =>
                     navigator.geolocation?.getCurrentPosition(
-                      () => window.location.reload(),
+                      () => retryGeolocation(),
                       () => {},
                       { enableHighAccuracy: true, timeout: 10_000 },
                     )

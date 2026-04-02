@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface Position {
   lat: number;
@@ -8,11 +8,16 @@ interface Position {
 // New Taipei City center
 const DEFAULT_POSITION: Position = { lat: 25.012, lon: 121.465 };
 
+/** Dispatch this event to make all useGeolocation instances re-request position. */
+export function retryGeolocation() {
+  window.dispatchEvent(new Event("geolocation-retry"));
+}
+
 export function useGeolocation() {
   const [position, setPosition] = useState<Position>(DEFAULT_POSITION);
   const [located, setLocated] = useState(false);
 
-  useEffect(() => {
+  const requestPosition = useCallback(() => {
     if (!navigator.geolocation) return;
 
     const onSuccess = (pos: GeolocationPosition) => {
@@ -35,6 +40,17 @@ export function useGeolocation() {
       { enableHighAccuracy: true, timeout: 10_000 },
     );
   }, []);
+
+  useEffect(() => {
+    requestPosition();
+  }, [requestPosition]);
+
+  // Re-request when permission is granted via another code path (e.g., Discovery Card)
+  useEffect(() => {
+    const handler = () => requestPosition();
+    window.addEventListener("geolocation-retry", handler);
+    return () => window.removeEventListener("geolocation-retry", handler);
+  }, [requestPosition]);
 
   return { position, located };
 }
