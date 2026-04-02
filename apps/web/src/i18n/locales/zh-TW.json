@@ -123,9 +123,15 @@
     },
     "enableLocation": "開啟定位以查看附近公車、單車、垃圾車等資訊",
     "noCards": "無可用的資料模組",
+    "showTips": "顯示提示",
     "viewOnMap": "在地圖上查看",
     "actionMap": "地圖",
     "actionSchedule": "時刻表",
+    "age": {
+      "seconds": "{{count}}秒前",
+      "minutes": "{{count}}分前",
+      "hours": "{{count}}小時前"
+    },
     "garbage": {
       "title": "垃圾車",
       "noStops": "範圍內無垃圾收集點"

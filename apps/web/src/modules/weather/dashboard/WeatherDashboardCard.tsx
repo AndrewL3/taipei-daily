@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { useWeatherForecast } from "../api/hooks";
 import WeatherIcon from "../views/WeatherIcon";
+import DataAge from "@/components/DataAge";
 
 export default function WeatherDashboardCard() {
   const { t } = useTranslation();
@@ -15,6 +16,7 @@ export default function WeatherDashboardCard() {
     isLoading,
     isError,
     refetch,
+    dataUpdatedAt,
   } = useWeatherForecast(position.lat, position.lon);
 
   const current = forecast?.forecast[0];
@@ -29,10 +31,11 @@ export default function WeatherDashboardCard() {
           <h3 className="text-sm font-semibold">
             {t("dashboard.weather.title")}
           </h3>
+          <DataAge updatedAt={dataUpdatedAt} />
         </div>
         <button
           onClick={() => navigate("/weather")}
-          className="text-xs font-medium text-primary/70 hover:text-primary"
+          className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
         >
           {t("weather.forecast")}
         </button>

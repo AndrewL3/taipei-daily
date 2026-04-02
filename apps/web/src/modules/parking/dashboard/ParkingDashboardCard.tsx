@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { useParkingSpaces } from "../api/hooks";
 import { getAvailabilityColor } from "../utils/availability";
+import DataAge from "@/components/DataAge";
 
 export default function ParkingDashboardCard() {
   const { t } = useTranslation();
@@ -19,7 +20,13 @@ export default function ParkingDashboardCard() {
       }
     : null;
 
-  const { data: segments, isLoading, isError, refetch } = useParkingSpaces(bounds);
+  const {
+    data: segments,
+    isLoading,
+    isError,
+    refetch,
+    dataUpdatedAt,
+  } = useParkingSpaces(bounds);
   const nearest = segments?.[0];
 
   return (
@@ -32,6 +39,7 @@ export default function ParkingDashboardCard() {
           <h3 className="text-sm font-semibold">
             {t("dashboard.parking.title")}
           </h3>
+          <DataAge updatedAt={dataUpdatedAt} />
         </div>
         <button
           onClick={() => navigate("/map")}

@@ -9,6 +9,7 @@ import {
   Bike,
   ParkingSquare,
   GripVertical,
+  HelpCircle,
 } from "lucide-react";
 import { useQueryClient, useIsFetching } from "@tanstack/react-query";
 import {
@@ -166,7 +167,7 @@ export default function DashboardView() {
   );
 
   // Contextual tooltips
-  const { dismiss, getActiveTooltip } = useDismissedTooltips();
+  const { dismiss, resetAll, getActiveTooltip } = useDismissedTooltips();
   const activeTooltip = getActiveTooltip(TOOLTIP_PRIORITY);
   const allFavorites = useAllFavorites();
   const totalFavorites = Object.values(allFavorites).reduce(
@@ -216,7 +217,16 @@ export default function DashboardView() {
         <div className="stagger mx-auto max-w-lg px-4 pb-8 pt-6">
           {/* Header group — tight spacing within */}
           <div className="space-y-3">
-            <h1 className="font-display text-2xl">{t(getGreetingKey())}</h1>
+            <div className="flex items-center justify-between">
+              <h1 className="font-display text-2xl">{t(getGreetingKey())}</h1>
+              <button
+                onClick={resetAll}
+                className="rounded-full p-1.5 text-muted-foreground/40 transition-colors hover:bg-muted hover:text-muted-foreground"
+                aria-label={t("dashboard.showTips")}
+              >
+                <HelpCircle className="h-5 w-5" />
+              </button>
+            </div>
             <SearchBar />
             {activeTooltip === "search-hint" && (
               <TooltipCallout

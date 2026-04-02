@@ -123,9 +123,15 @@
     },
     "enableLocation": "Enable location to see nearby buses, bikes, garbage trucks, and more",
     "noCards": "No data modules available",
+    "showTips": "Show tips",
     "viewOnMap": "View on map",
     "actionMap": "Map",
     "actionSchedule": "Schedule",
+    "age": {
+      "seconds": "{{count}}s ago",
+      "minutes": "{{count}}m ago",
+      "hours": "{{count}}h ago"
+    },
     "garbage": {
       "title": "Garbage Truck",
       "noStops": "No scheduled stops in range"

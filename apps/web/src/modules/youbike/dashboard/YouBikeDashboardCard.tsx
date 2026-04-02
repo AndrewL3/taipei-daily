@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { useYouBikeStations } from "../api/hooks";
 import { getAvailabilityColor } from "../utils/availability";
+import DataAge from "@/components/DataAge";
 
 export default function YouBikeDashboardCard() {
   const { t } = useTranslation();
@@ -20,7 +21,13 @@ export default function YouBikeDashboardCard() {
       }
     : null;
 
-  const { data: stations, isLoading, isError, refetch } = useYouBikeStations(bounds);
+  const {
+    data: stations,
+    isLoading,
+    isError,
+    refetch,
+    dataUpdatedAt,
+  } = useYouBikeStations(bounds);
   const nearest = stations?.[0];
 
   return (
@@ -33,6 +40,7 @@ export default function YouBikeDashboardCard() {
           <h3 className="text-sm font-semibold">
             {t("dashboard.youbike.title")}
           </h3>
+          <DataAge updatedAt={dataUpdatedAt} />
         </div>
         <button
           onClick={() => navigate("/map")}

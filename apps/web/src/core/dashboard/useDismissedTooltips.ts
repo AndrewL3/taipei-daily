@@ -22,11 +22,16 @@ export function useDismissedTooltips() {
     });
   }, []);
 
+  const resetAll = useCallback(() => {
+    localStorage.removeItem(STORAGE_KEY);
+    setDismissed([]);
+  }, []);
+
   /** Returns the first non-dismissed key from the list, or null. */
   const getActiveTooltip = useCallback(
     (keys: string[]) => keys.find((k) => !dismissed.includes(k)) ?? null,
     [dismissed],
   );
 
-  return { dismiss, getActiveTooltip };
+  return { dismiss, resetAll, getActiveTooltip };
 }
