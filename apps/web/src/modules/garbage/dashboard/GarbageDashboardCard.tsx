@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Trash2, Clock } from "lucide-react";
+import { Trash2 } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { useNearbyStops } from "../api/hooks";
@@ -22,7 +22,7 @@ export default function GarbageDashboardCard() {
   const nearest = stops?.[0];
 
   return (
-    <div className="card-lift rounded-2xl border-t-2 border-teal-500 bg-card p-4 shadow-[var(--shadow-card)]">
+    <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-teal-500 to-sky-500 shadow-[0_2px_8px_rgba(13,148,136,0.3)]">
@@ -43,14 +43,16 @@ export default function GarbageDashboardCard() {
       {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
 
       {!isLoading && nearest && (
-        <div className="flex items-center gap-3">
-          <Clock className="h-8 w-8 shrink-0 text-teal-500" />
+        <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
             <p className="truncate text-sm font-medium">{nearest.name}</p>
             <p className="text-xs text-muted-foreground">
-              {nearest.routeLineName} · {Math.round(nearest.distance)}m
+              {nearest.routeLineName}
             </p>
           </div>
+          <span className="shrink-0 rounded-full bg-teal-500/10 px-2.5 py-1 text-xs font-semibold tabular-nums text-teal-600 dark:text-teal-400">
+            {Math.round(nearest.distance)}m
+          </span>
         </div>
       )}
 

@@ -24,7 +24,7 @@ export default function YouBikeDashboardCard() {
   const nearest = stations?.[0];
 
   return (
-    <div className="card-lift rounded-2xl border-t-2 border-emerald-500 bg-card p-4 shadow-[var(--shadow-card)]">
+    <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-emerald-500 to-green-400 shadow-[0_2px_8px_rgba(16,185,129,0.3)]">
@@ -42,27 +42,43 @@ export default function YouBikeDashboardCard() {
         </button>
       </div>
 
-      {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
+      {isLoading && (
+        <div className="space-y-2">
+          <div className="h-7 w-24 animate-pulse rounded-lg bg-muted" />
+          <div className="h-1.5 animate-pulse rounded-full bg-muted" />
+          <div className="h-5 animate-pulse rounded-lg bg-muted" />
+        </div>
+      )}
 
       {!isLoading && nearest && (
-        <div className="flex items-center gap-3">
-          <div
-            className="flex h-10 w-10 items-center justify-center rounded-full"
-            style={{ backgroundColor: `${getAvailabilityColor(nearest)}20` }}
-          >
+        <div>
+          <div className="flex items-baseline gap-1.5">
             <span
-              className="text-lg font-bold tabular-nums"
+              className="text-2xl font-bold tabular-nums"
               style={{ color: getAvailabilityColor(nearest) }}
             >
               {nearest.availableBikes}
             </span>
+            <span className="text-sm text-muted-foreground">
+              {t("youbike.availableBikes")}
+            </span>
           </div>
-          <div className="min-w-0">
-            <p className="truncate text-sm font-medium">{nearest.name}</p>
-            <p className="text-xs text-muted-foreground">
-              {t("youbike.availableBikes")}: {nearest.availableBikes} ·{" "}
-              {t("youbike.emptyDocks")}: {nearest.emptyDocks}
+          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted">
+            <div
+              className="h-full rounded-full transition-all"
+              style={{
+                width: `${nearest.availableBikes + nearest.emptyDocks > 0 ? (nearest.availableBikes / (nearest.availableBikes + nearest.emptyDocks)) * 100 : 0}%`,
+                backgroundColor: getAvailabilityColor(nearest),
+              }}
+            />
+          </div>
+          <div className="mt-1.5 flex items-center justify-between">
+            <p className="min-w-0 truncate text-sm font-medium">
+              {nearest.name}
             </p>
+            <span className="shrink-0 text-xs tabular-nums text-muted-foreground">
+              {nearest.emptyDocks} {t("youbike.emptyDocks")}
+            </span>
           </div>
         </div>
       )}

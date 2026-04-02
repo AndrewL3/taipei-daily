@@ -241,7 +241,7 @@ export default function DashboardView() {
 
           {/* Discovery card — shown when location is off */}
           {!located && hasNearby && (
-            <div className="card-lift mt-6 rounded-2xl border-t-2 border-teal-500 bg-card p-5 shadow-[var(--shadow-card)]">
+            <div className="card-lift mt-6 rounded-2xl bg-card p-5 shadow-[var(--shadow-card)]">
               <div className="flex gap-2.5">
                 <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-teal-500 to-sky-500 shadow-[0_2px_8px_rgba(13,148,136,0.3)]">
                   <Trash2 className="h-5 w-5 text-white" />

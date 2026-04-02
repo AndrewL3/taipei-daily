@@ -22,7 +22,7 @@ export default function TransitDashboardCard() {
   const nearby = stations?.slice(0, 3);
 
   return (
-    <div className="card-lift rounded-2xl border-t-2 border-blue-500 bg-card p-4 shadow-[var(--shadow-card)]">
+    <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
@@ -53,11 +53,13 @@ export default function TransitDashboardCard() {
           {nearby.map((station) => (
             <div
               key={station.stationId}
-              className="flex items-center justify-between text-sm"
+              className="flex items-center justify-between gap-2 text-sm"
             >
-              <span className="truncate font-medium">{station.name}</span>
-              <span className="shrink-0 text-xs text-muted-foreground">
-                {station.routes.length} {t("transit.routesServed")}
+              <span className="min-w-0 truncate font-medium">
+                {station.name}
+              </span>
+              <span className="shrink-0 rounded-full bg-blue-500/10 px-2 py-0.5 text-xs font-medium tabular-nums text-blue-600 dark:text-blue-400">
+                {station.routes.length}
               </span>
             </div>
           ))}

@@ -23,7 +23,7 @@ export default function ParkingDashboardCard() {
   const nearest = segments?.[0];
 
   return (
-    <div className="card-lift rounded-2xl border-t-2 border-violet-500 bg-card p-4 shadow-[var(--shadow-card)]">
+    <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-violet-500 to-purple-500 shadow-[0_2px_8px_rgba(139,92,246,0.3)]">
@@ -44,26 +44,21 @@ export default function ParkingDashboardCard() {
       {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
 
       {!isLoading && nearest && (
-        <div className="flex items-center gap-3">
-          <div
-            className="flex h-10 w-10 items-center justify-center rounded-full"
-            style={{
-              backgroundColor: `${getAvailabilityColor(nearest)}20`,
-            }}
-          >
+        <div className="flex items-center gap-4">
+          <div className="shrink-0">
             <span
-              className="text-lg font-bold tabular-nums"
+              className="text-2xl font-bold tabular-nums"
               style={{ color: getAvailabilityColor(nearest) }}
             >
               {nearest.availableSpaces}
             </span>
+            <span className="text-sm text-muted-foreground">
+              /{nearest.totalSpaces}
+            </span>
           </div>
           <div className="min-w-0">
             <p className="truncate text-sm font-medium">{nearest.roadName}</p>
-            <p className="text-xs text-muted-foreground">
-              {nearest.availableSpaces}/{nearest.totalSpaces}{" "}
-              {t("parking.spaces")} · {nearest.pricing}
-            </p>
+            <p className="text-xs text-muted-foreground">{nearest.pricing}</p>
           </div>
         </div>
       )}
