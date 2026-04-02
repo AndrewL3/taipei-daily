@@ -124,6 +124,8 @@
     "enableLocation": "Enable location to see nearby buses, bikes, garbage trucks, and more",
     "noCards": "No data modules available",
     "viewOnMap": "View on map",
+    "actionMap": "Map",
+    "actionSchedule": "Schedule",
     "garbage": {
       "title": "Garbage Truck",
       "noStops": "No scheduled stops in range"

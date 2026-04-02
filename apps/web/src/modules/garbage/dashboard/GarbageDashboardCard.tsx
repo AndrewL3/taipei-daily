@@ -32,12 +32,21 @@ export default function GarbageDashboardCard() {
             {t("dashboard.garbage.title")}
           </h3>
         </div>
-        <button
-          onClick={() => navigate("/map")}
-          className="text-xs font-medium text-primary/70 hover:text-primary"
-        >
-          {t("dashboard.viewOnMap")}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => navigate("/schedules/garbage")}
+            className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+          >
+            {t("dashboard.actionSchedule")}
+          </button>
+          <span className="text-muted-foreground/30">·</span>
+          <button
+            onClick={() => navigate("/map")}
+            className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+          >
+            {t("dashboard.actionMap")}
+          </button>
+        </div>
       </div>
 
       {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
