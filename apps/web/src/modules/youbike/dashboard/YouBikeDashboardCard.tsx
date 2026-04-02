@@ -104,9 +104,17 @@ export default function YouBikeDashboardCard() {
       )}
 
       {!isLoading && !isError && !nearest && (
-        <p className="text-sm text-muted-foreground">
-          {t("dashboard.youbike.noStations")}
-        </p>
+        <div>
+          <p className="text-sm text-muted-foreground">
+            {t("dashboard.youbike.noStations")}
+          </p>
+          <button
+            onClick={() => navigate("/map")}
+            className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+          >
+            {t("dashboard.youbike.noStationsAction")} &rarr;
+          </button>
+        </div>
       )}
     </div>
   );

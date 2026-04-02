@@ -221,7 +221,7 @@ export default function DashboardView() {
               <h1 className="font-display text-2xl">{t(getGreetingKey())}</h1>
               <button
                 onClick={resetAll}
-                className="rounded-full p-1.5 text-muted-foreground/40 transition-colors hover:bg-muted hover:text-muted-foreground"
+                className="-m-1 rounded-full p-2.5 text-muted-foreground/40 transition-colors hover:bg-muted hover:text-muted-foreground"
                 aria-label={t("dashboard.showTips")}
               >
                 <HelpCircle className="h-5 w-5" />
@@ -292,7 +292,7 @@ export default function DashboardView() {
                 </button>
                 <Link
                   to="/schedules"
-                  className="text-sm font-medium text-primary/70 hover:text-primary"
+                  className="text-sm font-medium text-primary/80 transition-colors hover:text-primary"
                 >
                   {t("dashboard.discovery.browseSchedules")} &rarr;
                 </Link>

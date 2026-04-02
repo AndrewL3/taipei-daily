@@ -84,9 +84,17 @@ export default function ParkingDashboardCard() {
       )}
 
       {!isLoading && !isError && !nearest && (
-        <p className="text-sm text-muted-foreground">
-          {t("dashboard.parking.noSpaces")}
-        </p>
+        <div>
+          <p className="text-sm text-muted-foreground">
+            {t("dashboard.parking.noSpaces")}
+          </p>
+          <button
+            onClick={() => navigate("/map")}
+            className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+          >
+            {t("dashboard.parking.noSpacesAction")} &rarr;
+          </button>
+        </div>
       )}
     </div>
   );

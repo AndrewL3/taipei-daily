@@ -78,9 +78,17 @@ export default function GarbageDashboardCard() {
       )}
 
       {!isLoading && !isError && !nearest && (
-        <p className="text-sm text-muted-foreground">
-          {t("dashboard.garbage.noStops")}
-        </p>
+        <div>
+          <p className="text-sm text-muted-foreground">
+            {t("dashboard.garbage.noStops")}
+          </p>
+          <button
+            onClick={() => navigate("/schedules/garbage")}
+            className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+          >
+            {t("dashboard.garbage.noStopsAction")} &rarr;
+          </button>
+        </div>
       )}
     </div>
   );

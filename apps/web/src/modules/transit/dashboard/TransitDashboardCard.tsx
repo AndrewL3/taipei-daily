@@ -88,9 +88,17 @@ export default function TransitDashboardCard() {
       )}
 
       {!isLoading && !isError && (!nearby || nearby.length === 0) && (
-        <p className="text-sm text-muted-foreground">
-          {t("dashboard.transit.noStops")}
-        </p>
+        <div>
+          <p className="text-sm text-muted-foreground">
+            {t("dashboard.transit.noStops")}
+          </p>
+          <button
+            onClick={() => navigate("/schedules/transit")}
+            className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+          >
+            {t("dashboard.transit.noStopsAction")} &rarr;
+          </button>
+        </div>
       )}
     </div>
   );

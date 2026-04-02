@@ -134,19 +134,23 @@
     },
     "garbage": {
       "title": "Garbage Truck",
-      "noStops": "No scheduled stops in range"
+      "noStops": "No scheduled stops in range",
+      "noStopsAction": "View tonight's routes"
     },
     "youbike": {
       "title": "YouBike",
-      "noStations": "No stations nearby"
+      "noStations": "No stations nearby",
+      "noStationsAction": "Check the map"
     },
     "transit": {
       "title": "Bus Transit",
-      "noStops": "No bus stops in range"
+      "noStops": "No bus stops in range",
+      "noStopsAction": "Browse all routes"
     },
     "parking": {
       "title": "Street Parking",
-      "noSpaces": "No parking sensors in this area"
+      "noSpaces": "No parking sensors in this area",
+      "noSpacesAction": "Check the map"
     },
     "weather": {
       "title": "Weather",

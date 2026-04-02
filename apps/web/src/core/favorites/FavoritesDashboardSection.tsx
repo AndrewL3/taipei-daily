@@ -199,7 +199,7 @@ export default function FavoritesDashboardSection() {
         </h2>
         <button
           onClick={() => setEditMode(!editMode)}
-          className="ml-auto text-xs font-medium text-primary/70 hover:text-primary"
+          className="ml-auto text-xs font-medium text-primary/80 transition-colors hover:text-primary"
         >
           {editMode ? t("favorites.done") : t("favorites.edit")}
         </button>
