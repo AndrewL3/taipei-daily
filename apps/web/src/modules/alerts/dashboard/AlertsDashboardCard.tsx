@@ -59,7 +59,15 @@ export default function AlertsDashboardCard() {
           className="cursor-pointer rounded-lg bg-muted/50 p-3"
         >
           <div className="flex items-center gap-2">
-            <span className="rounded-full bg-red-500/10 px-2 py-0.5 text-xs font-medium text-red-700 dark:text-red-400">
+            <span
+              className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                highest.severity === "Extreme" || highest.severity === "Severe"
+                  ? "bg-red-500/10 text-red-700 dark:text-red-400"
+                  : highest.severity === "Moderate"
+                    ? "bg-yellow-500/10 text-yellow-700 dark:text-yellow-400"
+                    : "bg-blue-500/10 text-blue-700 dark:text-blue-400"
+              }`}
+            >
               {activeAlerts.length}
             </span>
             <p className="flex-1 truncate text-sm">{highest.headline}</p>

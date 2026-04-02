@@ -29,6 +29,7 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { useGeolocation, retryGeolocation } from "@/hooks/useGeolocation";
+import { useActiveAlerts } from "@/modules/alerts/api/hooks";
 import { getRegisteredModules } from "../module-registry";
 import { usePullToRefresh } from "./usePullToRefresh";
 import { useDashboardOrder } from "./useDashboardOrder";
@@ -174,6 +175,26 @@ export default function DashboardView() {
     (sum, arr) => sum + arr.length,
     0,
   );
+
+  // Alert-aware safety icon color
+  const { data: alertsData } = useActiveAlerts();
+  const activeAlertsList = alertsData ?? [];
+  const severityOrder = ["Extreme", "Severe", "Moderate", "Minor", "Unknown"];
+  const highestAlert =
+    activeAlertsList.length > 0
+      ? activeAlertsList.reduce((a, b) =>
+          severityOrder.indexOf(a.severity) < severityOrder.indexOf(b.severity)
+            ? a
+            : b,
+        )
+      : null;
+  const safetyIconColor = !highestAlert
+    ? "text-muted-foreground"
+    : highestAlert.severity === "Extreme" || highestAlert.severity === "Severe"
+      ? "text-red-500"
+      : highestAlert.severity === "Moderate"
+        ? "text-amber-500"
+        : "text-blue-500";
 
   const allCards = modules
     .filter((m) => m.dashboardCard)
@@ -349,7 +370,7 @@ export default function DashboardView() {
               to="/safety"
               className="flex items-center gap-3 rounded-xl border border-border/12 bg-card px-4 py-3 shadow-sm transition-colors hover:bg-muted/50"
             >
-              <ShieldAlert className="h-5 w-5 shrink-0 text-orange-500" />
+              <ShieldAlert className={`h-5 w-5 shrink-0 ${safetyIconColor}`} />
               <div>
                 <p className="text-sm font-medium">
                   {t("safety.dashboardTitle")}

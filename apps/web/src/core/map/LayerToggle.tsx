@@ -1,6 +1,14 @@
 import { useTranslation } from "react-i18next";
 import type { MapLayerProvider } from "../types";
 
+// Per-module active colors — matches gradient-icon colors on dashboard cards
+const layerActiveClass: Record<string, string> = {
+  garbage: "bg-teal-500 text-white shadow-sm",
+  youbike: "bg-emerald-500 text-white shadow-sm",
+  transit: "bg-blue-500 text-white shadow-sm",
+  parking: "bg-violet-500 text-white shadow-sm",
+};
+
 interface LayerToggleProps {
   layers: MapLayerProvider[];
   visibility: Record<string, boolean>;
@@ -28,7 +36,7 @@ export default function LayerToggle({
               key={layer.id}
               className={`flex items-center gap-2 rounded-xl px-2.5 py-1.5 text-xs font-medium transition-colors ${
                 isVisible
-                  ? "bg-primary text-primary-foreground shadow-sm"
+                  ? layerActiveClass[layer.id] ?? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
               onClick={() => onToggle(layer.id)}
