@@ -67,7 +67,7 @@ export default function RouteView() {
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
               <Bus className="h-5 w-5 shrink-0 text-blue-500" />
-              <h1 className="truncate text-lg font-bold">
+              <h1 className="truncate font-display text-lg">
                 {data?.route.routeName ?? routeId}
               </h1>
             </div>

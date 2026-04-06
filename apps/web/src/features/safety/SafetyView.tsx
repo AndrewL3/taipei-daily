@@ -99,7 +99,7 @@ export default function SafetyView() {
 
           {/* Emergency Numbers */}
           <section className="space-y-3">
-            <h2 className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+            <h2 className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
               <Phone className="h-4 w-4" />
               {t("safety.emergencyNumbers")}
             </h2>
@@ -110,7 +110,7 @@ export default function SafetyView() {
                   href={`tel:${number}`}
                   className="flex items-center gap-3 rounded-xl border border-border/12 bg-card px-4 py-3 shadow-sm transition-colors hover:bg-muted/50"
                 >
-                  <span className="text-xl font-bold tabular-nums text-primary">
+                  <span className="font-mono text-xl font-bold tabular-nums text-primary">
                     {number}
                   </span>
                   <span className="text-xs text-muted-foreground">
@@ -147,7 +147,7 @@ export default function SafetyView() {
 
           {/* Nearby Shelters */}
           <section className="space-y-3">
-            <h2 className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+            <h2 className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
               <Shield className="h-4 w-4" />
               {t("safety.shelters")}
             </h2>

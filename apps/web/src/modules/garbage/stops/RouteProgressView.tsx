@@ -92,7 +92,7 @@ export default function RouteProgressView() {
           <ArrowLeft className="h-5 w-5" />
         </Button>
         <div className="min-w-0 flex-1">
-          <h1 className="truncate text-xl font-bold">{route.lineName}</h1>
+          <h1 className="truncate font-display text-xl">{route.lineName}</h1>
           <div className="flex items-center gap-2 text-sm">
             {progress.deltaMinutes != null && (
               <Badge

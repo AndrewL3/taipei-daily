@@ -25,9 +25,7 @@ export default function TransitDashboardCard() {
     <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
-            <Bus className="h-3.5 w-3.5" />
-          </div>
+          <Bus className="h-4 w-4 text-blue-500" />
           <h3 className="text-sm font-semibold">
             {t("dashboard.transit.title")}
           </h3>

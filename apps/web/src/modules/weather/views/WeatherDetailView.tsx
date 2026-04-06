@@ -31,7 +31,7 @@ export default function WeatherDetailView() {
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
-          <h1 className="text-lg font-bold">{t("weather.forecast")}</h1>
+          <h1 className="font-display text-lg">{t("weather.forecast")}</h1>
         </div>
       </div>
 
@@ -85,7 +85,7 @@ export default function WeatherDetailView() {
             </div>
 
             {/* Forecast timeline */}
-            <h2 className="mb-3 text-sm font-semibold text-muted-foreground">
+            <h2 className="mb-3 font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
               {t("weather.upcoming")}
             </h2>
             <div className="space-y-2">

@@ -97,8 +97,8 @@ export default function TransitSchedulesView() {
               }
               className="card-lift flex items-center gap-3 rounded-2xl bg-card p-4 shadow-[var(--shadow-card)] text-left"
             >
-              <div className="gradient-icon rounded-lg bg-gradient-to-br from-blue-500 to-indigo-500 p-2 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
-                <Bus className="h-5 w-5" />
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10">
+                <Bus className="h-5 w-5 text-blue-500" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-base font-semibold">{route.routeName}</div>

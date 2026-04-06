@@ -26,9 +26,7 @@ export default function AlertsDashboardCard() {
     <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="gradient-icon h-6 w-6 bg-gradient-to-br from-rose-500 to-red-500 shadow-[0_2px_8px_rgba(244,63,94,0.3)]">
-            <AlertTriangle className="h-3.5 w-3.5" />
-          </div>
+          <AlertTriangle className="h-4 w-4 text-rose-500" />
           <h3 className="text-sm font-semibold">
             {t("dashboard.alerts.title")}
           </h3>

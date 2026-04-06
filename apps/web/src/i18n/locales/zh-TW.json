@@ -26,7 +26,10 @@
       "transit": "公車站",
       "parking": "路邊停車",
       "alerts": "警報"
-    }
+    },
+    "legend": "圖例",
+    "legendHint": "點擊圖標查看詳情",
+    "legendDismiss": "關閉圖例"
   },
   "stop": {
     "passedAt": "已通過",

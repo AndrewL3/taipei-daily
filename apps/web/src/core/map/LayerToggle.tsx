@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import type { MapLayerProvider } from "../types";
 
-// Per-module active colors — matches gradient-icon colors on dashboard cards
+// Per-module active colors — matches module colors on dashboard cards
 const layerActiveClass: Record<string, string> = {
   garbage: "bg-teal-500 text-white shadow-sm",
   youbike: "bg-emerald-500 text-white shadow-sm",

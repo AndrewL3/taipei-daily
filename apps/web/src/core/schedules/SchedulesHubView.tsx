@@ -8,16 +8,16 @@ const options = [
     titleKey: "schedules.hub.garbage",
     descKey: "schedules.hub.garbageDesc",
     Icon: Trash2,
-    color: "text-white",
-    bg: "gradient-icon bg-gradient-to-br from-green-500 to-emerald-500 shadow-[0_2px_8px_rgba(34,197,94,0.3)]",
+    color: "text-teal-500",
+    bg: "flex items-center justify-center bg-teal-500/10",
   },
   {
     path: "/schedules/transit",
     titleKey: "schedules.hub.transit",
     descKey: "schedules.hub.transitDesc",
     Icon: Bus,
-    color: "text-white",
-    bg: "gradient-icon bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]",
+    color: "text-blue-500",
+    bg: "flex items-center justify-center bg-blue-500/10",
   },
 ] as const;
 

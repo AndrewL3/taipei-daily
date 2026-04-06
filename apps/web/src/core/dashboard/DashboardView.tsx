@@ -10,6 +10,7 @@ import {
   ParkingSquare,
   GripVertical,
   HelpCircle,
+  RefreshCw,
 } from "lucide-react";
 import { useQueryClient, useIsFetching } from "@tanstack/react-query";
 import {
@@ -108,7 +109,7 @@ function SortableCard({
       <button
         {...attributes}
         {...listeners}
-        className="absolute right-3 top-1/2 -translate-y-1/2 touch-none p-1 text-muted-foreground/30 hover:text-muted-foreground/60"
+        className="absolute right-3 top-1/2 -translate-y-1/2 touch-none p-1 text-muted-foreground/50 transition-colors hover:text-muted-foreground/80"
         aria-label="Reorder"
       >
         <GripVertical className="h-4 w-4" />
@@ -224,15 +225,17 @@ export default function DashboardView() {
               ...(isRefreshing ? {} : { transition: "none" }),
             }}
           >
-            <svg
+            <RefreshCw
               className={`h-5 w-5 ${isRefreshing ? "animate-spin" : ""}`}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-            </svg>
+              style={
+                !isRefreshing
+                  ? {
+                      transform: `rotate(${(pullOffset / 60) * 360}deg)${pullOffset >= 50 ? " scale(1.2)" : ""}`,
+                      opacity: Math.min(pullOffset / 30, 1),
+                    }
+                  : undefined
+              }
+            />
           </div>
         )}
         <div className="stagger mx-auto max-w-lg px-4 pb-8 pt-6">
@@ -285,32 +288,32 @@ export default function DashboardView() {
               </p>
               <div className="mt-3 grid grid-cols-4 gap-3">
                 <div className="flex flex-col items-center gap-1">
-                  <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-teal-500 to-sky-500 shadow-[0_2px_8px_rgba(13,148,136,0.3)]">
-                    <Trash2 className="h-5 w-5 text-white" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-500/10">
+                    <Trash2 className="h-5 w-5 text-teal-500" />
                   </div>
                   <span className="text-[10px] font-medium text-muted-foreground">
                     {t("dashboard.garbage.title")}
                   </span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
-                    <Bus className="h-5 w-5 text-white" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10">
+                    <Bus className="h-5 w-5 text-blue-500" />
                   </div>
                   <span className="text-[10px] font-medium text-muted-foreground">
                     {t("dashboard.transit.title")}
                   </span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-emerald-500 to-green-400 shadow-[0_2px_8px_rgba(16,185,129,0.3)]">
-                    <Bike className="h-5 w-5 text-white" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10">
+                    <Bike className="h-5 w-5 text-emerald-500" />
                   </div>
                   <span className="text-[10px] font-medium text-muted-foreground">
                     {t("dashboard.youbike.title")}
                   </span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-violet-500 to-purple-500 shadow-[0_2px_8px_rgba(139,92,246,0.3)]">
-                    <ParkingSquare className="h-5 w-5 text-white" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-violet-500/10">
+                    <ParkingSquare className="h-5 w-5 text-violet-500" />
                   </div>
                   <span className="text-[10px] font-medium text-muted-foreground">
                     {t("dashboard.parking.title")}

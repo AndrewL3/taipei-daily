@@ -14,6 +14,7 @@ import UserLocationMarker from "./UserLocationMarker";
 import LayerRegistry from "./LayerRegistry";
 import LayerToggle from "./LayerToggle";
 import MapLoadingBar from "./MapLoadingBar";
+import MapLegend from "./MapLegend";
 import SearchBar from "../search/SearchBar";
 import type { MapLayerProvider } from "../types";
 
@@ -117,6 +118,7 @@ export default function SharedMapView() {
         visibility={visibility}
         onToggle={handleToggle}
       />
+      <MapLegend />
     </div>
   );
 }

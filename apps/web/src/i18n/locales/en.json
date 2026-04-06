@@ -26,7 +26,10 @@
       "transit": "Bus stops",
       "parking": "Street parking",
       "alerts": "Alerts"
-    }
+    },
+    "legend": "Legend",
+    "legendHint": "Tap any marker for details",
+    "legendDismiss": "Dismiss legend"
   },
   "stop": {
     "passedAt": "Passed at",

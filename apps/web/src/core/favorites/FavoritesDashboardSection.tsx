@@ -193,7 +193,7 @@ export default function FavoritesDashboardSection() {
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2">
-        <h2 className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+        <h2 className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
           <Heart className="h-4 w-4" />
           {t("favorites.title")}
         </h2>
