@@ -49,17 +49,28 @@ export default function GarbageDashboardCard() {
         </div>
       </div>
 
-      {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
+      {isLoading && (
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0 space-y-1.5">
+            <div className="h-4 w-32 animate-pulse rounded bg-muted" />
+            <div className="h-3 w-20 animate-pulse rounded bg-muted" />
+          </div>
+          <div className="h-6 w-12 shrink-0 animate-pulse rounded-full bg-muted" />
+        </div>
+      )}
 
       {!isLoading && nearest && (
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium">{nearest.name}</p>
+            <p className="truncate text-sm font-semibold">{nearest.name}</p>
             <p className="text-xs text-muted-foreground">
               {nearest.routeLineName}
             </p>
           </div>
-          <span className="shrink-0 rounded-full bg-teal-500/10 px-2.5 py-1 text-xs font-semibold tabular-nums text-teal-600 dark:text-teal-400">
+          <span
+            className="shrink-0 rounded-full bg-teal-500/10 px-2.5 py-1 text-sm font-semibold tabular-nums text-teal-600 dark:text-teal-400"
+            aria-label={t("dashboard.garbage.distanceAway", { distance: Math.round(nearest.distance) })}
+          >
             {Math.round(nearest.distance)}m
           </span>
         </div>
@@ -78,16 +89,19 @@ export default function GarbageDashboardCard() {
       )}
 
       {!isLoading && !isError && !nearest && (
-        <div>
-          <p className="text-sm text-muted-foreground">
-            {t("dashboard.garbage.noStops")}
-          </p>
-          <button
-            onClick={() => navigate("/schedules/garbage")}
-            className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
-          >
-            {t("dashboard.garbage.noStopsAction")} &rarr;
-          </button>
+        <div className="flex items-start gap-3">
+          <Trash2 className="mt-0.5 h-5 w-5 shrink-0 text-teal-500/30" />
+          <div>
+            <p className="text-sm text-muted-foreground">
+              {t("dashboard.garbage.noStops")}
+            </p>
+            <button
+              onClick={() => navigate("/schedules/garbage")}
+              className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+            >
+              {t("dashboard.garbage.noStopsAction")} &rarr;
+            </button>
+          </div>
         </div>
       )}
     </div>

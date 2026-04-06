@@ -135,7 +135,8 @@
     "garbage": {
       "title": "Garbage Truck",
       "noStops": "No scheduled stops in range",
-      "noStopsAction": "View tonight's routes"
+      "noStopsAction": "View tonight's routes",
+      "distanceAway": "{{distance}} meters away"
     },
     "youbike": {
       "title": "YouBike",
@@ -145,7 +146,8 @@
     "transit": {
       "title": "Bus Transit",
       "noStops": "No bus stops in range",
-      "noStopsAction": "Browse all routes"
+      "noStopsAction": "Browse all routes",
+      "routeCount": "{{count}} routes"
     },
     "parking": {
       "title": "Street Parking",
@@ -160,8 +162,9 @@
       "title": "Alerts"
     },
     "discovery": {
-      "title": "Nearby services",
-      "description": "Garbage trucks, buses, bikes, and street parking — enable location to see what's around you.",
+      "title": "Your Greater Taipei daily companion",
+      "description": "Garbage trucks, buses, bikes, and parking near you — all in one place.",
+      "locationHint": "Location is used only to find nearby services.",
       "enableLocation": "Enable Location",
       "browseSchedules": "Browse schedules"
     },

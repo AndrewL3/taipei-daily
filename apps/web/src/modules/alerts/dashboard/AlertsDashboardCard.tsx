@@ -43,7 +43,12 @@ export default function AlertsDashboardCard() {
         )}
       </div>
 
-      {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
+      {isLoading && (
+        <div className="flex items-center gap-2 rounded-lg bg-muted/50 p-3">
+          <div className="h-5 w-8 shrink-0 animate-pulse rounded-full bg-muted" />
+          <div className="h-4 w-full animate-pulse rounded bg-muted" />
+        </div>
+      )}
 
       {!isLoading && activeAlerts.length > 0 && highest && (
         <div

@@ -41,7 +41,19 @@ export default function WeatherDashboardCard() {
         </button>
       </div>
 
-      {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
+      {isLoading && (
+        <div className="flex items-center gap-3">
+          <div className="h-10 w-10 shrink-0 animate-pulse rounded-lg bg-muted" />
+          <div className="min-w-0 flex-1 space-y-1.5">
+            <div className="h-9 w-12 animate-pulse rounded bg-muted" />
+            <div className="h-4 w-16 animate-pulse rounded bg-muted" />
+            <div className="flex gap-3">
+              <div className="h-3 w-14 animate-pulse rounded bg-muted" />
+              <div className="h-3 w-10 animate-pulse rounded bg-muted" />
+            </div>
+          </div>
+        </div>
+      )}
 
       {!isLoading && current && (
         <div className="flex items-center gap-3">
@@ -50,13 +62,13 @@ export default function WeatherDashboardCard() {
             className="h-10 w-10 shrink-0 text-foreground"
           />
           <div className="min-w-0 flex-1">
-            <p className="text-2xl font-bold tabular-nums">
+            <p className="text-3xl font-bold tabular-nums tracking-tight">
               {current.temperature}°
-              <span className="ml-2 text-sm font-normal text-muted-foreground">
-                {current.wx}
-              </span>
             </p>
-            <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <p className="text-sm font-medium text-muted-foreground">
+              {current.wx}
+            </p>
+            <div className="mt-0.5 flex items-center gap-3 text-xs text-muted-foreground">
               <span className="tabular-nums">
                 {current.minT}°–{current.maxT}°
               </span>
@@ -85,9 +97,12 @@ export default function WeatherDashboardCard() {
       )}
 
       {!isLoading && !isError && !current && (
-        <p className="text-sm text-muted-foreground">
-          {t("dashboard.weather.noData")}
-        </p>
+        <div className="flex items-start gap-3">
+          <CloudSun className="mt-0.5 h-5 w-5 shrink-0 text-amber-500/30" />
+          <p className="text-sm text-muted-foreground">
+            {t("dashboard.weather.noData")}
+          </p>
+        </div>
       )}
     </div>
   );

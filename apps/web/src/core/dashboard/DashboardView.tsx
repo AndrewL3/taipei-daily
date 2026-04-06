@@ -277,26 +277,46 @@ export default function DashboardView() {
           {/* Discovery card — shown when location is off */}
           {!located && hasNearby && (
             <div className="card-lift mt-6 rounded-2xl bg-card p-5 shadow-[var(--shadow-card)]">
-              <div className="flex gap-2.5">
-                <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-teal-500 to-sky-500 shadow-[0_2px_8px_rgba(13,148,136,0.3)]">
-                  <Trash2 className="h-5 w-5 text-white" />
-                </div>
-                <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
-                  <Bus className="h-5 w-5 text-white" />
-                </div>
-                <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-emerald-500 to-green-400 shadow-[0_2px_8px_rgba(16,185,129,0.3)]">
-                  <Bike className="h-5 w-5 text-white" />
-                </div>
-                <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-violet-500 to-purple-500 shadow-[0_2px_8px_rgba(139,92,246,0.3)]">
-                  <ParkingSquare className="h-5 w-5 text-white" />
-                </div>
-              </div>
-              <h3 className="mt-3 text-sm font-semibold">
+              <h3 className="font-display text-base">
                 {t("dashboard.discovery.title")}
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 {t("dashboard.discovery.description")}
               </p>
+              <div className="mt-3 grid grid-cols-4 gap-3">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-teal-500 to-sky-500 shadow-[0_2px_8px_rgba(13,148,136,0.3)]">
+                    <Trash2 className="h-5 w-5 text-white" />
+                  </div>
+                  <span className="text-[10px] font-medium text-muted-foreground">
+                    {t("dashboard.garbage.title")}
+                  </span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-blue-500 to-indigo-500 shadow-[0_2px_8px_rgba(59,130,246,0.3)]">
+                    <Bus className="h-5 w-5 text-white" />
+                  </div>
+                  <span className="text-[10px] font-medium text-muted-foreground">
+                    {t("dashboard.transit.title")}
+                  </span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-emerald-500 to-green-400 shadow-[0_2px_8px_rgba(16,185,129,0.3)]">
+                    <Bike className="h-5 w-5 text-white" />
+                  </div>
+                  <span className="text-[10px] font-medium text-muted-foreground">
+                    {t("dashboard.youbike.title")}
+                  </span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <div className="gradient-icon h-10 w-10 bg-gradient-to-br from-violet-500 to-purple-500 shadow-[0_2px_8px_rgba(139,92,246,0.3)]">
+                    <ParkingSquare className="h-5 w-5 text-white" />
+                  </div>
+                  <span className="text-[10px] font-medium text-muted-foreground">
+                    {t("dashboard.parking.title")}
+                  </span>
+                </div>
+              </div>
               <div className="mt-4 flex items-center gap-4">
                 <button
                   onClick={() =>
@@ -318,6 +338,9 @@ export default function DashboardView() {
                   {t("dashboard.discovery.browseSchedules")} &rarr;
                 </Link>
               </div>
+              <p className="mt-3 text-[11px] text-muted-foreground/60">
+                {t("dashboard.discovery.locationHint")}
+              </p>
             </div>
           )}
 

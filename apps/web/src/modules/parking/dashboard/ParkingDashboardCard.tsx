@@ -49,13 +49,24 @@ export default function ParkingDashboardCard() {
         </button>
       </div>
 
-      {isLoading && <div className="h-12 animate-pulse rounded-lg bg-muted" />}
+      {isLoading && (
+        <div className="flex items-center gap-4">
+          <div className="flex items-baseline gap-0.5">
+            <div className="h-9 w-10 animate-pulse rounded bg-muted" />
+            <div className="h-4 w-6 animate-pulse rounded bg-muted" />
+          </div>
+          <div className="min-w-0 space-y-1.5">
+            <div className="h-4 w-24 animate-pulse rounded bg-muted" />
+            <div className="h-3 w-16 animate-pulse rounded bg-muted" />
+          </div>
+        </div>
+      )}
 
       {!isLoading && nearest && (
         <div className="flex items-center gap-4">
           <div className="shrink-0">
             <span
-              className="text-2xl font-bold tabular-nums"
+              className="text-3xl font-bold tabular-nums tracking-tight"
               style={{ color: getAvailabilityColor(nearest) }}
             >
               {nearest.availableSpaces}
@@ -65,7 +76,7 @@ export default function ParkingDashboardCard() {
             </span>
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium">{nearest.roadName}</p>
+            <p className="truncate text-sm font-semibold">{nearest.roadName}</p>
             <p className="text-xs text-muted-foreground">{nearest.pricing}</p>
           </div>
         </div>
@@ -84,16 +95,19 @@ export default function ParkingDashboardCard() {
       )}
 
       {!isLoading && !isError && !nearest && (
-        <div>
-          <p className="text-sm text-muted-foreground">
-            {t("dashboard.parking.noSpaces")}
-          </p>
-          <button
-            onClick={() => navigate("/map")}
-            className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
-          >
-            {t("dashboard.parking.noSpacesAction")} &rarr;
-          </button>
+        <div className="flex items-start gap-3">
+          <ParkingSquare className="mt-0.5 h-5 w-5 shrink-0 text-violet-500/30" />
+          <div>
+            <p className="text-sm text-muted-foreground">
+              {t("dashboard.parking.noSpaces")}
+            </p>
+            <button
+              onClick={() => navigate("/map")}
+              className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+            >
+              {t("dashboard.parking.noSpacesAction")} &rarr;
+            </button>
+          </div>
         </div>
       )}
     </div>

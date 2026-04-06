@@ -135,7 +135,8 @@
     "garbage": {
       "title": "垃圾車",
       "noStops": "範圍內無垃圾收集點",
-      "noStopsAction": "查看今晚路線"
+      "noStopsAction": "查看今晚路線",
+      "distanceAway": "{{distance}} 公尺"
     },
     "youbike": {
       "title": "YouBike",
@@ -145,7 +146,8 @@
     "transit": {
       "title": "公車",
       "noStops": "範圍內無公車站",
-      "noStopsAction": "瀏覽所有路線"
+      "noStopsAction": "瀏覽所有路線",
+      "routeCount": "{{count}} 條路線"
     },
     "parking": {
       "title": "路邊停車",
@@ -160,8 +162,9 @@
       "title": "警報"
     },
     "discovery": {
-      "title": "附近服務",
-      "description": "垃圾車、公車、YouBike 和路邊停車——開啟定位即可查看附近資訊。",
+      "title": "大台北生活助手",
+      "description": "垃圾車、公車、YouBike 和路邊停車——附近資訊一目了然。",
+      "locationHint": "定位僅用於查找附近服務。",
       "enableLocation": "開啟定位",
       "browseSchedules": "瀏覽時刻表"
     },

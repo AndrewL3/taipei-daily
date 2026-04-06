@@ -52,9 +52,15 @@ export default function YouBikeDashboardCard() {
 
       {isLoading && (
         <div className="space-y-2">
-          <div className="h-7 w-24 animate-pulse rounded-lg bg-muted" />
+          <div className="flex items-baseline gap-1.5">
+            <div className="h-9 w-12 animate-pulse rounded bg-muted" />
+            <div className="h-4 w-20 animate-pulse rounded bg-muted" />
+          </div>
           <div className="h-1.5 animate-pulse rounded-full bg-muted" />
-          <div className="h-5 animate-pulse rounded-lg bg-muted" />
+          <div className="flex items-center justify-between">
+            <div className="h-4 w-28 animate-pulse rounded bg-muted" />
+            <div className="h-3 w-16 animate-pulse rounded bg-muted" />
+          </div>
         </div>
       )}
 
@@ -62,7 +68,7 @@ export default function YouBikeDashboardCard() {
         <div>
           <div className="flex items-baseline gap-1.5">
             <span
-              className="text-2xl font-bold tabular-nums"
+              className="text-3xl font-bold tabular-nums tracking-tight"
               style={{ color: getAvailabilityColor(nearest) }}
             >
               {nearest.availableBikes}
@@ -81,7 +87,7 @@ export default function YouBikeDashboardCard() {
             />
           </div>
           <div className="mt-1.5 flex items-center justify-between">
-            <p className="min-w-0 truncate text-sm font-medium">
+            <p className="min-w-0 truncate text-sm font-semibold">
               {nearest.name}
             </p>
             <span className="shrink-0 text-xs tabular-nums text-muted-foreground">
@@ -104,16 +110,19 @@ export default function YouBikeDashboardCard() {
       )}
 
       {!isLoading && !isError && !nearest && (
-        <div>
-          <p className="text-sm text-muted-foreground">
-            {t("dashboard.youbike.noStations")}
-          </p>
-          <button
-            onClick={() => navigate("/map")}
-            className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
-          >
-            {t("dashboard.youbike.noStationsAction")} &rarr;
-          </button>
+        <div className="flex items-start gap-3">
+          <Bike className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500/30" />
+          <div>
+            <p className="text-sm text-muted-foreground">
+              {t("dashboard.youbike.noStations")}
+            </p>
+            <button
+              onClick={() => navigate("/map")}
+              className="mt-1 text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+            >
+              {t("dashboard.youbike.noStationsAction")} &rarr;
+            </button>
+          </div>
         </div>
       )}
     </div>
