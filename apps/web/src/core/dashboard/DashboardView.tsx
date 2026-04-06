@@ -349,16 +349,20 @@ export default function DashboardView() {
 
           {/* Module cards — reorderable vertical list (only when located) */}
           {located && hasNearby && (
-            <DndContext
-              sensors={sensors}
-              collisionDetection={closestCenter}
-              onDragEnd={handleDragEnd}
-            >
-              <SortableContext
-                items={reorderableIds}
-                strategy={verticalListSortingStrategy}
+            <div className="mt-5">
+              <h2 className="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                {t("dashboard.nearby")}
+              </h2>
+              <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd}
               >
-                <div className="mt-6 space-y-3">
+                <SortableContext
+                  items={reorderableIds}
+                  strategy={verticalListSortingStrategy}
+                >
+                  <div className="space-y-2.5">
                   {orderedCards.map(({ id, Card, mod }) => (
                     <SortableCard
                       key={id}
@@ -379,6 +383,7 @@ export default function DashboardView() {
                 </div>
               </SortableContext>
             </DndContext>
+            </div>
           )}
 
           {/* Alerts — separate from location-based cards */}
@@ -390,8 +395,8 @@ export default function DashboardView() {
             </div>
           )}
 
-          {/* Emergency info — footer with generous separation */}
-          <div className="mt-8">
+          {/* Emergency info */}
+          <div className="mt-6">
             <Link
               to="/safety"
               className="flex items-center gap-3 rounded-xl border border-border/12 bg-card px-4 py-3 shadow-sm transition-colors hover:bg-muted/50"
