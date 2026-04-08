@@ -7,8 +7,26 @@ import { toTaipeiDateString } from "@tracker/utils";
 const NTC_GPS_URL =
   "https://data.ntpc.gov.tw/api/datasets/28ab4122-60e1-4065-98e5-abccb69aaca6/json";
 
+function extractAdminToken(req: VercelRequest): string | undefined {
+  const authorization = req.headers.authorization;
+  if (!authorization) return undefined;
+  if (authorization.toLowerCase().startsWith("bearer ")) {
+    const token = authorization.slice(7).trim();
+    return token || undefined;
+  }
+  const token = authorization.trim();
+  return token || undefined;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Cache-Control", "private, no-store");
+
+  if (req.method === "OPTIONS") {
+    return res.status(204).end();
+  }
 
   // Auth: validate token against ADMIN_PASSWORD
   const adminPassword = process.env.ADMIN_PASSWORD;
@@ -17,7 +35,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .status(503)
       .json({ ok: false, error: "ADMIN_PASSWORD not configured" });
   }
-  const token = req.query.token as string | undefined;
+  const token = extractAdminToken(req);
   if (token !== adminPassword) {
     return res.status(401).json({ ok: false, error: "Unauthorized" });
   }

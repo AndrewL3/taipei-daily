@@ -12,7 +12,7 @@ import {
   HelpCircle,
   RefreshCw,
 } from "lucide-react";
-import { useQueryClient, useIsFetching } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import {
   DndContext,
   closestCenter,
@@ -126,15 +126,10 @@ export default function DashboardView() {
   // Pull-to-refresh
   const scrollRef = useRef<HTMLDivElement>(null);
   const queryClient = useQueryClient();
-  const isFetching = useIsFetching();
   const handleRefresh = useCallback(() => {
-    queryClient.invalidateQueries();
+    return queryClient.invalidateQueries();
   }, [queryClient]);
-  const { offset: pullOffset, isRefreshing } = usePullToRefresh(
-    scrollRef,
-    handleRefresh,
-    isFetching === 0,
-  );
+  const { offset: pullOffset, isRefreshing } = usePullToRefresh(scrollRef, handleRefresh);
 
   // Dashboard card reorder
   const [cardOrder, setCardOrder] = useDashboardOrder();
@@ -165,7 +160,7 @@ export default function DashboardView() {
         setQuickAction({ mod, rect });
       }
     },
-    [],
+    [setQuickAction],
   );
 
   // Contextual tooltips

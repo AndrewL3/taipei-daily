@@ -57,9 +57,11 @@ export interface AdminStatus {
 }
 
 export async function fetchAdminStatus(token: string): Promise<AdminStatus> {
-  const res = await fetch(
-    `${API_BASE}/api/admin/status?token=${encodeURIComponent(token)}`,
-  );
+  const res = await fetch(`${API_BASE}/api/admin/status`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   if (res.status === 401) throw new Error("Unauthorized");
   const json = await res.json();
   if (!json.ok) throw new Error(json.error ?? "Admin API request failed");

@@ -302,25 +302,22 @@ function RouteStatusPanel({ routes }: { routes: AdminRouteStatus[] }) {
 // --- Main Component ---
 
 export default function AdminView() {
-  const [token, setToken] = useState<string | null>(() =>
-    sessionStorage.getItem("admin_token"),
-  );
+  const [token, setToken] = useState<string | null>(null);
+  const [authVersion, setAuthVersion] = useState(0);
+  const handleUnauthorized = useCallback(() => {
+    setToken(null);
+  }, []);
 
   const { data, isLoading, isError, error, refetch, dataUpdatedAt } =
-    useAdminStatus(token);
+    useAdminStatus(token, authVersion, handleUnauthorized);
 
   // Handle 401 — clear token and show gate
   const isUnauthorized =
     isError && error instanceof Error && error.message === "Unauthorized";
 
-  if (isUnauthorized && token) {
-    sessionStorage.removeItem("admin_token");
-    setToken(null);
-  }
-
   const handleAuth = useCallback((pw: string) => {
-    sessionStorage.setItem("admin_token", pw);
     setToken(pw);
+    setAuthVersion((current) => current + 1);
   }, []);
 
   if (!token || isUnauthorized) {

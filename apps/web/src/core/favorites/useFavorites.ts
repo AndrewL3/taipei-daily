@@ -2,8 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import {
   loadFavorites,
   saveFavorites,
-  saveCachedData,
-  loadCachedData,
+  deleteFavoriteData,
   isAtLimit,
   type FavoriteItem,
   type FavoritesMap,
@@ -44,6 +43,7 @@ export async function removeFavorite(
     [moduleKey]: moduleItems.filter((f) => f.id !== itemId),
   };
   cachedFavorites = updated;
+  await deleteFavoriteData(moduleKey, itemId);
   await saveFavorites(updated);
   notify();
   return item;
@@ -102,7 +102,6 @@ export function useFavorites(moduleKey: string) {
       label: string,
       lat: number,
       lon: number,
-      data?: unknown,
     ) => {
       const current = cachedFavorites ?? {};
       const moduleItems = current[moduleKey] ?? [];
@@ -110,6 +109,7 @@ export function useFavorites(moduleKey: string) {
 
       let updated: FavoritesMap;
       if (exists) {
+        await deleteFavoriteData(moduleKey, id);
         updated = {
           ...current,
           [moduleKey]: moduleItems.filter((f) => f.id !== id),
@@ -123,9 +123,6 @@ export function useFavorites(moduleKey: string) {
             { id, label, lat, lon, addedAt: Date.now() },
           ],
         };
-        if (data) {
-          await saveCachedData(moduleKey, id, data);
-        }
       }
       cachedFavorites = updated;
       await saveFavorites(updated);
@@ -134,12 +131,7 @@ export function useFavorites(moduleKey: string) {
     [moduleKey],
   );
 
-  const getCachedData = useCallback(
-    <T>(id: string) => loadCachedData<T>(moduleKey, id),
-    [moduleKey],
-  );
-
-  return { items, isFavorite, toggle, getCachedData };
+  return { items, isFavorite, toggle };
 }
 
 export function useAllFavorites() {

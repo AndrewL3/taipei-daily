@@ -10,22 +10,12 @@ interface PullToRefreshResult {
 
 export function usePullToRefresh(
   scrollRef: React.RefObject<HTMLElement | null>,
-  onRefresh: () => void,
-  settled: boolean,
+  onRefresh: () => Promise<unknown>,
 ): PullToRefreshResult {
   const [offset, setOffset] = useState(0);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const startY = useRef(0);
   const pulling = useRef(false);
-
-  // Reset when queries settle after a refresh.
-  // Uses same setState-in-effect pattern as existing map layer hooks.
-  useEffect(() => {
-    if (isRefreshing && settled) {
-      setIsRefreshing(false);
-      setOffset(0);
-    }
-  }, [isRefreshing, settled]);
 
   const handleTouchStart = useCallback(
     (e: TouchEvent) => {
@@ -59,7 +49,14 @@ export function usePullToRefresh(
     setOffset((current) => {
       if (current >= TRIGGER_THRESHOLD) {
         setIsRefreshing(true);
-        onRefresh();
+        void Promise.resolve(onRefresh())
+          .catch(() => {
+            // Errors are surfaced by the individual queries/cards.
+          })
+          .finally(() => {
+            setIsRefreshing(false);
+            setOffset(0);
+          });
         return MAX_PULL;
       }
       return 0;

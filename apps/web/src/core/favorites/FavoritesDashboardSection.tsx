@@ -28,6 +28,7 @@ import {
 import { getRegisteredModules } from "../module-registry";
 import { useNavigate } from "react-router";
 import type { FavoriteItem } from "./storage";
+import { buildMapNavigationTarget } from "../map/navigation";
 
 interface FavEntry {
   key: string;
@@ -153,7 +154,7 @@ export default function FavoritesDashboardSection() {
       setDisplayOrder(newOrder);
       saveDisplayOrder(newOrder);
     },
-    [entries],
+    [entries, setDisplayOrder],
   );
 
   const handleRemove = useCallback(
@@ -171,12 +172,14 @@ export default function FavoritesDashboardSection() {
         });
       }
     },
-    [t, displayOrder],
+    [displayOrder, setDisplayOrder, t],
   );
 
   const handleNavigate = useCallback(
     (entry: FavEntry) => {
-      navigate(`/map?lat=${entry.fav.lat}&lon=${entry.fav.lon}&zoom=17`);
+      navigate(
+        buildMapNavigationTarget(entry.moduleKey, entry.fav.lat, entry.fav.lon),
+      );
     },
     [navigate],
   );

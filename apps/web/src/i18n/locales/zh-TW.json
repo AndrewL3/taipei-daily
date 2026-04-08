@@ -92,6 +92,7 @@
     "dismiss": "關閉",
     "severity": "嚴重程度",
     "expires": "到期",
+    "expired": "已到期",
     "areas": "影響地區",
     "instruction": "注意事項",
     "viewOfficial": "查看官方警報",

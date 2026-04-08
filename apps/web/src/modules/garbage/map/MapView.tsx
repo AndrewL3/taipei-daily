@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useMemo, useEffect } from "react";
+import { useState, useCallback, useRef, useMemo } from "react";
 import { useMap, useMapEvents } from "react-leaflet";
 import type L from "leaflet";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -68,19 +68,14 @@ export default function GarbageMapLayer() {
   const selectingRef = useRef(false);
 
   // Bounds for Taipei bounding-box query
-  const [bounds, setBounds] = useState<MapBounds | null>(null);
+  const [bounds, setBounds] = useState<MapBounds | null>(() =>
+    map.getZoom() >= MIN_ZOOM ? getBounds(map) : null,
+  );
 
   // Taipei stop selection (separate from NTC selection)
   const [selectedTaipeiStop, setSelectedTaipeiStop] =
     useState<TaipeiGarbageStop | null>(null);
   const selectingTaipeiRef = useRef(false);
-
-  // Initialize bounds on mount
-  useEffect(() => {
-    const z = map.getZoom();
-    setZoom(z);
-    if (z >= MIN_ZOOM) setBounds(getBounds(map));
-  }, [map]);
 
   // Fetch Taipei stops
   const { data: taipeiStops } = useTaipeiStops(zoom >= MIN_ZOOM ? bounds : null);

@@ -143,7 +143,6 @@ export default function StopDetailContent({
           label={stop.routeLineName}
           lat={stop.latitude}
           lon={stop.longitude}
-          data={stop}
         />
         <DirectionsButton lat={stop.latitude} lon={stop.longitude} />
       </div>

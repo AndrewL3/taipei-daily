@@ -9,7 +9,6 @@ interface FavoriteButtonProps {
   label: string;
   lat: number;
   lon: number;
-  data?: unknown;
 }
 
 export default function FavoriteButton({
@@ -18,7 +17,6 @@ export default function FavoriteButton({
   label,
   lat,
   lon,
-  data,
 }: FavoriteButtonProps) {
   const { t } = useTranslation();
   const { items, isFavorite, toggle } = useFavorites(moduleKey);
@@ -27,7 +25,7 @@ export default function FavoriteButton({
   const handleClick = () => {
     if (favorited) {
       const captured = items.find((f) => f.id === id);
-      toggle(id, label, lat, lon, data);
+      toggle(id, label, lat, lon);
       if (captured) {
         toast(t("favorites.removed"), {
           action: {
@@ -37,7 +35,7 @@ export default function FavoriteButton({
         });
       }
     } else {
-      toggle(id, label, lat, lon, data);
+      toggle(id, label, lat, lon);
     }
   };
 

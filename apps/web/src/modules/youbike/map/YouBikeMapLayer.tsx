@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef } from "react";
 import { useMap, useMapEvents } from "react-leaflet";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useYouBikeStations } from "../api/hooks";
@@ -52,19 +52,14 @@ function getBounds(map: L.Map): MapBounds {
 export default function YouBikeMapLayer() {
   const map = useMap();
   const isDesktop = useMediaQuery("(min-width: 768px)");
-  const [bounds, setBounds] = useState<MapBounds | null>(null);
+  const [bounds, setBounds] = useState<MapBounds | null>(() =>
+    map.getZoom() >= MIN_ZOOM ? getBounds(map) : null,
+  );
   const [zoom, setZoom] = useState(() => map.getZoom());
   const [selectedStation, setSelectedStation] = useState<YouBikeStation | null>(
     null,
   );
   const selectingRef = useRef(false);
-
-  // Initialize bounds on mount
-  useEffect(() => {
-    const z = map.getZoom();
-    setZoom(z);
-    if (z >= MIN_ZOOM) setBounds(getBounds(map));
-  }, [map]);
 
   const handleMoveEnd = useCallback(() => {
     const z = map.getZoom();

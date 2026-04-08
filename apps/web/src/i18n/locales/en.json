@@ -92,6 +92,7 @@
     "dismiss": "Dismiss",
     "severity": "Severity",
     "expires": "Expires",
+    "expired": "Expired",
     "areas": "Affected areas",
     "instruction": "Instructions",
     "viewOfficial": "View official alert",

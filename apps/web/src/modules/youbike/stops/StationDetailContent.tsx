@@ -58,7 +58,6 @@ export default function StationDetailContent({
           label={station.name}
           lat={station.lat}
           lon={station.lon}
-          data={station}
         />
         <DirectionsButton lat={station.lat} lon={station.lon} />
       </div>

@@ -30,7 +30,6 @@ export default function TaipeiStopDetailContent({
           label={`${stop.routeName} ${stop.trip}`}
           lat={stop.lat}
           lon={stop.lon}
-          data={stop}
         />
         <DirectionsButton lat={stop.lat} lon={stop.lon} />
       </div>

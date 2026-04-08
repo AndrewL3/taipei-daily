@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ExternalLink } from "lucide-react";
 import {
@@ -22,13 +23,29 @@ const severityStyles: Record<string, string> = {
   Unknown: "bg-muted text-muted-foreground",
 };
 
-function formatRelativeExpiry(expires: string): string {
-  const diff = new Date(expires).getTime() - Date.now();
-  if (diff <= 0) return "Expired";
-  const hours = Math.floor(diff / 3_600_000);
-  const minutes = Math.floor((diff % 3_600_000) / 60_000);
-  if (hours > 0) return `${hours}h ${minutes}m`;
-  return `${minutes}m`;
+function formatRelativeExpiry(
+  expires: string,
+  now: number,
+  language: string,
+  expiredLabel: string,
+): string {
+  const diff = new Date(expires).getTime() - now;
+  if (diff <= 0) return expiredLabel;
+
+  const rtf = new Intl.RelativeTimeFormat(language, {
+    numeric: "auto",
+    style: "short",
+  });
+  const minutes = Math.max(1, Math.round(diff / 60_000));
+  if (minutes < 60) {
+    return rtf.format(minutes, "minute");
+  }
+  const hours = Math.round(diff / 3_600_000);
+  if (hours < 24) {
+    return rtf.format(hours, "hour");
+  }
+  const days = Math.round(diff / 86_400_000);
+  return rtf.format(days, "day");
 }
 
 export default function AlertDetailSheet({
@@ -36,7 +53,18 @@ export default function AlertDetailSheet({
   open,
   onClose,
 }: AlertDetailSheetProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    if (!open) return;
+    const frame = requestAnimationFrame(() => setNow(Date.now()));
+    const id = setInterval(() => setNow(Date.now()), 60_000);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearInterval(id);
+    };
+  }, [open]);
 
   return (
     <Drawer open={open} onOpenChange={(o) => !o && onClose()} modal={false}>
@@ -97,7 +125,13 @@ export default function AlertDetailSheet({
 
                 <div className="flex items-center justify-between">
                   <p className="text-xs text-muted-foreground">
-                    {t("alerts.expires")}: {formatRelativeExpiry(alert.expires)}
+                    {t("alerts.expires")}:{" "}
+                    {formatRelativeExpiry(
+                      alert.expires,
+                      now,
+                      i18n.resolvedLanguage ?? i18n.language,
+                      t("alerts.expired"),
+                    )}
                   </p>
                   {alert.web && (
                     <a

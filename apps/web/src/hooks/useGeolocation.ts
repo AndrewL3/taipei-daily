@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 
 interface Position {
   lat: number;
@@ -8,49 +8,80 @@ interface Position {
 // New Taipei City center
 const DEFAULT_POSITION: Position = { lat: 25.012, lon: 121.465 };
 
-/** Dispatch this event to make all useGeolocation instances re-request position. */
+interface GeolocationState {
+  position: Position;
+  located: boolean;
+}
+
+let state: GeolocationState = {
+  position: DEFAULT_POSITION,
+  located: false,
+};
+let requestStarted = false;
+let requestInFlight = false;
+const listeners = new Set<() => void>();
+
+function notify() {
+  listeners.forEach((listener) => listener());
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function getSnapshot(): GeolocationState {
+  return state;
+}
+
+function requestPosition(force = false) {
+  if (typeof navigator === "undefined" || !navigator.geolocation) return;
+  if (!force && requestStarted) return;
+  if (requestInFlight) return;
+
+  requestStarted = true;
+  requestInFlight = true;
+
+  const onSuccess = (pos: GeolocationPosition) => {
+    requestInFlight = false;
+    state = {
+      position: { lat: pos.coords.latitude, lon: pos.coords.longitude },
+      located: true,
+    };
+    notify();
+  };
+
+  const onFailure = () => {
+    requestInFlight = false;
+  };
+
+  navigator.geolocation.getCurrentPosition(
+    onSuccess,
+    () => {
+      navigator.geolocation.getCurrentPosition(
+        onSuccess,
+        onFailure,
+        { enableHighAccuracy: false, timeout: 15_000 },
+      );
+    },
+    { enableHighAccuracy: true, timeout: 10_000 },
+  );
+}
+
 export function retryGeolocation() {
-  window.dispatchEvent(new Event("geolocation-retry"));
+  requestPosition(true);
 }
 
 export function useGeolocation() {
-  const [position, setPosition] = useState<Position>(DEFAULT_POSITION);
-  const [located, setLocated] = useState(false);
-
-  const requestPosition = useCallback(() => {
-    if (!navigator.geolocation) return;
-
-    const onSuccess = (pos: GeolocationPosition) => {
-      setPosition({ lat: pos.coords.latitude, lon: pos.coords.longitude });
-      setLocated(true);
-    };
-
-    // Try high accuracy first (GPS on mobile), fall back to low accuracy (IP/WiFi on desktop)
-    navigator.geolocation.getCurrentPosition(
-      onSuccess,
-      () => {
-        navigator.geolocation.getCurrentPosition(
-          onSuccess,
-          () => {
-            // Both attempts failed — keep default position
-          },
-          { enableHighAccuracy: false, timeout: 15_000 },
-        );
-      },
-      { enableHighAccuracy: true, timeout: 10_000 },
-    );
-  }, []);
+  const { position, located } = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getSnapshot,
+  );
 
   useEffect(() => {
     requestPosition();
-  }, [requestPosition]);
-
-  // Re-request when permission is granted via another code path (e.g., Discovery Card)
-  useEffect(() => {
-    const handler = () => requestPosition();
-    window.addEventListener("geolocation-retry", handler);
-    return () => window.removeEventListener("geolocation-retry", handler);
-  }, [requestPosition]);
+  }, []);
 
   return { position, located };
 }

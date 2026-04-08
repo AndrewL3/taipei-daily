@@ -2,6 +2,10 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../redis.js";
 import { tdxFetch } from "../data-sources/tdx.js";
 import {
+  TRANSIT_STATIONS_CACHE_KEY,
+  TRANSIT_STATIONS_CACHE_TTL,
+} from "./cache.js";
+import {
   TdxStopOfRouteRawArraySchema,
   flattenStopsOfRoute,
   groupStopsIntoStations,
@@ -10,35 +14,28 @@ import {
   type TdxStopOfRouteRaw,
 } from "@tracker/types";
 
-const CACHE_KEY = "transit:stations:v2";
-const CACHE_TTL = 86400; // 24h
-
 const VALID_CITIES: Set<string> = new Set(["Taipei", "NewTaipei"]);
 
-const CITIES: { path: CityKey; code: string }[] = [
-  { path: "Taipei", code: "TPE" },
-  { path: "NewTaipei", code: "NWT" },
-];
+const CITIES: CityKey[] = ["Taipei", "NewTaipei"];
 
-async function fetchCityStops(city: {
-  path: string;
-  code: string;
-}): Promise<BusStation[]> {
+async function fetchCityStops(city: CityKey): Promise<BusStation[]> {
   const raw = await tdxFetch<TdxStopOfRouteRaw[]>(
-    `/v2/Bus/StopOfRoute/City/${city.path}`,
+    `/v2/Bus/StopOfRoute/City/${city}`,
   );
   const parsed = TdxStopOfRouteRawArraySchema.parse(raw);
   const flat = flattenStopsOfRoute(parsed);
-  return groupStopsIntoStations(flat, city.path);
+  return groupStopsIntoStations(flat, city);
 }
 
 async function getAllStations(): Promise<BusStation[]> {
-  const cached = await redis.get<BusStation[]>(CACHE_KEY);
+  const cached = await redis.get<BusStation[]>(TRANSIT_STATIONS_CACHE_KEY);
   if (cached) return cached;
 
   const results = await Promise.all(CITIES.map(fetchCityStops));
   const all = results.flat();
-  await redis.set(CACHE_KEY, all, { ex: CACHE_TTL });
+  await redis.set(TRANSIT_STATIONS_CACHE_KEY, all, {
+    ex: TRANSIT_STATIONS_CACHE_TTL,
+  });
   return all;
 }
 
@@ -56,14 +53,19 @@ export async function handleStops(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    const cityParam = req.query.city as string | undefined;
+    const cityParam = req.query.city as CityKey | undefined;
     if (cityParam && !VALID_CITIES.has(cityParam)) {
       return res.status(400).json({ ok: false, error: "Invalid city" });
     }
 
     const all = await getAllStations();
     const stations = all.filter(
-      (s) => s.lat >= south && s.lat <= north && s.lon >= west && s.lon <= east,
+      (s) =>
+        s.lat >= south &&
+        s.lat <= north &&
+        s.lon >= west &&
+        s.lon <= east &&
+        (!cityParam || s.city === cityParam),
     );
 
     return res.status(200).json({ ok: true, stations });

@@ -3,17 +3,21 @@ import { useTranslation } from "react-i18next";
 
 export default function DataAge({ updatedAt }: { updatedAt?: number }) {
   const { t } = useTranslation();
-  const [, setTick] = useState(0);
+  const [now, setNow] = useState(() => Date.now());
 
   useEffect(() => {
     if (!updatedAt) return;
-    const id = setInterval(() => setTick((n) => n + 1), 15_000);
-    return () => clearInterval(id);
+    const frame = requestAnimationFrame(() => setNow(Date.now()));
+    const id = setInterval(() => setNow(Date.now()), 15_000);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearInterval(id);
+    };
   }, [updatedAt]);
 
   if (!updatedAt) return null;
 
-  const seconds = Math.floor((Date.now() - updatedAt) / 1000);
+  const seconds = Math.floor((now - updatedAt) / 1000);
   if (seconds < 10) return null;
 
   let text: string;

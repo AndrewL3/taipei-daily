@@ -43,7 +43,6 @@ export default function ParkingDetailContent({
           label={segment.roadName}
           lat={segment.latitude}
           lon={segment.longitude}
-          data={segment}
         />
         <DirectionsButton lat={segment.latitude} lon={segment.longitude} />
       </div>

@@ -1,18 +1,21 @@
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { Trash2, Bike, Bus, MapPin } from "lucide-react";
+import { Trash2, Bike, Bus, MapPin, ParkingSquare } from "lucide-react";
 import { useSearch, type SearchResult } from "./useSearch";
+import { buildMapNavigationTarget } from "../map/navigation";
 
 const MODULE_ICONS: Record<string, typeof Bus> = {
   garbage: Trash2,
   youbike: Bike,
   transit: Bus,
+  parking: ParkingSquare,
 };
 
 const MODULE_COLORS: Record<string, string> = {
   garbage: "text-teal-600 dark:text-teal-400",
   youbike: "text-green-600 dark:text-green-400",
   transit: "text-blue-600 dark:text-blue-400",
+  parking: "text-violet-600 dark:text-violet-400",
 };
 
 interface SearchOverlayProps {
@@ -35,7 +38,7 @@ export default function SearchOverlay({ query, onClose }: SearchOverlayProps) {
   );
 
   const handleSelect = (result: SearchResult) => {
-    navigate(`/map?lat=${result.lat}&lon=${result.lon}&zoom=17`);
+    navigate(buildMapNavigationTarget(result.moduleId, result.lat, result.lon));
     onClose();
   };
 

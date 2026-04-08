@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../src/redis.js";
 import { db } from "../src/db.js";
+import { TRANSIT_STATIONS_CACHE_KEY } from "../src/transit/cache.js";
 import { stops, routes } from "@tracker/types";
 import { sql } from "drizzle-orm";
 import type {
@@ -55,7 +56,7 @@ async function searchTransit(
   query: string,
   limit: number,
 ): Promise<SearchResult[]> {
-  const cached = await redis.get<BusStation[]>("transit:stations");
+  const cached = await redis.get<BusStation[]>(TRANSIT_STATIONS_CACHE_KEY);
   if (!cached) return [];
 
   const q = normalize(query);
@@ -123,7 +124,6 @@ async function searchParking(
       moduleId: "parking",
     }));
 }
-
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
