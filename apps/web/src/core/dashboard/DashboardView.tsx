@@ -399,7 +399,7 @@ export default function DashboardView() {
           <div className="mt-6">
             <Link
               to="/safety"
-              className="flex items-center gap-3 rounded-xl border border-border/12 bg-card px-4 py-3 shadow-sm transition-colors hover:bg-muted/50"
+              className="flex items-center gap-3 rounded-xl bg-card px-4 py-3 shadow-sm transition-colors hover:bg-muted/50"
             >
               <ShieldAlert className={`h-5 w-5 shrink-0 ${safetyIconColor}`} />
               <div>
