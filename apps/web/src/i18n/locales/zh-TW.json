@@ -238,6 +238,14 @@
     "edit": "編輯",
     "done": "完成"
   },
+  "settings": {
+    "title": "設定",
+    "theme": "主題",
+    "light": "淺色",
+    "dark": "深色",
+    "system": "自動",
+    "language": "語言"
+  },
   "unit": {
     "min": "分鐘"
   }

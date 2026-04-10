@@ -11,6 +11,7 @@ import {
   GripVertical,
   HelpCircle,
   RefreshCw,
+  ChevronRight,
 } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import {
@@ -38,6 +39,7 @@ import { useLongPress } from "./useLongPress";
 import { useDismissedTooltips } from "./useDismissedTooltips";
 import QuickActionsPopover from "./QuickActionsPopover";
 import TooltipCallout from "./TooltipCallout";
+import SettingsDropdown from "./SettingsDropdown";
 import SearchBar from "../search/SearchBar";
 import AlertBanner from "@/modules/alerts/components/AlertBanner";
 import FavoritesDashboardSection from "../favorites/FavoritesDashboardSection";
@@ -238,13 +240,16 @@ export default function DashboardView() {
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <h1 className="font-display text-2xl">{t(getGreetingKey())}</h1>
-              <button
-                onClick={resetAll}
-                className="-m-1 rounded-full p-2.5 text-muted-foreground/40 transition-colors hover:bg-muted hover:text-muted-foreground"
-                aria-label={t("dashboard.showTips")}
-              >
-                <HelpCircle className="h-5 w-5" />
-              </button>
+              <div className="flex items-center gap-0.5">
+                <SettingsDropdown />
+                <button
+                  onClick={resetAll}
+                  className="-m-1 rounded-full p-2.5 text-muted-foreground/40 transition-colors hover:bg-muted hover:text-muted-foreground"
+                  aria-label={t("dashboard.showTips")}
+                >
+                  <HelpCircle className="h-5 w-5" />
+                </button>
+              </div>
             </div>
             <SearchBar />
             {activeTooltip === "search-hint" && (
@@ -394,17 +399,20 @@ export default function DashboardView() {
           <div className="mt-6">
             <Link
               to="/safety"
-              className="flex items-center gap-3 rounded-xl bg-card px-4 py-3 shadow-sm transition-colors hover:bg-muted/50"
+              className="card-lift flex items-center gap-4 rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]"
             >
-              <ShieldAlert className={`h-5 w-5 shrink-0 ${safetyIconColor}`} />
-              <div>
-                <p className="text-sm font-medium">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-500/10">
+                <ShieldAlert className={`h-5 w-5 ${safetyIconColor}`} />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold">
                   {t("safety.dashboardTitle")}
                 </p>
                 <p className="text-xs text-muted-foreground">
                   {t("safety.dashboardSubtitle")}
                 </p>
               </div>
+              <ChevronRight className="h-5 w-5 shrink-0 text-muted-foreground" />
             </Link>
           </div>
 

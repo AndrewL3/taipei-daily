@@ -30,10 +30,6 @@ export default function SchedulesHubView() {
       <div className="flex-1 overflow-y-auto">
         <div className="mx-auto max-w-lg px-4 pb-8 pt-6">
           <div className="space-y-2">
-            <div className="section-label">
-              <span className="dot" />
-              {t("schedules.heading")}
-            </div>
             <h1 className="font-display text-2xl">
               {t("schedules.heading")}
             </h1>

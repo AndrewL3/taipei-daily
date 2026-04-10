@@ -238,6 +238,14 @@
     "edit": "Edit",
     "done": "Done"
   },
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "Auto",
+    "language": "Language"
+  },
   "unit": {
     "min": "min"
   }
