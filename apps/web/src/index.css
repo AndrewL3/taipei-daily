@@ -145,6 +145,15 @@
   }
 }
 
+/* --- Z-Index Scale ---
+   z-10:     Sticky headers, drag state
+   z-20:     Desktop glass nav pill
+   z-50:     Overlays (drawers, dropdowns, popovers, toasts)
+   z-[999]:  Map legend (informational, dismissible)
+   z-[1000]: Map controls + layer toggle (interactive, always accessible)
+   z-[1001]: Map search bar + loading bar (highest map UI priority)
+*/
+
 /* --- Design System: Minimalist Modern Polish --- */
 
 .card-lift {
@@ -219,9 +228,20 @@
   }
 }
 
-/* View entrance — single element fade + slide */
+/* View entrance — lateral tab switch (fade + subtle slide) */
 .view-enter {
   animation: fade-in-up 250ms cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+/* Detail drill-down — rises over previous view (sheet-style) */
+@keyframes slide-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+.view-slide-up {
+  animation: slide-up-in 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Stagger — progressive child reveals (dashboard sections) */
@@ -419,6 +439,7 @@
 /* --- Accessibility: Reduced Motion --- */
 @media (prefers-reduced-motion: reduce) {
   .view-enter,
+  .view-slide-up,
   .stagger > *,
   .dropdown-enter,
   .overlay-enter,

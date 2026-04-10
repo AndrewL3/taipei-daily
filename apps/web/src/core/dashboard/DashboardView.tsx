@@ -26,7 +26,7 @@ import {
 import {
   SortableContext,
   useSortable,
-  verticalListSortingStrategy,
+  rectSortingStrategy,
   arrayMove,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
@@ -277,6 +277,15 @@ export default function DashboardView() {
             </div>
           )}
 
+          {/* Alerts — promoted above nearby when active */}
+          {activeAlertsList.length > 0 && alertCards.length > 0 && (
+            <div className="mt-4">
+              {alertCards.map(({ id, Card }) => (
+                <Card key={id} />
+              ))}
+            </div>
+          )}
+
           {/* Discovery card — shown when location is off */}
           {!located && hasNearby && (
             <div className="card-lift mt-6 rounded-2xl bg-card p-5 shadow-[var(--shadow-card)]">
@@ -304,8 +313,8 @@ export default function DashboardView() {
                   </span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10">
-                    <Bike className="h-5 w-5 text-emerald-500" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-lime-600/10">
+                    <Bike className="h-5 w-5 text-lime-600" />
                   </div>
                   <span className="text-xs font-medium text-muted-foreground">
                     {t("dashboard.youbike.title")}
@@ -360,9 +369,9 @@ export default function DashboardView() {
               >
                 <SortableContext
                   items={reorderableIds}
-                  strategy={verticalListSortingStrategy}
+                  strategy={rectSortingStrategy}
                 >
-                  <div className="space-y-2.5">
+                  <div className="grid gap-2.5 sm:grid-cols-2">
                   {orderedCards.map(({ id, Card, mod }) => (
                     <SortableCard
                       key={id}
@@ -375,10 +384,12 @@ export default function DashboardView() {
                   ))}
                   {orderedCards.length > 0 &&
                     activeTooltip === "long-press-hint" && (
-                      <TooltipCallout
-                        message={t("dashboard.tooltip.longPressHint")}
-                        onDismiss={() => dismiss("long-press-hint")}
-                      />
+                      <div className="sm:col-span-2">
+                        <TooltipCallout
+                          message={t("dashboard.tooltip.longPressHint")}
+                          onDismiss={() => dismiss("long-press-hint")}
+                        />
+                      </div>
                     )}
                 </div>
               </SortableContext>
@@ -386,8 +397,8 @@ export default function DashboardView() {
             </div>
           )}
 
-          {/* Alerts — separate from location-based cards */}
-          {alertCards.length > 0 && (
+          {/* Alerts — below nearby when no active alerts (shows "all clear") */}
+          {activeAlertsList.length === 0 && alertCards.length > 0 && (
             <div className="mt-4">
               {alertCards.map(({ id, Card }) => (
                 <Card key={id} />
@@ -396,7 +407,7 @@ export default function DashboardView() {
           )}
 
           {/* Emergency info */}
-          <div className="mt-6">
+          <div className="mt-5">
             <Link
               to="/safety"
               className="card-lift flex items-center gap-4 rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]"

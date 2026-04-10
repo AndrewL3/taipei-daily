@@ -52,7 +52,7 @@ export default function RouteView() {
   const { data, isLoading, error } = useRouteDetail(routeId, direction, city);
 
   return (
-    <div className="flex h-full flex-col bg-background">
+    <div className="view-slide-up flex h-full flex-col bg-background">
       {/* Header */}
       <div className="sticky top-0 z-10 border-b border-border/12 bg-background/95 backdrop-blur-sm">
         <div className="flex items-center gap-3 px-4 py-3">

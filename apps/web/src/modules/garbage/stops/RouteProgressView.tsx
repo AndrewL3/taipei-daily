@@ -33,7 +33,7 @@ export default function RouteProgressView() {
 
   if (isLoading) {
     return (
-      <div className="flex h-dvh flex-col bg-background">
+      <div className="view-slide-up flex h-dvh flex-col bg-background">
         <div className="flex items-center gap-3 bg-background px-4 py-3 shadow-sm">
           <Skeleton className="h-6 w-6" />
           <Skeleton className="h-6 w-32" />
@@ -49,7 +49,7 @@ export default function RouteProgressView() {
 
   if (isError) {
     return (
-      <div className="flex h-dvh flex-col items-center justify-center bg-background">
+      <div className="view-slide-up flex h-dvh flex-col items-center justify-center bg-background">
         <ErrorMessage
           message={t("route.failedToLoad")}
           onRetry={() => refetch()}
@@ -63,7 +63,7 @@ export default function RouteProgressView() {
 
   if (!data) {
     return (
-      <div className="flex h-dvh flex-col items-center justify-center gap-4 bg-background">
+      <div className="view-slide-up flex h-dvh flex-col items-center justify-center gap-4 bg-background">
         <p className="text-muted-foreground">{t("route.notFound")}</p>
         <Button variant="outline" onClick={() => navigate(-1)}>
           {t("route.goBack")}
@@ -80,7 +80,7 @@ export default function RouteProgressView() {
   }
 
   return (
-    <div className="flex h-dvh flex-col bg-background">
+    <div className="view-slide-up flex h-dvh flex-col bg-background">
       {/* Sticky header — solid surface with shadow */}
       <div className="sticky top-0 z-10 flex items-center gap-3 bg-background px-4 py-3 shadow-sm">
         <Button

@@ -13,7 +13,7 @@ const STORAGE_KEY = "map-legend-dismissed";
 
 const LEGEND_ITEMS = [
   { icon: Trash2, color: "text-teal-500", labelKey: "map.layers.garbage" },
-  { icon: Bike, color: "text-emerald-500", labelKey: "map.layers.youbike" },
+  { icon: Bike, color: "text-lime-600", labelKey: "map.layers.youbike" },
   { icon: Bus, color: "text-blue-500", labelKey: "map.layers.transit" },
   {
     icon: ParkingSquare,
@@ -35,7 +35,7 @@ export default function MapLegend() {
 
   if (dismissed) {
     return (
-      <div className="absolute bottom-20 left-3 z-[1000] md:bottom-4">
+      <div className="absolute bottom-20 left-3 z-[999] md:bottom-4">
         <button
           onClick={() => setDismissed(false)}
           className="glass rounded-full p-2 shadow-lg transition-colors hover:bg-muted/50"
@@ -48,7 +48,7 @@ export default function MapLegend() {
   }
 
   return (
-    <div className="absolute bottom-20 left-3 z-[1000] md:bottom-4">
+    <div className="absolute bottom-20 left-3 z-[999] md:bottom-4">
       <div className="overlay-enter glass rounded-xl p-3 shadow-lg">
         <div className="mb-2 flex items-center justify-between gap-4">
           <h3 className="font-mono text-[10px] font-medium uppercase tracking-wider text-muted-foreground">

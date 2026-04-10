@@ -33,7 +33,7 @@ const ICON_PATHS = {
 
 const MODULE_COLORS = {
   garbage: "#0d9488",
-  youbike: "#22c55e",
+  youbike: "#65a30d",
   transit: "#3b82f6",
   parking: "#8b5cf6",
 } as const;

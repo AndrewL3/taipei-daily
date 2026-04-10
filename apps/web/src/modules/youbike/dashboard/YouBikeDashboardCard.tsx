@@ -34,7 +34,7 @@ export default function YouBikeDashboardCard() {
     <div className="card-lift rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Bike className="h-4 w-4 text-emerald-500" />
+          <Bike className="h-4 w-4 text-lime-600" />
           <h3 className="text-sm font-semibold">
             {t("dashboard.youbike.title")}
           </h3>
@@ -109,7 +109,7 @@ export default function YouBikeDashboardCard() {
 
       {!isLoading && !isError && !nearest && (
         <div className="flex items-start gap-3">
-          <Bike className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500/30" />
+          <Bike className="mt-0.5 h-5 w-5 shrink-0 text-lime-600/30" />
           <div>
             <p className="text-sm text-muted-foreground">
               {t("dashboard.youbike.noStations")}

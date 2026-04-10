@@ -13,7 +13,7 @@ const MODULE_ICONS: Record<string, typeof Bus> = {
 
 const MODULE_COLORS: Record<string, string> = {
   garbage: "text-teal-600 dark:text-teal-400",
-  youbike: "text-green-600 dark:text-green-400",
+  youbike: "text-lime-600 dark:text-lime-400",
   transit: "text-blue-600 dark:text-blue-400",
   parking: "text-violet-600 dark:text-violet-400",
 };

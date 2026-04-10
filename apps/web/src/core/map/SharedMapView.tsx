@@ -89,7 +89,7 @@ export default function SharedMapView() {
   return (
     <div className="view-enter relative h-full w-full overflow-hidden">
       <MapLoadingBar />
-      <div className="absolute top-3 left-3 right-3 z-[1000] md:left-auto md:right-3 md:w-80">
+      <div className="absolute top-3 left-3 right-3 z-[1001] md:left-auto md:right-3 md:w-80">
         <SearchBar />
       </div>
       <MapContainer

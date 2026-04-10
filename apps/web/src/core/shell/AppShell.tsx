@@ -19,6 +19,9 @@ const TransitRouteView = lazy(
 const TransitSchedulesView = lazy(
   () => import("@/modules/transit/schedules/TransitSchedulesView"),
 );
+const WeatherDetailView = lazy(
+  () => import("@/modules/weather/views/WeatherDetailView"),
+);
 const AdminView = lazy(() => import("@/features/admin/AdminView"));
 const SafetyView = lazy(() => import("@/features/safety/SafetyView"));
 
@@ -56,6 +59,7 @@ export default function AppShell() {
               path="schedules/transit"
               element={<TransitSchedulesView />}
             />
+            <Route path="weather" element={<WeatherDetailView />} />
             <Route path="safety" element={<SafetyView />} />
           </Route>
           <Route path="route/:lineId" element={<RouteProgressView />} />

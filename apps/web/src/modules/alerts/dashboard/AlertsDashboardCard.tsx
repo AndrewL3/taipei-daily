@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, ShieldCheck } from "lucide-react";
 import { useActiveAlerts } from "../api/hooks";
 import AlertDetailSheet from "../components/AlertDetailSheet";
 
@@ -79,7 +79,10 @@ export default function AlertsDashboardCard() {
       )}
 
       {!isLoading && activeAlerts.length === 0 && (
-        <p className="text-sm text-muted-foreground">{t("alerts.noAlerts")}</p>
+        <div className="flex items-center gap-2 rounded-lg bg-emerald-500/5 px-3 py-2">
+          <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
+          <p className="text-sm text-muted-foreground">{t("alerts.noAlerts")}</p>
+        </div>
       )}
 
       <AlertDetailSheet

@@ -1,7 +1,8 @@
 import { Outlet, NavLink } from "react-router";
-import { House, Map } from "lucide-react";
+import { House, Map, WifiOff } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import type { ComponentType } from "react";
+import { useOnline } from "@/hooks/useOnline";
 import type { ModuleDefinition } from "../types";
 
 interface NavTab {
@@ -41,10 +42,17 @@ export default function ShellLayout({
   modules: readonly ModuleDefinition[];
 }) {
   const { t } = useTranslation();
+  const isOnline = useOnline();
   const tabs = buildNavTabs(modules);
 
   return (
     <div className="relative flex h-dvh flex-col">
+      {!isOnline && (
+        <div className="flex items-center gap-2 bg-muted px-4 py-2 text-xs font-medium text-muted-foreground" role="status">
+          <WifiOff className="h-3.5 w-3.5 shrink-0" />
+          {t("offline.banner")}
+        </div>
+      )}
       <div className="flex-1 isolate overflow-auto">
         <Outlet />
       </div>
@@ -81,7 +89,7 @@ export default function ShellLayout({
                   className={`flex flex-col items-center justify-center py-2 text-xs font-medium transition-colors ${
                     isActive
                       ? "text-primary border-t-2 border-primary -mt-px"
-                      : "text-muted-foreground"
+                      : "text-muted-foreground border-t-2 border-transparent -mt-px"
                   }`}
                 >
                   <Icon className="h-5 w-5 mb-0.5" />

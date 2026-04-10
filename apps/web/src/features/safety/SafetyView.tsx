@@ -74,7 +74,7 @@ export default function SafetyView() {
     : [];
 
   return (
-    <div className="view-enter flex h-full flex-col bg-background">
+    <div className="view-slide-up flex h-full flex-col bg-background">
       <div className="flex-1 overflow-y-auto">
         <div className="mx-auto max-w-lg space-y-6 px-4 py-6">
           {/* Header — inverted section */}
@@ -90,7 +90,7 @@ export default function SafetyView() {
               <div className="space-y-1">
                 <div className="section-label" style={{ borderColor: 'rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.8)' }}>
                   <span className="dot" />
-                  Safety
+                  {t("safety.sectionLabel")}
                 </div>
                 <h1 className="font-display text-2xl">{t("safety.title")}</h1>
               </div>

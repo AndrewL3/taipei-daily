@@ -16,6 +16,9 @@
     "generic": "發生錯誤",
     "retry": "重試"
   },
+  "offline": {
+    "banner": "目前離線中 — 顯示快取資料"
+  },
   "map": {
     "zoomIn": "放大",
     "zoomOut": "縮小",
@@ -230,7 +233,8 @@
     "outdoor": "室外",
     "indoorOutdoor": "室內外",
     "distance": "{{km}} 公里",
-    "emergencyInfo": "緊急資訊"
+    "emergencyInfo": "緊急資訊",
+    "sectionLabel": "安全"
   },
   "favorites": {
     "title": "收藏",

@@ -30,7 +30,7 @@ export default function DataAge({ updatedAt }: { updatedAt?: number }) {
   }
 
   return (
-    <span className="text-xs tabular-nums text-muted-foreground/50">
+    <span className="text-xs tabular-nums text-muted-foreground/70">
       · {text}
     </span>
   );

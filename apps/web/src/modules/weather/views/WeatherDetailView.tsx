@@ -21,7 +21,7 @@ export default function WeatherDetailView() {
   const current = forecast?.forecast[0];
 
   return (
-    <div className="view-enter min-h-screen bg-background">
+    <div className="view-slide-up min-h-screen bg-background">
       {/* Header */}
       <div className="sticky top-0 z-10 bg-background shadow-sm">
         <div className="flex items-center gap-3 px-4 py-3">

@@ -16,6 +16,9 @@
     "generic": "Something went wrong",
     "retry": "Retry"
   },
+  "offline": {
+    "banner": "You're offline — showing cached data"
+  },
   "map": {
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
@@ -230,7 +233,8 @@
     "outdoor": "Outdoor",
     "indoorOutdoor": "Indoor & Outdoor",
     "distance": "{{km}} km",
-    "emergencyInfo": "Emergency info"
+    "emergencyInfo": "Emergency info",
+    "sectionLabel": "Safety"
   },
   "favorites": {
     "title": "Favorites",

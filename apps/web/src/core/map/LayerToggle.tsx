@@ -4,7 +4,7 @@ import type { MapLayerProvider } from "../types";
 // Per-module active colors — matches module colors on dashboard cards
 const layerActiveClass: Record<string, string> = {
   garbage: "bg-teal-500 text-white shadow-sm",
-  youbike: "bg-emerald-500 text-white shadow-sm",
+  youbike: "bg-lime-600 text-white shadow-sm",
   transit: "bg-blue-500 text-white shadow-sm",
   parking: "bg-violet-500 text-white shadow-sm",
 };
