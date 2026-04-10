@@ -111,7 +111,7 @@ function SortableCard({
       <button
         {...attributes}
         {...listeners}
-        className="absolute right-3 top-1/2 -translate-y-1/2 touch-none p-1 text-muted-foreground/50 transition-colors hover:text-muted-foreground/80"
+        className="absolute right-3 top-1/2 -translate-y-1/2 touch-none p-1.5 text-muted-foreground/40 transition-colors hover:text-muted-foreground/70"
         aria-label="Reorder"
       >
         <GripVertical className="h-4 w-4" />
@@ -244,7 +244,7 @@ export default function DashboardView() {
                 <SettingsDropdown />
                 <button
                   onClick={resetAll}
-                  className="-m-1 rounded-full p-2.5 text-muted-foreground/40 transition-colors hover:bg-muted hover:text-muted-foreground"
+                  className="-m-1 rounded-full p-2.5 text-muted-foreground/50 transition-colors hover:bg-muted hover:text-muted-foreground"
                   aria-label={t("dashboard.showTips")}
                 >
                   <HelpCircle className="h-5 w-5" />
@@ -291,7 +291,7 @@ export default function DashboardView() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-500/10">
                     <Trash2 className="h-5 w-5 text-teal-500" />
                   </div>
-                  <span className="text-[10px] font-medium text-muted-foreground">
+                  <span className="text-xs font-medium text-muted-foreground">
                     {t("dashboard.garbage.title")}
                   </span>
                 </div>
@@ -299,7 +299,7 @@ export default function DashboardView() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10">
                     <Bus className="h-5 w-5 text-blue-500" />
                   </div>
-                  <span className="text-[10px] font-medium text-muted-foreground">
+                  <span className="text-xs font-medium text-muted-foreground">
                     {t("dashboard.transit.title")}
                   </span>
                 </div>
@@ -307,7 +307,7 @@ export default function DashboardView() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10">
                     <Bike className="h-5 w-5 text-emerald-500" />
                   </div>
-                  <span className="text-[10px] font-medium text-muted-foreground">
+                  <span className="text-xs font-medium text-muted-foreground">
                     {t("dashboard.youbike.title")}
                   </span>
                 </div>
@@ -315,7 +315,7 @@ export default function DashboardView() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-violet-500/10">
                     <ParkingSquare className="h-5 w-5 text-violet-500" />
                   </div>
-                  <span className="text-[10px] font-medium text-muted-foreground">
+                  <span className="text-xs font-medium text-muted-foreground">
                     {t("dashboard.parking.title")}
                   </span>
                 </div>

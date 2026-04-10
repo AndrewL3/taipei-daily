@@ -41,7 +41,7 @@ export default function ParkingDashboardCard() {
         </div>
         <button
           onClick={() => navigate("/map")}
-          className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+          className="text-xs font-medium text-primary"
         >
           {t("dashboard.viewOnMap")}
         </button>
@@ -82,7 +82,7 @@ export default function ParkingDashboardCard() {
 
       {!isLoading && isError && (
         <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">{t("error.generic")}</p>
+          <p className="text-sm text-muted-foreground">{t("dashboard.parking.error")}</p>
           <button
             onClick={() => refetch()}
             className="text-xs font-medium text-primary"

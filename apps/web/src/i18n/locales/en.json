@@ -140,27 +140,32 @@
       "title": "Garbage Truck",
       "noStops": "No scheduled stops in range",
       "noStopsAction": "View tonight's routes",
-      "distanceAway": "{{distance}} meters away"
+      "distanceAway": "{{distance}} meters away",
+      "error": "Couldn't load garbage truck info"
     },
     "youbike": {
       "title": "YouBike",
       "noStations": "No stations nearby",
-      "noStationsAction": "Check the map"
+      "noStationsAction": "Check the map",
+      "error": "Couldn't load bike station data"
     },
     "transit": {
       "title": "Bus Transit",
       "noStops": "No bus stops in range",
       "noStopsAction": "Browse all routes",
-      "routeCount": "{{count}} routes"
+      "routeCount": "{{count}} routes",
+      "error": "Couldn't load bus stop info"
     },
     "parking": {
       "title": "Street Parking",
       "noSpaces": "No parking sensors in this area",
-      "noSpacesAction": "Check the map"
+      "noSpacesAction": "Check the map",
+      "error": "Couldn't load parking data"
     },
     "weather": {
       "title": "Weather",
-      "noData": "Weather unavailable right now"
+      "noData": "Weather unavailable right now",
+      "error": "Couldn't load weather data"
     },
     "alerts": {
       "title": "Alerts"

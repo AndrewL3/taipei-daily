@@ -35,19 +35,20 @@ export default function SettingsDropdown() {
 
   const toggleLang = () => {
     i18n.changeLanguage(i18n.language === "zh-TW" ? "en" : "zh-TW");
+    setOpen(false);
   };
 
   return (
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="-m-1 rounded-full p-2.5 text-muted-foreground/40 transition-colors hover:bg-muted hover:text-muted-foreground"
+        className="-m-1 rounded-full p-2.5 text-muted-foreground/50 transition-colors hover:bg-muted hover:text-muted-foreground"
         aria-label={t("settings.title")}
       >
         <Settings className="h-5 w-5" />
       </button>
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-border/12 bg-card p-3 shadow-lg">
+        <div className="dropdown-enter absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-border/12 bg-card p-3 shadow-lg">
           <p className="mb-1.5 font-mono text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
             {t("settings.theme")}
           </p>

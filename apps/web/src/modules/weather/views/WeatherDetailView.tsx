@@ -15,6 +15,7 @@ export default function WeatherDetailView() {
     data: forecast,
     isLoading,
     isError,
+    refetch,
   } = useWeatherForecast(position.lat, position.lon);
 
   const current = forecast?.forecast[0];
@@ -47,9 +48,17 @@ export default function WeatherDetailView() {
 
         {/* Error */}
         {isError && (
-          <p className="text-center text-sm text-muted-foreground">
-            {t("weather.error")}
-          </p>
+          <div className="flex items-center justify-between rounded-2xl bg-card p-4 shadow-[var(--shadow-card)]">
+            <p className="text-sm text-muted-foreground">
+              {t("weather.error")}
+            </p>
+            <button
+              onClick={() => refetch()}
+              className="text-xs font-medium text-primary"
+            >
+              {t("error.retry")}
+            </button>
+          </div>
         )}
 
         {/* Current conditions hero */}

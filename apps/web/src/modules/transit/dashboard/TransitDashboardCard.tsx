@@ -3,6 +3,7 @@ import { Bus } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { useBusStations } from "../api/hooks";
+import DataAge from "@/components/DataAge";
 
 export default function TransitDashboardCard() {
   const { t } = useTranslation();
@@ -18,7 +19,7 @@ export default function TransitDashboardCard() {
       }
     : null;
 
-  const { data: stations, isLoading, isError, refetch } = useBusStations(bounds);
+  const { data: stations, isLoading, isError, refetch, dataUpdatedAt } = useBusStations(bounds);
   const nearby = stations?.slice(0, 3);
 
   return (
@@ -29,18 +30,19 @@ export default function TransitDashboardCard() {
           <h3 className="text-sm font-semibold">
             {t("dashboard.transit.title")}
           </h3>
+          <DataAge updatedAt={dataUpdatedAt} />
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => navigate("/schedules/transit")}
-            className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+            className="text-xs font-medium text-primary"
           >
             {t("dashboard.actionSchedule")}
           </button>
           <span className="text-muted-foreground/30">·</span>
           <button
             onClick={() => navigate("/map")}
-            className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+            className="text-xs font-medium text-primary"
           >
             {t("dashboard.actionMap")}
           </button>
@@ -83,7 +85,7 @@ export default function TransitDashboardCard() {
 
       {!isLoading && isError && (
         <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">{t("error.generic")}</p>
+          <p className="text-sm text-muted-foreground">{t("dashboard.transit.error")}</p>
           <button
             onClick={() => refetch()}
             className="text-xs font-medium text-primary"

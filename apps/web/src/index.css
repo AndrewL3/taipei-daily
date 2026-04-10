@@ -235,6 +235,39 @@
 .stagger > :nth-child(5) { animation-delay: 240ms; }
 .stagger > :nth-child(6) { animation-delay: 300ms; }
 
+/* Dropdown entrance — scale from anchor point */
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+}
+.dropdown-enter {
+  animation: dropdown-in 150ms cubic-bezier(0.25, 1, 0.5, 1) both;
+  transform-origin: top right;
+}
+
+/* Overlay slide down from search bar */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+.overlay-enter {
+  animation: slide-down 150ms cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+/* Callout subtle fade in */
+@keyframes callout-in {
+  from {
+    opacity: 0;
+  }
+}
+.callout-enter {
+  animation: callout-in 200ms cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
 /* Indeterminate loading bar — map data fetching */
 @keyframes progress-slide {
   0% { transform: translateX(-100%); }
@@ -386,7 +419,10 @@
 /* --- Accessibility: Reduced Motion --- */
 @media (prefers-reduced-motion: reduce) {
   .view-enter,
-  .stagger > * {
+  .stagger > *,
+  .dropdown-enter,
+  .overlay-enter,
+  .callout-enter {
     animation: none;
     opacity: 1;
   }

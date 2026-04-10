@@ -186,9 +186,11 @@ export default function FavoritesDashboardSection() {
 
   if (entries.length === 0) {
     return (
-      <div className="flex items-center gap-2 py-1 text-[13px] text-muted-foreground">
-        <Heart className="h-4 w-4" />
-        <span>{t("favorites.emptyHint")}</span>
+      <div className="flex items-center gap-3 rounded-xl border border-border/12 bg-muted/30 px-3 py-2.5">
+        <Heart className="h-4 w-4 shrink-0 text-muted-foreground/50" />
+        <span className="text-sm text-muted-foreground">
+          {t("favorites.emptyHint")}
+        </span>
       </div>
     );
   }

@@ -33,7 +33,7 @@ export default function WeatherDashboardCard() {
         </div>
         <button
           onClick={() => navigate("/weather")}
-          className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+          className="text-xs font-medium text-primary"
         >
           {t("weather.forecast")}
         </button>
@@ -84,7 +84,7 @@ export default function WeatherDashboardCard() {
 
       {!isLoading && isError && (
         <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">{t("error.generic")}</p>
+          <p className="text-sm text-muted-foreground">{t("dashboard.weather.error")}</p>
           <button
             onClick={() => refetch()}
             className="text-xs font-medium text-primary"

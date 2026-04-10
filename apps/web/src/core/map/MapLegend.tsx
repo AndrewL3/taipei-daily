@@ -49,7 +49,7 @@ export default function MapLegend() {
 
   return (
     <div className="absolute bottom-20 left-3 z-[1000] md:bottom-4">
-      <div className="glass rounded-xl p-3 shadow-lg">
+      <div className="overlay-enter glass rounded-xl p-3 shadow-lg">
         <div className="mb-2 flex items-center justify-between gap-4">
           <h3 className="font-mono text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
             {t("map.legend")}

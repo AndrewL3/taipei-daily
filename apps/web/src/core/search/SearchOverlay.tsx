@@ -43,7 +43,7 @@ export default function SearchOverlay({ query, onClose }: SearchOverlayProps) {
   };
 
   return (
-    <div className="absolute left-0 right-0 top-full z-50 mt-1 max-h-64 overflow-y-auto rounded-xl border border-border/12 bg-card shadow-lg">
+    <div className="overlay-enter absolute left-0 right-0 top-full z-50 mt-1 max-h-64 overflow-y-auto rounded-xl border border-border/12 bg-card shadow-lg">
       {isLoading && (
         <div className="space-y-2 p-4">
           {[1, 2, 3].map((i) => (

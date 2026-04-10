@@ -53,7 +53,7 @@ export default function QuickActionsPopover({
       <div className="absolute inset-0 bg-black/10" onClick={onClose} />
       <div
         ref={ref}
-        className="absolute rounded-xl bg-popover shadow-lg ring-1 ring-border/20"
+        className="dropdown-enter absolute rounded-xl bg-popover shadow-lg ring-1 ring-border/20"
         style={{ top, right, minWidth: 180 }}
         role="menu"
         onKeyDown={(e) => e.key === "Escape" && onClose()}

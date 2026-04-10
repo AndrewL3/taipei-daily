@@ -3,6 +3,7 @@ import { Trash2 } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { useNearbyStops } from "../api/hooks";
+import DataAge from "@/components/DataAge";
 
 export default function GarbageDashboardCard() {
   const { t } = useTranslation();
@@ -13,6 +14,7 @@ export default function GarbageDashboardCard() {
     isLoading,
     isError,
     refetch,
+    dataUpdatedAt,
   } = useNearbyStops(
     located ? position.lat : null,
     located ? position.lon : null,
@@ -29,18 +31,19 @@ export default function GarbageDashboardCard() {
           <h3 className="text-sm font-semibold">
             {t("dashboard.garbage.title")}
           </h3>
+          <DataAge updatedAt={dataUpdatedAt} />
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => navigate("/schedules/garbage")}
-            className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+            className="text-xs font-medium text-primary"
           >
             {t("dashboard.actionSchedule")}
           </button>
           <span className="text-muted-foreground/30">·</span>
           <button
             onClick={() => navigate("/map")}
-            className="text-xs font-medium text-primary/80 transition-colors hover:text-primary"
+            className="text-xs font-medium text-primary"
           >
             {t("dashboard.actionMap")}
           </button>
@@ -76,7 +79,7 @@ export default function GarbageDashboardCard() {
 
       {!isLoading && isError && (
         <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">{t("error.generic")}</p>
+          <p className="text-sm text-muted-foreground">{t("dashboard.garbage.error")}</p>
           <button
             onClick={() => refetch()}
             className="text-xs font-medium text-primary"
