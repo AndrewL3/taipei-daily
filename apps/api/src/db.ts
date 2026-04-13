@@ -13,6 +13,28 @@ function getConnectionString(): string {
   return url;
 }
 
-const client = postgres(getConnectionString(), { prepare: false });
+function createDb() {
+  const client = postgres(getConnectionString(), { prepare: false });
+  return drizzle(client, { schema });
+}
 
-export const db = drizzle(client, { schema });
+type Database = ReturnType<typeof createDb>;
+
+let dbInstance: Database | null = null;
+
+export function getDb(): Database {
+  if (!dbInstance) {
+    dbInstance = createDb();
+  }
+  return dbInstance;
+}
+
+// Defer DB client creation until the first query so handlers can degrade
+// gracefully when the DB env var is missing or invalid.
+export const db = new Proxy({} as Database, {
+  get(_target, prop) {
+    const resolved = getDb();
+    const value = Reflect.get(resolved as object, prop);
+    return typeof value === "function" ? value.bind(resolved) : value;
+  },
+});
