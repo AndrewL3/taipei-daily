@@ -17,19 +17,9 @@ jest.unstable_mockModule("../../src/db.js", () => ({
   },
 }));
 
-const { default: handler } = await import("../../api/search.js");
-
-function mockReq(query: Record<string, string> = {}): any {
-  return { query };
-}
-
-function mockRes() {
-  const res: any = {};
-  res.status = jest.fn<any>().mockReturnValue(res);
-  res.json = jest.fn<any>().mockReturnValue(res);
-  res.setHeader = jest.fn<any>().mockReturnValue(res);
-  return res;
-}
+const { getSearchResults, normalizeSearchQuery } = await import(
+  "../../src/search/results.js"
+);
 
 function mockGarbageQuery(rows: unknown[]) {
   const limit = jest.fn<any>().mockResolvedValue(rows);
@@ -39,14 +29,39 @@ function mockGarbageQuery(rows: unknown[]) {
   mockDbSelect.mockReturnValue({ from });
 }
 
-describe("GET /api/search", () => {
+describe("search results service", () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockGarbageQuery([]);
     mockRedisSet.mockResolvedValue(undefined);
   });
 
-  it("reads transit stations from the current cache key", async () => {
+  it("normalizes raw query input before the handler delegates", () => {
+    expect(normalizeSearchQuery("  Main Station  ")).toBe("main station");
+    expect(normalizeSearchQuery(undefined)).toBe("");
+  });
+
+  it("returns cached search results when the search cache is warm", async () => {
+    const cachedResults = [
+      {
+        id: "cached-1",
+        title: "Cached Result",
+        subtitle: "Cached Subtitle",
+        lat: 25.04,
+        lon: 121.51,
+        moduleId: "transit",
+      },
+    ];
+    mockRedisGet.mockResolvedValueOnce(cachedResults);
+
+    const results = await getSearchResults("main");
+
+    expect(results).toEqual(cachedResults);
+    expect(mockRedisGet).toHaveBeenCalledWith("search:main");
+    expect(mockRedisSet).not.toHaveBeenCalled();
+  });
+
+  it("reads transit stations from the current cache key and caches the search result", async () => {
     mockRedisGet.mockImplementation(async (key: string) => {
       if (key === "search:main") return null;
       if (key === "transit:stations:v3") {
@@ -71,25 +86,19 @@ describe("GET /api/search", () => {
       return [];
     });
 
-    const req = mockReq({ q: "main" });
-    const res = mockRes();
+    const results = await getSearchResults("main");
 
-    await handler(req, res);
-
-    expect(res.status).toHaveBeenCalledWith(200);
-    expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({
-        ok: true,
-        results: expect.arrayContaining([
-          expect.objectContaining({
-            id: "transit-TPE123",
-            title: "Main Station",
-            moduleId: "transit",
-          }),
-        ]),
-      }),
+    expect(results).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: "transit-TPE123",
+          title: "Main Station",
+          moduleId: "transit",
+        }),
+      ]),
     );
     expect(mockRedisGet).toHaveBeenCalledWith("transit:stations:v3");
     expect(mockRedisGet).not.toHaveBeenCalledWith("transit:stations");
+    expect(mockRedisSet).toHaveBeenCalledWith("search:main", results, { ex: 60 });
   });
 });
