@@ -1,25 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { redis } from "../../src/redis.js";
 import { sendInternalError } from "../../src/http.js";
-import {
-  fetchNcdrFeed,
-  preFilterEntries,
-  fetchCapFile,
-  sanitizeAlertWebUrl,
-} from "../../src/data-sources/ncdr.js";
-import { filterAlertsByArea, type ActiveAlert } from "@tracker/types";
-
-const CACHE_KEY = "alerts:active";
-const CACHE_TTL = 300; // 5 minutes
-
-const TAIPEI_PREFIXES = ["63", "65"];
-
-function sanitizeAlertLinks(alerts: ActiveAlert[]): ActiveAlert[] {
-  return alerts.map((alert) => ({
-    ...alert,
-    web: sanitizeAlertWebUrl(alert.web),
-  }));
-}
+import { getActiveAlerts } from "../../src/alerts/active.js";
 
 export default async function handler(
   _req: VercelRequest,
@@ -28,32 +9,7 @@ export default async function handler(
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   try {
-    const cached = await redis.get<ActiveAlert[]>(CACHE_KEY);
-    if (cached) {
-      return res.status(200).json({
-        ok: true,
-        alerts: sanitizeAlertLinks(cached),
-      });
-    }
-
-    // 1. Fetch NCDR JSON feed
-    const entries = await fetchNcdrFeed();
-
-    // 2. Pre-filter by summary text (Greater Taipei keywords)
-    const relevant = preFilterEntries(entries);
-
-    // 3. Fetch and parse CAP XML for each relevant entry
-    const capPromises = relevant.map((e) => fetchCapFile(e.link["@href"]));
-    const capResults = await Promise.all(capPromises);
-    const parsed = capResults.filter((a): a is ActiveAlert => a !== null);
-
-    // 4. Final filter by geocode (Taipei 63, New Taipei 65)
-    const alerts = sanitizeAlertLinks(
-      filterAlertsByArea(parsed, TAIPEI_PREFIXES),
-    );
-
-    // 5. Cache and return
-    await redis.set(CACHE_KEY, alerts, { ex: CACHE_TTL });
+    const alerts = await getActiveAlerts();
     return res.status(200).json({ ok: true, alerts });
   } catch (err) {
     return sendInternalError(res, "Alerts API error:", err);

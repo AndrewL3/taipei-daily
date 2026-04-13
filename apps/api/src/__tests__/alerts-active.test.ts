@@ -1,13 +1,9 @@
 import { beforeEach, describe, expect, it, jest } from "@jest/globals";
 
-const mockRedisGet = jest.fn<any>();
-const mockRedisSet = jest.fn<any>();
+const mockGetActiveAlerts = jest.fn<any>();
 
-jest.unstable_mockModule("../../src/redis.js", () => ({
-  redis: {
-    get: mockRedisGet,
-    set: mockRedisSet,
-  },
+jest.unstable_mockModule("../../src/alerts/active.js", () => ({
+  getActiveAlerts: mockGetActiveAlerts,
 }));
 
 const { default: handler } = await import("../../api/alerts/active.js");
@@ -23,13 +19,12 @@ function mockRes() {
 describe("GET /api/alerts/active", () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    mockRedisSet.mockResolvedValue(undefined);
   });
 
-  it("sanitizes cached alert links before returning them", async () => {
-    mockRedisGet.mockResolvedValueOnce([
+  it("returns alerts from the alerts service", async () => {
+    mockGetActiveAlerts.mockResolvedValueOnce([
       {
-        id: "cached-alert",
+        id: "alert-a",
         headline: "Alert",
         description: "Description",
         instruction: "Instruction",
@@ -43,7 +38,7 @@ describe("GET /api/alerts/active", () => {
         alertColor: "",
         areas: ["台北市"],
         geocodes: ["6300100"],
-        web: "javascript:alert(1)",
+        web: "https://www.cwa.gov.tw/warning",
       },
     ]);
 
@@ -56,11 +51,11 @@ describe("GET /api/alerts/active", () => {
       ok: true,
       alerts: [
         expect.objectContaining({
-          id: "cached-alert",
-          web: undefined,
+          id: "alert-a",
+          web: "https://www.cwa.gov.tw/warning",
         }),
       ],
     });
-    expect(mockRedisSet).not.toHaveBeenCalled();
+    expect(mockGetActiveAlerts).toHaveBeenCalled();
   });
 });
