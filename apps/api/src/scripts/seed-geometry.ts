@@ -1,6 +1,6 @@
 import { eq, asc, isNull } from "drizzle-orm";
 import { db } from "../db.js";
-import { routes, stops } from "@tracker/types";
+import { routes, stops } from "@tracker/types/db";
 
 const OSRM_BASE = "https://router.project-osrm.org/route/v1/driving";
 const RATE_LIMIT_MS = 1100; // slightly over 1s to be courteous

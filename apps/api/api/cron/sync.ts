@@ -3,7 +3,7 @@ import { inArray, asc } from "drizzle-orm";
 import { db } from "../../src/db.js";
 import { sendServiceUnavailable } from "../../src/http.js";
 import { redis } from "../../src/redis.js";
-import { stops, passEvents } from "@tracker/types";
+import { stops, passEvents } from "@tracker/types/db";
 import {
   inferPassEvents,
   getNextMidnightTaipei,

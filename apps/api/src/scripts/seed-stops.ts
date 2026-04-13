@@ -1,6 +1,6 @@
 import { sql } from "drizzle-orm";
 import { db } from "../db.js";
-import { routes, stops } from "@tracker/types";
+import { routes, stops } from "@tracker/types/db";
 import { fetchStaticStops } from "../ntc-stops-client.js";
 import type { RouteStop } from "@tracker/types";
 

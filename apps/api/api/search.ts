@@ -3,7 +3,7 @@ import { redis } from "../src/redis.js";
 import { db } from "../src/db.js";
 import { sendInternalError } from "../src/http.js";
 import { TRANSIT_STATIONS_CACHE_KEY } from "../src/transit/cache.js";
-import { stops, routes } from "@tracker/types";
+import { stops, routes } from "@tracker/types/db";
 import { sql } from "drizzle-orm";
 import type {
   BusStation,

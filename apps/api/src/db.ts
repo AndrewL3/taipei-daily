@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
-import * as schema from "@tracker/types";
+import * as schema from "@tracker/types/db";
 
 function getConnectionString(): string {
   const url = process.env.SUPABASE_DB_URL;

@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { eq, asc, sql } from "drizzle-orm";
 import { db } from "../src/db.js";
 import { sendInternalError } from "../src/http.js";
-import { routes, stops, passEvents } from "@tracker/types";
+import { routes, stops, passEvents } from "@tracker/types/db";
 import {
   toTaipeiDateString,
   getTaipeiDayOfWeek,

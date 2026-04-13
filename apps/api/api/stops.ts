@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { and, between, eq } from "drizzle-orm";
 import { db } from "../src/db.js";
 import { sendInternalError } from "../src/http.js";
-import { stops, routes } from "@tracker/types";
+import { stops, routes } from "@tracker/types/db";
 import { haversineMeters } from "@tracker/utils";
 
 const DEFAULT_RADIUS = 500;
