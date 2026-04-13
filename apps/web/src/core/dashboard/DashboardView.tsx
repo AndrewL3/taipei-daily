@@ -343,13 +343,7 @@ export default function DashboardView() {
               </div>
               <div className="mt-4 flex items-center gap-4">
                 <button
-                  onClick={() =>
-                    navigator.geolocation?.getCurrentPosition(
-                      () => retryGeolocation(),
-                      () => {},
-                      { enableHighAccuracy: true, timeout: 10_000 },
-                    )
-                  }
+                  onClick={retryGeolocation}
                   className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-transform active:scale-[0.98]"
                 >
                   <MapPin className="h-4 w-4" />
