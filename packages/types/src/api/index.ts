@@ -46,6 +46,7 @@ export {
   TdxBusPositionRawArraySchema,
   TdxBusRouteRawSchema,
   TdxBusRouteRawArraySchema,
+  buildBusStationId,
   groupStopsIntoStations,
   transformArrivals,
   type CityKey,
@@ -85,4 +86,3 @@ export {
   type NcdrFeedEntry,
   type ActiveAlert,
 } from "./ncdr-alerts.js";
-

@@ -4,6 +4,7 @@ import {
   TdxBusEtaRawSchema,
   TdxBusPositionRawSchema,
   TdxBusRouteRawSchema,
+  buildBusStationId,
   groupStopsIntoStations,
   transformArrivals,
 } from "../tdx-bus";
@@ -157,6 +158,8 @@ describe("groupStopsIntoStations", () => {
     const stations = groupStopsIntoStations(stops, "TPE");
     expect(stations).toHaveLength(1);
     expect(stations[0].routes).toHaveLength(2);
+    expect(stations[0].stationId).toBe(buildBusStationId(stops[0]));
+    expect(stations[0].stationId).toMatch(/^station_[A-Za-z0-9_-]+$/);
   });
 });
 

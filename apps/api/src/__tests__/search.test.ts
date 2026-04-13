@@ -49,7 +49,7 @@ describe("GET /api/search", () => {
   it("reads transit stations from the current cache key", async () => {
     mockRedisGet.mockImplementation(async (key: string) => {
       if (key === "search:main") return null;
-      if (key === "transit:stations:v2") {
+      if (key === "transit:stations:v3") {
         return [
           {
             stationId: "TPE123",
@@ -89,7 +89,7 @@ describe("GET /api/search", () => {
         ]),
       }),
     );
-    expect(mockRedisGet).toHaveBeenCalledWith("transit:stations:v2");
+    expect(mockRedisGet).toHaveBeenCalledWith("transit:stations:v3");
     expect(mockRedisGet).not.toHaveBeenCalledWith("transit:stations");
   });
 });

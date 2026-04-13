@@ -5,6 +5,7 @@ import { sendInternalError } from "../http.js";
 import {
   TdxBusStopMinimalArraySchema,
   TdxBusEtaRawArraySchema,
+  buildBusStationId,
   transformArrivals,
   type CityKey,
   type TdxBusStopMinimal,
@@ -29,7 +30,7 @@ async function getCityStops(city: CityKey): Promise<TdxBusStopMinimal[]> {
 
   const raw = await tdxFetch<TdxBusStopMinimal[]>(
     `/v2/Bus/Stop/City/${city}`,
-    { $select: "StopUID,StationID" },
+    { $select: "StopUID,StopName,StopPosition,StationID" },
   );
   const parsed = TdxBusStopMinimalArraySchema.parse(raw);
   await redis.set(cacheKey, parsed, { ex: STOPS_TTL });
@@ -42,7 +43,7 @@ function findStopUidsForStation(
 ): Set<string> {
   const uids = new Set<string>();
   for (const s of stops) {
-    if (s.StationID === stationId) {
+    if (buildBusStationId(s) === stationId) {
       uids.add(s.StopUID);
     }
   }

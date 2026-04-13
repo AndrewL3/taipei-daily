@@ -8,15 +8,48 @@ const TdxNameSchema = z.object({
   En: z.string().optional().default(""),
 });
 
+const TdxStopPositionSchema = z.object({
+  PositionLat: z.number(),
+  PositionLon: z.number(),
+});
+
+type BusStationIdSource = {
+  StationID?: string;
+  StopName: z.infer<typeof TdxNameSchema>;
+  StopPosition: z.infer<typeof TdxStopPositionSchema>;
+};
+
+function encodeStationIdSegment(value: string): string {
+  return Array.from(value)
+    .map((char) =>
+      /^[A-Za-z0-9]$/.test(char)
+        ? char
+        : `u${char.codePointAt(0)?.toString(16) ?? "0"}`,
+    )
+    .join("-");
+}
+
+function encodeStationCoordinate(value: number): string {
+  return value.toFixed(4).replaceAll(".", "_");
+}
+
+export function buildBusStationId(stop: BusStationIdSource): string {
+  if (stop.StationID) return stop.StationID;
+
+  return [
+    "station",
+    encodeStationIdSegment(stop.StopName.Zh_tw),
+    encodeStationCoordinate(stop.StopPosition.PositionLat),
+    encodeStationCoordinate(stop.StopPosition.PositionLon),
+  ].join("_");
+}
+
 // --- Flat stop record (internal, produced by flattenStopsOfRoute) ---
 
 export const TdxBusStopRawSchema = z.object({
   StopUID: z.string(),
   StopName: TdxNameSchema,
-  StopPosition: z.object({
-    PositionLat: z.number(),
-    PositionLon: z.number(),
-  }),
+  StopPosition: TdxStopPositionSchema,
   StationID: z.string().optional(),
   RouteUID: z.string(),
   RouteName: TdxNameSchema,
@@ -31,10 +64,7 @@ export const TdxBusStopRawArraySchema = z.array(TdxBusStopRawSchema);
 const TdxStopOfRouteStopSchema = z.object({
   StopUID: z.string(),
   StopName: TdxNameSchema,
-  StopPosition: z.object({
-    PositionLat: z.number(),
-    PositionLon: z.number(),
-  }),
+  StopPosition: TdxStopPositionSchema,
   StopSequence: z.number(),
   StationID: z.string().optional(),
 });
@@ -70,6 +100,8 @@ export function flattenStopsOfRoute(
 
 export const TdxBusStopMinimalSchema = z.object({
   StopUID: z.string(),
+  StopName: TdxNameSchema,
+  StopPosition: TdxStopPositionSchema,
   StationID: z.string().optional(),
 });
 export type TdxBusStopMinimal = z.infer<typeof TdxBusStopMinimalSchema>;
@@ -202,9 +234,7 @@ export function groupStopsIntoStations(
   >();
 
   for (const stop of stops) {
-    const key =
-      stop.StationID ??
-      `${stop.StopName.Zh_tw}_${stop.StopPosition.PositionLat.toFixed(4)}_${stop.StopPosition.PositionLon.toFixed(4)}`;
+    const key = buildBusStationId(stop);
 
     let station = stationMap.get(key);
     if (!station) {
