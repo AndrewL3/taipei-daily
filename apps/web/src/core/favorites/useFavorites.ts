@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
+import { toast } from "sonner";
+import i18n from "@/i18n";
 import {
   loadFavorites,
   saveFavorites,
@@ -11,22 +13,63 @@ import {
 // Shared in-memory state + listeners for cross-component sync
 let cachedFavorites: FavoritesMap | null = null;
 const listeners = new Set<() => void>();
+let favoritesStorageHealthy = true;
 
 function notify() {
   listeners.forEach((fn) => fn());
+}
+
+function reportFavoritesStorageError(error: unknown) {
+  console.warn("Favorites storage unavailable:", error);
+  if (favoritesStorageHealthy) {
+    toast(i18n.t("favorites.storageError"));
+    favoritesStorageHealthy = false;
+  }
+}
+
+async function loadFavoritesSafe(): Promise<FavoritesMap> {
+  try {
+    const favorites = await loadFavorites();
+    favoritesStorageHealthy = true;
+    return favorites;
+  } catch (error) {
+    reportFavoritesStorageError(error);
+    return cachedFavorites ?? {};
+  }
+}
+
+async function saveFavoritesSafe(favorites: FavoritesMap): Promise<void> {
+  try {
+    await saveFavorites(favorites);
+    favoritesStorageHealthy = true;
+  } catch (error) {
+    reportFavoritesStorageError(error);
+  }
+}
+
+async function deleteFavoriteDataSafe(
+  moduleKey: string,
+  itemId: string,
+): Promise<void> {
+  try {
+    await deleteFavoriteData(moduleKey, itemId);
+    favoritesStorageHealthy = true;
+  } catch (error) {
+    reportFavoritesStorageError(error);
+  }
 }
 
 export async function addFavorite(
   moduleKey: string,
   item: FavoriteItem,
 ): Promise<void> {
-  const current = cachedFavorites ?? (await loadFavorites());
+  const current = cachedFavorites ?? (await loadFavoritesSafe());
   const moduleItems = current[moduleKey] ?? [];
   if (moduleItems.some((f) => f.id === item.id)) return;
   if (isAtLimit(current)) return;
   const updated = { ...current, [moduleKey]: [...moduleItems, item] };
   cachedFavorites = updated;
-  await saveFavorites(updated);
+  await saveFavoritesSafe(updated);
   notify();
 }
 
@@ -34,7 +77,7 @@ export async function removeFavorite(
   moduleKey: string,
   itemId: string,
 ): Promise<FavoriteItem | undefined> {
-  const current = cachedFavorites ?? (await loadFavorites());
+  const current = cachedFavorites ?? (await loadFavoritesSafe());
   const moduleItems = current[moduleKey] ?? [];
   const item = moduleItems.find((f) => f.id === itemId);
   if (!item) return undefined;
@@ -43,8 +86,8 @@ export async function removeFavorite(
     [moduleKey]: moduleItems.filter((f) => f.id !== itemId),
   };
   cachedFavorites = updated;
-  await deleteFavoriteData(moduleKey, itemId);
-  await saveFavorites(updated);
+  await deleteFavoriteDataSafe(moduleKey, itemId);
+  await saveFavoritesSafe(updated);
   notify();
   return item;
 }
@@ -71,7 +114,7 @@ export function useFavorites(moduleKey: string) {
 
   useEffect(() => {
     if (!cachedFavorites) {
-      loadFavorites().then((favs) => {
+      void loadFavoritesSafe().then((favs) => {
         cachedFavorites = favs;
         setFavorites(favs);
         notify();
@@ -109,7 +152,7 @@ export function useFavorites(moduleKey: string) {
 
       let updated: FavoritesMap;
       if (exists) {
-        await deleteFavoriteData(moduleKey, id);
+        await deleteFavoriteDataSafe(moduleKey, id);
         updated = {
           ...current,
           [moduleKey]: moduleItems.filter((f) => f.id !== id),
@@ -125,7 +168,7 @@ export function useFavorites(moduleKey: string) {
         };
       }
       cachedFavorites = updated;
-      await saveFavorites(updated);
+      await saveFavoritesSafe(updated);
       notify();
     },
     [moduleKey],
@@ -141,7 +184,7 @@ export function useAllFavorites() {
 
   useEffect(() => {
     if (!cachedFavorites) {
-      loadFavorites().then((favs) => {
+      void loadFavoritesSafe().then((favs) => {
         cachedFavorites = favs;
         setFavorites(favs);
         notify();

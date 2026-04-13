@@ -242,6 +242,7 @@
     "add": "收藏",
     "remove": "取消收藏",
     "saved": "已收藏",
+    "storageError": "這台裝置無法儲存收藏",
     "emptyHint": "點按 ♡ 收藏站點，方便快速查看",
     "removed": "已取消收藏",
     "undo": "復原",
