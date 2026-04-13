@@ -63,24 +63,26 @@ export default function SharedMapView() {
   const { isDark } = useTheme();
   const [searchParams, setSearchParams] = useSearchParams();
   const [layers] = useState(collectMapLayers);
-  const [visibility, setVisibility] = useState(() => {
-    // Check for ?layer= param to force-enable a specific layer on mount
-    const layerParam = new URLSearchParams(window.location.search).get("layer");
-    const defaults = buildDefaultVisibility(layers);
-    if (layerParam && layers.some((l) => l.id === layerParam)) {
-      defaults[layerParam] = true;
-    }
-    return defaults;
-  });
+  const [visibility, setVisibility] = useState(() => buildDefaultVisibility(layers));
 
-  // Clear ?layer= param after reading (keep lat/lon/zoom for FlyToSearchResult)
+  // Force-enable a requested layer and then clear the param.
   useEffect(() => {
-    if (searchParams.has("layer")) {
-      const next = new URLSearchParams(searchParams);
-      next.delete("layer");
+    const layerId = searchParams.get("layer");
+    if (!layerId) return;
+
+    const next = new URLSearchParams(searchParams);
+    next.delete("layer");
+    const timeoutId = window.setTimeout(() => {
+      if (layers.some((layer) => layer.id === layerId)) {
+        setVisibility((prev) =>
+          prev[layerId] ? prev : { ...prev, [layerId]: true },
+        );
+      }
       setSearchParams(next, { replace: true });
-    }
-  }, [searchParams, setSearchParams]);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [layers, searchParams, setSearchParams]);
 
   const handleToggle = useCallback((layerId: string) => {
     setVisibility((prev) => ({ ...prev, [layerId]: !prev[layerId] }));

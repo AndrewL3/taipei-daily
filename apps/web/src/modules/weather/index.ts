@@ -10,4 +10,6 @@ export const weatherModule: ModuleDefinition = {
   routes: [],
   mapLayers: [],
   dashboardCard: WeatherDashboardCard,
+  dashboardCardPlacement: "hero",
+  dashboardCardOrder: 10,
 };

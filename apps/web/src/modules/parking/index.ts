@@ -8,6 +8,7 @@ export const parkingModule: ModuleDefinition = {
   name: "nav.parking",
   icon: ParkingSquare,
   accentClassName: "text-violet-600 dark:text-violet-400",
+  mapNavigationLayerId: "parking",
   routes: [],
   mapLayers: [
     {
@@ -20,6 +21,8 @@ export const parkingModule: ModuleDefinition = {
     },
   ],
   dashboardCard: ParkingDashboardCard,
+  dashboardCardPlacement: "nearby",
+  dashboardCardOrder: 40,
   favoritesConfig: { storageKey: "parking" },
   quickActions: [
     {

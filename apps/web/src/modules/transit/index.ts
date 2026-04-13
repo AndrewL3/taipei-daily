@@ -20,6 +20,8 @@ export const transitModule: ModuleDefinition = {
     },
   ],
   dashboardCard: TransitDashboardCard,
+  dashboardCardPlacement: "nearby",
+  dashboardCardOrder: 20,
   favoritesConfig: { storageKey: "transit" },
   quickActions: [
     { label: "dashboard.quickActions.openOnMap", icon: Map, to: "/map" },

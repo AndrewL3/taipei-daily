@@ -10,4 +10,6 @@ export const alertsModule: ModuleDefinition = {
   routes: [],
   mapLayers: [],
   dashboardCard: AlertsDashboardCard,
+  dashboardCardPlacement: "priority",
+  dashboardCardOrder: 20,
 };

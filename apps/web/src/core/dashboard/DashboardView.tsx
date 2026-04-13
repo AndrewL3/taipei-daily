@@ -133,24 +133,6 @@ export default function DashboardView() {
   }, [queryClient]);
   const { offset: pullOffset, isRefreshing } = usePullToRefresh(scrollRef, handleRefresh);
 
-  // Dashboard card reorder
-  const [cardOrder, setCardOrder] = useDashboardOrder();
-  const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
-    useSensor(KeyboardSensor),
-  );
-  const handleDragEnd = useCallback(
-    (event: DragEndEvent) => {
-      const { active, over } = event;
-      if (over && active.id !== over.id) {
-        const oldIndex = cardOrder.indexOf(active.id as string);
-        const newIndex = cardOrder.indexOf(over.id as string);
-        setCardOrder(arrayMove(cardOrder, oldIndex, newIndex));
-      }
-    },
-    [cardOrder, setCardOrder],
-  );
-
   // Long-press quick actions
   const [quickAction, setQuickAction] = useState<{
     mod: ModuleDefinition;
@@ -196,17 +178,47 @@ export default function DashboardView() {
 
   const allCards = modules
     .filter((m) => m.dashboardCard)
+    .sort(
+      (a, b) => (a.dashboardCardOrder ?? 0) - (b.dashboardCardOrder ?? 0),
+    )
     .map((m) => ({ id: m.id, Card: m.dashboardCard!, mod: m }));
 
-  const heroCards = allCards.filter((c) => c.id === "weather");
-  const alertCards = allCards.filter((c) => c.id === "alerts");
+  const heroCards = allCards.filter(
+    (c) => c.mod.dashboardCardPlacement === "hero",
+  );
+  const priorityCards = allCards.filter(
+    (c) => c.mod.dashboardCardPlacement === "priority",
+  );
+  const reorderableCards = allCards.filter(
+    (c) => (c.mod.dashboardCardPlacement ?? "nearby") === "nearby",
+  );
 
-  // Order the 4 reorderable module cards
+  // Dashboard card reorder
+  const [cardOrder, setCardOrder] = useDashboardOrder(
+    reorderableCards.map((card) => card.id),
+  );
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
+    useSensor(KeyboardSensor),
+  );
+  const handleDragEnd = useCallback(
+    (event: DragEndEvent) => {
+      const { active, over } = event;
+      if (over && active.id !== over.id) {
+        const oldIndex = cardOrder.indexOf(active.id as string);
+        const newIndex = cardOrder.indexOf(over.id as string);
+        setCardOrder(arrayMove(cardOrder, oldIndex, newIndex));
+      }
+    },
+    [cardOrder, setCardOrder],
+  );
+
+  // Order the reorderable module cards
   const reorderableIds = cardOrder.filter((id) =>
-    allCards.some((c) => c.id === id),
+    reorderableCards.some((c) => c.id === id),
   );
   const orderedCards = reorderableIds
-    .map((id) => allCards.find((c) => c.id === id)!)
+    .map((id) => reorderableCards.find((c) => c.id === id)!)
     .filter(Boolean);
   const hasNearby = orderedCards.length > 0;
 
@@ -278,9 +290,9 @@ export default function DashboardView() {
           )}
 
           {/* Alerts — promoted above nearby when active */}
-          {activeAlertsList.length > 0 && alertCards.length > 0 && (
+          {activeAlertsList.length > 0 && priorityCards.length > 0 && (
             <div className="mt-4">
-              {alertCards.map(({ id, Card }) => (
+              {priorityCards.map(({ id, Card }) => (
                 <Card key={id} />
               ))}
             </div>
@@ -398,9 +410,9 @@ export default function DashboardView() {
           )}
 
           {/* Alerts — below nearby when no active alerts (shows "all clear") */}
-          {activeAlertsList.length === 0 && alertCards.length > 0 && (
+          {activeAlertsList.length === 0 && priorityCards.length > 0 && (
             <div className="mt-4">
-              {alertCards.map(({ id, Card }) => (
+              {priorityCards.map(({ id, Card }) => (
                 <Card key={id} />
               ))}
             </div>

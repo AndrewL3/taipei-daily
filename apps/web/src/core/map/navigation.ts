@@ -1,6 +1,4 @@
-const MODULE_LAYER_OVERRIDES: Partial<Record<string, string>> = {
-  parking: "parking",
-};
+import { getRegisteredModule } from "../module-registry";
 
 export function buildMapNavigationTarget(
   moduleId: string,
@@ -13,7 +11,7 @@ export function buildMapNavigationTarget(
     lon: String(lon),
     zoom: String(zoom),
   });
-  const layerId = MODULE_LAYER_OVERRIDES[moduleId];
+  const layerId = getRegisteredModule(moduleId)?.mapNavigationLayerId;
   if (layerId) {
     params.set("layer", layerId);
   }

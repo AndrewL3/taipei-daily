@@ -20,6 +20,8 @@ export const youbikeModule: ModuleDefinition = {
     },
   ],
   dashboardCard: YouBikeDashboardCard,
+  dashboardCardPlacement: "nearby",
+  dashboardCardOrder: 30,
   favoritesConfig: { storageKey: "youbike" },
   quickActions: [
     { label: "dashboard.quickActions.openOnMap", icon: Map, to: "/map" },

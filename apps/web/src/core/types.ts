@@ -7,10 +7,13 @@ export interface ModuleDefinition {
   name: string; // i18n key
   icon: ComponentType<{ className?: string }>; // Lucide icon for nav
   accentClassName?: string;
+  mapNavigationLayerId?: string;
   routes: RouteObject[];
   mapLayers?: MapLayerProvider[];
   searchProvider?: SearchProvider;
   dashboardCard?: ComponentType;
+  dashboardCardPlacement?: "hero" | "priority" | "nearby";
+  dashboardCardOrder?: number;
   favoritesConfig?: {
     storageKey: string;
   };

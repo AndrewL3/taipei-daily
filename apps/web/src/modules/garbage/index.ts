@@ -29,6 +29,8 @@ export const garbageModule: ModuleDefinition = {
     },
   ],
   dashboardCard: GarbageDashboardCard,
+  dashboardCardPlacement: "nearby",
+  dashboardCardOrder: 10,
   favoritesConfig: { storageKey: "garbage" },
   quickActions: [
     { label: "dashboard.quickActions.openOnMap", icon: Map, to: "/map" },
