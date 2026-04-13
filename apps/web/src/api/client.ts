@@ -4,11 +4,64 @@
 // In local dev it defaults to "" so requests go through the Vite proxy.
 const API_BASE = (import.meta.env.VITE_API_URL ?? "").replace(/\/+$/, "");
 
+const INVALID_RESPONSE_MESSAGE = "Invalid server response";
+
+type ApiEnvelope = {
+  ok?: boolean;
+  error?: string;
+};
+
+function isJsonResponse(res: Response): boolean {
+  const contentType = res.headers.get("content-type")?.toLowerCase() ?? "";
+  return contentType.includes("/json") || contentType.includes("+json");
+}
+
+function getErrorMessage(payload: unknown, fallback: string): string {
+  if (
+    payload &&
+    typeof payload === "object" &&
+    "error" in payload &&
+    typeof payload.error === "string" &&
+    payload.error.trim()
+  ) {
+    return payload.error;
+  }
+
+  return fallback;
+}
+
+async function parseApiEnvelope(
+  res: Response,
+  requestErrorMessage: string,
+): Promise<ApiEnvelope> {
+  if (!isJsonResponse(res)) {
+    if (!res.ok) throw new Error(requestErrorMessage);
+    throw new Error(INVALID_RESPONSE_MESSAGE);
+  }
+
+  let payload: unknown;
+  try {
+    payload = await res.json();
+  } catch {
+    throw new Error(INVALID_RESPONSE_MESSAGE);
+  }
+
+  if (!payload || typeof payload !== "object") {
+    throw new Error(INVALID_RESPONSE_MESSAGE);
+  }
+
+  if (!res.ok) {
+    throw new Error(getErrorMessage(payload, requestErrorMessage));
+  }
+
+  return payload as ApiEnvelope;
+}
+
 export async function apiFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`);
-  const json = await res.json();
+  const json = await parseApiEnvelope(res, "API request failed");
   if (!json.ok) throw new Error(json.error ?? "API request failed");
-  return json;
+  return json as T;
 }
 
 // --- Admin types ---
@@ -63,7 +116,7 @@ export async function fetchAdminStatus(token: string): Promise<AdminStatus> {
     },
   });
   if (res.status === 401) throw new Error("Unauthorized");
-  const json = await res.json();
+  const json = await parseApiEnvelope(res, "Admin API request failed");
   if (!json.ok) throw new Error(json.error ?? "Admin API request failed");
-  return json;
+  return json as AdminStatus;
 }
