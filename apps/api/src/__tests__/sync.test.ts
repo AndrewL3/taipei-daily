@@ -12,6 +12,9 @@ const mockDbSelect = jest.fn();
 const mockDbInsert = jest.fn();
 const mockRedisMget = jest.fn<any>();
 const mockRedisPipeline = jest.fn<any>();
+const mockRedisIncr = jest.fn<any>();
+const mockRedisExpire = jest.fn<any>();
+const mockRedisDel = jest.fn<any>();
 const mockPipelineSet = jest.fn<any>();
 const mockPipelineExec = jest.fn<any>();
 
@@ -24,6 +27,9 @@ jest.unstable_mockModule("../../src/db.js", () => ({
 
 jest.unstable_mockModule("../../src/redis.js", () => ({
   redis: {
+    del: mockRedisDel,
+    expire: mockRedisExpire,
+    incr: mockRedisIncr,
     mget: mockRedisMget,
     pipeline: mockRedisPipeline,
   },
@@ -58,6 +64,9 @@ describe("/api/cron/sync", () => {
     jest.clearAllMocks();
     process.env = { ...originalEnv };
     delete process.env.CRON_SECRET;
+    mockRedisIncr.mockResolvedValue(1);
+    mockRedisExpire.mockResolvedValue(1);
+    mockRedisDel.mockResolvedValue(1);
     mockRedisPipeline.mockReturnValue({
       set: mockPipelineSet,
       exec: mockPipelineExec,
@@ -97,6 +106,24 @@ describe("/api/cron/sync", () => {
     });
   });
 
+  it("returns 429 after repeated unauthorized attempts", async () => {
+    process.env.CRON_SECRET = "correct-secret";
+    mockRedisIncr.mockResolvedValue(6);
+    const res = mockRes();
+
+    await handler(
+      mockReq({ headers: { authorization: "Bearer wrong-secret" } }),
+      res,
+    );
+
+    expect(res.setHeader).toHaveBeenCalledWith("Retry-After", "300");
+    expect(res.status).toHaveBeenCalledWith(429);
+    expect(res.json).toHaveBeenCalledWith({
+      ok: false,
+      error: "Too many unauthorized attempts",
+    });
+  });
+
   it("rejects requests with missing Authorization header when CRON_SECRET is set", async () => {
     process.env.CRON_SECRET = "correct-secret";
     const res = mockRes();
@@ -114,6 +141,9 @@ describe("/api/cron/sync", () => {
       res,
     );
 
+    expect(mockRedisDel).toHaveBeenCalledWith(
+      expect.stringContaining("auth:failed:cron/sync:"),
+    );
     expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith({ ok: true, vehicles: 0 });
   });

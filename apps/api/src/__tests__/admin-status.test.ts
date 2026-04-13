@@ -10,11 +10,17 @@ import {
 
 const mockRedisPing = jest.fn<any>();
 const mockRedisLrange = jest.fn<any>();
+const mockRedisIncr = jest.fn<any>();
+const mockRedisExpire = jest.fn<any>();
+const mockRedisDel = jest.fn<any>();
 const mockFetch = jest.fn<typeof fetch>();
 const originalFetch = global.fetch;
 
 jest.unstable_mockModule("../../src/redis.js", () => ({
   redis: {
+    del: mockRedisDel,
+    expire: mockRedisExpire,
+    incr: mockRedisIncr,
     ping: mockRedisPing,
     lrange: mockRedisLrange,
   },
@@ -54,6 +60,9 @@ describe("GET /api/admin/status", () => {
 
     mockRedisPing.mockResolvedValue(undefined);
     mockRedisLrange.mockResolvedValue([]);
+    mockRedisIncr.mockResolvedValue(1);
+    mockRedisExpire.mockResolvedValue(1);
+    mockRedisDel.mockResolvedValue(1);
     mockFetch.mockResolvedValue({
       ok: true,
       json: async () => [{ time: "2026-04-13T10:00:00+08:00" }],
@@ -77,6 +86,22 @@ describe("GET /api/admin/status", () => {
   afterAll(() => {
     consoleErrorSpy.mockRestore();
     global.fetch = originalFetch;
+  });
+
+  it("returns 429 after repeated unauthorized attempts", async () => {
+    mockRedisIncr.mockResolvedValue(6);
+
+    const req = mockReq({ authorization: "Bearer wrong-secret" });
+    const res = mockRes();
+
+    await handler(req, res);
+
+    expect(res.setHeader).toHaveBeenCalledWith("Retry-After", "300");
+    expect(res.status).toHaveBeenCalledWith(429);
+    expect(res.json).toHaveBeenCalledWith({
+      ok: false,
+      error: "Too many unauthorized attempts",
+    });
   });
 
   it("returns degraded database health when SUPABASE_DB_URL is missing", async () => {
@@ -107,6 +132,9 @@ describe("GET /api/admin/status", () => {
       }),
     );
     expect(mockRedisPing).toHaveBeenCalled();
+    expect(mockRedisDel).toHaveBeenCalledWith(
+      expect.stringContaining("auth:failed:admin/status:"),
+    );
     expect(mockFetch).toHaveBeenCalled();
   });
 });

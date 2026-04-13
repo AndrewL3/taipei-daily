@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { inArray, asc } from "drizzle-orm";
 import { db } from "../../src/db.js";
-import { sendServiceUnavailable } from "../../src/http.js";
+import { requireSharedSecret } from "../../src/auth.js";
 import { redis } from "../../src/redis.js";
 import { stops, passEvents } from "@tracker/types/db";
 import {
@@ -12,28 +12,20 @@ import {
 import { fetchLiveGps } from "../../src/ntc-client.js";
 import type { VehicleGps } from "@tracker/types";
 
-export default async function handler(
-  _req: VercelRequest,
-  res: VercelResponse,
-) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Method check: only accept POST
-  if (_req.method !== "POST") {
+  if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ ok: false, error: "Method not allowed" });
   }
 
-  // Auth check: validate CRON_SECRET bearer token (skip if env var not set)
-  const cronSecret = process.env.CRON_SECRET;
-  if (!cronSecret) {
-    return sendServiceUnavailable(
-      res,
-      "[cron/sync] CRON_SECRET is not configured",
-    );
-  }
-
-  const authHeader = _req.headers.authorization;
-  if (authHeader !== `Bearer ${cronSecret}`) {
-    return res.status(401).json({ ok: false, error: "Unauthorized" });
+  if (
+    !(await requireSharedSecret(req, res, {
+      envVarName: "CRON_SECRET",
+      scope: "cron/sync",
+    }))
+  ) {
+    return;
   }
 
   try {

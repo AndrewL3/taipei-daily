@@ -1,23 +1,12 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { sql } from "drizzle-orm";
 import { db } from "../../src/db.js";
-import { sendServiceUnavailable } from "../../src/http.js";
+import { requireSharedSecret } from "../../src/auth.js";
 import { redis } from "../../src/redis.js";
 import { toTaipeiDateString } from "@tracker/utils";
 
 const NTC_GPS_URL =
   "https://data.ntpc.gov.tw/api/datasets/28ab4122-60e1-4065-98e5-abccb69aaca6/json";
-
-function extractAdminToken(req: VercelRequest): string | undefined {
-  const authorization = req.headers.authorization;
-  if (!authorization) return undefined;
-  if (authorization.toLowerCase().startsWith("bearer ")) {
-    const token = authorization.slice(7).trim();
-    return token || undefined;
-  }
-  const token = authorization.trim();
-  return token || undefined;
-}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -29,17 +18,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(204).end();
   }
 
-  // Auth: validate token against ADMIN_PASSWORD
-  const adminPassword = process.env.ADMIN_PASSWORD;
-  if (!adminPassword) {
-    return sendServiceUnavailable(
-      res,
-      "[admin/status] ADMIN_PASSWORD is not configured",
-    );
-  }
-  const token = extractAdminToken(req);
-  if (token !== adminPassword) {
-    return res.status(401).json({ ok: false, error: "Unauthorized" });
+  if (
+    !(await requireSharedSecret(req, res, {
+      envVarName: "ADMIN_PASSWORD",
+      scope: "admin/status",
+      allowRawAuthorization: true,
+    }))
+  ) {
+    return;
   }
 
   const now = new Date();
