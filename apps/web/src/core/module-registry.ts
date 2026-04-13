@@ -1,11 +1,13 @@
 import type { ModuleDefinition } from "./types";
 
-const modules: ModuleDefinition[] = [];
+const modules = new Map<string, ModuleDefinition>();
 
 export function registerModules(defs: ModuleDefinition[]) {
-  modules.push(...defs);
+  for (const def of defs) {
+    modules.set(def.id, def);
+  }
 }
 
 export function getRegisteredModules(): readonly ModuleDefinition[] {
-  return modules;
+  return Array.from(modules.values());
 }
