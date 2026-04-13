@@ -201,6 +201,7 @@
   },
   "search": {
     "placeholder": "Search stops, routes, stations...",
+    "error": "Couldn't load search results",
     "noResults": "No matches. Try a different stop or route name.",
     "module": {
       "garbage": "Garbage",

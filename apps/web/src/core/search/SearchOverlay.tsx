@@ -4,6 +4,7 @@ import { MapPin } from "lucide-react";
 import { useSearch, type SearchResult } from "./useSearch";
 import { buildMapNavigationTarget } from "../map/navigation";
 import { getRegisteredModule } from "../module-registry";
+import ErrorMessage from "@/components/ErrorMessage";
 
 interface SearchOverlayProps {
   query: string;
@@ -13,7 +14,7 @@ interface SearchOverlayProps {
 export default function SearchOverlay({ query, onClose }: SearchOverlayProps) {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { data: results, isLoading } = useSearch(query);
+  const { data: results, isLoading, isError, refetch } = useSearch(query);
 
   // Group results by module
   const grouped = (results ?? []).reduce<Record<string, SearchResult[]>>(
@@ -45,7 +46,17 @@ export default function SearchOverlay({ query, onClose }: SearchOverlayProps) {
         </p>
       )}
 
+      {!isLoading && isError && (
+        <ErrorMessage
+          message={t("search.error")}
+          onRetry={() => {
+            void refetch();
+          }}
+        />
+      )}
+
       {!isLoading &&
+        !isError &&
         Object.entries(grouped).map(([moduleId, items]) => {
           const module = getRegisteredModule(moduleId);
           const Icon = module?.icon ?? MapPin;

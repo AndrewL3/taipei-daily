@@ -201,6 +201,7 @@
   },
   "search": {
     "placeholder": "搜尋站點、路線...",
+    "error": "無法載入搜尋結果",
     "noResults": "找不到相關結果，試試其他站名或路線",
     "module": {
       "garbage": "垃圾車",
