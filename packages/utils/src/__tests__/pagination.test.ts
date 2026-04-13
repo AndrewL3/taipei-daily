@@ -24,4 +24,12 @@ describe("paginateAll", () => {
     const results = await paginateAll(fetcher, 10);
     expect(results).toEqual([]);
   });
+
+  it("throws when pagination exceeds the configured page cap", async () => {
+    const fetcher = async (): Promise<number[]> => [1];
+
+    await expect(
+      paginateAll(fetcher, 10, { maxPages: 2 }),
+    ).rejects.toThrow("Pagination exceeded max pages (2)");
+  });
 });

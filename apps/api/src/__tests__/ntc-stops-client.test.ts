@@ -76,7 +76,12 @@ describe("fetchStaticStops", () => {
       true,
     ]);
     expect(mockFetch).toHaveBeenCalledTimes(2);
-    expect(mockFetch).toHaveBeenCalledWith(`${STOPS_URL}?page=0&size=1000`);
+    expect(mockFetch).toHaveBeenCalledWith(
+      `${STOPS_URL}?page=0&size=1000`,
+      expect.objectContaining({
+        signal: expect.any(AbortSignal),
+      }),
+    );
   });
 
   it("skips invalid records", async () => {
@@ -132,11 +137,21 @@ describe("fetchStaticStops", () => {
   });
 
   it("throws when fetch fails", async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: false,
-      status: 500,
-      statusText: "Internal Server Error",
-    } as Response);
+    mockFetch
+      .mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        statusText: "Internal Server Error",
+        json: async () => ({}),
+        text: async () => "",
+      } as Response)
+      .mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        statusText: "Internal Server Error",
+        json: async () => ({}),
+        text: async () => "",
+      } as Response);
 
     await expect(fetchStaticStops()).rejects.toThrow("NTC Stops API error");
   });

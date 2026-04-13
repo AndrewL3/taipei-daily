@@ -43,8 +43,18 @@ describe("fetchLiveGps", () => {
     expect(result[0].car).toBe("KED-0605");
     expect(result[0].longitude).toBe(121.689);
     expect(mockFetch).toHaveBeenCalledTimes(2);
-    expect(mockFetch).toHaveBeenCalledWith(`${GPS_URL}?page=0&size=1000`);
-    expect(mockFetch).toHaveBeenCalledWith(`${GPS_URL}?page=1&size=1000`);
+    expect(mockFetch).toHaveBeenCalledWith(
+      `${GPS_URL}?page=0&size=1000`,
+      expect.objectContaining({
+        signal: expect.any(AbortSignal),
+      }),
+    );
+    expect(mockFetch).toHaveBeenCalledWith(
+      `${GPS_URL}?page=1&size=1000`,
+      expect.objectContaining({
+        signal: expect.any(AbortSignal),
+      }),
+    );
   });
 
   it("skips invalid records and keeps valid ones", async () => {
@@ -79,12 +89,22 @@ describe("fetchLiveGps", () => {
   });
 
   it("throws when fetch fails", async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: false,
-      status: 500,
-      statusText: "Internal Server Error",
-    } as Response);
+    mockFetch
+      .mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        statusText: "Internal Server Error",
+        json: async () => ({}),
+        text: async () => "",
+      } as Response)
+      .mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        statusText: "Internal Server Error",
+        json: async () => ({}),
+        text: async () => "",
+      } as Response);
 
-    await expect(fetchLiveGps()).rejects.toThrow();
+    await expect(fetchLiveGps()).rejects.toThrow("NTC GPS API error");
   });
 });

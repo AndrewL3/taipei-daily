@@ -1,10 +1,12 @@
 import { redis } from "../redis.js";
+import { fetchJson } from "../fetch-helpers.js";
 
 const TDX_AUTH_URL =
   "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token";
 const TDX_API_BASE = "https://tdx.transportdata.tw/api/basic";
 const TOKEN_CACHE_KEY = "tdx:token";
 const TOKEN_TTL = 86000; // slightly under 24h
+const TDX_FETCH_OPTIONS = { timeoutMs: 10_000, retries: 1 } as const;
 
 async function getToken(): Promise<string> {
   const cached = await redis.get<string>(TOKEN_CACHE_KEY);
@@ -16,15 +18,19 @@ async function getToken(): Promise<string> {
     throw new Error("TDX_CLIENT_ID and TDX_CLIENT_SECRET must be set");
   }
 
-  const res = await fetch(TDX_AUTH_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "client_credentials",
-      client_id: clientId,
-      client_secret: clientSecret,
-    }),
-  });
+  const res = await fetchJson(
+    TDX_AUTH_URL,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        grant_type: "client_credentials",
+        client_id: clientId,
+        client_secret: clientSecret,
+      }),
+    },
+    TDX_FETCH_OPTIONS,
+  );
 
   if (!res.ok) {
     throw new Error(`TDX auth failed: ${res.status} ${await res.text()}`);
@@ -53,17 +59,25 @@ export async function tdxFetch<T>(
     }
   }
 
-  const res = await fetch(url.toString(), {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const res = await fetchJson(
+    url.toString(),
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    },
+    TDX_FETCH_OPTIONS,
+  );
 
   if (res.status === 401) {
     // Token expired — clear cache and retry once
     await redis.del(TOKEN_CACHE_KEY);
     const newToken = await getToken();
-    const retry = await fetch(url.toString(), {
-      headers: { Authorization: `Bearer ${newToken}` },
-    });
+    const retry = await fetchJson(
+      url.toString(),
+      {
+        headers: { Authorization: `Bearer ${newToken}` },
+      },
+      TDX_FETCH_OPTIONS,
+    );
     if (!retry.ok) {
       throw new Error(`TDX API error: ${retry.status} ${await retry.text()}`);
     }
