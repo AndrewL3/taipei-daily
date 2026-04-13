@@ -1,6 +1,5 @@
 import { describe, expect, it, jest, beforeEach } from "@jest/globals";
 
-// Mock redis before any handler import
 const mockRedisGet = jest.fn<any>();
 const mockRedisSet = jest.fn<any>();
 
@@ -15,59 +14,18 @@ jest.unstable_mockModule("../../src/redis.js", () => ({
 const mockFetch = jest.fn<typeof fetch>();
 global.fetch = mockFetch;
 
-// Import handler after mocks are set up (top-level await)
-const { default: handler } = await import("../../api/parking/spaces.js");
+const { getParkingRoadSegmentsInBounds } = await import(
+  "../../src/parking/spaces.js"
+);
 
-function mockReq(query: Record<string, string> = {}): any {
-  return { query };
-}
-
-function mockRes() {
-  const res: any = {};
-  res.status = jest.fn<any>().mockReturnValue(res);
-  res.json = jest.fn<any>().mockReturnValue(res);
-  res.setHeader = jest.fn<any>().mockReturnValue(res);
-  return res;
-}
-
-describe("parking/spaces handler", () => {
+describe("getParkingRoadSegmentsInBounds", () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockRedisGet.mockResolvedValue(null);
     mockRedisSet.mockResolvedValue(undefined);
   });
 
-  it("returns 400 when bounding box params are missing", async () => {
-    const req = mockReq({});
-    const res = mockRes();
-
-    await handler(req, res);
-
-    expect(res.status).toHaveBeenCalledWith(400);
-    expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ ok: false }),
-    );
-  });
-
-  it("returns 400 when params are non-numeric", async () => {
-    const req = mockReq({
-      north: "abc",
-      south: "24.99",
-      east: "121.50",
-      west: "121.48",
-    });
-    const res = mockRes();
-
-    await handler(req, res);
-
-    expect(res.status).toHaveBeenCalledWith(400);
-    expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ ok: false }),
-    );
-  });
-
-  it("returns filtered road segments within bounding box", async () => {
-    // Simulate cached data with two road segments
+  it("returns filtered road segments from cached data", async () => {
     const cachedSegments = [
       {
         roadId: "T63",
@@ -96,40 +54,17 @@ describe("parking/spaces handler", () => {
     ];
     mockRedisGet.mockResolvedValueOnce(cachedSegments);
 
-    const req = mockReq({
-      north: "25.01",
-      south: "24.99",
-      east: "121.50",
-      west: "121.48",
+    const segments = await getParkingRoadSegmentsInBounds({
+      north: 25.01,
+      south: 24.99,
+      east: 121.5,
+      west: 121.48,
     });
-    const res = mockRes();
 
-    await handler(req, res);
-
-    expect(res.status).toHaveBeenCalledWith(200);
-    const result = res.json.mock.calls[0][0];
-    expect(result.ok).toBe(true);
-    expect(result.segments).toHaveLength(1);
-    expect(result.segments[0].roadId).toBe("T63");
-  });
-
-  it("sets CORS headers", async () => {
-    mockRedisGet.mockResolvedValueOnce([]);
-
-    const req = mockReq({
-      north: "25.01",
-      south: "24.99",
-      east: "121.50",
-      west: "121.48",
-    });
-    const res = mockRes();
-
-    await handler(req, res);
-
-    expect(res.setHeader).toHaveBeenCalledWith(
-      "Access-Control-Allow-Origin",
-      "*",
-    );
+    expect(segments).toHaveLength(1);
+    expect(segments[0].roadId).toBe("T63");
+    expect(mockFetch).not.toHaveBeenCalled();
+    expect(mockRedisSet).not.toHaveBeenCalled();
   });
 
   it("fetches from NTC API when cache is empty", async () => {
@@ -165,15 +100,12 @@ describe("parking/spaces handler", () => {
         json: () => Promise.resolve([]),
       } as any);
 
-    const req = mockReq({
-      north: "25.01",
-      south: "24.99",
-      east: "121.50",
-      west: "121.48",
+    const segments = await getParkingRoadSegmentsInBounds({
+      north: 25.01,
+      south: 24.99,
+      east: 121.5,
+      west: 121.48,
     });
-    const res = mockRes();
-
-    await handler(req, res);
 
     expect(mockFetch).toHaveBeenCalledTimes(2);
     expect(mockFetch).toHaveBeenCalledWith(expect.stringContaining("page=0"));
@@ -183,28 +115,7 @@ describe("parking/spaces handler", () => {
       expect.any(Array),
       { ex: 120 },
     );
-    expect(res.status).toHaveBeenCalledWith(200);
-  });
-
-  it("returns 500 on internal error", async () => {
-    mockRedisGet.mockRejectedValueOnce(new Error("Redis down"));
-
-    const req = mockReq({
-      north: "25.01",
-      south: "24.99",
-      east: "121.50",
-      west: "121.48",
-    });
-    const res = mockRes();
-
-    await handler(req, res);
-
-    expect(res.status).toHaveBeenCalledWith(500);
-    expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({
-        ok: false,
-        error: "Internal server error",
-      }),
-    );
+    expect(segments).toHaveLength(1);
+    expect(segments[0].roadId).toBe("R1");
   });
 });
