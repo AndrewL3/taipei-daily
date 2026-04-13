@@ -6,6 +6,7 @@ export const weatherModule: ModuleDefinition = {
   id: "weather",
   name: "nav.weather",
   icon: CloudSun,
+  accentClassName: "text-sky-600 dark:text-sky-400",
   routes: [],
   mapLayers: [],
   dashboardCard: WeatherDashboardCard,

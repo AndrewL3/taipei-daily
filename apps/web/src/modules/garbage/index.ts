@@ -13,6 +13,7 @@ export const garbageModule: ModuleDefinition = {
   id: "garbage",
   name: "nav.schedules",
   icon: CalendarClock,
+  accentClassName: "text-teal-600 dark:text-teal-400",
   routes: [
     { path: "schedules", element: createElement(SchedulesHubView) },
     { path: "schedules/garbage", element: createElement(GarbageSchedulesView) },
@@ -22,6 +23,7 @@ export const garbageModule: ModuleDefinition = {
       id: "garbage",
       name: "map.layers.garbage",
       icon: Trash2,
+      activeClassName: "bg-teal-500 text-white shadow-sm",
       defaultVisible: true,
       MapComponent: GarbageMapLayer,
     },

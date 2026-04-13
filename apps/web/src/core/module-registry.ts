@@ -8,6 +8,10 @@ export function registerModules(defs: ModuleDefinition[]) {
   }
 }
 
+export function getRegisteredModule(id: string): ModuleDefinition | undefined {
+  return modules.get(id);
+}
+
 export function getRegisteredModules(): readonly ModuleDefinition[] {
   return Array.from(modules.values());
 }

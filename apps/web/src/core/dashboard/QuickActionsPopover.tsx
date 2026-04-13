@@ -59,9 +59,7 @@ export default function QuickActionsPopover({
         onKeyDown={(e) => e.key === "Escape" && onClose()}
       >
         {actions.map((action, i) => {
-          const Icon = action.icon as React.ComponentType<{
-            className?: string;
-          }>;
+          const Icon = action.icon;
           return (
             <button
               key={action.to}

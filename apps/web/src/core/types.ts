@@ -5,7 +5,8 @@ import type { LatLng, Icon } from "leaflet";
 export interface ModuleDefinition {
   id: string;
   name: string; // i18n key
-  icon: ComponentType; // Lucide icon for nav
+  icon: ComponentType<{ className?: string }>; // Lucide icon for nav
+  accentClassName?: string;
   routes: RouteObject[];
   mapLayers?: MapLayerProvider[];
   searchProvider?: SearchProvider;
@@ -15,7 +16,7 @@ export interface ModuleDefinition {
   };
   quickActions?: {
     label: string; // i18n key
-    icon: ComponentType;
+    icon: ComponentType<{ className?: string }>;
     to: string; // route path
   }[];
 }
@@ -23,7 +24,8 @@ export interface ModuleDefinition {
 export interface MapLayerProvider {
   id: string;
   name: string; // i18n key for toggle label
-  icon: ComponentType;
+  icon: ComponentType<{ className?: string }>;
+  activeClassName?: string;
   defaultVisible: boolean;
   MapComponent: ComponentType; // renders inside shared MapContainer
 }

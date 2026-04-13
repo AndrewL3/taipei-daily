@@ -1,22 +1,9 @@
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { Trash2, Bike, Bus, MapPin, ParkingSquare } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useSearch, type SearchResult } from "./useSearch";
 import { buildMapNavigationTarget } from "../map/navigation";
-
-const MODULE_ICONS: Record<string, typeof Bus> = {
-  garbage: Trash2,
-  youbike: Bike,
-  transit: Bus,
-  parking: ParkingSquare,
-};
-
-const MODULE_COLORS: Record<string, string> = {
-  garbage: "text-teal-600 dark:text-teal-400",
-  youbike: "text-lime-600 dark:text-lime-400",
-  transit: "text-blue-600 dark:text-blue-400",
-  parking: "text-violet-600 dark:text-violet-400",
-};
+import { getRegisteredModule } from "../module-registry";
 
 interface SearchOverlayProps {
   query: string;
@@ -60,8 +47,9 @@ export default function SearchOverlay({ query, onClose }: SearchOverlayProps) {
 
       {!isLoading &&
         Object.entries(grouped).map(([moduleId, items]) => {
-          const Icon = MODULE_ICONS[moduleId] ?? MapPin;
-          const color = MODULE_COLORS[moduleId] ?? "text-foreground";
+          const module = getRegisteredModule(moduleId);
+          const Icon = module?.icon ?? MapPin;
+          const color = module?.accentClassName ?? "text-foreground";
 
           return (
             <div key={moduleId}>

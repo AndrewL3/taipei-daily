@@ -1,14 +1,13 @@
 import { Outlet, NavLink } from "react-router";
 import { House, Map, WifiOff } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import type { ComponentType } from "react";
 import { useOnline } from "@/hooks/useOnline";
 import type { ModuleDefinition } from "../types";
 
 interface NavTab {
   to: string;
   label: string;
-  icon: ComponentType<{ className?: string }>;
+  icon: ModuleDefinition["icon"];
   end?: boolean;
 }
 
@@ -28,8 +27,7 @@ function buildNavTabs(modules: readonly ModuleDefinition[]): NavTab[] {
     tabs.push({
       to: path,
       label: mod.name,
-      // Lucide icons accept className but ModuleDefinition.icon is ComponentType<{}>
-      icon: mod.icon as ComponentType<{ className?: string }>,
+      icon: mod.icon,
     });
   }
 

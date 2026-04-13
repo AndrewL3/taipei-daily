@@ -7,12 +7,14 @@ export const youbikeModule: ModuleDefinition = {
   id: "youbike",
   name: "nav.youbike",
   icon: Bike,
+  accentClassName: "text-lime-600 dark:text-lime-400",
   routes: [],
   mapLayers: [
     {
       id: "youbike",
       name: "map.layers.youbike",
       icon: Bike,
+      activeClassName: "bg-lime-600 text-white shadow-sm",
       defaultVisible: true,
       MapComponent: YouBikeMapLayer,
     },
