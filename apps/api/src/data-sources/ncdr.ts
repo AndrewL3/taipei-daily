@@ -8,6 +8,7 @@ import {
 const FEED_URL = "https://alerts.ncdr.nat.gov.tw/JSONAtomFeeds.ashx";
 const FEED_HOSTNAME = "alerts.ncdr.nat.gov.tw";
 const ALLOWED_CAP_HOSTNAMES = new Set([FEED_HOSTNAME]);
+const ALLOWED_ALERT_WEB_HOST_SUFFIX = ".gov.tw";
 const CAP_FETCH_TIMEOUT_MS = 5_000;
 const MAX_CAP_BYTES = 256 * 1024;
 
@@ -47,6 +48,34 @@ function isAllowedCapUrl(url: string): boolean {
     );
   } catch {
     return false;
+  }
+}
+
+export function sanitizeAlertWebUrl(url: string | undefined): string | undefined {
+  if (!url) return undefined;
+
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.toLowerCase();
+    const hasAllowedHost =
+      hostname === "gov.tw" || hostname.endsWith(ALLOWED_ALERT_WEB_HOST_SUFFIX);
+
+    if (
+      parsed.protocol !== "https:" ||
+      !hasAllowedHost ||
+      parsed.username ||
+      parsed.password ||
+      (parsed.port !== "" && parsed.port !== "443")
+    ) {
+      return undefined;
+    }
+
+    parsed.username = "";
+    parsed.password = "";
+    if (parsed.port === "443") parsed.port = "";
+    return parsed.toString();
+  } catch {
+    return undefined;
   }
 }
 
@@ -165,7 +194,9 @@ export function parseCapXml(xml: string): ActiveAlert | null {
       alertColor,
       areas,
       geocodes,
-      web: info.web ? String(info.web) : undefined,
+      web: sanitizeAlertWebUrl(
+        info.web ? String(info.web) : undefined,
+      ),
     };
   } catch {
     return null;

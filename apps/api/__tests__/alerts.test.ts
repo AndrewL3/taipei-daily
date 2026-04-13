@@ -10,6 +10,7 @@ import {
   fetchCapFile,
   parseCapXml,
   preFilterEntries,
+  sanitizeAlertWebUrl,
 } from "../src/data-sources/ncdr.js";
 import type { NcdrFeedEntry } from "@tracker/types";
 
@@ -67,7 +68,7 @@ describe("parseCapXml", () => {
     expect(alert!.event).toBe("強風");
     expect(alert!.senderName).toBe("中央氣象署");
     expect(alert!.alertColor).toBe("255,255,0");
-    expect(alert!.web).toBe("https://www.cwa.gov.tw");
+    expect(alert!.web).toBe("https://www.cwa.gov.tw/");
   });
 
   it("extracts areas and geocodes", () => {
@@ -140,6 +141,52 @@ describe("parseCapXml", () => {
     expect(alert!.web).toBeUndefined();
     expect(alert!.alertColor).toBe("");
     expect(alert!.geocodes).toEqual([]);
+  });
+
+  it("drops unsafe `javascript:` links from CAP XML", () => {
+    const xml = sampleCap.replace(
+      "<web>https://www.cwa.gov.tw</web>",
+      "<web>javascript:alert(1)</web>",
+    );
+
+    const alert = parseCapXml(xml);
+
+    expect(alert).not.toBeNull();
+    expect(alert!.web).toBeUndefined();
+  });
+
+  it("drops non-government links from CAP XML", () => {
+    const xml = sampleCap.replace(
+      "<web>https://www.cwa.gov.tw</web>",
+      "<web>https://example.com/phish</web>",
+    );
+
+    const alert = parseCapXml(xml);
+
+    expect(alert).not.toBeNull();
+    expect(alert!.web).toBeUndefined();
+  });
+});
+
+describe("sanitizeAlertWebUrl", () => {
+  it("keeps https links on government domains", () => {
+    expect(sanitizeAlertWebUrl("https://www.cwa.gov.tw/warning")).toBe(
+      "https://www.cwa.gov.tw/warning",
+    );
+  });
+
+  it("rejects non-https links", () => {
+    expect(sanitizeAlertWebUrl("http://www.cwa.gov.tw/warning")).toBeUndefined();
+  });
+
+  it("rejects links outside government domains", () => {
+    expect(sanitizeAlertWebUrl("https://example.com/warning")).toBeUndefined();
+  });
+
+  it("rejects urls with embedded credentials", () => {
+    expect(
+      sanitizeAlertWebUrl("https://user:pass@www.cwa.gov.tw/warning"),
+    ).toBeUndefined();
   });
 });
 

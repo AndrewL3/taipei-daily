@@ -5,6 +5,7 @@ import {
   fetchNcdrFeed,
   preFilterEntries,
   fetchCapFile,
+  sanitizeAlertWebUrl,
 } from "../../src/data-sources/ncdr.js";
 import { filterAlertsByArea, type ActiveAlert } from "@tracker/types";
 
@@ -12,6 +13,13 @@ const CACHE_KEY = "alerts:active";
 const CACHE_TTL = 300; // 5 minutes
 
 const TAIPEI_PREFIXES = ["63", "65"];
+
+function sanitizeAlertLinks(alerts: ActiveAlert[]): ActiveAlert[] {
+  return alerts.map((alert) => ({
+    ...alert,
+    web: sanitizeAlertWebUrl(alert.web),
+  }));
+}
 
 export default async function handler(
   _req: VercelRequest,
@@ -22,7 +30,10 @@ export default async function handler(
   try {
     const cached = await redis.get<ActiveAlert[]>(CACHE_KEY);
     if (cached) {
-      return res.status(200).json({ ok: true, alerts: cached });
+      return res.status(200).json({
+        ok: true,
+        alerts: sanitizeAlertLinks(cached),
+      });
     }
 
     // 1. Fetch NCDR JSON feed
@@ -37,7 +48,9 @@ export default async function handler(
     const parsed = capResults.filter((a): a is ActiveAlert => a !== null);
 
     // 4. Final filter by geocode (Taipei 63, New Taipei 65)
-    const alerts = filterAlertsByArea(parsed, TAIPEI_PREFIXES);
+    const alerts = sanitizeAlertLinks(
+      filterAlertsByArea(parsed, TAIPEI_PREFIXES),
+    );
 
     // 5. Cache and return
     await redis.set(CACHE_KEY, alerts, { ex: CACHE_TTL });
