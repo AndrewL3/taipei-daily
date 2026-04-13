@@ -41,7 +41,8 @@ async function getCached<T>(
 export async function handleRoute(req: VercelRequest, res: VercelResponse) {
   try {
     const routeId = req.query.routeId as string | undefined;
-    const direction = parseInt(req.query.direction as string) || 0;
+    const directionParam =
+      typeof req.query.direction === "string" ? req.query.direction : undefined;
     const cityParam = (req.query.city as string) ?? "Taipei";
     if (!VALID_CITIES.has(cityParam)) {
       return res.status(400).json({ ok: false, error: "Invalid city" });
@@ -62,12 +63,20 @@ export async function handleRoute(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    if (direction !== 0 && direction !== 1) {
+    if (directionParam == null) {
+      return res.status(400).json({
+        ok: false,
+        error: "direction query param is required",
+      });
+    }
+
+    if (directionParam !== "0" && directionParam !== "1") {
       return res.status(400).json({
         ok: false,
         error: "direction must be 0 or 1",
       });
     }
+    const direction = Number(directionParam);
 
     // Static data (24h cache): routes + per-route stops -- fetch per-route via $filter
     // Real-time data (60s cache): ETAs + positions -- fetch per-route via $filter
