@@ -1,28 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { redis } from "../../src/redis.js";
 import { sendInternalError } from "../../src/http.js";
-import { parseTaipeiGarbageCsv, type TaipeiGarbageStop } from "@tracker/types";
-
-const CACHE_KEY = "garbage:taipei:stops";
-const CACHE_TTL = 86_400; // 24 hours
-
-const CSV_URL =
-  "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=a6e90031-7ec4-4089-afb5-361a4efe7202";
-
-async function getAllStops(): Promise<TaipeiGarbageStop[]> {
-  const cached = await redis.get<TaipeiGarbageStop[]>(CACHE_KEY);
-  if (cached) return cached;
-
-  const res = await fetch(CSV_URL);
-  if (!res.ok) {
-    throw new Error(`Taipei CSV fetch failed: ${res.status} ${res.statusText}`);
-  }
-  const csvText = await res.text();
-  const stops = parseTaipeiGarbageCsv(csvText);
-
-  await redis.set(CACHE_KEY, stops, { ex: CACHE_TTL });
-  return stops;
-}
+import { getTaipeiGarbageStopsInBounds } from "../../src/garbage/taipei-stops.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -40,10 +18,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    const all = await getAllStops();
-    const stops = all.filter(
-      (s) => s.lat >= south && s.lat <= north && s.lon >= west && s.lon <= east,
-    );
+    const stops = await getTaipeiGarbageStopsInBounds({
+      north,
+      south,
+      east,
+      west,
+    });
 
     return res.status(200).json({ ok: true, stops });
   } catch (err) {
