@@ -1,15 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { redis } from "../../src/redis.js";
-import { cwaFetch } from "../../src/data-sources/cwa.js";
 import { sendInternalError } from "../../src/http.js";
-import {
-  CwaForecastResponseSchema,
-  transformCwaForecast,
-  type CwaForecastResponse,
-} from "@tracker/types";
-import { findNearestTownship } from "../../src/data/township-centers.js";
-
-const CACHE_TTL = 1800; // 30 minutes
+import { getForecastForLocation } from "../../src/weather/forecast.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -25,29 +16,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    // Find nearest township and its CWA dataset
-    const township = findNearestTownship(lat, lon);
-    const cacheKey = `weather:forecast:${township.datasetId}`;
-
-    // Check cache for the city-level forecast, parse once
-    let parsed: CwaForecastResponse;
-    const cached = await redis.get<CwaForecastResponse>(cacheKey);
-
-    if (cached) {
-      parsed = CwaForecastResponseSchema.parse(cached);
-    } else {
-      const raw = await cwaFetch<unknown>(township.datasetId);
-      parsed = CwaForecastResponseSchema.parse(raw);
-      await redis.set(cacheKey, parsed, { ex: CACHE_TTL });
-    }
-
-    // Extract the specific township's forecast
-    const forecast = transformCwaForecast(parsed, township.name);
+    const { townshipName, forecast } = await getForecastForLocation(lat, lon);
 
     if (!forecast) {
       return res.status(404).json({
         ok: false,
-        error: `No forecast found for township: ${township.name}`,
+        error: `No forecast found for township: ${townshipName}`,
       });
     }
 
