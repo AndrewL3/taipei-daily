@@ -10,21 +10,38 @@ export default function InstallPrompt() {
   const { t } = useTranslation();
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null);
+  const [isPrompting, setIsPrompting] = useState(false);
 
   useEffect(() => {
-    const handler = (e: Event) => {
+    const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
     };
-    window.addEventListener("beforeinstallprompt", handler);
-    return () => window.removeEventListener("beforeinstallprompt", handler);
+    const handleAppInstalled = () => {
+      setDeferredPrompt(null);
+      setIsPrompting(false);
+    };
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    window.addEventListener("appinstalled", handleAppInstalled);
+    return () => {
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt,
+      );
+      window.removeEventListener("appinstalled", handleAppInstalled);
+    };
   }, []);
 
   const install = async () => {
-    if (!deferredPrompt) return;
-    await deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === "accepted") {
+    if (!deferredPrompt || isPrompting) return;
+    const promptEvent = deferredPrompt;
+    setDeferredPrompt(null);
+    setIsPrompting(true);
+    try {
+      await promptEvent.prompt();
+      await promptEvent.userChoice;
+    } finally {
+      setIsPrompting(false);
       setDeferredPrompt(null);
     }
   };
