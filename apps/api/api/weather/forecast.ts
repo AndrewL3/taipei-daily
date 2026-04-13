@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../../src/redis.js";
 import { cwaFetch } from "../../src/data-sources/cwa.js";
+import { sendInternalError } from "../../src/http.js";
 import {
   CwaForecastResponseSchema,
   transformCwaForecast,
@@ -52,8 +53,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({ ok: true, forecast });
   } catch (err) {
-    console.error("Weather forecast API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Weather forecast API error:", err);
   }
 }

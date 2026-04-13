@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../../src/redis.js";
+import { sendInternalError } from "../../src/http.js";
 import {
   NtcParkingSpaceRawArraySchema,
   groupSpacesIntoRoadSegments,
@@ -65,8 +66,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({ ok: true, segments });
   } catch (err) {
-    console.error("Parking spaces API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Parking spaces API error:", err);
   }
 }

@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../redis.js";
 import { tdxFetch } from "../data-sources/tdx.js";
+import { sendInternalError } from "../http.js";
 import {
   TdxBusRouteRawArraySchema,
   type TdxBusRouteRaw,
@@ -57,8 +58,6 @@ export async function handleRoutes(_req: VercelRequest, res: VercelResponse) {
     const routes = results.flat();
     return res.status(200).json({ ok: true, routes });
   } catch (err) {
-    console.error("Transit routes API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Transit routes API error:", err);
   }
 }

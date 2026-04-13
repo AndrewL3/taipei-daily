@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../redis.js";
 import { tdxFetch } from "../data-sources/tdx.js";
+import { sendInternalError } from "../http.js";
 import {
   TdxBusStopMinimalArraySchema,
   TdxBusEtaRawArraySchema,
@@ -101,8 +102,6 @@ export async function handleArrivals(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({ ok: true, arrivals });
   } catch (err) {
-    console.error("Transit arrivals API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Transit arrivals API error:", err);
   }
 }

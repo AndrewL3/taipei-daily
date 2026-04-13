@@ -114,7 +114,10 @@ describe("GET /api/routes", () => {
 
     expect(res.status).toHaveBeenCalledWith(500);
     expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ ok: false }),
+      expect.objectContaining({
+        ok: false,
+        error: "Internal server error",
+      }),
     );
   });
 

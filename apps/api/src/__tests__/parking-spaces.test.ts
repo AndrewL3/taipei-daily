@@ -201,7 +201,10 @@ describe("parking/spaces handler", () => {
 
     expect(res.status).toHaveBeenCalledWith(500);
     expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ ok: false, error: "Redis down" }),
+      expect.objectContaining({
+        ok: false,
+        error: "Internal server error",
+      }),
     );
   });
 });

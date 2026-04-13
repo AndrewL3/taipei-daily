@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../../src/redis.js";
+import { sendInternalError } from "../../src/http.js";
 import {
   fetchNcdrFeed,
   preFilterEntries,
@@ -42,8 +43,6 @@ export default async function handler(
     await redis.set(CACHE_KEY, alerts, { ex: CACHE_TTL });
     return res.status(200).json({ ok: true, alerts });
   } catch (err) {
-    console.error("Alerts API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Alerts API error:", err);
   }
 }

@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { eq, asc, sql } from "drizzle-orm";
 import { db } from "../src/db.js";
+import { sendInternalError } from "../src/http.js";
 import { routes, stops, passEvents } from "@tracker/types";
 import {
   toTaipeiDateString,
@@ -22,9 +23,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return await handleList(res);
     }
   } catch (err) {
-    console.error("Routes API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Routes API error:", err);
   }
 }
 

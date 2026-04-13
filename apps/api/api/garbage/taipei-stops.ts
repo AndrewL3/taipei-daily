@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../../src/redis.js";
+import { sendInternalError } from "../../src/http.js";
 import { parseTaipeiGarbageCsv, type TaipeiGarbageStop } from "@tracker/types";
 
 const CACHE_KEY = "garbage:taipei:stops";
@@ -46,8 +47,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({ ok: true, stops });
   } catch (err) {
-    console.error("Taipei garbage stops API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Taipei garbage stops API error:", err);
   }
 }

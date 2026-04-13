@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { sql } from "drizzle-orm";
 import { db } from "../../src/db.js";
+import { sendServiceUnavailable } from "../../src/http.js";
 import { redis } from "../../src/redis.js";
 import { toTaipeiDateString } from "@tracker/utils";
 
@@ -31,9 +32,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Auth: validate token against ADMIN_PASSWORD
   const adminPassword = process.env.ADMIN_PASSWORD;
   if (!adminPassword) {
-    return res
-      .status(503)
-      .json({ ok: false, error: "ADMIN_PASSWORD not configured" });
+    return sendServiceUnavailable(
+      res,
+      "[admin/status] ADMIN_PASSWORD is not configured",
+    );
   }
   const token = extractAdminToken(req);
   if (token !== adminPassword) {

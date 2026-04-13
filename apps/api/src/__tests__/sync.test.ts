@@ -118,29 +118,41 @@ describe("/api/cron/sync", () => {
     expect(res.json).toHaveBeenCalledWith({ ok: true, vehicles: 0 });
   });
 
-  it("skips auth check when CRON_SECRET env var is not set", async () => {
+  it("rejects requests when CRON_SECRET env var is not set", async () => {
     mockFetchLiveGps.mockResolvedValue([]);
     const res = mockRes();
     await handler(mockReq(), res);
 
-    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.status).toHaveBeenCalledWith(503);
+    expect(res.json).toHaveBeenCalledWith({
+      ok: false,
+      error: "Service unavailable",
+    });
   });
 
   it("returns early with vehicles: 0 when no GPS data", async () => {
+    process.env.CRON_SECRET = "correct-secret";
     mockFetchLiveGps.mockResolvedValue([]);
     const res = mockRes();
 
-    await handler(mockReq(), res);
+    await handler(
+      mockReq({ headers: { authorization: "Bearer correct-secret" } }),
+      res,
+    );
 
     expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith({ ok: true, vehicles: 0 });
   });
 
   it("returns 500 when NTC API fails", async () => {
+    process.env.CRON_SECRET = "correct-secret";
     mockFetchLiveGps.mockRejectedValue(new Error("Network error"));
     const res = mockRes();
 
-    await handler(mockReq(), res);
+    await handler(
+      mockReq({ headers: { authorization: "Bearer correct-secret" } }),
+      res,
+    );
 
     expect(res.status).toHaveBeenCalledWith(500);
     expect(res.json).toHaveBeenCalledWith(
@@ -149,6 +161,7 @@ describe("/api/cron/sync", () => {
   });
 
   it("processes GPS data end-to-end", async () => {
+    process.env.CRON_SECRET = "correct-secret";
     mockFetchLiveGps.mockResolvedValue([
       {
         lineid: "207001",
@@ -189,7 +202,10 @@ describe("/api/cron/sync", () => {
     mockOnConflict.mockResolvedValue(undefined);
 
     const res = mockRes();
-    await handler(mockReq(), res);
+    await handler(
+      mockReq({ headers: { authorization: "Bearer correct-secret" } }),
+      res,
+    );
 
     expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith(

@@ -1,9 +1,19 @@
-import { describe, expect, it } from "@jest/globals";
-import { parseCapXml, preFilterEntries } from "../src/data-sources/ncdr.js";
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  jest,
+} from "@jest/globals";
+import {
+  fetchCapFile,
+  parseCapXml,
+  preFilterEntries,
+} from "../src/data-sources/ncdr.js";
 import type { NcdrFeedEntry } from "@tracker/types";
 
-describe("parseCapXml", () => {
-  const sampleCap = `<?xml version="1.0" encoding="utf-8"?>
+const sampleCap = `<?xml version="1.0" encoding="utf-8"?>
 <alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
   <identifier>CWA-Weather_test_001</identifier>
   <sender>weather@cwa.gov.tw</sender>
@@ -46,6 +56,7 @@ describe("parseCapXml", () => {
   </info>
 </alert>`;
 
+describe("parseCapXml", () => {
   it("extracts core fields from CAP XML", () => {
     const alert = parseCapXml(sampleCap);
     expect(alert).not.toBeNull();
@@ -125,10 +136,70 @@ describe("parseCapXml", () => {
     const alert = parseCapXml(xml);
     expect(alert).not.toBeNull();
     expect(alert!.id).toBe("MINIMAL");
-    expect(alert!.headline).toBe("Test"); // falls back to event
+    expect(alert!.headline).toBe("Test");
     expect(alert!.web).toBeUndefined();
     expect(alert!.alertColor).toBe("");
     expect(alert!.geocodes).toEqual([]);
+  });
+});
+
+describe("fetchCapFile", () => {
+  const originalFetch = global.fetch;
+
+  beforeEach(() => {
+    global.fetch = jest.fn() as typeof fetch;
+  });
+
+  afterEach(() => {
+    global.fetch = originalFetch;
+  });
+
+  it("rejects CAP URLs outside the NCDR allowlist", async () => {
+    const result = await fetchCapFile("https://example.com/test.cap");
+
+    expect(result).toBeNull();
+    expect(global.fetch).not.toHaveBeenCalled();
+  });
+
+  it("rejects oversized CAP responses before parsing", async () => {
+    const fetchMock = global.fetch as unknown as jest.Mock;
+    fetchMock.mockResolvedValue({
+      ok: true,
+      headers: {
+        get: (name: string) =>
+          name === "content-length" ? String(300 * 1024) : null,
+      },
+      body: undefined,
+      text: async () => sampleCap,
+    });
+
+    const result = await fetchCapFile(
+      "https://alerts.ncdr.nat.gov.tw/Capstorage/CWA/2026/test.cap",
+    );
+
+    expect(result).toBeNull();
+  });
+
+  it("parses CAP responses from the allowed host", async () => {
+    const fetchMock = global.fetch as unknown as jest.Mock;
+    fetchMock.mockResolvedValue({
+      ok: true,
+      headers: {
+        get: (name: string) =>
+          name === "content-length"
+            ? String(Buffer.byteLength(sampleCap, "utf8"))
+            : null,
+      },
+      body: undefined,
+      text: async () => sampleCap,
+    });
+
+    const result = await fetchCapFile(
+      "https://alerts.ncdr.nat.gov.tw/Capstorage/CWA/2026/test.cap",
+    );
+
+    expect(result).not.toBeNull();
+    expect(result!.id).toBe("CWA-Weather_test_001");
   });
 });
 

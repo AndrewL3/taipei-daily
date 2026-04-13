@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "../src/redis.js";
 import { db } from "../src/db.js";
+import { sendInternalError } from "../src/http.js";
 import { TRANSIT_STATIONS_CACHE_KEY } from "../src/transit/cache.js";
 import { stops, routes } from "@tracker/types";
 import { sql } from "drizzle-orm";
@@ -160,8 +161,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({ ok: true, results });
   } catch (err) {
-    console.error("Search API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Search API error:", err);
   }
 }

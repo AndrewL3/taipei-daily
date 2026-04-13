@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { and, between, eq } from "drizzle-orm";
 import { db } from "../src/db.js";
+import { sendInternalError } from "../src/http.js";
 import { stops, routes } from "@tracker/types";
 import { haversineMeters } from "@tracker/utils";
 
@@ -76,8 +77,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({ ok: true, stops: nearbyStops });
   } catch (err) {
-    console.error("Stops API error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ ok: false, error: message });
+    return sendInternalError(res, "Stops API error:", err);
   }
 }

@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { inArray, asc } from "drizzle-orm";
 import { db } from "../../src/db.js";
+import { sendServiceUnavailable } from "../../src/http.js";
 import { redis } from "../../src/redis.js";
 import { stops, passEvents } from "@tracker/types";
 import {
@@ -23,11 +24,16 @@ export default async function handler(
 
   // Auth check: validate CRON_SECRET bearer token (skip if env var not set)
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret) {
-    const authHeader = _req.headers.authorization;
-    if (authHeader !== `Bearer ${cronSecret}`) {
-      return res.status(401).json({ ok: false, error: "Unauthorized" });
-    }
+  if (!cronSecret) {
+    return sendServiceUnavailable(
+      res,
+      "[cron/sync] CRON_SECRET is not configured",
+    );
+  }
+
+  const authHeader = _req.headers.authorization;
+  if (authHeader !== `Bearer ${cronSecret}`) {
+    return res.status(401).json({ ok: false, error: "Unauthorized" });
   }
 
   try {
